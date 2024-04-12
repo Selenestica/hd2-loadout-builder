@@ -78,10 +78,19 @@ export const strategemData = [
     {
         id: 7,
         name: "AC-8 Autocannon",
-        icon: strat6,
-        range: [1, 0, 0],
+        icon: strat7,
+        range: [1, 1, 0.5],
         type: 'support-weapon',
         coverage: [1, 1, 1, 1, 0],
+        objectives: []
+    },
+    {
+        id: 8,
+        name: "MG-206 Heavy Machine Gun",
+        icon: strat8,
+        range: [1, 1, 0],
+        type: 'support-weapon',
+        coverage: [0.5, 1, 1, 1, 0],
         objectives: []
     },
 ]
