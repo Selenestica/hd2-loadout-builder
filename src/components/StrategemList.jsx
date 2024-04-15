@@ -22,7 +22,7 @@ export default function StrategemList({ handleClick }) {
                         a.color > b.color
                         : a.type > b.type
                 )).map(strat => {
-                    return <div className={css`
+                    return <div key={strat.id} className={css`
                         display: flex; 
                         align-items: center; 
                         gap: 1em;

@@ -3,6 +3,8 @@ import { css } from '@emotion/css'
 import { colors } from '../data/constants'
 import { loadLoadouts } from '../data/indexedDB'
 import Loadout from './Loadout'
+import { addLoadout } from '../data/indexedDB'
+import { useCallback } from 'react'
 
 export default function StrategemList({ handleClick }) {
     const [loadouts, setLoadouts] = useState([])
@@ -18,6 +20,27 @@ export default function StrategemList({ handleClick }) {
         })
     }, [])
 
+    const handleAddLoadout = useCallback(() => {
+        const newLoadout = {
+            id: (Math.max(...loadouts.map(x => x.id)) || 0) + 1,
+            name: 'New Loadout',
+            strat1: 1,
+            strat2: 26,
+            strat3: null,
+            strat4: null,
+            primary: 1,
+            secondary: 1,
+            grenade: 1,
+            armor: 1,
+        }
+        addLoadout(newLoadout).then(loadout => {
+            setLoadouts(current => [
+                ...current,
+                loadout
+            ])
+        })
+    }, [loadouts, setLoadouts])
+
     return (loading ? 'loading...' :
         <div className={css`
             background: ${colors.lighter};
@@ -29,26 +52,11 @@ export default function StrategemList({ handleClick }) {
             justify-content: space-between;
         `}>
             <div>
-                {loadouts.map(loadout => <Loadout data={loadout} />)}
+                {loadouts.map(loadout => <Loadout key={loadout.id} data={loadout} />)}
             </div>
-            <button className={css`
-                width: 100%;
-            `}
-                onClick={() => {
-                    setLoadouts(current => [...current,
-                    {
-                        name: 'New Loadout',
-                        strat1: 1,
-                        strat2: 26,
-                        strat3: null,
-                        strat4: null,
-                        primary: 1,
-                        secondary: 1,
-                        grenade: 1,
-                        armor: 1,
-                    }
-                    ])
-                }}
+            <button
+                className={css`width: 100%;`}
+                onClick={handleAddLoadout}
             >
                 add loadout
             </button>

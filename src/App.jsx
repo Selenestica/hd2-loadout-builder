@@ -9,7 +9,6 @@ export default function App() {
             <div className={css` 
                 display: flex;
             `}>
-
                 <LoadoutList />
                 <StrategemList />
             </div>

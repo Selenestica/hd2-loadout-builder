@@ -3,7 +3,7 @@ let dbPromise
 function openDB() {
     if (!dbPromise) {
         dbPromise = new Promise((resolve, reject) => {
-            const request = indexedDB.open('loadoutsDB', 1)
+            const request = indexedDB.open('loadoutsDB', 2)
 
             request.onupgradeneeded = function(event) {
                 const db = event.target.result
@@ -35,7 +35,7 @@ export function addLoadout(loadout) {
         return new Promise((resolve, reject) => {
             transaction.oncomplete = () => {
                 console.log('Loadout added to the database')
-                resolve()
+                resolve(loadout)
             }
 
             transaction.onerror = () => {
