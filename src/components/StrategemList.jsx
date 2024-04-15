@@ -3,8 +3,8 @@ import { strategemData } from '../data/hardcodedData'
 import { css } from '@emotion/css'
 import { colors } from '../data/constants'
 
-export default function LoadoutsList({ handleClick }) {
-    const [hoverState, setHoverState] = useState({})
+export default function StrategemList({ handleClick }) {
+    const [hoverState, setHoverState] = useState()
 
     return (
         <div className={css`
@@ -29,6 +29,7 @@ export default function LoadoutsList({ handleClick }) {
                         padding-right: 1em;
                         cursor: pointer;
                         white-space: nowrap;
+                        user-select: none;
                         
                         &:hover {
                             background: ${colors.lightBlue};
@@ -50,7 +51,7 @@ export default function LoadoutsList({ handleClick }) {
                 place-items: center;
             `}>
                 <div>
-                    {JSON.stringify(hoverState)}
+                    {hoverState ? JSON.stringify(hoverState) : null}
                 </div>
             </div>
         </div>

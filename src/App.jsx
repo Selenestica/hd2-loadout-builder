@@ -1,15 +1,12 @@
-import react, { useState } from 'react'
-//import { strategemData } from './data/hardcodedData'
-//import { css } from '@emotion/css'
 import { LoadoutsProvider } from './context/Loadouts'
-import LoadoutsList from './components/LoadoutsList'
+import StrategemList from './components/StrategemList'
+import LoadoutList from './components/LoadoutList'
 
 export default function App() {
     return (
-        <div>
-            <LoadoutsProvider>
-                <LoadoutsList />
-            </LoadoutsProvider>
-        </div>
+        <LoadoutsProvider>
+            <LoadoutList />
+            <StrategemList />
+        </LoadoutsProvider>
     )
 }
