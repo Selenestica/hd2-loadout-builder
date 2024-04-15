@@ -40,9 +40,10 @@ export default function Loadout({ data, setLoadouts }) {
             background: ${colors.darkBlue};
             
             display: grid;
-            grid-template: auto / min-content 1fr min-content;
+            align-items: center;
+            grid-template: auto / 15em 1fr min-content;
             grid-gap: 1em;
-            padding: 5px;
+            padding: 1em;
             overflow: auto;
 
             img, div > div{
@@ -51,11 +52,13 @@ export default function Loadout({ data, setLoadouts }) {
                 height: 3em;
             }
         `}>
-            <div>{name}</div>
             <div className={css`
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-                grid-gap: 2px;
+                white-space: nowrap;
+            
+            `}>{name}</div>
+            <div className={css`
+                display: flex;
+                gap: 2px;
             `}>
                 {strat1Data ? <img src={strat1Data?.icon} alt="" /> : <div />}
                 {strat2Data ? <img src={strat2Data?.icon} alt="" /> : <div />}

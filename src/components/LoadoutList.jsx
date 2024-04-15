@@ -46,6 +46,7 @@ export default function StrategemList({ handleClick }) {
             max-height: 80vh;
             overflow-Y: auto;
             width: 100%;
+            min-width: 60em;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
