@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { css } from '@emotion/css'
 import { colors } from '../data/constants'
 import { loadLoadouts } from '../data/indexedDB'
 import Loadout from './Loadout'
 import { addLoadout } from '../data/indexedDB'
-import { useCallback } from 'react'
 
 export default function StrategemList({ handleClick }) {
     const [loadouts, setLoadouts] = useState([])
@@ -52,7 +51,11 @@ export default function StrategemList({ handleClick }) {
             justify-content: space-between;
         `}>
             <div>
-                {loadouts.map(loadout => <Loadout key={loadout.id} data={loadout} />)}
+                {loadouts.map(loadout => <Loadout
+                    key={loadout.id}
+                    data={loadout}
+                    setLoadouts={setLoadouts}
+                />)}
             </div>
             <button
                 className={css`width: 100%;`}
