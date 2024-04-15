@@ -60,6 +60,7 @@ export const armorData = []
 const strategemTypes = ['back']
 const coverageCategories = [0, 1, 2, 3, 4]
 const objectives = ['bughole', 'fabricatorVent', 'radioTower', 'shriekerNest']
+const uptimes =['very low', 'low', 'medium', 'high', 'very high']
 export const strategemData = [
     {
         id: 1,
@@ -68,6 +69,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'support-weapon',
         coverage: [1, 1, 0.5, 0, 0],
+        uptime: 'high',
         objectives: []
     },
     {
@@ -77,6 +79,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'support-weapon',
         coverage: [0.5, 1, 1.5, 1, 0],
+        uptime: 'very high',
         objectives: []
     },
     {
@@ -86,6 +89,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'support-weapon',
         coverage: [2, 0.5, 0, 0, 0],
+        uptime: 'very high',
         objectives: []
     },
     {
@@ -95,6 +99,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'support-weapon',
         coverage: [0, 0, 0, 1, 1],
+        uptime: 'very high',
         objectives: []
     },
     {
@@ -104,6 +109,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'support-weapon',
         coverage: [0, 0, 0, 1, 1],
+        uptime: 'very high',
         objectives: []
     },
     {
@@ -113,6 +119,7 @@ export const strategemData = [
         offensiveRange: [1, 0, 0],
         type: 'support-weapon',
         coverage: [1, 1, 1, 1, 0],
+        uptime: 'very high',
         objectives: []
     },
     {
@@ -122,6 +129,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0.5],
         type: 'support-weapon',
         coverage: [1, 1, 1, 1, 0],
+        uptime: 'very high',
         objectives: []
     },
     {
@@ -131,6 +139,7 @@ export const strategemData = [
         offensiveRange: [0.5, 1, 0],
         type: 'support-weapon',
         coverage: [0.5, 1, 1, 1, 0],
+        uptime: 'medium',
         objectives: []
     },
     {
@@ -140,6 +149,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0.5],
         type: 'support-weapon',
         coverage: [0, 1, 2, 1, 0],
+        uptime: 'very high',
         objectives: []
     },
     {
@@ -149,6 +159,7 @@ export const strategemData = [
         offensiveRange: [0, 0.5, 1],
         type: 'support-weapon',
         coverage: [0, 0, 0, 0.5, 1],
+        uptime: 'very high',
         objectives: []
     },
     {
@@ -158,6 +169,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'orbital',
         coverage: [1, 1, 0.5, 0, 0],
+        uptime: 'high',
         objectives: []
     },
     {
@@ -167,6 +179,7 @@ export const strategemData = [
         offensiveRange: [0.5, 1, 0],
         type: 'orbital',
         coverage: [1, 1, 0.5, 0, 0],
+        uptime: 'high',
         objectives: []
     },
     {
@@ -176,6 +189,7 @@ export const strategemData = [
         offensiveRange: [0, 1, 0],
         type: 'orbital',
         coverage: [0.5, 0.5, 0.5, 0.5, 0.5],
+        uptime: 'low',
         objectives: []
     },
     {
@@ -185,6 +199,7 @@ export const strategemData = [
         offensiveRange: [0, 1, 0],
         type: 'orbital',
         coverage: [0.5, 0.5, 0.5, 0.5, 0.5],
+        uptime: 'low',
         objectives: []
     },
     {
@@ -194,6 +209,7 @@ export const strategemData = [
         offensiveRange: [0.5, 1, 0],
         type: 'orbital',
         coverage: [0.5, 0.5, 0.5, 0.5, 0.5],
+        uptime: 'low',
         objectives: []
     },
     {
@@ -202,7 +218,8 @@ export const strategemData = [
         icon: stratorbitalLaser,
         offensiveRange: [1, 1, 0],
         type: 'orbital',
-        coverage: [1, 1, 1, 0.5, 0.5],
+        coverage: [1, 1, 1, 1, 0.5],
+        uptime: 'very low',
         objectives: []
     },
     {
@@ -212,6 +229,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'orbital',
         coverage: [0, 0, 0, 1, 1],
+        uptime: 'low',
         objectives: []
     },
     {
@@ -221,6 +239,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'eagle',
         coverage: [1, 1, 0.5, 0, 0],
+        uptime: 'high',
         objectives: []
     },
     {
@@ -230,6 +249,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'eagle',
         coverage: [1, 1, 1, 0.5, 0],
+        uptime: 'medium',
         objectives: []
     },
     {
@@ -239,6 +259,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'eagle',
         coverage: [1, 1, 1, 0, 0],
+        uptime: 'high',
         objectives: []
     },
     {
@@ -248,6 +269,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'eagle',
         coverage: [1, 1, 0.5, 0, 0],
+        uptime: 'high',
         objectives: []
     },
     {
@@ -257,6 +279,7 @@ export const strategemData = [
         offensiveRange: [0, 0, 0],
         type: 'backpack',
         coverage: [0, 0, 0, 0, 0],
+        uptime: 'very high',
         objectives: []
     },
     {
@@ -266,6 +289,7 @@ export const strategemData = [
         offensiveRange: [0, 0, 0],
         type: 'eagle',
         coverage: [0, 0, 0, 0, 0],
+        uptime: 'high',
         objectives: []
     },
     {
@@ -275,6 +299,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'eagle',
         coverage: [0, 0, 0, 0.5, 0.5],
+        uptime: 'high',
         objectives: []
     },
     {
@@ -284,6 +309,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'eagle',
         coverage: [0, 0, 0, 0.5, 1],
+        uptime: 'medium',
         objectives: []
     },
     {
@@ -293,6 +319,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'orbital',
         coverage: [0, 0, 0.5, 0.5, 0.5],
+        uptime: 'high',
         objectives: []
     },
     {
@@ -302,6 +329,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'orbital',
         coverage: [1.5, 1.5, 0.5, 0, 0],
+        uptime: 'high',
         objectives: []
     },
     {
@@ -311,6 +339,7 @@ export const strategemData = [
         offensiveRange: [0, 0, 0],
         type: 'orbital',
         coverage: [0, 0, 0, 0, 0],
+        uptime: 'high',
         objectives: []
     },
     {
@@ -320,6 +349,7 @@ export const strategemData = [
         offensiveRange: [0, 0, 0],
         type: 'orbital',
         coverage: [0, 0, 0, 0, 0],
+        uptime: 'high',
         objectives: []
     },
     {
@@ -329,6 +359,7 @@ export const strategemData = [
         offensiveRange: [0.5, 1, 1],
         type: 'turret',
         coverage: [1, 1, 1, 0.5, 0],
+        uptime: 'medium',
         objectives: []
     },
     {
@@ -338,6 +369,7 @@ export const strategemData = [
         offensiveRange: [0, 0, 0],
         type: 'emplacement',
         coverage: [0, 0, 0, 0, 0],
+        uptime: 'high',
         objectives: []
     },
     {
@@ -347,6 +379,7 @@ export const strategemData = [
         offensiveRange: [0, 1, 0],
         type: 'turret',
         coverage: [1, 1, 1, 0.5, 0],
+        uptime: 'medium',
         objectives: []
     },
     {
@@ -356,6 +389,7 @@ export const strategemData = [
         offensiveRange: [0, 1, 0],
         type: 'emplacement',
         coverage: [1, 1, 1, 0, 0],
+        uptime: 'medium',
         objectives: []
     },
     {
@@ -365,6 +399,7 @@ export const strategemData = [
         offensiveRange: [0, 0, 0],
         type: 'backpack',
         coverage: [0, 0, 0, 0, 0],
+        uptime: 'very high',
         objectives: []
     },
     {
@@ -374,6 +409,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'support-weapon',
         coverage: [1, 1, 1, 0.5, 0],
+        uptime: 'very high',
         objectives: []
     },
     {
@@ -383,96 +419,97 @@ export const strategemData = [
         offensiveRange: [0.5, 1, 1],
         type: 'support-weapon',
         coverage: [1, 1, 1, 1, 0],
+        uptime: 'very high',
         objectives: []
     },
     {
         id: 37,
-        name: "LAS-98 Laser Cannon",
-        icon: stratlasercannon,
-        offensiveRange: [0.5, 1, 1],
-        type: 'support-weapon',
-        coverage: [1, 1, 1, 1, 0],
-        objectives: []
-    },
-    {
-        id: 38,
         name: "MD-I4 Incendiary Mines",
         icon: stratincendiarymines,
         offensiveRange: [0, 1, 0],
         type: 'emplacement',
         coverage: [1, 1, 1, 0, 0],
+        uptime: 'medium',
         objectives: []
     },
     {
-        id: 39,
+        id: 38,
         name: "AX/LAS-5 Guard Dog Rover",
         icon: stratguarddogrover,
         offensiveRange: [1, 0.5, 0],
         type: 'backpack',
         coverage: [1, 1, 0.5, 0, 0],
+        uptime: 'very high',
         objectives: []
     },
     {
-        id: 40,
+        id: 39,
         name: "SH-20 Ballistic Shield Backpack",
         icon: stratballisticshield,
         offensiveRange: [0, 0, 0],
         type: 'backpack',
         coverage: [0, 0, 0, 0, 0],
+        uptime: 'very high',
         objectives: []
     },
     {
-        id: 41,
+        id: 40,
         name: "ARC-3 Arc Thrower",
         icon: stratarcthrower,
         offensiveRange: [0, 1, 0],
         type: 'support-weapon',
         coverage: [1, 1, 1, 0.5, 0],
+        uptime: 'very high',
         objectives: []
     },
     {
-        id: 42,
+        id: 41,
         name: "LAS-99 Quasar Cannon",
         icon: stratquasar,
         offensiveRange: [0, 1, 1],
         type: 'support-weapon',
         coverage: [0, 0, 0, 1, 1],
+        uptime: 'very high',
         objectives: []
     },
     {
-        id: 43,
+        id: 42,
         name: "SH-32 Shield Generator Pack",
         icon: stratshieldpack,
         offensiveRange: [0, 0, 0],
         type: 'backpack',
         coverage: [0, 0, 0, 0, 0],
+        uptime: 'very high',
         objectives: []
     },
     {
-        id: 44,
+        id: 43,
         name: "A/MG-43 Machine Gun Sentry",
         icon: stratmg43sentry,
         offensiveRange: [1, 1, 0],
         type: 'turret',
         coverage: [1, 1, 0, 0, 0],
+        uptime: 'medium',
         objectives: []
     },
     {
-        id: 45,
+        id: 44,
         name: "A/G-16 Gatling Sentry",
         icon: stratgatlingturret,
         offensiveRange: [1, 1, 0],
         type: 'turret',
         coverage: [1, 1, 0, 0, 0],
+        uptime: 'medium',
         objectives: []
     },
     {
-        id: 46,
+        id: 45,
         name: "A/M-12 Mortar Sentry",
         icon: stratmortar,
         offensiveRange: [1, 1, 0.5],
         type: 'turret',
         coverage: [1, 1, 1, 0, 0],
+        uptime: 'medium',
         objectives: []
     },
     {
@@ -482,6 +519,7 @@ export const strategemData = [
         offensiveRange: [1, 0.5, 0],
         type: 'backpack',
         coverage: [1, 1, 0, 0, 0],
+        uptime: 'very high',
         objectives: []
     },
     {
@@ -491,6 +529,7 @@ export const strategemData = [
         offensiveRange: [0, 1, 1],
         type: 'turret',
         coverage: [0.5, 1, 1, 1, 1],
+        uptime: 'medium',
         objectives: []
     },
     {
@@ -500,6 +539,7 @@ export const strategemData = [
         offensiveRange: [0.5, 1, 0],
         type: 'turret',
         coverage: [0.5, 1, 1, 0.5, 0],
+        uptime: 'medium',
         objectives: []
     },
     {
@@ -509,6 +549,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0.5],
         type: 'turret',
         coverage: [0, 0, 0, 0, 0],
+        uptime: 'medium',
         objectives: []
     },
     {
@@ -518,6 +559,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0.5],
         type: 'support-weapon',
         coverage: [1, 1, 1, 1, 1],
+        uptime: 'low',
         objectives: []
     },
 
