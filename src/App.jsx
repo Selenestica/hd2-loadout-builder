@@ -1,18 +1,15 @@
-import { useState } from 'react'
-import { strategemData } from './data/hardcodedData'
-import { css } from '@emotion/css'
+import react, { useState } from 'react'
+//import { strategemData } from './data/hardcodedData'
+//import { css } from '@emotion/css'
+import { LoadoutsProvider } from './context/Loadouts'
+import LoadoutsList from './components/LoadoutsList'
 
 export default function App() {
     return (
         <div>
-            {strategemData.map(strat => {
-                return <div className={css`
-                    display: flex; 
-                `}>
-                    <img src={strat.icon} alt={strat.name} />
-                    {strat.name}
-                </div>
-            })}
+            <LoadoutsProvider>
+                <LoadoutsList />
+            </LoadoutsProvider>
         </div>
     )
 }
