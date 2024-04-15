@@ -44,10 +44,14 @@ export default function LoadoutsList({ handleClick }) {
             </div >
             <div className={css`
                 padding: 1em;
-                background: rgba(255,255,255, 0.1);
-                max-width: 20em;
+                background: ${colors.lighter};
+                width: 20em;
+                display: grid;
+                place-items: center;
             `}>
-                {JSON.stringify(hoverState)}
+                <div>
+                    {JSON.stringify(hoverState)}
+                </div>
             </div>
         </div>
     )
