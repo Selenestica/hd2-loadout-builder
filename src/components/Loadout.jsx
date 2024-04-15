@@ -38,11 +38,12 @@ export default function Loadout({ data, setLoadouts }) {
     return (
         <div className={css`
             background: ${colors.darkBlue};
-            width: 100%;
+            
             display: grid;
-            grid-template: auto / auto 1fr min-content;
+            grid-template: auto / min-content 1fr min-content;
             grid-gap: 1em;
             padding: 5px;
+            overflow: auto;
 
             img, div > div{
                 background: black;

@@ -21,7 +21,7 @@ export default function StrategemList({ handleClick }) {
 
     const handleAddLoadout = useCallback(() => {
         const newLoadout = {
-            id: (Math.max(...loadouts.map(x => x.id)) || 0) + 1,
+            id: (Math.max(...loadouts.map(x => x.id), 0) || 0) + 1,
             name: 'New Loadout',
             strat1: 1,
             strat2: 26,
@@ -45,7 +45,7 @@ export default function StrategemList({ handleClick }) {
             background: ${colors.lighter};
             max-height: 80vh;
             overflow-Y: auto;
-            width: 50em;
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;

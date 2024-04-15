@@ -1,10 +1,20 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { strategemData } from '../data/hardcodedData'
 import { css } from '@emotion/css'
 import { colors } from '../data/constants'
 
 export default function StrategemList({ handleClick }) {
     const [hoverState, setHoverState] = useState()
+
+    const sortedStrats = useMemo(() => {
+        strategemData.sort((a, b) => (
+            a.color !== b.color ?
+                a.color > b.color
+                : a.type > b.type
+        ))
+        return strategemData
+
+    },[strategemData])
 
     return (
         <div className={css`
@@ -17,11 +27,7 @@ export default function StrategemList({ handleClick }) {
                 max-height: 80vh;
                 overflow-Y: auto;
             `}>
-                {strategemData.toSorted((a, b) => (
-                    a.color !== b.color ?
-                        a.color > b.color
-                        : a.type > b.type
-                )).map(strat => {
+                {sortedStrats.map(strat => {
                     return <div key={strat.id} className={css`
                         display: flex; 
                         align-items: center; 
