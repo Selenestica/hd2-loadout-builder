@@ -254,15 +254,8 @@ export const strategemData = [
         id: 22,
         name: "Lift-850 Jump Pack",
         icon: stratjumppack,
+        offensiveRange: [0, 0, 0],
         type: 'backpack',
-        coverage: [0, 0, 0, 0, 0],
-        objectives: []
-    },
-    {
-        id: 23,
-        name: "Eagle Smoke Strike",
-        icon: stratsmokestrike,
-        type: 'eagle',
         coverage: [0, 0, 0, 0, 0],
         objectives: []
     },
@@ -273,6 +266,258 @@ export const strategemData = [
         offensiveRange: [0, 0, 0],
         type: 'eagle',
         coverage: [0, 0, 0, 0, 0],
+        objectives: []
+    },
+    {
+        id: 24,
+        name: "Eagle 110mm Rocket Pods",
+        icon: stratrocketpods,
+        offensiveRange: [1, 1, 0],
+        type: 'eagle',
+        coverage: [0, 0, 0, 0.5, 0.5],
+        objectives: []
+    },
+    {
+        id: 25,
+        name: "Eagle 500kg Bomb",
+        icon: strat500kg,
+        offensiveRange: [1, 1, 0],
+        type: 'eagle',
+        coverage: [0, 0, 0, 0.5, 1],
+        objectives: []
+    },
+    {
+        id: 26,
+        name: "Orbital Precision Strike",
+        icon: stratprecisionstrike,
+        offensiveRange: [1, 1, 0],
+        type: 'orbital',
+        coverage: [0, 0, 0.5, 0.5, 0.5],
+        objectives: []
+    },
+    {
+        id: 27,
+        name: "Orbital Gas Strike",
+        icon: stratgasstrike,
+        offensiveRange: [1, 1, 0],
+        type: 'orbital',
+        coverage: [1.5, 1.5, 0.5, 0, 0],
+        objectives: []
+    },
+    {
+        id: 28,
+        name: "Orbital EMS Strike",
+        icon: stratems,
+        offensiveRange: [0, 0, 0],
+        type: 'orbital',
+        coverage: [0, 0, 0, 0, 0],
+        objectives: []
+    },
+    {
+        id: 29,
+        name: "Orbital Smoke Strike",
+        icon: stratorbitalsmoke,
+        offensiveRange: [0, 0, 0],
+        type: 'orbital',
+        coverage: [0, 0, 0, 0, 0],
+        objectives: []
+    },
+    {
+        id: 30,
+        name: "E/MG-101 HMG Emplacement",
+        icon: strathmgemplacement,
+        offensiveRange: [0.5, 1, 1],
+        type: 'turret',
+        coverage: [1, 1, 1, 0.5, 0],
+        objectives: []
+    },
+    {
+        id: 31,
+        name: "FX-12 Shield Generator Relay",
+        icon: stratshieldrelay,
+        offensiveRange: [0, 0, 0],
+        type: 'emplacement',
+        coverage: [0, 0, 0, 0, 0],
+        objectives: []
+    },
+    {
+        id: 32,
+        name: "A/ARC-3 Tesla Tower",
+        icon: stratteslatower,
+        offensiveRange: [0, 1, 0],
+        type: 'turret',
+        coverage: [1, 1, 1, 0.5, 0],
+        objectives: []
+    },
+    {
+        id: 33,
+        name: "MD-6 Anti-Personnel Minefield",
+        icon: stratminefieldpersonn,
+        offensiveRange: [0, 1, 0],
+        type: 'emplacement',
+        coverage: [1, 1, 1, 0, 0],
+        objectives: []
+    },
+    {
+        id: 34,
+        name: "B-1 Supply Pack",
+        icon: stratsupply,
+        offensiveRange: [0, 0, 0],
+        type: 'backpack',
+        coverage: [0, 0, 0, 0, 0],
+        objectives: []
+    },
+    {
+        id: 35,
+        name: "GL-21 Grenade Launcher",
+        icon: stratgrenadelauncher,
+        offensiveRange: [1, 1, 0],
+        type: 'support-weapon',
+        coverage: [1, 1, 1, 0.5, 0],
+        objectives: []
+    },
+    {
+        id: 36,
+        name: "LAS-98 Laser Cannon",
+        icon: stratlasercannon,
+        offensiveRange: [0.5, 1, 1],
+        type: 'support-weapon',
+        coverage: [1, 1, 1, 1, 0],
+        objectives: []
+    },
+    {
+        id: 37,
+        name: "LAS-98 Laser Cannon",
+        icon: stratlasercannon,
+        offensiveRange: [0.5, 1, 1],
+        type: 'support-weapon',
+        coverage: [1, 1, 1, 1, 0],
+        objectives: []
+    },
+    {
+        id: 38,
+        name: "MD-I4 Incendiary Mines",
+        icon: stratincendiarymines,
+        offensiveRange: [0, 1, 0],
+        type: 'emplacement',
+        coverage: [1, 1, 1, 0, 0],
+        objectives: []
+    },
+    {
+        id: 39,
+        name: "AX/LAS-5 Guard Dog Rover",
+        icon: stratguarddogrover,
+        offensiveRange: [1, 0.5, 0],
+        type: 'backpack',
+        coverage: [1, 1, 0.5, 0, 0],
+        objectives: []
+    },
+    {
+        id: 40,
+        name: "SH-20 Ballistic Shield Backpack",
+        icon: stratballisticshield,
+        offensiveRange: [0, 0, 0],
+        type: 'backpack',
+        coverage: [0, 0, 0, 0, 0],
+        objectives: []
+    },
+    {
+        id: 41,
+        name: "ARC-3 Arc Thrower",
+        icon: stratarcthrower,
+        offensiveRange: [0, 1, 0],
+        type: 'support-weapon',
+        coverage: [1, 1, 1, 0.5, 0],
+        objectives: []
+    },
+    {
+        id: 42,
+        name: "LAS-99 Quasar Cannon",
+        icon: stratquasar,
+        offensiveRange: [0, 1, 1],
+        type: 'support-weapon',
+        coverage: [0, 0, 0, 1, 1],
+        objectives: []
+    },
+    {
+        id: 43,
+        name: "SH-32 Shield Generator Pack",
+        icon: stratshieldpack,
+        offensiveRange: [0, 0, 0],
+        type: 'backpack',
+        coverage: [0, 0, 0, 0, 0],
+        objectives: []
+    },
+    {
+        id: 44,
+        name: "A/MG-43 Machine Gun Sentry",
+        icon: stratmg43sentry,
+        offensiveRange: [1, 1, 0],
+        type: 'turret',
+        coverage: [1, 1, 0, 0, 0],
+        objectives: []
+    },
+    {
+        id: 45,
+        name: "A/G-16 Gatling Sentry",
+        icon: stratgatlingturret,
+        offensiveRange: [1, 1, 0],
+        type: 'turret',
+        coverage: [1, 1, 0, 0, 0],
+        objectives: []
+    },
+    {
+        id: 46,
+        name: "A/M-12 Mortar Sentry",
+        icon: stratmortar,
+        offensiveRange: [1, 1, 0.5],
+        type: 'turret',
+        coverage: [1, 1, 1, 0, 0],
+        objectives: []
+    },
+    {
+        id: 46,
+        name: "AX/AR-23 Guard Dog",
+        icon: stratguarddogAR,
+        offensiveRange: [1, 0.5, 0],
+        type: 'backpack',
+        coverage: [1, 1, 0, 0, 0],
+        objectives: []
+    },
+    {
+        id: 47,
+        name: "A/AC-8 Autocannon Sentry",
+        icon: stratautocannonturret,
+        offensiveRange: [0, 1, 1],
+        type: 'turret',
+        coverage: [0.5, 1, 1, 1, 1],
+        objectives: []
+    },
+    {
+        id: 48,
+        name: "A/MLS-4X Rocket Sentry",
+        icon: stratrocketsentry,
+        offensiveRange: [0.5, 1, 0],
+        type: 'turret',
+        coverage: [0.5, 1, 1, 0.5, 0],
+        objectives: []
+    },
+    {
+        id: 49,
+        name: "A/M-23 EMS Mortar Sentry",
+        icon: stratmortarEMSsentry,
+        offensiveRange: [1, 1, 0.5],
+        type: 'turret',
+        coverage: [0, 0, 0, 0, 0],
+        objectives: []
+    },
+    {
+        id: 50,
+        name: "EXO-45 Patriot Exosuit",
+        icon: stratexo45patriot,
+        offensiveRange: [1, 1, 0.5],
+        type: 'support-weapon',
+        coverage: [1, 1, 1, 1, 1],
         objectives: []
     },
 
