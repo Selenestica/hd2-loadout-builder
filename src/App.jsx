@@ -5,7 +5,7 @@ import { useState } from 'react'
 import LoadoutDetails from './components/LoadoutDetails'
 
 export default function App() {
-    const [selectedLoadout, setSelectedLoadout] = useState({})
+    const [selectedLoadout, setSelectedLoadout] = useState()
 
     return (
         <LoadoutsProvider >
@@ -20,7 +20,7 @@ export default function App() {
                     setSelectedLoadout={setSelectedLoadout}
                 />
 
-                <LoadoutDetails selectedLoadout={selectedLoadout}/>
+                {selectedLoadout && <LoadoutDetails selectedLoadout={selectedLoadout}/>}
             </div>
         </LoadoutsProvider>
     )

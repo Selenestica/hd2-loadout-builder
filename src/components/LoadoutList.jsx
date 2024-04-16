@@ -53,7 +53,7 @@ export default function LoadoutList({ setSelectedLoadout }) {
                 {loadouts.map(loadout => <Loadout
                     key={loadout.id}
                     data={loadout}
-                    onClick={() => setSelectedLoadout(loadout)}
+                    onClick={() => {setSelectedLoadout(loadout)}}
                     onPointerEnter={() => setSelectedLoadout(loadout)}
                 />)}
             </div>

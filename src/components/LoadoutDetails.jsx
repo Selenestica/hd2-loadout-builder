@@ -1,5 +1,6 @@
 import { css } from '@emotion/css'
 import { useCallback } from 'react'
+import { useEffect } from 'react'
 import { useState } from 'react'
 import { colors } from '../data/constants'
 import { strategemData } from '../data/hardcodedData'
@@ -8,6 +9,10 @@ import StrategemDetails from './StrategemDetails'
 export default function LoadoutDetails({ selectedLoadout }) {
 
     const [name, setName] = useState(selectedLoadout.name)
+
+    useEffect(() => {
+        setName(selectedLoadout.name)
+    }, [selectedLoadout])
 
     const handleSave = useCallback(() => {
 
@@ -27,9 +32,19 @@ export default function LoadoutDetails({ selectedLoadout }) {
             min-width: 20em;
             gap: 0.5em;
         `}>
-            <div className={css`align-self: center;`}>
-                {selectedLoadout.name} Details
-            </div>
+            <input
+                type='text'
+                className={css`
+                    align-self: center;
+                    text-align: center;
+                    width: 100%;
+                    font-size: 1.2em;
+                    border: none;
+                    cursor: pointer;
+                `}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+            />
 
             <StrategemDetails strat={strat1} />
             <StrategemDetails strat={strat2} />
