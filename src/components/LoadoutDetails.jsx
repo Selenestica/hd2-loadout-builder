@@ -8,6 +8,7 @@ import { strategemData } from '../data/hardcodedData'
 import StrategemList from './StrategemList'
 import StrategemDetails from './StrategemDetails'
 import { updateLoadout, deleteLoadout } from '../data/indexedDB'
+import LoadoutSummary from './LoadoutSummary'
 
 export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelectedLoadout }) {
 
@@ -166,6 +167,14 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelect
                         setSelectedTarget({ type: null, target: null })
                     }}
                     filterArr={[newStrat1?.id, newStrat2?.id, newStrat3?.id, newStrat4?.id]}
+                />
+            }
+            {!selectedTarget.type &&
+                <LoadoutSummary
+                    strat1={newStrat1}
+                    strat2={newStrat2}
+                    strat3={newStrat3}
+                    strat4={newStrat4}
                 />
             }
         </>

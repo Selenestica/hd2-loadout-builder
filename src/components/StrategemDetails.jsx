@@ -35,7 +35,7 @@ export default function StrategemDetails({ strat, active, ...props }) {
                         border-radius: 15px;
                         overflow: hidden;
                     `}>
-                        {strat.offensiveRange.map((el, i) => <div className={css`
+                        {strat.offensiveRange.map((el, i) => <div key={i} className={css`
                             width: 100%;
                             height: ${el * el * 100}%;
                             background: white;
@@ -53,7 +53,7 @@ export default function StrategemDetails({ strat, active, ...props }) {
                         border-radius: 15px;
                         overflow: hidden;
                     `}>
-                        {strat.coverage.map((el, i) => <div className={css`
+                        {strat.coverage.map((el, i) => <div key={i} className={css`
                             width: 100%;
                             height: ${el * el * 100}%;
                             align-self: center;
