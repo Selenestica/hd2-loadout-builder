@@ -1,23 +1,13 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useCallback } from 'react'
 import { css } from '@emotion/css'
 import { colors } from '../data/constants'
-import { loadLoadouts } from '../data/indexedDB'
 import Loadout from './Loadout'
 import { addLoadout } from '../data/indexedDB'
 
-export default function LoadoutList({ setSelectedLoadout }) {
-    const [loadouts, setLoadouts] = useState([])
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-        loadLoadouts().then(result => {
-            setLoadouts(result)
-            setLoading(false)
-        }).catch(error => {
-            console.error('Failed to load loadouts:', error)
-            setLoading(false)
-        })
-    }, [])
+export default function LoadoutList({ setSelectedLoadout,
+    loadouts, setLoadouts, loading, setLoading,
+}) {
+    
 
     const handleAddLoadout = useCallback(() => {
         const newLoadout = {

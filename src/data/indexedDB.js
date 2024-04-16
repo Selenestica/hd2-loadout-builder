@@ -75,7 +75,7 @@ export function updateLoadout(loadout) {
         return new Promise((resolve, reject) => {
             transaction.oncomplete = () => {
                 console.log('Loadout updated')
-                resolve()
+                resolve(loadout)
             }
 
             transaction.onerror = () => {

@@ -1,11 +1,26 @@
 import { LoadoutsProvider } from './context/Loadouts'
 import LoadoutList from './components/LoadoutList'
 import { css } from '@emotion/css'
-import { useState } from 'react'
 import LoadoutDetails from './components/LoadoutDetails'
+import { loadLoadouts } from './data/indexedDB'
+import { useState, useEffect } from 'react'
+
 
 export default function App() {
     const [selectedLoadout, setSelectedLoadout] = useState()
+
+    const [loadouts, setLoadouts] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        loadLoadouts().then(result => {
+            setLoadouts(result)
+            setLoading(false)
+        }).catch(error => {
+            console.error('Failed to load loadouts:', error)
+            setLoading(false)
+        })
+    }, [])
 
     return (
         <LoadoutsProvider >
@@ -18,10 +33,17 @@ export default function App() {
                 <LoadoutList
                     className={css``}
                     setSelectedLoadout={setSelectedLoadout}
+                    loadouts={loadouts}
+                    setLoadouts={setLoadouts}
+                    setLoading={setLoading}
+                    loading={loading}
                 />
 
                 {selectedLoadout &&
-                    <LoadoutDetails selectedLoadout={selectedLoadout} />
+                    <LoadoutDetails 
+                        selectedLoadout={selectedLoadout}
+                        setLoadouts={setLoadouts}
+                    />
                 }
             </div>
         </LoadoutsProvider>

@@ -37,8 +37,9 @@ export default function StrategemDetails({ strat, active, ...props }) {
                     `}>
                         {strat.offensiveRange.map(el => <div className={css`
                             width: 100%;
-                            height: ${el * 100}%;
+                            height: ${el * el * 100}%;
                             background: white;
+                            align-self: center;
                         `} />)}
                     </div>
 

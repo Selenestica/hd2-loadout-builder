@@ -7,8 +7,9 @@ import { colors } from '../data/constants'
 import { strategemData } from '../data/hardcodedData'
 import StrategemList from './StrategemList'
 import StrategemDetails from './StrategemDetails'
+import { updateLoadout } from '../data/indexedDB'
 
-export default function LoadoutDetails({ selectedLoadout }) {
+export default function LoadoutDetails({ selectedLoadout, setLoadouts }) {
 
     const [name, setName] = useState(selectedLoadout.name)
     const [selectedTarget, setSelectedTarget] = useState({ type: null, target: null, data: null })
@@ -24,10 +25,6 @@ export default function LoadoutDetails({ selectedLoadout }) {
 
     }, [])
 
-    const handleSave = useCallback(() => {
-
-    }, [name])
-
     const newStrat1 = strategemData.find(x => x.id === newLoadout.strat1) || null
     const newStrat2 = strategemData.find(x => x.id === newLoadout.strat2) || null
     const newStrat3 = strategemData.find(x => x.id === newLoadout.strat3) || null
@@ -35,7 +32,32 @@ export default function LoadoutDetails({ selectedLoadout }) {
 
     const activeChanges = useMemo(() => {
         return name !== selectedLoadout.name
-    }, [name, selectedLoadout])
+            || newStrat1?.id !== selectedLoadout.strat1
+            || newStrat2?.id !== selectedLoadout.strat2
+            || newStrat3?.id !== selectedLoadout.strat3
+            || newStrat4?.id !== selectedLoadout.strat4
+    }, [name, selectedLoadout, newStrat1, newStrat2, newStrat3, newStrat4])
+
+    const handleSave = useCallback(() => {
+        const data = {
+            ...newLoadout, 
+            name: name
+        }
+        try {
+            updateLoadout(data).then(res => {
+
+                setLoadouts(prev => {
+                    const newData = [...prev]
+                    const i = newData.indexOf(newData.find(x => x.id === data.id))
+                    newData[i] = data
+                    return newData
+                })
+            })
+        } catch (e) {
+            console.log(e)
+        }
+        
+    }, [name, newLoadout, setLoadouts])
 
     return (
         <>
@@ -66,7 +88,7 @@ export default function LoadoutDetails({ selectedLoadout }) {
                     onChange={(e) => setName(e.target.value)}
                 />
 
-                <StrategemDetails strat={newStrat1}  active={selectedTarget.target === 'strat1'}
+                <StrategemDetails strat={newStrat1} active={selectedTarget.target === 'strat1'}
                     onClick={() => setSelectedTarget({ type: 'strat', target: 'strat1' })}
                 />
                 <StrategemDetails strat={newStrat2} active={selectedTarget.target === 'strat2'}
@@ -85,12 +107,13 @@ export default function LoadoutDetails({ selectedLoadout }) {
                 </button>
             </div>
 
-            {selectedTarget.type === 'strat' && 
+            {selectedTarget.type === 'strat' &&
                 <StrategemList handleClick={(id) => setNewLoadout(prev => {
-                    return { ...prev,
+                    return {
+                        ...prev,
                         [selectedTarget.target]: id
                     }
-                })}/>
+                })} />
             }
         </>
     )
