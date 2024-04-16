@@ -41,7 +41,7 @@ export default function StrategemList({ handleClick, filterArr }) {
                             background: ${colors.lighter};
                         }
                     `}
-                        onClick={() => handleClick(strat.id)}
+                        onClick={() => filterArr.includes(strat.id) ? null : handleClick(strat.id)}
                         onPointerEnter={() => setHoverState(strat)}
                     >
                         <img src={strat.icon} alt={strat.name} />

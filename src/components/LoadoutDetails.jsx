@@ -43,13 +43,13 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelect
         }
         try {
             updateLoadout(data).then(res => {
-
                 setLoadouts(prev => {
                     const newData = [...prev]
                     const i = newData.indexOf(newData.find(x => x.id === data.id))
                     newData[i] = data
                     return newData
                 })
+                setSelectedTarget({ type: null, target: null })
             })
         } catch (e) {
             console.log(e)
@@ -100,16 +100,34 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelect
                 />
 
                 <StrategemDetails strat={newStrat1} active={selectedTarget.target === 'strat1'}
-                    onClick={() => setSelectedTarget({ type: 'strat', target: 'strat1' })}
+                    onClick={() => {
+                        setSelectedTarget(
+                            selectedTarget.target === 'strat1' ?
+                                { type: null, target: null }
+                                : { type: 'strat', target: 'strat1' }
+                        )
+                    }}
                 />
                 <StrategemDetails strat={newStrat2} active={selectedTarget.target === 'strat2'}
-                    onClick={() => setSelectedTarget({ type: 'strat', target: 'strat2' })}
+                    onClick={() => setSelectedTarget(
+                        selectedTarget.target === 'strat2' ?
+                            { type: null, target: null }
+                            : { type: 'strat', target: 'strat2' }
+                    )}
                 />
                 <StrategemDetails strat={newStrat3} active={selectedTarget.target === 'strat3'}
-                    onClick={() => setSelectedTarget({ type: 'strat', target: 'strat3' })}
+                    onClick={() => setSelectedTarget(
+                        selectedTarget.target === 'strat3' ?
+                            { type: null, target: null }
+                            : { type: 'strat', target: 'strat3' }
+                    )}
                 />
                 <StrategemDetails strat={newStrat4} active={selectedTarget.target === 'strat4'}
-                    onClick={() => setSelectedTarget({ type: 'strat', target: 'strat4' })}
+                    onClick={() => setSelectedTarget(
+                        selectedTarget.target === 'strat4' ?
+                            { type: null, target: null }
+                            : { type: 'strat', target: 'strat4' }
+                    )}
                 />
 
                 <div className={css`flex-grow: 1;`} />

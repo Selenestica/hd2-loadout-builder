@@ -39,7 +39,7 @@ export default function LoadoutList({ setSelectedLoadout,
             flex-direction: column;
             justify-content: space-between;
         `}>
-            <div>
+            <div className={css`display: flex; flex-direction: column; gap: 0.2em`}>
                 {loadouts.map(loadout => <Loadout
                     key={loadout.id}
                     data={loadout}
