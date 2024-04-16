@@ -58,7 +58,7 @@ export default function LoadoutList({ setSelectedLoadout }) {
                 />)}
             </div>
             <button
-                className={css`width: 100%;`}
+                className={css`width: auto; margin: 1em;`}
                 onClick={handleAddLoadout}
             >
                 add loadout

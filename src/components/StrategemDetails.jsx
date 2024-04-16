@@ -10,7 +10,7 @@ export default function StrategemDetails({ strat }) {
         <div className={css`
             display: grid;
             grid-template: auto / auto 1fr;
-            grid-gap: 0.5em 1em;
+            grid-gap: 0.2em 1em;
             //place-items: start;
             align-items: center;
             background: ${colors.lighter};
@@ -41,7 +41,38 @@ export default function StrategemDetails({ strat }) {
                             width: 100%;
                             height: ${el * 100}%;
                             background: white;
-                        `}/>)}
+                        `} />)}
+                    </div>
+
+                    <div>Coverage:</div>
+                    <div className={css`
+                        display: grid;
+                        grid-template-columns: repeat(5, 1fr);
+                        height: 50%;
+                        background: ${colors.darkBlue};
+                        border-radius: 15px;
+                        overflow: hidden;
+                    `}>
+                        {strat.coverage.map(el => <div className={css`
+                            width: 100%;
+                            height: ${el * el * 100}%;
+                            align-self: center;
+                            background: white;
+                        `} />)}
+                    </div>
+
+                    <div></div>
+                    <div className={css`
+                        display: flex;
+                        justify-content: space-between;
+                        color: ${colors.lighter};
+                    `}>
+                        <div>
+                            {'light armor'}
+                        </div>
+                        <div>
+                            {'heavy armor'}
+                        </div>
                     </div>
                 </>
             }

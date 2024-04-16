@@ -25,7 +25,7 @@ export default function LoadoutDetails({ selectedLoadout }) {
             display: flex;
             flex-direction: column;
             min-width: 20em;
-            gap: 1em;
+            gap: 0.5em;
         `}>
             <div className={css`align-self: center;`}>
                 {selectedLoadout.name} Details
@@ -37,7 +37,7 @@ export default function LoadoutDetails({ selectedLoadout }) {
             <StrategemDetails strat={strat4} />
 
             <div className={css`flex-grow: 1;`} />
-            <button>
+            <button >
                 Save
             </button>
         </div>
