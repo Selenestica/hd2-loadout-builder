@@ -12,7 +12,7 @@ export default function StrategemList({ handleClick, filterArr }) {
                 a.color > b.color
                 : a.type > b.type
         ))
-        return strategemData
+        return strategemData//.filter(x => !filterArr.includes(x.id))
 
     },[strategemData])
 
@@ -32,12 +32,13 @@ export default function StrategemList({ handleClick, filterArr }) {
                         align-items: center; 
                         gap: 1em;
                         padding-right: 1em;
-                        cursor: pointer;
+                        cursor: ${filterArr.includes(strat.id) ? 'unset' : 'pointer'};
+                        opacity: ${filterArr.includes(strat.id) ? '0.5' : '1'};
                         white-space: nowrap;
                         user-select: none;
                         
                         &:hover {
-                            background: ${colors.lightBlue};
+                            background: ${colors.lighter};
                         }
                     `}
                         onClick={() => handleClick(strat.id)}

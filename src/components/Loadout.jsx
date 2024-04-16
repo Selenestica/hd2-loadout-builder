@@ -46,9 +46,9 @@ export default function Loadout({ data, setLoadouts, ...props }) {
             
             display: grid;
             align-items: center;
-            grid-template: auto / 15em 1fr min-content;
+            grid-template: auto / 11em 1fr min-content;
             grid-gap: 1em;
-            padding: 1em;
+            padding: 0.5em;
             overflow: auto;
 
             img, div > div{
@@ -74,12 +74,6 @@ export default function Loadout({ data, setLoadouts, ...props }) {
             <div className={css`
                 display: flex;
             `}>
-                {/* <button>
-                    edit
-                </button>
-                <button onClick={handleDeleteLoadout}>
-                    delete
-                </button> */}
             </div>
         </div >
     )

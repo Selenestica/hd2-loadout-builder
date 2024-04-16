@@ -7,18 +7,18 @@ import { colors } from '../data/constants'
 import { strategemData } from '../data/hardcodedData'
 import StrategemList from './StrategemList'
 import StrategemDetails from './StrategemDetails'
-import { updateLoadout } from '../data/indexedDB'
+import { updateLoadout, deleteLoadout } from '../data/indexedDB'
 
-export default function LoadoutDetails({ selectedLoadout, setLoadouts }) {
+export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelectedLoadout }) {
 
     const [name, setName] = useState(selectedLoadout.name)
-    const [selectedTarget, setSelectedTarget] = useState({ type: null, target: null, data: null })
+    const [selectedTarget, setSelectedTarget] = useState({ type: null, target: null })
     const [newLoadout, setNewLoadout] = useState(selectedLoadout)
     const [confirmDelete, setConfirmDelete] = useState(false)
 
     useEffect(() => {
         setName(selectedLoadout.name)
-        setSelectedTarget({ type: null, target: null, data: null })
+        setSelectedTarget({ type: null, target: null })
         setNewLoadout(selectedLoadout)
         setConfirmDelete(false)
     }, [selectedLoadout])
@@ -57,6 +57,18 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts }) {
 
     }, [name, newLoadout, setLoadouts])
 
+    const handleDelete = useCallback(() => {
+        try {
+            deleteLoadout(selectedLoadout.id).then(res => {
+                setLoadouts(prev => prev.filter(x => x.id !== selectedLoadout.id))
+                setSelectedLoadout()
+            })
+
+        } catch (e) {
+            console.log(e)
+        }
+    }, [selectedLoadout, setSelectedLoadout, setLoadouts])
+
     return (
         <>
             <div className={css`
@@ -82,6 +94,7 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts }) {
                     background: black;
                     border-radius: 5px;
                 `}
+                    maxLength='24'
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
@@ -100,37 +113,42 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts }) {
                 />
 
                 <div className={css`flex-grow: 1;`} />
-                <button disabled={!activeChanges} onClick={handleSave}>
-                    Save
-                </button>
 
                 <div className={css`
                         width: 100%; 
                         text-align: center;
                         font-size: 0.8em;
                         cursor: pointer;
-                    `}
+                        `}
                     onClick={() => setConfirmDelete(prev => !prev)}
                 >
                     {!confirmDelete && 'Remove'}
                     {confirmDelete &&
-                        <button className={css`padding: 0.2em;`}>
+                        <button
+                            className={css`padding: 0.2em;`}
+                            onClick={handleDelete}
+                        >
                             Remove
                         </button>}
                 </div>
+                <button disabled={!activeChanges} onClick={handleSave}>
+                    Save
+                </button>
             </div>
 
             {selectedTarget.type === 'strat' &&
-                <StrategemList handleClick={(id) => {
-                    setNewLoadout(prev => {
-                        return {
-                            ...prev,
-                            [selectedTarget.target]: id
-                        }
-                    })
-                    setSelectedTarget({ type: null, target: null, data: null })
-                }
-                } />
+                <StrategemList
+                    handleClick={(id) => {
+                        setNewLoadout(prev => {
+                            return {
+                                ...prev,
+                                [selectedTarget.target]: id
+                            }
+                        })
+                        setSelectedTarget({ type: null, target: null })
+                    }}
+                    filterArr={[newStrat1?.id, newStrat2?.id, newStrat3?.id, newStrat4?.id]}
+                />
             }
         </>
     )

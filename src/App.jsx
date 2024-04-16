@@ -42,6 +42,7 @@ export default function App() {
                 {selectedLoadout &&
                     <LoadoutDetails 
                         selectedLoadout={selectedLoadout}
+                        setSelectedLoadout={setSelectedLoadout}
                         setLoadouts={setLoadouts}
                     />
                 }
