@@ -1,21 +1,18 @@
 import { css } from '@emotion/css'
-import { useCallback } from 'react'
-import { useState } from 'react'
 import { colors } from '../data/constants'
-import { strategemData } from '../data/hardcodedData'
 
-export default function StrategemDetails({ strat }) {
+export default function StrategemDetails({ strat, active, ...props }) {
 
     return (
         <div className={css`
             display: grid;
             grid-template: auto / auto 1fr;
             grid-gap: 0.2em 1em;
-            //place-items: start;
+            cursor: pointer;
             align-items: center;
-            background: ${colors.lighter};
+            background: ${active ? colors.lighter : colors.darkBlue};
             padding: 0.4em;
-        `}>
+        `} {...props}>
             {strat?.icon ?
                 <img src={strat?.icon} alt="" className={css`width: 3em; height: 3em; background: black;`} />
                 : <div className={css`width: 3em; height: 3em; background: black;`} />
@@ -32,8 +29,9 @@ export default function StrategemDetails({ strat }) {
                     <div className={css`
                         display: grid;
                         grid-template-columns: repeat(3, 1fr);
+                        grid-gap: 2px;
                         height: 40%;
-                        background: ${colors.darkBlue};
+                        background: ${colors.lighter};
                         border-radius: 15px;
                         overflow: hidden;
                     `}>
@@ -48,8 +46,9 @@ export default function StrategemDetails({ strat }) {
                     <div className={css`
                         display: grid;
                         grid-template-columns: repeat(5, 1fr);
+                        grid-gap: 2px;
                         height: 50%;
-                        background: ${colors.darkBlue};
+                        background: ${colors.lighter};
                         border-radius: 15px;
                         overflow: hidden;
                     `}>

@@ -40,7 +40,7 @@ export default function Loadout({ data, setLoadouts, ...props }) {
             background: ${colors.darkBlue};
 
             &:hover {
-                background: ${colors.lightBlue};
+                background: ${colors.lighter};
                 cursor: pointer;
             }
             

@@ -11,16 +11,18 @@ export default function App() {
         <LoadoutsProvider >
             <div className={css`
                 display: grid;
-                grid-template: 80vh / 35em 1fr;
+                grid-template: 80vh / 35em 1fr auto;
                 padding: 2em;
                 gap: 1em;
              `}>
-                <LoadoutList 
+                <LoadoutList
                     className={css``}
                     setSelectedLoadout={setSelectedLoadout}
                 />
 
-                {selectedLoadout && <LoadoutDetails selectedLoadout={selectedLoadout}/>}
+                {selectedLoadout &&
+                    <LoadoutDetails selectedLoadout={selectedLoadout} />
+                }
             </div>
         </LoadoutsProvider>
     )
