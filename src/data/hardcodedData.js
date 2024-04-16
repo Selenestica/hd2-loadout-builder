@@ -220,7 +220,7 @@ export const strategemData = [
         id: 15,
         name: "Orbital Walking Barrage",
         icon: stratwalkingbarrage,
-        offensiveRange: [0.5, 1, 0],
+        offensiveRange: [0.5, 1, 0.5],
         type: 'orbital',
         color: 'red',
         coverage: [0.5, 0.5, 0.5, 0.5, 0.5],
