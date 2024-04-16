@@ -5,7 +5,7 @@ import { loadLoadouts } from '../data/indexedDB'
 import Loadout from './Loadout'
 import { addLoadout } from '../data/indexedDB'
 
-export default function StrategemList({ handleClick }) {
+export default function LoadoutList({ setSelectedLoadout }) {
     const [loadouts, setLoadouts] = useState([])
     const [loading, setLoading] = useState(true)
 
@@ -43,10 +43,8 @@ export default function StrategemList({ handleClick }) {
     return (loading ? 'loading...' :
         <div className={css`
             background: ${colors.lighter};
-            max-height: 80vh;
             overflow-Y: auto;
             width: 100%;
-            min-width: 60em;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -55,7 +53,8 @@ export default function StrategemList({ handleClick }) {
                 {loadouts.map(loadout => <Loadout
                     key={loadout.id}
                     data={loadout}
-                    setLoadouts={setLoadouts}
+                    onClick={() => setSelectedLoadout(loadout)}
+                    onPointerEnter={() => setSelectedLoadout(loadout)}
                 />)}
             </div>
             <button

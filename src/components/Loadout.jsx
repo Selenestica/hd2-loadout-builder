@@ -5,7 +5,7 @@ import { strategemData } from '../data/hardcodedData'
 import { useCallback } from 'react'
 import { deleteLoadout } from '../data/indexedDB'
 
-export default function Loadout({ data, setLoadouts }) {
+export default function Loadout({ data, setLoadouts, ...props }) {
 
     const {
         id,
@@ -38,6 +38,11 @@ export default function Loadout({ data, setLoadouts }) {
     return (
         <div className={css`
             background: ${colors.darkBlue};
+
+            &:hover {
+                background: ${colors.lightBlue};
+                cursor: pointer;
+            }
             
             display: grid;
             align-items: center;
@@ -51,11 +56,12 @@ export default function Loadout({ data, setLoadouts }) {
                 width: 3em;
                 height: 3em;
             }
-        `}>
+        `} {...props}>
             <div className={css`
                 white-space: nowrap;
-            
-            `}>{name}</div>
+            `}>
+                {name}
+            </div>
             <div className={css`
                 display: flex;
                 gap: 2px;
@@ -68,12 +74,12 @@ export default function Loadout({ data, setLoadouts }) {
             <div className={css`
                 display: flex;
             `}>
-                <button>
+                {/* <button>
                     edit
                 </button>
                 <button onClick={handleDeleteLoadout}>
                     delete
-                </button>
+                </button> */}
             </div>
         </div >
     )

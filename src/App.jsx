@@ -1,16 +1,26 @@
 import { LoadoutsProvider } from './context/Loadouts'
-import StrategemList from './components/StrategemList'
 import LoadoutList from './components/LoadoutList'
 import { css } from '@emotion/css'
+import { useState } from 'react'
+import LoadoutDetails from './components/LoadoutDetails'
 
 export default function App() {
+    const [selectedLoadout, setSelectedLoadout] = useState({})
+
     return (
         <LoadoutsProvider >
-            <div className={css` 
-                display: flex;
-            `}>
-                <LoadoutList />
-                <StrategemList />
+            <div className={css`
+                display: grid;
+                grid-template: 80vh / 45em 1fr;
+                padding: 2em;
+                gap: 1em;
+             `}>
+                <LoadoutList 
+                    className={css``}
+                    setSelectedLoadout={setSelectedLoadout}
+                />
+
+                <LoadoutDetails selectedLoadout={selectedLoadout}/>
             </div>
         </LoadoutsProvider>
     )
