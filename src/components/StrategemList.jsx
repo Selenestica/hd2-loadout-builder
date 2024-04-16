@@ -12,9 +12,9 @@ export default function StrategemList({ handleClick, filterArr }) {
                 a.color > b.color
                 : a.type > b.type
         ))
-        return strategemData//.filter(x => !filterArr.includes(x.id))
+        return strategemData
 
-    },[strategemData])
+    }, [strategemData])
 
     return (
         <div className={css`
@@ -50,15 +50,78 @@ export default function StrategemList({ handleClick, filterArr }) {
                 })}
             </div >
             <div className={css`
-                padding: 1em;
                 background: ${colors.lighter};
-                width: 20em;
+                width: 100%;
                 display: grid;
                 place-items: center;
             `}>
-                <div>
-                    {hoverState ? JSON.stringify(hoverState) : null}
-                </div>
+                {hoverState &&
+                    <div className={css`
+                        display: grid;
+                        width: 100%;
+                        max-width: 30em;
+                        grid-template: auto / auto 1fr;
+                        grid-gap: 0.2em 1em;
+                        align-items: center;
+                    `}>
+                        <div>Type:</div>
+                        <div>{hoverState.type}</div>
+
+                        <div>Uptime:</div>
+                        <div>{hoverState.uptime}</div>
+
+                        <div>Range:</div>
+                        <div className={css`
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            grid-gap: 2px;
+                            height: 40%;
+                            background: ${colors.lighter};
+                            border-radius: 15px;
+                            overflow: hidden;
+                        `}>
+                            {hoverState.offensiveRange.map((el, i) => <div className={css`
+                            width: 100%;
+                            height: ${el * el * 100}%;
+                            background: white;
+                            align-self: center;
+                        `} title={i === 0 ? 'short' : i === 1 ? 'medium' : i === 2 ? 'long' : ''} />)}
+                        </div>
+
+                        <div>Removal:</div>
+                        <div className={css`
+                            display: grid;
+                            grid-template-columns: repeat(5, 1fr);
+                            grid-gap: 2px;
+                            height: 50%;
+                            background: ${colors.lighter};
+                            border-radius: 15px;
+                            overflow: hidden;
+                        `}>
+                            {hoverState.coverage.map((el, i) => <div className={css`
+                            width: 100%;
+                            height: ${el * el * 100}%;
+                            align-self: center;
+                            background: white;
+                        `} />)}
+                        </div>
+
+                        <div></div>
+                            <div className={css`
+                            display: flex;
+                            justify-content: space-between;
+                            color: ${colors.lighter};
+                        `}>
+                            <div>
+                                {'lights'}
+                            </div>
+                            <div>
+                                {'heavies'}
+                            </div>
+                        </div>
+                    </div>
+                }
+
             </div>
         </div>
     )
