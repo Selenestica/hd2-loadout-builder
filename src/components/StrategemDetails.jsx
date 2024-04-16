@@ -12,6 +12,10 @@ export default function StrategemDetails({ strat, active, ...props }) {
             align-items: center;
             background: ${active ? colors.lighter : colors.darkBlue};
             padding: 0.4em;
+
+            &:hover {
+                background: ${colors.lighter};
+            }
         `} {...props}>
             {strat?.icon ?
                 <img src={strat?.icon} alt="" className={css`width: 3em; height: 3em; background: black;`} />

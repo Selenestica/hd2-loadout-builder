@@ -22,7 +22,7 @@ export default function LoadoutSummary({ strat1, strat2, strat3, strat4, ...prop
             }
             output.push(cov)
         }
-        
+
         return output
     }, [strat1, strat2, strat3, strat4])
 
@@ -30,8 +30,52 @@ export default function LoadoutSummary({ strat1, strat2, strat3, strat4, ...prop
     return <div {...props} className={css`
         background: ${colors.lighter};
         padding: 1em;
+        display: grid;
+        place-items: center;
     `}>
-        <RangeRemovalMatrix data={rangeRemovalData} />
+        <div className={css`
+            display: grid;
+            grid-template: 18em 3em / 3em 10em;
+        `}>
+            <div className={css`
+                place-self: center; 
+                transform: rotate(-90deg);
+                display: flex;
+                justify-content: space-around;
+                width: 20em;
+            `}>
+                <div className={css`
+                    transform: translate(0, 0.5em);
+                    opacity: 0.4;
+                `}>lights</div>
+                <div className={css`
+                    transform: translate(0, -0.5em);
+                `}>Removal</div>
+                <div className={css`
+                    transform: translate(0, 0.5em);
+                    opacity: 0.4;
+                `}>heavies</div>
+            </div>
+            <RangeRemovalMatrix data={rangeRemovalData} />
+            <div></div>
+            <div className={css`
+                display: flex;
+                justify-content: space-around;
+                width: 10em;
+            `}>
+                <div className={css`
+                    transform: translate(0, -0.5em);
+                    opacity: 0.4;
+                `}>short</div>
+                <div className={css`
+                    transform: translate(0, 0.5em);
+                `}>Range</div>
+                <div className={css`
+                    transform: translate(0, -0.5em);
+                    opacity: 0.4;
+                `}>long</div>
+            </div>
+        </div>
     </div>
 }
 
