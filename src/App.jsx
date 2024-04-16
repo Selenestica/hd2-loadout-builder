@@ -26,7 +26,7 @@ export default function App() {
         <LoadoutsProvider >
             <div className={css`
                 display: grid;
-                grid-template: 80vh / 35em 1fr auto;
+                grid-template: 90vh / 35em 1fr auto;
                 padding: 2em;
                 gap: 1em;
              `}>
