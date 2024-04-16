@@ -44,7 +44,6 @@ export default function LoadoutList({ setSelectedLoadout,
                     key={loadout.id}
                     data={loadout}
                     onClick={() => {setSelectedLoadout(loadout)}}
-                    onPointerEnter={() => setSelectedLoadout(loadout)}
                 />)}
             </div>
             <button

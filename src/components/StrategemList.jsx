@@ -3,7 +3,7 @@ import { strategemData } from '../data/hardcodedData'
 import { css } from '@emotion/css'
 import { colors } from '../data/constants'
 
-export default function StrategemList({ handleClick }) {
+export default function StrategemList({ handleClick, filterArr }) {
     const [hoverState, setHoverState] = useState()
 
     const sortedStrats = useMemo(() => {
@@ -24,7 +24,6 @@ export default function StrategemList({ handleClick }) {
         `}>
             <div className={css`
                 background: ${colors.darkBlue};
-                max-height: 80vh;
                 overflow-Y: auto;
             `}>
                 {sortedStrats.map(strat => {

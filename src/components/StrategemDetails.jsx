@@ -35,15 +35,15 @@ export default function StrategemDetails({ strat, active, ...props }) {
                         border-radius: 15px;
                         overflow: hidden;
                     `}>
-                        {strat.offensiveRange.map(el => <div className={css`
+                        {strat.offensiveRange.map((el, i) => <div className={css`
                             width: 100%;
                             height: ${el * el * 100}%;
                             background: white;
                             align-self: center;
-                        `} />)}
+                        `}title={i === 0 ? 'short' : i === 1 ? 'medium' : i === 2 ? 'long' : ''} />)}
                     </div>
 
-                    <div>Coverage:</div>
+                    <div>Removal:</div>
                     <div className={css`
                         display: grid;
                         grid-template-columns: repeat(5, 1fr);
@@ -53,7 +53,7 @@ export default function StrategemDetails({ strat, active, ...props }) {
                         border-radius: 15px;
                         overflow: hidden;
                     `}>
-                        {strat.coverage.map(el => <div className={css`
+                        {strat.coverage.map((el, i) => <div className={css`
                             width: 100%;
                             height: ${el * el * 100}%;
                             align-self: center;
@@ -68,10 +68,10 @@ export default function StrategemDetails({ strat, active, ...props }) {
                         color: ${colors.lighter};
                     `}>
                         <div>
-                            {'light armor'}
+                            {'lights'}
                         </div>
                         <div>
-                            {'heavy armor'}
+                            {'heavies'}
                         </div>
                     </div>
                 </>

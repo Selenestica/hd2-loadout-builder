@@ -14,16 +14,14 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts }) {
     const [name, setName] = useState(selectedLoadout.name)
     const [selectedTarget, setSelectedTarget] = useState({ type: null, target: null, data: null })
     const [newLoadout, setNewLoadout] = useState(selectedLoadout)
+    const [confirmDelete, setConfirmDelete] = useState(false)
 
     useEffect(() => {
         setName(selectedLoadout.name)
         setSelectedTarget({ type: null, target: null, data: null })
         setNewLoadout(selectedLoadout)
+        setConfirmDelete(false)
     }, [selectedLoadout])
-
-    useEffect(() => {
-
-    }, [])
 
     const newStrat1 = strategemData.find(x => x.id === newLoadout.strat1) || null
     const newStrat2 = strategemData.find(x => x.id === newLoadout.strat2) || null
@@ -40,7 +38,7 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts }) {
 
     const handleSave = useCallback(() => {
         const data = {
-            ...newLoadout, 
+            ...newLoadout,
             name: name
         }
         try {
@@ -56,7 +54,7 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts }) {
         } catch (e) {
             console.log(e)
         }
-        
+
     }, [name, newLoadout, setLoadouts])
 
     return (
@@ -105,15 +103,34 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts }) {
                 <button disabled={!activeChanges} onClick={handleSave}>
                     Save
                 </button>
+
+                <div className={css`
+                        width: 100%; 
+                        text-align: center;
+                        font-size: 0.8em;
+                        cursor: pointer;
+                    `}
+                    onClick={() => setConfirmDelete(prev => !prev)}
+                >
+                    {!confirmDelete && 'Remove'}
+                    {confirmDelete &&
+                        <button className={css`padding: 0.2em;`}>
+                            Remove
+                        </button>}
+                </div>
             </div>
 
             {selectedTarget.type === 'strat' &&
-                <StrategemList handleClick={(id) => setNewLoadout(prev => {
-                    return {
-                        ...prev,
-                        [selectedTarget.target]: id
-                    }
-                })} />
+                <StrategemList handleClick={(id) => {
+                    setNewLoadout(prev => {
+                        return {
+                            ...prev,
+                            [selectedTarget.target]: id
+                        }
+                    })
+                    setSelectedTarget({ type: null, target: null, data: null })
+                }
+                } />
             }
         </>
     )
