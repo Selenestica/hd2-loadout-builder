@@ -51,7 +51,7 @@ export default function LoadoutList({ setSelectedLoadout, selectedLoadout,
                 className={css`width: auto; margin: 1em;`}
                 onClick={handleAddLoadout}
             >
-                add loadout
+                Add loadout
             </button>
         </div >
     )

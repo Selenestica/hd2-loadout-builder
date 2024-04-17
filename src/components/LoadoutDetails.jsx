@@ -36,7 +36,7 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelect
     const newSecondary = secondaryWeaponData.find(x => x.id === newLoadout.secondary) || null
 
     const activeChanges = useMemo(() => {
-        if(newStrat1 === null || newStrat2 === null || newStrat3 === null || newStrat4 === null || newPrimary === null || newSecondary === null) return false
+        if (newStrat1 === null || newStrat2 === null || newStrat3 === null || newStrat4 === null || newPrimary === null || newSecondary === null) return false
         return name !== selectedLoadout.name
             || newStrat1?.id !== selectedLoadout.strat1
             || newStrat2?.id !== selectedLoadout.strat2
@@ -84,11 +84,12 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelect
         <>
             <div className={css`
                 background: ${colors.lighter};
+
+                display: grid; 
+                grid-template: min-content min-content min-content min-content 1fr min-content min-content /  1fr 1fr;
+                grid-gap: 0.2em;
                 padding: 1em;
-                display: flex;
-                flex-direction: column;
-                min-width: 20em;
-                gap: 0.5em;
+
                 height: auto;
                 overflow-Y: auto;
             `}>
@@ -104,6 +105,7 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelect
                     padding: 0.5em 0;
                     background: black;
                     border-radius: 5px;
+                    grid-column: span 2;
                 `}
                     maxLength='24'
                     value={name}
@@ -162,7 +164,8 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelect
                         text-align: center;
                         font-size: 0.8em;
                         cursor: pointer;
-                        `}
+                        grid-column: span 2;
+                    `}
                     onClick={() => setConfirmDelete(prev => !prev)}
                 >
                     {!confirmDelete && 'Remove'}
@@ -174,7 +177,9 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelect
                             Remove
                         </button>}
                 </div>
-                <button disabled={!activeChanges} onClick={handleSave}>
+                <button disabled={!activeChanges} onClick={handleSave} className={css`
+                    grid-column: span 2;
+                `}>
                     Save
                 </button>
             </div>
