@@ -738,10 +738,10 @@ export const armorData = [
     }
 ]
 
-const strategemTypes = ['back']
+/* const strategemTypes = ['back']
 const coverageCategories = [0, 1, 2, 3, 4]
 const objectives = ['bughole', 'fabricatorVent', 'radioTower', 'shriekerNest']
-const uptimes = ['very low', 'low', 'medium', 'high', 'very high']
+const uptimes = ['very low', 'low', 'medium', 'high', 'very high'] */
 export const strategemData = [
     {
         id: 1,
@@ -838,7 +838,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0.5],
         type: 'support-weapon',
         color: 'blue',
-        coverage: [0, 1, 2, 1, 0],
+        coverage: [0, 1, 2, 0.5, 0],
         uptime: 'very high',
         objectives: []
     },

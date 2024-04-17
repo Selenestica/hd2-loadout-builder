@@ -14,10 +14,10 @@ export default function LoadoutSummary({ strat1, strat2, strat3, strat4, ...prop
             for (const range of [0, 1, 2]) {
                 const sum = arr
                     .map(strat => strat.offensiveRange[range] * strat.coverage[coverage])
-                    .reduce((a, b) => a + b)
+                    ?.reduce(((a, b) => a + b),0)
                 cov.data.push({
                     x: range,
-                    y: sum
+                    y: sum || 0
                 })
             }
             output.push(cov)

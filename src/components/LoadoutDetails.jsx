@@ -4,11 +4,12 @@ import { useEffect } from 'react'
 import { useMemo } from 'react'
 import { useState } from 'react'
 import { colors } from '../data/constants'
-import { strategemData } from '../data/hardcodedData'
+import { strategemData, primaryWeaponData, /* secondaryWeaponData, grenadeData, armorData */ } from '../data/hardcodedData'
 import StrategemList from './StrategemList'
 import StrategemDetails from './StrategemDetails'
 import { updateLoadout, deleteLoadout } from '../data/indexedDB'
 import LoadoutSummary from './LoadoutSummary'
+import PrimaryDetails from './PrimaryDetails'
 
 export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelectedLoadout }) {
 
@@ -28,6 +29,7 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelect
     const newStrat2 = strategemData.find(x => x.id === newLoadout.strat2) || null
     const newStrat3 = strategemData.find(x => x.id === newLoadout.strat3) || null
     const newStrat4 = strategemData.find(x => x.id === newLoadout.strat4) || null
+    const newPrimary = primaryWeaponData.find(x => x.id === newLoadout.primary) || null
 
     const activeChanges = useMemo(() => {
         return name !== selectedLoadout.name
@@ -35,7 +37,8 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelect
             || newStrat2?.id !== selectedLoadout.strat2
             || newStrat3?.id !== selectedLoadout.strat3
             || newStrat4?.id !== selectedLoadout.strat4
-    }, [name, selectedLoadout, newStrat1, newStrat2, newStrat3, newStrat4])
+            || newPrimary?.id !== selectedLoadout.primary
+    }, [name, selectedLoadout, newStrat1, newStrat2, newStrat3, newStrat4, newPrimary])
 
     const handleSave = useCallback(() => {
         const data = {
@@ -130,6 +133,13 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelect
                             : { type: 'strat', target: 'strat4' }
                     )}
                 />
+                <PrimaryDetails primary={newPrimary} active={selectedTarget.target === 'primary'}
+                    onClick={() => setSelectedTarget(
+                        selectedTarget.target === 'primary' ?
+                            { type: null, target: null }
+                            : { type: 'primary', target: 'primary' }
+                    )}
+                />
 
                 <div className={css`flex-grow: 1;`} />
 
@@ -168,6 +178,22 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelect
                     }}
                     filterArr={[newStrat1?.id, newStrat2?.id, newStrat3?.id, newStrat4?.id]}
                 />
+            }
+            {selectedTarget.type === 'primary' &&
+                {/*  // primaryList
+                
+                <StrategemList
+                    handleClick={(id) => {
+                        setNewLoadout(prev => {
+                            return {
+                                ...prev,
+                                [selectedTarget.target]: id
+                            }
+                        })
+                        setSelectedTarget({ type: null, target: null })
+                    }}
+                    filterArr={[newStrat1?.id, newStrat2?.id, newStrat3?.id, newStrat4?.id]}
+                /> */}
             }
             {!selectedTarget.type &&
                 <LoadoutSummary
