@@ -609,7 +609,134 @@ export const grenadeData = [
     },
 ]
 
-export const armorData = []
+export const armorData = [
+    {
+        id: 1,
+        name: 'light engineer',
+        bonus: 'engineering kit',
+        type: 'light',
+    },
+    {
+        id: 2,
+        name: 'light servo',
+        bonus: 'servo assisted',
+        type: 'light',
+    },
+    {
+        id: 3,
+        name: 'light padded',
+        bonus: 'extra padding',
+        type: 'light',
+    },
+    {
+        id: 4,
+        name: 'light democracy',
+        bonus: 'democracy protects',
+        type: 'light',
+    },
+    {
+        id: 5,
+        name: 'light fortified',
+        bonus: 'fortified',
+        type: 'light',
+    },
+    {
+        id: 6,
+        name: 'light med kit',
+        bonus: 'med kit',
+        type: 'light',
+    },
+    {
+        id: 7,
+        name: 'light scout',
+        bonus: 'scout',
+        type: 'light',
+    },
+    {
+        id: 8,
+        name: 'medium engineer',
+        bonus: 'engineering kit',
+        type: 'medium',
+    },
+    {
+        id: 9,
+        name: 'medium democracy',
+        bonus: 'democracy protects',
+        type: 'medium',
+    },
+    {
+        id: 10,
+        name: 'medium padding',
+        bonus: 'extra padding',
+        type: 'medium',
+    },
+    {
+        id: 11,
+        name: 'medium fortified',
+        bonus: 'fortified',
+        type: 'medium',
+    },
+    {
+        id: 12,
+        name: 'medium scout',
+        bonus: 'scout',
+        type: 'medium',
+    },
+    {
+        id: 13,
+        name: 'medium servo',
+        bonus: 'servo assisted',
+        type: 'medium',
+    },
+    {
+        id: 14,
+        name: 'medium med kit',
+        bonus: 'med kit',
+        type: 'medium',
+    },
+    {
+        id: 15,
+        name: 'medium arc',
+        bonus: 'arc resistance',
+        type: 'medium',
+    },
+    {
+        id: 16,
+        name: 'heavy engineer',
+        bonus: 'engineering kit',
+        type: 'heavy',
+    },
+    {
+        id: 17,
+        name: 'heavy padding',
+        bonus: 'extra padding',
+        type: 'heavy',
+    },
+    {
+        id: 18,
+        name: 'heavy fortified',
+        bonus: 'fortified',
+        type: 'heavy',
+    },
+    {
+        id: 19,
+        name: 'heavy scout',
+        bonus: 'scout',
+        type: 'heavy',
+    },
+    {
+        id: 20,
+        name: 'heavy servo',
+        bonus: 'servo assisted',
+        type: 'heavy',
+    },
+    {
+        id: 21,
+        name: 'heavy med kit',
+        bonus: 'med kit',
+        type: 'heavy',
+    }
+]
 
 const strategemTypes = ['back']
 const coverageCategories = [0, 1, 2, 3, 4]
