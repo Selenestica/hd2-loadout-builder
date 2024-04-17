@@ -407,10 +407,207 @@ export const primaryWeaponData = [
         objectives: []
     },
 ]
+export const secondaryWeaponData = [
+    {
+        id: 1,
+        name: "P-2 Peacemaker",
+        icon: '#',
+        ingameStats: {
+            damage: 60,
+            capacity: 15,
+            recoil: 23,
+            fireRate: 900,
+            traits: ['light armor penetrating', 'one handed']
+        },
+        offensiveRange: [0.5, 0.5, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        sluggish: false,
+        stun: false,
+        objectives: []
+    },
+    {
+        id: 2,
+        name: "P-19 Redeemer",
+        icon: '#',
+        ingameStats: {
+            damage: 60,
+            capacity: 31,
+            recoil: 11,
+            fireRate: 1100,
+            traits: ['light armor penetrating', 'one handed']
+        },
+        offensiveRange: [1, 0.5, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        sluggish: false,
+        stun: false,
+        objectives: []
+    },
+    {
+        id: 3,
+        name: "GP-31 Grenade Pistol",
+        icon: '#',
+        ingameStats: {
+            damage: 600,
+            capacity: 1,
+            recoil: 43,
+            fireRate: 900,
+            traits: ['explosive', 'one handed']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [0.5, 0.5, 0.5, 0, 0],
+        sluggish: false,
+        stun: true,
+        objectives: []
+    },
+    {
+        id: 4,
+        name: "LAS-7 Dagger",
+        icon: '#',
+        ingameStats: {
+            dps: 150,
+            fireLimit: 5,
+            recoil: 1,
+            traits: ['light armor penetrating', 'one handed', 'beam', 'heat']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [0.5, 0.25, 0, 0, 0],
+        sluggish: false,
+        stun: false,
+        objectives: []
+    },
+    {
+        id: 5,
+        name: "P-4 Senator",
+        icon: '#',
+        ingameStats: {
+            damage: 150,
+            capacity: 6,
+            recoil: 43,
+            fireRate: 200,
+            traits: ['medium armor penetrating', 'one handed', 'rounds reload']
+        },
+        offensiveRange: [1, 0.666, 0],
+        coverage: [0.5, 1, 0.5, 0, 0],
+        sluggish: false,
+        stun: false,
+        objectives: []
+    },
+]
 
-export const secondaryWeaponData = []
-
-export const grenadeData = []
+export const grenadeData = [
+    {
+        id: 1,
+        name: "G-6 Frag",
+        icon: '#',
+        ingameStats: {
+            damage: 250,
+            penetration: 3,
+            radius: 8,
+            fuse: 2.4,
+            traits: []
+        },
+        offensiveRange: [0.8, 1, 0],
+        coverage: [0.5, 0.5, 0, 0, 0],
+        stun: true,
+        objectives: []
+    },
+    {
+        id: 2,
+        name: "G-12 High Explosive",
+        icon: '#',
+        ingameStats: {
+            damage: 400,
+            penetration: 4,
+            radius: 7,
+            fuse: 3.5,
+            traits: []
+        },
+        offensiveRange: [0.8, 1, 0],
+        coverage: [1, 1, 1, 0.25, 0.25],
+        stun: true,
+        objectives: []
+    },
+    {
+        id: 3,
+        name: "G-10 Incendiary",
+        icon: '#',
+        ingameStats: {
+            damage: 150,
+            penetration: 3,
+            radius: 7,
+            fuse: 2.9,
+            traits: ['incendiary']
+        },
+        offensiveRange: [0.8, 1, 0],
+        coverage: [1.5, 1, 0.5, 0, 0],
+        stun: false,
+        objectives: []
+    },
+    {
+        id: 4,
+        name: "G-16 Impact",
+        icon: '#',
+        ingameStats: {
+            damage: 400,
+            penetration: 4,
+            radius: 7,
+            fuse: 0,
+            traits: []
+        },
+        offensiveRange: [0.5, 1, 0],
+        coverage: [1, 1, 1, 0.5, 0.5],
+        stun: true,
+        objectives: []
+    },
+    {
+        id: 5,
+        name: "G-23 Stun",
+        icon: '#',
+        ingameStats: {
+            damage: 0,
+            penetration: 6,
+            radius: 10,
+            fuse: 1.8,
+            traits: []
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [0, 0, 0, 0, 0],
+        stun: true,
+        objectives: []
+    },
+    {
+        id: 6,
+        name: "G-3 Smoke",
+        icon: '#',
+        ingameStats: {
+            damage: 0,
+            penetration: 0,
+            radius: 5,
+            fuse: 2.4,
+            traits: []
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [0, 0, 0, 0, 0],
+        stun: false,
+        objectives: []
+    },
+    {
+        id: 7,
+        name: "G-123 Thermite",
+        icon: '#',
+        ingameStats: {
+            damage: 100,
+            penetration: 7,
+            radius: 2,
+            fuse: 2.9,
+            traits: []
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [0, 0, 0, 1, 0.5],
+        stun: false,
+        objectives: []
+    },
+]
 
 export const armorData = []
 
