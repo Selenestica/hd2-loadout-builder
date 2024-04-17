@@ -49,7 +49,364 @@ import stratsupply from '../assets/strat-supply.bmp'
 import stratteslatower from '../assets/strat-teslatower.bmp'
 import stratwalkingbarrage from '../assets/strat-walkingbarrage.bmp'
 
-export const primaryWeaponData = []
+export const primaryWeaponData = [
+    {
+        id: 1,
+        name: "AR23 Liberator",
+        icon: '#',
+        ingameStats: {
+            damage: 55,
+            capacity: 45,
+            recoil: 15,
+            fireRate: 640,
+            traits: ['light armor penetrating']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [],
+        sluggish: false,
+        stun: false,
+        objectives: []
+    },
+    {
+        id: 2,
+        name: "AR23P Liberator Penetrator",
+        icon: '#',
+        ingameStats: {
+            damage: 45,
+            capacity: 30,
+            recoil: 19,
+            fireRate: 640,
+            traits: ['medium armor penetrating']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [],
+        sluggish: false,
+        stun: false,
+        objectives: []
+    },
+    {
+        id: 3,
+        name: "AR23C Liberator Concussive",
+        icon: '#',
+        ingameStats: {
+            damage: 55,
+            capacity: 30,
+            recoil: 28,
+            fireRate: 320,
+            traits: ['light armor penetrating', 'explosive damage type']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [],
+        sluggish: false,
+        stun: true,
+        objectives: []
+    },
+    {
+        id: 4,
+        name: "BR-14 Adjudicator",
+        icon: '#',
+        ingameStats: {
+            damage: 80,
+            capacity: 25,
+            recoil: 50,
+            fireRate: 550,
+            traits: ['medium armor penetrating']
+        },
+        offensiveRange: [1, 1, 0.5],
+        coverage: [],
+        sluggish: false,
+        stun: false,
+        objectives: []
+    },
+    {
+        id: 5,
+        name: "R-63 Diligence",
+        icon: '#',
+        ingameStats: {
+            damage: 112,
+            capacity: 20,
+            recoil: 35,
+            fireRate: 350,
+            traits: ['light armor penetrating']
+        },
+        offensiveRange: [1, 1, 1],
+        coverage: [],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 6,
+        name: "R-63CS Diligence Counter Sniper",
+        icon: '#',
+        ingameStats: {
+            damage: 128,
+            capacity: 15,
+            recoil: 53,
+            fireRate: 350,
+            traits: ['medium armor penetrating']
+        },
+        offensiveRange: [0.5, 1, 1],
+        coverage: [],
+        stun: false,
+        sluggish: true,
+        objectives: []
+    },
+    {
+        id: 7,
+        name: "SMG-37 Defender",
+        icon: '#',
+        ingameStats: {
+            damage: 70,
+            capacity: 45,
+            recoil: 10,
+            fireRate: 520,
+            traits: ['light armor penetrating', 'one handed']
+        },
+        offensiveRange: [1, 0.5, 0],
+        coverage: [],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 8,
+        name: "SG-8 Punisher",
+        icon: '#',
+        ingameStats: {
+            damage: 405,
+            capacity: 16,
+            recoil: 120,
+            fireRate: 80,
+            traits: ['light armor penetrating', 'rounds reload']
+        },
+        offensiveRange: [1, 0.5, 0],
+        coverage: [],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 9,
+        name: "SG-8S Slugger",
+        icon: '#',
+        ingameStats: {
+            damage: 250,
+            capacity: 16,
+            recoil: 120,
+            fireRate: 80,
+            traits: ['medium armor penetrating', 'rounds reload']
+        },
+        offensiveRange: [1, 1, 0.5],
+        coverage: [],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 10,
+        name: "SG-8P Punisher Plasma",
+        icon: '#',
+        ingameStats: {
+            damage: 250,
+            capacity: 8,
+            recoil: 110,
+            fireRate: 80,
+            traits: ['explosive']
+        },
+        offensiveRange: [1, 0.5, 0],
+        coverage: [],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 11,
+        name: "ARC-12 Blitzer",
+        icon: '#',
+        ingameStats: {
+            damage: 250,
+            capacity: 'infinite',
+            recoil: 60,
+            fireRate: 30,
+            traits: []
+        },
+        offensiveRange: [1, 0, 0],
+        coverage: [],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 12,
+        name: "SG-225 Breaker",
+        icon: '#',
+        ingameStats: {
+            damage: 330,
+            capacity: 13,
+            recoil: 55,
+            fireRate: 300,
+            traits: ['light armor penetrating']
+        },
+        offensiveRange: [1, 0.5, 0],
+        coverage: [],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 13,
+        name: "SG-225SP Breaker Spray&Pray",
+        icon: '#',
+        ingameStats: {
+            damage: 192,
+            capacity: 26,
+            recoil: 45,
+            fireRate: 330,
+            traits: ['light armor penetrating']
+        },
+        offensiveRange: [1, 0, 0],
+        coverage: [],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 14,
+        name: "SG-225IE Breaker Incendiary",
+        icon: '#',
+        ingameStats: {
+            damage: 240,
+            capacity: 25,
+            recoil: 28,
+            fireRate: 330,
+            traits: ['light armor penetrating, incendiary']
+        },
+        offensiveRange: [1, 0.5, 0],
+        coverage: [],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 15,
+        name: "CB-9 Exploding Crossbow",
+        icon: '#',
+        ingameStats: {
+            damage: 420,
+            capacity: 5,
+            recoil: 35,
+            fireRate: 50,
+            traits: ['explosive']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 16,
+        name: "JAR-5 Dominator",
+        icon: '#',
+        ingameStats: {
+            damage: 300,
+            capacity: 15,
+            recoil: 75,
+            fireRate: 250,
+            traits: ['medium armor penetrating', 'explosive damage type']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [],
+        stun: true,
+        sluggish: true,
+        objectives: []
+    },
+    {
+        id: 17,
+        name: "R-36 Eruptor",
+        icon: '#',
+        ingameStats: {
+            damage: 380,
+            capacity: 5,
+            recoil: 75,
+            fireRate: 25,
+            traits: ['medium armor penetrating', 'explosive']
+        },
+        offensiveRange: [1, 1, 0.5],
+        coverage: [],
+        stun: true,
+        sluggish: true,
+        objectives: []
+    },
+    {
+        id: 18,
+        name: "LAS-5 Scythe",
+        icon: '#',
+        ingameStats: {
+            dps: 300,
+            fireLimit: 8,
+            recoil: 1,
+            traits: ['light armor penetrating', 'beam', 'heat']
+        },
+        offensiveRange: [1, 1, 0.5],
+        coverage: [],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 19,
+        name: "LAS-16 Sickle",
+        icon: '#',
+        ingameStats: {
+            damage: 55,
+            fireLimit: 9,
+            recoil: 2,
+            fireRate: 750,
+            traits: ['light armor penetrating', 'heat']
+        },
+        offensiveRange: [1, 1, 0.5],
+        coverage: [],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 20,
+        name: "PLAS-1 Scorcher",
+        icon: '#',
+        ingameStats: {
+            damage: 200,
+            fireLimit: 15,
+            recoil: 20,
+            fireRate: 250,
+            traits: ['light armor penetrating', 'explosive']
+        },
+        offensiveRange: [1, 1, 0.5],
+        coverage: [],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 21,
+        name: "MP-98 Knight",
+        icon: '#',
+        ingameStats: {
+            damage: 50,
+            fireLimit: 50,
+            recoil: 20,
+            fireRate: 1380,
+            traits: ['light armor penetrating', 'one handed']
+        },
+        offensiveRange: [1, 0, 0],
+        coverage: [],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+]
 
 export const secondaryWeaponData = []
 

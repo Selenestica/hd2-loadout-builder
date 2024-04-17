@@ -21,13 +21,6 @@ export default function RangeRemovalMatrix({ data, ...props }) {
                 minValue: 0,
                 maxValue: 4,
             }}
-
-        /* ({value}) => { 
-            if (value <= 0) return `hsl(220, 0%, 50.2%)`
-            if (value >= 5) return `hsl(220, 80%, 50.2%)`
-            const percentage = ( Math.min(value, 5) / 5 ) * 100
-            return `hsl(220, ${percentage * 0.8}%, 50.2%)`
-        } */
         />
     </div>
 }
