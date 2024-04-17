@@ -4,12 +4,15 @@ import { useEffect } from 'react'
 import { useMemo } from 'react'
 import { useState } from 'react'
 import { colors } from '../data/constants'
-import { strategemData, primaryWeaponData, /* secondaryWeaponData, grenadeData, armorData */ } from '../data/hardcodedData'
+import { strategemData, primaryWeaponData, secondaryWeaponData, /* secondaryWeaponData, grenadeData, armorData */ } from '../data/hardcodedData'
 import StrategemList from './StrategemList'
 import StrategemDetails from './StrategemDetails'
 import { updateLoadout, deleteLoadout } from '../data/indexedDB'
 import LoadoutSummary from './LoadoutSummary'
 import PrimaryDetails from './PrimaryDetails'
+import PrimaryList from './PrimaryList'
+import SecondaryList from './SecondaryList'
+import SecondaryDetails from './SecondaryDetails'
 
 export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelectedLoadout }) {
 
@@ -30,15 +33,18 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelect
     const newStrat3 = strategemData.find(x => x.id === newLoadout.strat3) || null
     const newStrat4 = strategemData.find(x => x.id === newLoadout.strat4) || null
     const newPrimary = primaryWeaponData.find(x => x.id === newLoadout.primary) || null
+    const newSecondary = secondaryWeaponData.find(x => x.id === newLoadout.secondary) || null
 
     const activeChanges = useMemo(() => {
+        if(newStrat1 === null || newStrat2 === null || newStrat3 === null || newStrat4 === null || newPrimary === null || newSecondary === null) return false
         return name !== selectedLoadout.name
             || newStrat1?.id !== selectedLoadout.strat1
             || newStrat2?.id !== selectedLoadout.strat2
             || newStrat3?.id !== selectedLoadout.strat3
             || newStrat4?.id !== selectedLoadout.strat4
             || newPrimary?.id !== selectedLoadout.primary
-    }, [name, selectedLoadout, newStrat1, newStrat2, newStrat3, newStrat4, newPrimary])
+            || newSecondary?.id !== selectedLoadout.secondary
+    }, [name, selectedLoadout, newStrat1, newStrat2, newStrat3, newStrat4, newPrimary, newSecondary])
 
     const handleSave = useCallback(() => {
         const data = {
@@ -53,6 +59,7 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelect
                     newData[i] = data
                     return newData
                 })
+                setSelectedLoadout(data)
                 setSelectedTarget({ type: null, target: null })
             })
         } catch (e) {
@@ -140,6 +147,13 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelect
                             : { type: 'primary', target: 'primary' }
                     )}
                 />
+                <SecondaryDetails secondary={newSecondary} active={selectedTarget.target === 'secondary'}
+                    onClick={() => setSelectedTarget(
+                        selectedTarget.target === 'secondary' ?
+                            { type: null, target: null }
+                            : { type: 'secondary', target: 'secondary' }
+                    )}
+                />
 
                 <div className={css`flex-grow: 1;`} />
 
@@ -180,9 +194,7 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelect
                 />
             }
             {selectedTarget.type === 'primary' &&
-                {/*  // primaryList
-                
-                <StrategemList
+                <PrimaryList
                     handleClick={(id) => {
                         setNewLoadout(prev => {
                             return {
@@ -192,8 +204,22 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelect
                         })
                         setSelectedTarget({ type: null, target: null })
                     }}
-                    filterArr={[newStrat1?.id, newStrat2?.id, newStrat3?.id, newStrat4?.id]}
-                /> */}
+                    filterArr={[newPrimary?.id]}
+                />
+            }
+            {selectedTarget.type === 'secondary' &&
+                <SecondaryList
+                    handleClick={(id) => {
+                        setNewLoadout(prev => {
+                            return {
+                                ...prev,
+                                [selectedTarget.target]: id
+                            }
+                        })
+                        setSelectedTarget({ type: null, target: null })
+                    }}
+                    filterArr={[newSecondary?.id]}
+                />
             }
             {!selectedTarget.type &&
                 <LoadoutSummary
@@ -201,6 +227,8 @@ export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelect
                     strat2={newStrat2}
                     strat3={newStrat3}
                     strat4={newStrat4}
+                    primary={newPrimary}
+                    secondary={newSecondary}
                 />
             }
         </>

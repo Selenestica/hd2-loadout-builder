@@ -52,8 +52,9 @@ import stratwalkingbarrage from '../assets/strat-walkingbarrage.bmp'
 export const primaryWeaponData = [
     {
         id: 1,
+        type: 'Assault rifle',
         name: "AR23 Liberator",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 55,
             capacity: 45,
@@ -69,8 +70,9 @@ export const primaryWeaponData = [
     },
     {
         id: 2,
+        type: 'Assault rifle',
         name: "AR23P Liberator Penetrator",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 45,
             capacity: 30,
@@ -86,8 +88,9 @@ export const primaryWeaponData = [
     },
     {
         id: 3,
+        type: 'Assault rifle',
         name: "AR23C Liberator Concussive",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 55,
             capacity: 30,
@@ -103,8 +106,9 @@ export const primaryWeaponData = [
     },
     {
         id: 4,
+        type: 'Marksman rifle',
         name: "BR-14 Adjudicator",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 80,
             capacity: 25,
@@ -120,8 +124,9 @@ export const primaryWeaponData = [
     },
     {
         id: 5,
+        type: 'Marksman rifle',
         name: "R-63 Diligence",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 112,
             capacity: 20,
@@ -137,8 +142,9 @@ export const primaryWeaponData = [
     },
     {
         id: 6,
+        type: 'Marksman rifle',
         name: "R-63CS Diligence Counter Sniper",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 128,
             capacity: 15,
@@ -154,8 +160,9 @@ export const primaryWeaponData = [
     },
     {
         id: 7,
+        type: 'SMG',
         name: "SMG-37 Defender",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 70,
             capacity: 45,
@@ -171,8 +178,9 @@ export const primaryWeaponData = [
     },
     {
         id: 8,
+        type: 'Shotgun',
         name: "SG-8 Punisher",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 405,
             capacity: 16,
@@ -188,8 +196,9 @@ export const primaryWeaponData = [
     },
     {
         id: 9,
+        type: 'Shotgun',
         name: "SG-8S Slugger",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 250,
             capacity: 16,
@@ -205,8 +214,9 @@ export const primaryWeaponData = [
     },
     {
         id: 10,
+        type: 'Shotgun',
         name: "SG-8P Punisher Plasma",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 250,
             capacity: 8,
@@ -222,8 +232,9 @@ export const primaryWeaponData = [
     },
     {
         id: 11,
+        type: 'Shotgun',
         name: "ARC-12 Blitzer",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 250,
             capacity: 'infinite',
@@ -239,8 +250,9 @@ export const primaryWeaponData = [
     },
     {
         id: 12,
+        type: 'Shotgun',
         name: "SG-225 Breaker",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 330,
             capacity: 13,
@@ -256,8 +268,9 @@ export const primaryWeaponData = [
     },
     {
         id: 13,
+        type: 'Shotgun',
         name: "SG-225SP Breaker Spray&Pray",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 192,
             capacity: 26,
@@ -273,8 +286,9 @@ export const primaryWeaponData = [
     },
     {
         id: 14,
+        type: 'Shotgun',
         name: "SG-225IE Breaker Incendiary",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 240,
             capacity: 25,
@@ -290,8 +304,9 @@ export const primaryWeaponData = [
     },
     {
         id: 15,
+        type: 'Explosive',
         name: "CB-9 Exploding Crossbow",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 420,
             capacity: 5,
@@ -307,8 +322,9 @@ export const primaryWeaponData = [
     },
     {
         id: 16,
+        type: 'Explosive',
         name: "JAR-5 Dominator",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 300,
             capacity: 15,
@@ -324,8 +340,9 @@ export const primaryWeaponData = [
     },
     {
         id: 17,
+        type: 'Explosive',
         name: "R-36 Eruptor",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 380,
             capacity: 5,
@@ -341,8 +358,9 @@ export const primaryWeaponData = [
     },
     {
         id: 18,
+        type: 'Energy',
         name: "LAS-5 Scythe",
-        icon: '#',
+        icon: null,
         ingameStats: {
             dps: 300,
             fireLimit: 8,
@@ -357,8 +375,9 @@ export const primaryWeaponData = [
     },
     {
         id: 19,
+        type: 'Energy',
         name: "LAS-16 Sickle",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 55,
             fireLimit: 9,
@@ -374,8 +393,9 @@ export const primaryWeaponData = [
     },
     {
         id: 20,
+        type: 'Energy',
         name: "PLAS-1 Scorcher",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 200,
             fireLimit: 15,
@@ -391,8 +411,9 @@ export const primaryWeaponData = [
     },
     {
         id: 21,
+        type: 'SMG',
         name: "MP-98 Knight",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 50,
             fireLimit: 50,
@@ -410,8 +431,9 @@ export const primaryWeaponData = [
 export const secondaryWeaponData = [
     {
         id: 1,
+        type: 'pistol',
         name: "P-2 Peacemaker",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 60,
             capacity: 15,
@@ -427,6 +449,7 @@ export const secondaryWeaponData = [
     },
     {
         id: 2,
+        type: 'pistol',
         name: "P-19 Redeemer",
         icon: '#',
         ingameStats: {
@@ -444,6 +467,7 @@ export const secondaryWeaponData = [
     },
     {
         id: 3,
+        type: 'pistol',
         name: "GP-31 Grenade Pistol",
         icon: '#',
         ingameStats: {
@@ -461,6 +485,7 @@ export const secondaryWeaponData = [
     },
     {
         id: 4,
+        type: 'pistol',
         name: "LAS-7 Dagger",
         icon: '#',
         ingameStats: {
@@ -477,6 +502,7 @@ export const secondaryWeaponData = [
     },
     {
         id: 5,
+        type: 'pistol',
         name: "P-4 Senator",
         icon: '#',
         ingameStats: {

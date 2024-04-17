@@ -37,6 +37,7 @@ export default function App() {
                     setLoadouts={setLoadouts}
                     setLoading={setLoading}
                     loading={loading}
+                    selectedLoadout={selectedLoadout}
                 />
 
                 {selectedLoadout &&

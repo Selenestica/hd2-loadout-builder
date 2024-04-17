@@ -4,7 +4,7 @@ import { colors } from '../data/constants'
 import Loadout from './Loadout'
 import { addLoadout } from '../data/indexedDB'
 
-export default function LoadoutList({ setSelectedLoadout,
+export default function LoadoutList({ setSelectedLoadout, selectedLoadout,
     loadouts, setLoadouts, loading, setLoading,
 }) {
     
@@ -44,6 +44,7 @@ export default function LoadoutList({ setSelectedLoadout,
                     key={loadout.id}
                     data={loadout}
                     onClick={() => {setSelectedLoadout(loadout)}}
+                    active={selectedLoadout.id === loadout.id}
                 />)}
             </div>
             <button

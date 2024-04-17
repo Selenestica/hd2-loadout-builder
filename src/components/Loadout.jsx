@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 import { css } from '@emotion/css'
 import { colors } from '../data/constants'
-import { strategemData } from '../data/hardcodedData'
+import { strategemData, primaryWeaponData, secondaryWeaponData } from '../data/hardcodedData'
 import { useCallback } from 'react'
 import { deleteLoadout } from '../data/indexedDB'
 
-export default function Loadout({ data, setLoadouts, ...props }) {
+export default function Loadout({ active, data, setLoadouts, ...props }) {
 
     const {
         id,
@@ -24,20 +24,12 @@ export default function Loadout({ data, setLoadouts, ...props }) {
     const strat2Data = strategemData.find(x => x.id === strat2)
     const strat3Data = strategemData.find(x => x.id === strat3)
     const strat4Data = strategemData.find(x => x.id === strat4)
-
-    const handleDeleteLoadout = useCallback(async () => {
-        try {
-            const res = await deleteLoadout(id)
-            console.log('deleteresult: ', res)
-            setLoadouts(current => current.filter(loadout => loadout.id !== id))
-        } catch (e) {
-            console.log(e)
-        }
-    }, [id, setLoadouts])
+    const primaryData = primaryWeaponData.find(x => x.id === primary)
+    const secondaryData = secondaryWeaponData.find(x => x.id === secondary)
 
     return (
         <div className={css`
-            background: ${colors.darkBlue};
+            background: ${active ? colors.lighter : colors.darkBlue};
 
             &:hover {
                 background: ${colors.lighter};
@@ -66,14 +58,17 @@ export default function Loadout({ data, setLoadouts, ...props }) {
                 display: flex;
                 gap: 2px;
             `}>
-                {strat1Data ? <img src={strat1Data?.icon} alt="" /> : <div />}
-                {strat2Data ? <img src={strat2Data?.icon} alt="" /> : <div />}
-                {strat3Data ? <img src={strat3Data?.icon} alt="" /> : <div />}
-                {strat4Data ? <img src={strat4Data?.icon} alt="" /> : <div />}
+                {strat1Data ? <img src={strat1Data?.icon} alt="" title={strat1Data?.name}/> : <div />}
+                {strat2Data ? <img src={strat2Data?.icon} alt="" title={strat2Data?.name}/> : <div />}
+                {strat3Data ? <img src={strat3Data?.icon} alt="" title={strat3Data?.name}/> : <div />}
+                {strat4Data ? <img src={strat4Data?.icon} alt="" title={strat4Data?.name}/> : <div />}
             </div>
+
             <div className={css`
                 display: flex;
             `}>
+                 {primaryData ? <img src={primaryData?.icon} alt={''} title={primaryData?.name}/> : <div />}
+                 {secondaryData ? <img src={secondaryData?.icon} alt={''} title={secondaryData?.name}/> : <div />}
             </div>
         </div >
     )

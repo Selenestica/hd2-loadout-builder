@@ -1,20 +1,20 @@
 import { useMemo, useState } from 'react'
-import { strategemData } from '../data/hardcodedData'
+import { secondaryWeaponData } from '../data/hardcodedData'
 import { css } from '@emotion/css'
 import { colors } from '../data/constants'
 
-export default function StrategemList({ handleClick, filterArr }) {
+export default function SecondaryList({ handleClick, filterArr }) {
     const [hoverState, setHoverState] = useState()
 
-    const sortedStrats = useMemo(() => {
-        strategemData.sort((a, b) => (
-            a.color !== b.color ?
-                a.color > b.color
-                : a.type > b.type
+    const sortedPrimaries = useMemo(() => {
+        secondaryWeaponData.sort((a, b) => (
+            a.type !== b.type ?
+                a.type > b.type
+                : a.name.split(' ').slice(1).join(' ').localeCompare(b.name.split(' ').slice(1).join(' '))
         ))
-        return strategemData
+        return secondaryWeaponData
 
-    }, [strategemData])
+    }, [secondaryWeaponData])
 
     return (
         <div className={css`
@@ -26,26 +26,27 @@ export default function StrategemList({ handleClick, filterArr }) {
                 background: ${colors.darkBlue};
                 overflow-Y: auto;
             `}>
-                {sortedStrats.map(strat => {
-                    return <div key={strat.id} className={css`
+                {sortedPrimaries.map(secondary => {
+                    return <div key={secondary.id} className={css`
                         display: flex; 
                         align-items: center; 
                         gap: 1em;
                         padding-right: 1em;
-                        cursor: ${filterArr.includes(strat.id) ? 'unset' : 'pointer'};
-                        opacity: ${filterArr.includes(strat.id) ? '0.5' : '1'};
+                        cursor: ${filterArr.includes(secondary.id) ? 'unset' : 'pointer'};
+                        opacity: ${filterArr.includes(secondary.id) ? '0.5' : '1'};
                         white-space: nowrap;
                         user-select: none;
+                        min-height: 3em;
                         
                         &:hover {
                             background: ${colors.lighter};
                         }
                     `}
-                        onClick={() => filterArr.includes(strat.id) ? handleClick(null) : handleClick(strat.id)}
-                        onPointerEnter={() => setHoverState(strat)}
+                        onClick={() => filterArr.includes(secondary.id) ? handleClick(null) : handleClick(secondary.id)}
+                        onPointerEnter={() => setHoverState(secondary)}
                     >
-                        <img src={strat.icon} alt={strat.name} />
-                        {strat.name}
+                        <img src={secondary.icon} alt={''} />
+                        {secondary.name}
                     </div>
                 })}
             </div >
@@ -65,11 +66,45 @@ export default function StrategemList({ handleClick, filterArr }) {
                         grid-gap: 0.2em 1em;
                         align-items: center;
                     `}>
+
+                        <div></div>
+                        <div><b>{hoverState.name}</b></div>
+
                         <div>Type:</div>
                         <div>{hoverState.type}</div>
 
-                        <div>Uptime:</div>
-                        <div>{hoverState.uptime}</div>
+                        <div>Damage:</div>
+                        <div>{hoverState.ingameStats.damage ? hoverState.ingameStats.damage : hoverState.ingameStats.dps + ' dps'}</div>
+
+                        {hoverState.ingameStats.capacity &&
+                            <>
+                                <div>Capacity:</div>
+                                <div>{hoverState.ingameStats.capacity}</div>
+                            </>
+                        }
+
+                        {hoverState.ingameStats.fireLimit &&
+                            <>
+                                <div>Fire limit:</div>
+                                <div>{hoverState.ingameStats.fireLimit}</div>
+                            </>
+                        }
+
+                        {hoverState.ingameStats.fireRate &&
+                            <>
+                                <div>Fire rate:</div>
+                                <div>{hoverState.ingameStats.fireRate}</div>
+                            </>
+                        }
+
+                        <div>Recoil:</div>
+                        <div>{hoverState.ingameStats.recoil}</div>
+
+                        <div>Stagger:</div>
+                        <div>{hoverState.stun ? 'Yes' : 'No'}</div>
+
+                        <div>Handling:</div>
+                        <div>{hoverState.sluggish ? 'Bad' : 'Normal'}</div>
 
                         <div>Range:</div>
                         <div className={css`
@@ -81,7 +116,7 @@ export default function StrategemList({ handleClick, filterArr }) {
                             border-radius: 15px;
                             overflow: hidden;
                         `}>
-                            {hoverState.offensiveRange.map((el, i) => <div className={css`
+                            {hoverState.offensiveRange.map((el, i) => <div key={i} className={css`
                             width: 100%;
                             height: ${el * el * 100}%;
                             background: white;
@@ -99,7 +134,7 @@ export default function StrategemList({ handleClick, filterArr }) {
                             border-radius: 15px;
                             overflow: hidden;
                         `}>
-                            {hoverState.coverage.map((el, i) => <div className={css`
+                            {hoverState.coverage.map((el, i) => <div key={i} className={css`
                             width: 100%;
                             height: ${el * el * 100}%;
                             align-self: center;
@@ -108,7 +143,7 @@ export default function StrategemList({ handleClick, filterArr }) {
                         </div>
 
                         <div></div>
-                            <div className={css`
+                        <div className={css`
                             display: flex;
                             justify-content: space-between;
                             color: ${colors.lighter};
@@ -120,6 +155,9 @@ export default function StrategemList({ handleClick, filterArr }) {
                                 {'heavies'}
                             </div>
                         </div>
+
+                        <div>Traits:</div>
+                        <div>{hoverState.ingameStats.traits.join(', ')}</div>
                     </div>
                 }
 
