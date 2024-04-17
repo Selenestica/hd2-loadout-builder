@@ -62,7 +62,7 @@ export const primaryWeaponData = [
             traits: ['light armor penetrating']
         },
         offensiveRange: [1, 1, 0],
-        coverage: [],
+        coverage: [1, 0.5, 0, 0, 0],
         sluggish: false,
         stun: false,
         objectives: []
@@ -79,7 +79,7 @@ export const primaryWeaponData = [
             traits: ['medium armor penetrating']
         },
         offensiveRange: [1, 1, 0],
-        coverage: [],
+        coverage: [1, 1, 0.5, 0, 0],
         sluggish: false,
         stun: false,
         objectives: []
@@ -96,7 +96,7 @@ export const primaryWeaponData = [
             traits: ['light armor penetrating', 'explosive damage type']
         },
         offensiveRange: [1, 1, 0],
-        coverage: [],
+        coverage: [1, 0.5, 0, 0, 0],
         sluggish: false,
         stun: true,
         objectives: []
@@ -113,7 +113,7 @@ export const primaryWeaponData = [
             traits: ['medium armor penetrating']
         },
         offensiveRange: [1, 1, 0.5],
-        coverage: [],
+        coverage: [1, 1, 0.5, 0, 0],
         sluggish: false,
         stun: false,
         objectives: []
@@ -130,7 +130,7 @@ export const primaryWeaponData = [
             traits: ['light armor penetrating']
         },
         offensiveRange: [1, 1, 1],
-        coverage: [],
+        coverage: [1, 0.5, 0, 0, 0],
         stun: false,
         sluggish: false,
         objectives: []
@@ -147,7 +147,7 @@ export const primaryWeaponData = [
             traits: ['medium armor penetrating']
         },
         offensiveRange: [0.5, 1, 1],
-        coverage: [],
+        coverage: [1, 1, 0.5, 0, 0],
         stun: false,
         sluggish: true,
         objectives: []
@@ -164,7 +164,7 @@ export const primaryWeaponData = [
             traits: ['light armor penetrating', 'one handed']
         },
         offensiveRange: [1, 0.5, 0],
-        coverage: [],
+        coverage: [1, 0.5, 0, 0, 0],
         stun: false,
         sluggish: false,
         objectives: []
@@ -181,7 +181,7 @@ export const primaryWeaponData = [
             traits: ['light armor penetrating', 'rounds reload']
         },
         offensiveRange: [1, 0.5, 0],
-        coverage: [],
+        coverage: [1, 0.5, 0, 0, 0],
         stun: true,
         sluggish: false,
         objectives: []
@@ -198,7 +198,7 @@ export const primaryWeaponData = [
             traits: ['medium armor penetrating', 'rounds reload']
         },
         offensiveRange: [1, 1, 0.5],
-        coverage: [],
+        coverage: [1, 1, 0.5, 0, 0],
         stun: false,
         sluggish: false,
         objectives: []
@@ -215,7 +215,7 @@ export const primaryWeaponData = [
             traits: ['explosive']
         },
         offensiveRange: [1, 0.5, 0],
-        coverage: [],
+        coverage: [1, 1, 1, 0.2, 0],
         stun: true,
         sluggish: false,
         objectives: []
@@ -231,8 +231,8 @@ export const primaryWeaponData = [
             fireRate: 30,
             traits: []
         },
-        offensiveRange: [1, 0, 0],
-        coverage: [],
+        offensiveRange: [0.75, 0, 0],
+        coverage: [1, 1, 0.5, 0, 0],
         stun: true,
         sluggish: false,
         objectives: []
@@ -249,7 +249,7 @@ export const primaryWeaponData = [
             traits: ['light armor penetrating']
         },
         offensiveRange: [1, 0.5, 0],
-        coverage: [],
+        coverage: [1, 0.5, 0, 0, 0],
         stun: false,
         sluggish: false,
         objectives: []
@@ -265,8 +265,8 @@ export const primaryWeaponData = [
             fireRate: 330,
             traits: ['light armor penetrating']
         },
-        offensiveRange: [1, 0, 0],
-        coverage: [],
+        offensiveRange: [1.25, 0, 0],
+        coverage: [1, 0.5, 0, 0, 0],
         stun: false,
         sluggish: false,
         objectives: []
@@ -283,7 +283,7 @@ export const primaryWeaponData = [
             traits: ['light armor penetrating, incendiary']
         },
         offensiveRange: [1, 0.5, 0],
-        coverage: [],
+        coverage: [1, 0.5, 0.5, 0, 0],
         stun: false,
         sluggish: false,
         objectives: []
@@ -300,7 +300,7 @@ export const primaryWeaponData = [
             traits: ['explosive']
         },
         offensiveRange: [1, 1, 0],
-        coverage: [],
+        coverage: [1, 1, 0.5, 0.2, 0],
         stun: true,
         sluggish: false,
         objectives: []
@@ -317,7 +317,7 @@ export const primaryWeaponData = [
             traits: ['medium armor penetrating', 'explosive damage type']
         },
         offensiveRange: [1, 1, 0],
-        coverage: [],
+        coverage: [0.5, 1, 1, 0, 0],
         stun: true,
         sluggish: true,
         objectives: []
@@ -333,8 +333,8 @@ export const primaryWeaponData = [
             fireRate: 25,
             traits: ['medium armor penetrating', 'explosive']
         },
-        offensiveRange: [1, 1, 0.5],
-        coverage: [],
+        offensiveRange: [0.5, 1, 0.5],
+        coverage: [1, 1, 0.5, 0.2, 0],
         stun: true,
         sluggish: true,
         objectives: []
@@ -350,7 +350,7 @@ export const primaryWeaponData = [
             traits: ['light armor penetrating', 'beam', 'heat']
         },
         offensiveRange: [1, 1, 0.5],
-        coverage: [],
+        coverage: [1, 0.5, 0, 0, 0],
         stun: false,
         sluggish: false,
         objectives: []
@@ -367,7 +367,7 @@ export const primaryWeaponData = [
             traits: ['light armor penetrating', 'heat']
         },
         offensiveRange: [1, 1, 0.5],
-        coverage: [],
+        coverage: [1, 0.5, 0, 0, 0],
         stun: false,
         sluggish: false,
         objectives: []
@@ -383,8 +383,8 @@ export const primaryWeaponData = [
             fireRate: 250,
             traits: ['light armor penetrating', 'explosive']
         },
-        offensiveRange: [1, 1, 0.5],
-        coverage: [],
+        offensiveRange: [0.8, 1, 0.5],
+        coverage: [1, 1, 1, 0.2, 0],
         stun: false,
         sluggish: false,
         objectives: []
@@ -401,7 +401,7 @@ export const primaryWeaponData = [
             traits: ['light armor penetrating', 'one handed']
         },
         offensiveRange: [1, 0, 0],
-        coverage: [],
+        coverage: [1, 0.5, 0, 0, 0],
         stun: false,
         sluggish: false,
         objectives: []
