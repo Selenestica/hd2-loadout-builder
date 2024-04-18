@@ -428,6 +428,7 @@ export const primaryWeaponData = [
         objectives: []
     },
 ]
+
 export const secondaryWeaponData = [
     {
         id: 1,
@@ -640,126 +641,147 @@ export const armorData = [
         id: 1,
         name: 'light engineer',
         bonus: 'engineering kit',
+        icon: '#',
         type: 'light',
     },
     {
         id: 2,
         name: 'light servo',
         bonus: 'servo assisted',
+        icon: '#',
         type: 'light',
     },
     {
         id: 3,
         name: 'light padded',
         bonus: 'extra padding',
+        icon: '#',
         type: 'light',
     },
     {
         id: 4,
         name: 'light democracy',
         bonus: 'democracy protects',
+        icon: '#',
         type: 'light',
     },
     {
         id: 5,
         name: 'light fortified',
         bonus: 'fortified',
+        icon: '#',
         type: 'light',
     },
     {
         id: 6,
         name: 'light med kit',
         bonus: 'med kit',
+        icon: '#',
         type: 'light',
     },
     {
         id: 7,
         name: 'light scout',
         bonus: 'scout',
+        icon: '#',
         type: 'light',
     },
     {
         id: 8,
         name: 'medium engineer',
         bonus: 'engineering kit',
+        icon: '#',
         type: 'medium',
     },
     {
         id: 9,
         name: 'medium democracy',
         bonus: 'democracy protects',
+        icon: '#',
         type: 'medium',
     },
     {
         id: 10,
         name: 'medium padding',
         bonus: 'extra padding',
+        icon: '#',
         type: 'medium',
     },
     {
         id: 11,
         name: 'medium fortified',
         bonus: 'fortified',
+        icon: '#',
         type: 'medium',
     },
     {
         id: 12,
         name: 'medium scout',
         bonus: 'scout',
+        icon: '#',
         type: 'medium',
     },
     {
         id: 13,
         name: 'medium servo',
         bonus: 'servo assisted',
+        icon: '#',
         type: 'medium',
     },
     {
         id: 14,
         name: 'medium med kit',
         bonus: 'med kit',
+        icon: '#',
         type: 'medium',
     },
     {
         id: 15,
         name: 'medium arc',
         bonus: 'arc resistance',
+        icon: '#',
         type: 'medium',
     },
     {
         id: 16,
         name: 'heavy engineer',
         bonus: 'engineering kit',
+        icon: '#',
         type: 'heavy',
     },
     {
         id: 17,
         name: 'heavy padding',
         bonus: 'extra padding',
+        icon: '#',
         type: 'heavy',
     },
     {
         id: 18,
         name: 'heavy fortified',
         bonus: 'fortified',
+        icon: '#',
         type: 'heavy',
     },
     {
         id: 19,
         name: 'heavy scout',
         bonus: 'scout',
+        icon: '#',
         type: 'heavy',
     },
     {
         id: 20,
         name: 'heavy servo',
         bonus: 'servo assisted',
+        icon: '#',
         type: 'heavy',
     },
     {
         id: 21,
         name: 'heavy med kit',
         bonus: 'med kit',
+        icon: '#',
         type: 'heavy',
     }
 ]
@@ -1323,5 +1345,16 @@ export const strategemData = [
 ]
 
 // to do: balance coverage and offensiveRange once you get the visualisations going
-
 export const boosterData = []
+
+export function preloadImages() {
+    console.log('preloading')
+    const preload = (src) => {
+        const img = new Image()
+        img.src = src
+    }
+    primaryWeaponData.forEach(d => preload(d.icon))
+    secondaryWeaponData.forEach(d => preload(d.icon))
+    grenadeData.forEach(d => preload(d.icon))
+    strategemData.forEach(d => preload(d.icon))
+}

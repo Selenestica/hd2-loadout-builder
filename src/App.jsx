@@ -1,53 +1,25 @@
-import { LoadoutsProvider } from './context/Loadouts'
-import LoadoutList from './components/LoadoutList'
+import { useContext } from 'react'
 import { css } from '@emotion/css'
+import LoadoutsContext from './context/Loadouts'
+import LoadoutList from './components/LoadoutList'
 import LoadoutDetails from './components/LoadoutDetails'
-import { loadLoadouts } from './data/indexedDB'
-import { useState, useEffect } from 'react'
-
 
 export default function App() {
-    const [selectedLoadout, setSelectedLoadout] = useState()
-
-    const [loadouts, setLoadouts] = useState([])
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-        loadLoadouts().then(result => {
-            setLoadouts(result)
-            setLoading(false)
-        }).catch(error => {
-            console.error('Failed to load loadouts:', error)
-            setLoading(false)
-        })
-    }, [])
-
+    const { selectedLoadout } = useContext(LoadoutsContext)
     return (
-        <LoadoutsProvider >
-            <div className={css`
+        <div className={css`
                 display: grid;
                 grid-template: 90vh / 35em 30em 40em;
                 padding: 2em;
                 gap: 1em;
              `}>
-                <LoadoutList
-                    className={css``}
-                    setSelectedLoadout={setSelectedLoadout}
-                    loadouts={loadouts}
-                    setLoadouts={setLoadouts}
-                    setLoading={setLoading}
-                    loading={loading}
-                    selectedLoadout={selectedLoadout}
-                />
-
-                {selectedLoadout &&
-                    <LoadoutDetails 
-                        selectedLoadout={selectedLoadout}
-                        setSelectedLoadout={setSelectedLoadout}
-                        setLoadouts={setLoadouts}
-                    />
-                }
-            </div>
-        </LoadoutsProvider>
+            <LoadoutList />
+            {selectedLoadout && <LoadoutDetails />}
+        </div>
     )
 }
+
+// TO DO:
+// import / export app data
+// add images to prim, sec, grenade, armor
+// add prim, sec, grenades and armor calculation into the charts.

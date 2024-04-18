@@ -81,7 +81,7 @@ export default function StrategemList({ handleClick, filterArr }) {
                             border-radius: 15px;
                             overflow: hidden;
                         `}>
-                            {hoverState.offensiveRange.map((el, i) => <div className={css`
+                            {hoverState.offensiveRange.map((el, i) => <div key={i} className={css`
                             width: 100%;
                             height: ${el * el * 100}%;
                             background: white;
@@ -99,7 +99,7 @@ export default function StrategemList({ handleClick, filterArr }) {
                             border-radius: 15px;
                             overflow: hidden;
                         `}>
-                            {hoverState.coverage.map((el, i) => <div className={css`
+                            {hoverState.coverage.map((el, i) => <div key={i} className={css`
                             width: 100%;
                             height: ${el * el * 100}%;
                             align-self: center;

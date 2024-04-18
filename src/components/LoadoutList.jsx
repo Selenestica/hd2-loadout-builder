@@ -1,13 +1,15 @@
-import { useCallback } from 'react'
+import { useCallback, useContext } from 'react'
 import { css } from '@emotion/css'
+import { addLoadout } from '../data/indexedDB'
 import { colors } from '../data/constants'
 import Loadout from './Loadout'
-import { addLoadout } from '../data/indexedDB'
+import LoadoutsContext from '../context/Loadouts'
 
-export default function LoadoutList({ setSelectedLoadout, selectedLoadout,
-    loadouts, setLoadouts, loading, setLoading,
+export default function LoadoutList({ 
+    ...props
 }) {
     
+    const {setSelectedLoadout, selectedLoadout, loadouts, setLoadouts, loading } = useContext(LoadoutsContext)
 
     const handleAddLoadout = useCallback(() => {
         const newLoadout = {

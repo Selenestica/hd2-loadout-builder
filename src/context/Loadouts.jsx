@@ -6,6 +6,7 @@ export default LoadoutsContext
 
 export function LoadoutsProvider({...props}) {
     const [loadouts, setLoadouts] = useState([])
+    const [selectedLoadout, setSelectedLoadout] = useState()
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
@@ -43,10 +44,15 @@ export function LoadoutsProvider({...props}) {
     return (
         <LoadoutsContext.Provider
             value={{
+                loadouts,
+                setLoadouts,
+                selectedLoadout,
+                setSelectedLoadout,
+                loading,
+                setLoading,
                 handleAdd,
                 handleUpdate,
                 handleDelete,
-                loading
             }}
             {...props}
         >

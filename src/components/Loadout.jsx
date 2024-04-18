@@ -1,9 +1,6 @@
-import { useState, useEffect } from 'react'
 import { css } from '@emotion/css'
 import { colors } from '../data/constants'
 import { strategemData, primaryWeaponData, secondaryWeaponData } from '../data/hardcodedData'
-import { useCallback } from 'react'
-import { deleteLoadout } from '../data/indexedDB'
 
 export default function Loadout({ active, data, setLoadouts, ...props }) {
 

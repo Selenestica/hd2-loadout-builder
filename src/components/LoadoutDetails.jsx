@@ -1,20 +1,24 @@
+import { useCallback, useEffect, useMemo, useState, useContext } from 'react'
 import { css } from '@emotion/css'
-import { useCallback } from 'react'
-import { useEffect } from 'react'
-import { useMemo } from 'react'
-import { useState } from 'react'
 import { colors } from '../data/constants'
-import { strategemData, primaryWeaponData, secondaryWeaponData, /* secondaryWeaponData, grenadeData, armorData */ } from '../data/hardcodedData'
+import { strategemData, primaryWeaponData, secondaryWeaponData, preloadImages/* grenadeData, armorData */ } from '../data/hardcodedData'
+import { updateLoadout, deleteLoadout } from '../data/indexedDB'
 import StrategemList from './StrategemList'
 import StrategemDetails from './StrategemDetails'
-import { updateLoadout, deleteLoadout } from '../data/indexedDB'
 import LoadoutSummary from './LoadoutSummary'
 import PrimaryDetails from './PrimaryDetails'
 import PrimaryList from './PrimaryList'
 import SecondaryList from './SecondaryList'
 import SecondaryDetails from './SecondaryDetails'
+import LoadoutsContext from '../context/Loadouts'
 
-export default function LoadoutDetails({ selectedLoadout, setLoadouts, setSelectedLoadout }) {
+export default function LoadoutDetails({ ...props }) {
+
+    const { selectedLoadout, setSelectedLoadout, setLoadouts } = useContext(LoadoutsContext)
+
+    useEffect(() => {
+        preloadImages()
+    }, [])
 
     const [name, setName] = useState(selectedLoadout.name)
     const [selectedTarget, setSelectedTarget] = useState({ type: null, target: null })
