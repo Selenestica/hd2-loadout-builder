@@ -13,6 +13,8 @@ import SecondaryDetails from './SecondaryDetails'
 import LoadoutsContext from '../context/Loadouts'
 import GrenadeDetails from './GrenadeDetails'
 import GrenadeList from './GrenadeList'
+import ArmorDetails from './ArmorDetails'
+import ArmorList from './ArmorList'
 
 export default function LoadoutDetails({ ...props }) {
 
@@ -41,6 +43,7 @@ export default function LoadoutDetails({ ...props }) {
     const newPrimary = primaryWeaponData.find(x => x.id === newLoadout.primary) || null
     const newSecondary = secondaryWeaponData.find(x => x.id === newLoadout.secondary) || null
     const newGrenade = grenadeData.find(x => x.id === newLoadout.grenade) || null
+    const newArmor = armorData.find(x => x.id === newLoadout.armor) || null
 
     const activeChanges = useMemo(() => {
         if (newStrat1 === null
@@ -50,6 +53,7 @@ export default function LoadoutDetails({ ...props }) {
             || newPrimary === null
             || newSecondary === null
             || newGrenade === null
+            || newArmor === null
         ) return false
         return name !== selectedLoadout.name
             || newStrat1?.id !== selectedLoadout.strat1
@@ -59,7 +63,8 @@ export default function LoadoutDetails({ ...props }) {
             || newPrimary?.id !== selectedLoadout.primary
             || newSecondary?.id !== selectedLoadout.secondary
             || newGrenade?.id !== selectedLoadout.grenade
-    }, [name, selectedLoadout, newStrat1, newStrat2, newStrat3, newStrat4, newPrimary, newSecondary, newGrenade])
+            || newArmor?.id !== selectedLoadout.grenade
+    }, [name, selectedLoadout, newStrat1, newStrat2, newStrat3, newStrat4, newPrimary, newSecondary, newGrenade, newArmor])
 
     const handleSave = useCallback(() => {
         const data = {
@@ -178,8 +183,13 @@ export default function LoadoutDetails({ ...props }) {
                             : { type: 'grenade', target: 'grenade' }
                     )}
                 />
-                <div></div>{/* placeholder for armordetails */}
-
+                <ArmorDetails armor={newArmor} active={selectedTarget.target === 'armor'}
+                    onClick={() => setSelectedTarget(
+                        selectedTarget.target === 'armor' ?
+                            { type: null, target: null }
+                            : { type: 'armor', target: 'armor' }
+                    )}
+                />
 
 
                 <div className={css`flex-grow: 1;`} />
@@ -263,6 +273,20 @@ export default function LoadoutDetails({ ...props }) {
                         setSelectedTarget({ type: null, target: null })
                     }}
                     filterArr={[newGrenade?.id]}
+                />
+            }
+            {selectedTarget.type === 'armor' &&
+                <ArmorList
+                    handleClick={(id) => {
+                        setNewLoadout(prev => {
+                            return {
+                                ...prev,
+                                [selectedTarget.target]: id
+                            }
+                        })
+                        setSelectedTarget({ type: null, target: null })
+                    }}
+                    filterArr={[newArmor?.id]}
                 />
             }
             {!selectedTarget.type &&
