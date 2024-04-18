@@ -1348,7 +1348,6 @@ export const strategemData = [
 export const boosterData = []
 
 export function preloadImages() {
-    console.log('preloading')
     const preload = (src) => {
         const img = new Image()
         img.src = src

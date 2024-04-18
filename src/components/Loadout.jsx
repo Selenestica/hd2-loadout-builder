@@ -1,6 +1,6 @@
 import { css } from '@emotion/css'
 import { colors } from '../data/constants'
-import { strategemData, primaryWeaponData, secondaryWeaponData } from '../data/hardcodedData'
+import { strategemData, primaryWeaponData, secondaryWeaponData, grenadeData, armorData } from '../data/hardcodedData'
 
 export default function Loadout({ active, data, setLoadouts, ...props }) {
 
@@ -17,12 +17,13 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
         armor,
     } = data
 
-    const strat1Data = strategemData.find(x => x.id === strat1)
-    const strat2Data = strategemData.find(x => x.id === strat2)
-    const strat3Data = strategemData.find(x => x.id === strat3)
-    const strat4Data = strategemData.find(x => x.id === strat4)
-    const primaryData = primaryWeaponData.find(x => x.id === primary)
-    const secondaryData = secondaryWeaponData.find(x => x.id === secondary)
+    const s1 = strategemData.find(x => x.id === strat1)
+    const s2 = strategemData.find(x => x.id === strat2)
+    const s3 = strategemData.find(x => x.id === strat3)
+    const s4 = strategemData.find(x => x.id === strat4)
+    const prim = primaryWeaponData.find(x => x.id === primary)
+    const sec = secondaryWeaponData.find(x => x.id === secondary)
+    const gren = grenadeData.find(x => x.id === grenade)
 
     return (
         <div className={css`
@@ -55,17 +56,18 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
                 display: flex;
                 gap: 2px;
             `}>
-                {strat1Data ? <img src={strat1Data?.icon} alt="" title={strat1Data?.name}/> : <div />}
-                {strat2Data ? <img src={strat2Data?.icon} alt="" title={strat2Data?.name}/> : <div />}
-                {strat3Data ? <img src={strat3Data?.icon} alt="" title={strat3Data?.name}/> : <div />}
-                {strat4Data ? <img src={strat4Data?.icon} alt="" title={strat4Data?.name}/> : <div />}
+                {s1 ? <img src={s1?.icon} alt="" title={s1?.name}/> : <div />}
+                {s2 ? <img src={s2?.icon} alt="" title={s2?.name}/> : <div />}
+                {s3 ? <img src={s3?.icon} alt="" title={s3?.name}/> : <div />}
+                {s4 ? <img src={s4?.icon} alt="" title={s4?.name}/> : <div />}
             </div>
 
             <div className={css`
                 display: flex;
             `}>
-                 {primaryData ? <img src={primaryData?.icon} alt={''} title={primaryData?.name}/> : <div />}
-                 {secondaryData ? <img src={secondaryData?.icon} alt={''} title={secondaryData?.name}/> : <div />}
+                 {prim ? <img src={prim?.icon} alt={''} title={prim?.name}/> : <div />}
+                 {sec ? <img src={sec?.icon} alt={''} title={sec?.name}/> : <div />}
+                 {gren ? <img src={gren?.icon} alt={''} title={gren?.name}/> : <div />}
             </div>
         </div >
     )

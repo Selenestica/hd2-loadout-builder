@@ -9,7 +9,7 @@ export default function App() {
     return (
         <div className={css`
                 display: grid;
-                grid-template: 90vh / 35em 30em 40em;
+                grid-template: 90vh / 36em 30em 40em;
                 padding: 2em;
                 gap: 1em;
              `}>

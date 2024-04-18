@@ -1,20 +1,18 @@
 import { useMemo, useState } from 'react'
-import { secondaryWeaponData } from '../data/hardcodedData'
+import { grenadeData } from '../data/hardcodedData'
 import { css } from '@emotion/css'
 import { colors } from '../data/constants'
 
-export default function SecondaryList({ handleClick, filterArr }) {
+export default function GrenadeList({ handleClick, filterArr }) {
     const [hoverState, setHoverState] = useState()
 
-    const sortedSecondaries = useMemo(() => {
-        secondaryWeaponData.sort((a, b) => (
-            a.type !== b.type ?
-                a.type > b.type
-                : a.name.split(' ').slice(1).join(' ').localeCompare(b.name.split(' ').slice(1).join(' '))
+    const sortedGrenades = useMemo(() => {
+        grenadeData.sort((a, b) => (
+            a.name.split(' ').slice(1).join(' ').localeCompare(b.name.split(' ').slice(1).join(' '))
         ))
-        return secondaryWeaponData
+        return grenadeData
 
-    }, [secondaryWeaponData])
+    }, [grenadeData])
 
     return (
         <div className={css`
@@ -26,14 +24,14 @@ export default function SecondaryList({ handleClick, filterArr }) {
                 background: ${colors.darkBlue};
                 overflow-Y: auto;
             `}>
-                {sortedSecondaries.map(secondary => {
-                    return <div key={secondary.id} className={css`
+                {sortedGrenades.map(grenade => {
+                    return <div key={grenade.id} className={css`
                         display: flex; 
                         align-items: center; 
                         gap: 1em;
                         padding-right: 1em;
-                        cursor: ${filterArr.includes(secondary.id) ? 'unset' : 'pointer'};
-                        opacity: ${filterArr.includes(secondary.id) ? '0.5' : '1'};
+                        cursor: ${filterArr.includes(grenade.id) ? 'unset' : 'pointer'};
+                        opacity: ${filterArr.includes(grenade.id) ? '0.5' : '1'};
                         white-space: nowrap;
                         user-select: none;
                         min-height: 3em;
@@ -42,11 +40,11 @@ export default function SecondaryList({ handleClick, filterArr }) {
                             background: ${colors.lighter};
                         }
                     `}
-                        onClick={() => filterArr.includes(secondary.id) ? handleClick(null) : handleClick(secondary.id)}
-                        onPointerEnter={() => setHoverState(secondary)}
+                        onClick={() => filterArr.includes(grenade.id) ? handleClick(null) : handleClick(grenade.id)}
+                        onPointerEnter={() => setHoverState(grenade)}
                     >
-                        <img src={secondary.icon} alt={''} />
-                        {secondary.name}
+                        <img src={grenade.icon} alt={''} />
+                        {grenade.name}
                     </div>
                 })}
             </div >
@@ -70,41 +68,23 @@ export default function SecondaryList({ handleClick, filterArr }) {
                         <div></div>
                         <div><b>{hoverState.name}</b></div>
 
-                        <div>Type:</div>
-                        <div>{hoverState.type}</div>
-
                         <div>Damage:</div>
-                        <div>{hoverState.ingameStats.damage ? hoverState.ingameStats.damage : hoverState.ingameStats.dps + ' dps'}</div>
+                        <div>{hoverState.ingameStats.damage}</div>
 
-                        {hoverState.ingameStats.capacity &&
-                            <>
-                                <div>Capacity:</div>
-                                <div>{hoverState.ingameStats.capacity}</div>
-                            </>
-                        }
+                        <div>Penetration:</div>
+                        <div>{hoverState.ingameStats.penetration}</div>
 
-                        {hoverState.ingameStats.fireLimit &&
-                            <>
-                                <div>Fire limit:</div>
-                                <div>{hoverState.ingameStats.fireLimit}</div>
-                            </>
-                        }
+                        <div>Radius:</div>
+                        <div>{hoverState.ingameStats.radius}</div>
 
-                        {hoverState.ingameStats.fireRate &&
-                            <>
-                                <div>Fire rate:</div>
-                                <div>{hoverState.ingameStats.fireRate}</div>
-                            </>
-                        }
+                        <div>Fuse:</div>
+                        <div>{hoverState.ingameStats.fuse}</div>
 
-                        <div>Recoil:</div>
-                        <div>{hoverState.ingameStats.recoil}</div>
+                        <div>Fuse:</div>
+                        <div>{hoverState.ingameStats.fuse}</div>
 
                         <div>Stagger:</div>
                         <div>{hoverState.stun ? 'Yes' : 'No'}</div>
-
-                        <div>Handling:</div>
-                        <div>{hoverState.sluggish ? 'Bad' : 'Normal'}</div>
 
                         <div>Range:</div>
                         <div className={css`

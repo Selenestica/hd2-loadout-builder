@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState, useContext } from 'react'
 import { css } from '@emotion/css'
 import { colors } from '../data/constants'
-import { strategemData, primaryWeaponData, secondaryWeaponData, preloadImages/* grenadeData, armorData */ } from '../data/hardcodedData'
+import { strategemData, primaryWeaponData, secondaryWeaponData, preloadImages, grenadeData, armorData } from '../data/hardcodedData'
 import { updateLoadout, deleteLoadout } from '../data/indexedDB'
 import StrategemList from './StrategemList'
 import StrategemDetails from './StrategemDetails'
@@ -11,6 +11,8 @@ import PrimaryList from './PrimaryList'
 import SecondaryList from './SecondaryList'
 import SecondaryDetails from './SecondaryDetails'
 import LoadoutsContext from '../context/Loadouts'
+import GrenadeDetails from './GrenadeDetails'
+import GrenadeList from './GrenadeList'
 
 export default function LoadoutDetails({ ...props }) {
 
@@ -38,9 +40,17 @@ export default function LoadoutDetails({ ...props }) {
     const newStrat4 = strategemData.find(x => x.id === newLoadout.strat4) || null
     const newPrimary = primaryWeaponData.find(x => x.id === newLoadout.primary) || null
     const newSecondary = secondaryWeaponData.find(x => x.id === newLoadout.secondary) || null
+    const newGrenade = grenadeData.find(x => x.id === newLoadout.grenade) || null
 
     const activeChanges = useMemo(() => {
-        if (newStrat1 === null || newStrat2 === null || newStrat3 === null || newStrat4 === null || newPrimary === null || newSecondary === null) return false
+        if (newStrat1 === null
+            || newStrat2 === null
+            || newStrat3 === null
+            || newStrat4 === null
+            || newPrimary === null
+            || newSecondary === null
+            || newGrenade === null
+        ) return false
         return name !== selectedLoadout.name
             || newStrat1?.id !== selectedLoadout.strat1
             || newStrat2?.id !== selectedLoadout.strat2
@@ -48,7 +58,8 @@ export default function LoadoutDetails({ ...props }) {
             || newStrat4?.id !== selectedLoadout.strat4
             || newPrimary?.id !== selectedLoadout.primary
             || newSecondary?.id !== selectedLoadout.secondary
-    }, [name, selectedLoadout, newStrat1, newStrat2, newStrat3, newStrat4, newPrimary, newSecondary])
+            || newGrenade?.id !== selectedLoadout.grenade
+    }, [name, selectedLoadout, newStrat1, newStrat2, newStrat3, newStrat4, newPrimary, newSecondary, newGrenade])
 
     const handleSave = useCallback(() => {
         const data = {
@@ -90,7 +101,7 @@ export default function LoadoutDetails({ ...props }) {
                 background: ${colors.lighter};
 
                 display: grid; 
-                grid-template: min-content min-content min-content min-content 1fr min-content min-content /  1fr 1fr;
+                grid-template: min-content min-content min-content min-content min-content 1fr min-content min-content /  1fr 1fr;
                 grid-gap: 0.2em;
                 padding: 1em;
 
@@ -100,17 +111,17 @@ export default function LoadoutDetails({ ...props }) {
                 <input
                     type='text'
                     className={css`
-                    align-self: center;
-                    text-align: center;
-                    width: 100%;
-                    font-size: 1.2em;
-                    border: none;
-                    cursor: pointer;
-                    padding: 0.5em 0;
-                    background: black;
-                    border-radius: 5px;
-                    grid-column: span 2;
-                `}
+                        align-self: center;
+                        text-align: center;
+                        width: 100%;
+                        font-size: 1.2em;
+                        border: none;
+                        cursor: pointer;
+                        padding: 0.5em 0;
+                        background: black;
+                        border-radius: 5px;
+                        grid-column: span 2;
+                    `}
                     maxLength='24'
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -160,6 +171,16 @@ export default function LoadoutDetails({ ...props }) {
                             : { type: 'secondary', target: 'secondary' }
                     )}
                 />
+                <GrenadeDetails grenade={newGrenade} active={selectedTarget.target === 'grenade'}
+                    onClick={() => setSelectedTarget(
+                        selectedTarget.target === 'grenade' ?
+                            { type: null, target: null }
+                            : { type: 'grenade', target: 'grenade' }
+                    )}
+                />
+                <div></div>{/* placeholder for armordetails */}
+
+
 
                 <div className={css`flex-grow: 1;`} />
 
@@ -230,6 +251,20 @@ export default function LoadoutDetails({ ...props }) {
                     filterArr={[newSecondary?.id]}
                 />
             }
+            {selectedTarget.type === 'grenade' &&
+                <GrenadeList
+                    handleClick={(id) => {
+                        setNewLoadout(prev => {
+                            return {
+                                ...prev,
+                                [selectedTarget.target]: id
+                            }
+                        })
+                        setSelectedTarget({ type: null, target: null })
+                    }}
+                    filterArr={[newGrenade?.id]}
+                />
+            }
             {!selectedTarget.type &&
                 <LoadoutSummary
                     strat1={newStrat1}
@@ -238,6 +273,7 @@ export default function LoadoutDetails({ ...props }) {
                     strat4={newStrat4}
                     primary={newPrimary}
                     secondary={newSecondary}
+                    grenade={newGrenade}
                 />
             }
         </>
