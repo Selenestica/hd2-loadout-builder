@@ -1,6 +1,7 @@
 import { css } from '@emotion/css'
 import { colors } from '../data/constants'
 import { strategemData, primaryWeaponData, secondaryWeaponData, grenadeData, armorData } from '../data/hardcodedData'
+import ArmorSVG from './ArmorSVG'
 
 export default function Loadout({ active, data, setLoadouts, ...props }) {
 
@@ -24,6 +25,7 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
     const prim = primaryWeaponData.find(x => x.id === primary)
     const sec = secondaryWeaponData.find(x => x.id === secondary)
     const gren = grenadeData.find(x => x.id === grenade)
+    const arm = armorData.find(x => x.id === armor)
 
     return (
         <div className={css`
@@ -41,7 +43,7 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
             padding: 0.5em;
             overflow: auto;
 
-            img, div > div{
+            img, > div > div{
                 background: ${colors.lighter};;
                 width: 3em;
                 height: 3em;
@@ -69,6 +71,7 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
                  {prim ? <img src={prim?.icon} alt={''} title={prim?.name}/> : <div />}
                  {sec ? <img src={sec?.icon} alt={''} title={sec?.name}/> : <div />}
                  {gren ? <img src={gren?.icon} alt={''} title={gren?.name}/> : <div />}
+                 {arm ? <ArmorSVG armor={arm} title={arm?.name}/> : <div />}
             </div>
         </div >
     )

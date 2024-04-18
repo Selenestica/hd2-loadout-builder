@@ -19,10 +19,10 @@ export default function LoadoutList({
             strat2: 26,
             strat3: null,
             strat4: null,
-            primary: 1,
-            secondary: 1,
-            grenade: 1,
-            armor: 1,
+            primary: null,
+            secondary: null,
+            grenade: null,
+            armor: null,
         }
         addLoadout(newLoadout).then(loadout => {
             setLoadouts(current => [

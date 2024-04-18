@@ -1,15 +1,16 @@
 import { ReactSVG } from "react-svg"
 import { css } from "@emotion/css"
+import { colors } from "../data/constants"
 
 export default function ArmorSVG({ armor, ...props }) {
 
-    return <div className={css`
-            background: black; 
+    return <span className={css`
+            background: ${colors.lighter}; 
             width: 3em; 
             height: 3em;
             position: relative;
         `
-    }>
+    }{...props}>
         <ReactSVG
             src={armor?.icon}
             alt=""
@@ -25,6 +26,6 @@ export default function ArmorSVG({ armor, ...props }) {
         }>
             {armor.abbr}
         </div>
-    </div>
+    </span>
 
 }

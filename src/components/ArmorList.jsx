@@ -9,10 +9,10 @@ export default function ArmorList({ handleClick, filterArr }) {
 
     const sortedArmors = useMemo(() => {
         armorData.sort((a, b) => (
-            a.id > b.id
+            a.type === b.type ? a.name.localeCompare(b.name) :
+                    (a.type === 'light' ? 1 : a.type === 'medium' ? 2 : 3) > (b.type === 'light' ? 1 : b.type === 'medium' ? 2 : 3)
         ))
         return armorData
-
     }, [armorData])
 
     return (

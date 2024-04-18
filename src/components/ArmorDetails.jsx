@@ -21,7 +21,7 @@ export default function ArmorDetails({ armor, active, ...props }) {
 
         {armor?.icon ?
             <ArmorSVG armor={armor} />
-            : <div className={css`width: 3em; height: 3em; background: black;`} />
+            : <div className={css`width: 3em; height: 3em; background: ${colors.lighter};`} />
         }
 
         <div>{armor?.name || 'Empty Armor'}</div>

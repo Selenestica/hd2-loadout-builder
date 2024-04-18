@@ -111,7 +111,7 @@ export default function PrimaryList({ handleClick, filterArr }) {
                             display: grid;
                             grid-template-columns: repeat(3, 1fr);
                             grid-gap: 2px;
-                            height: 40%;
+                            height: 50%;
                             background: ${colors.lighter};
                             border-radius: 15px;
                             overflow: hidden;
