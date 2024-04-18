@@ -9,7 +9,7 @@ export default function App() {
     return (
         <div className={css`
                 display: grid;
-                grid-template: 90vh / 36em 30em 40em;
+                grid-template: 90vh / 38.5em 30em 40em;
                 padding: 2em;
                 gap: 1em;
              `}>
@@ -20,6 +20,9 @@ export default function App() {
 }
 
 // TO DO:
-// import / export app data
+// add armor
 // add images to prim, sec, grenade, armor
 // add prim, sec, grenades and armor calculation into the charts.
+// random loadout
+// random heavy loadout, light loadout, long / short range etc...
+// import / export app data
