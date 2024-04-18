@@ -18,8 +18,8 @@ export default function SecondaryDetails({ secondary, active, ...props }) {
             `} {...props}>
 
         {secondary?.icon ?
-            <img src={secondary?.icon} alt="" className={css`width: 3em; height: 3em; background: black;`} />
-            : <div className={css`width: 3em; height: 3em; background: black;`} />
+            <img src={secondary?.icon} alt="" className={css`width: 3em; height: 3em; background: ${colors.lighter};`} />
+            : <div className={css`width: 3em; height: 3em; background: ${colors.lighter};`} />
         }
 
         <div>{secondary?.name || 'Empty Secondary'}</div>

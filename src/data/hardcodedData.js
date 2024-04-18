@@ -51,13 +51,44 @@ import stratwalkingbarrage from '../assets/strat-walkingbarrage.webp'
 import lightSVG from '../assets/light.svg'
 import mediumSVG from '../assets/medium.svg'
 import heavySVG from '../assets/heavy.svg'
+import adjudicator from '../assets/weapons/adj.webp'
+import grenadePistol from '../assets/weapons/grenade-pistol.webp'
+import redeemer from '../assets/weapons/redeemer.webp'
+import senator from '../assets/weapons/senator.webp'
+import dagger from '../assets/weapons/dagger.webp'
+import defender from '../assets/weapons/defender.webp'
+import lib from '../assets/weapons/lib.webp'
+import libPen from '../assets/weapons/lib-pen.webp'
+import libConc from '../assets/weapons/lib-conc.webp'
+import diligence from '../assets/weapons/diligence.webp'
+import diligenceCs from '../assets/weapons/diligence-cs.webp'
+import punisher from '../assets/weapons/punisher.webp'
+import breaker from '../assets/weapons/breaker.webp'
+import slug from '../assets/weapons/slug.webp'
+import breakInc from '../assets/weapons/break-inc.webp'
+import breakSp from '../assets/weapons/break-sp.webp'
+import punisherPl from '../assets/weapons/punisher-pl.webp'
+import blitz from '../assets/weapons/blitz.webp'
+import crossbow from '../assets/weapons/crossbow.webp'
+import eruptor from '../assets/weapons/eruptor.webp'
+import dominator from '../assets/weapons/dominator.webp'
+import scythe from '../assets/weapons/scythe.webp'
+import sickle from '../assets/weapons/sickle.webp'
+import scor from '../assets/weapons/scor.webp'
+import thermite from '../assets/weapons/thermite.webp'
+import incendiary from '../assets/weapons/incendiary.webp'
+import smoke from '../assets/weapons/smoke.webp'
+import frag from '../assets/weapons/frag.webp'
+import impact from '../assets/weapons/impact.webp'
+import he from '../assets/weapons/he.webp'
+
 
 export const primaryWeaponData = [
     {
         id: 1,
         type: 'Assault rifle',
         name: "AR23 Liberator",
-        icon: null,
+        icon: lib,
         ingameStats: {
             damage: 55,
             capacity: 45,
@@ -75,7 +106,7 @@ export const primaryWeaponData = [
         id: 2,
         type: 'Assault rifle',
         name: "AR23P Liberator Penetrator",
-        icon: null,
+        icon: libPen,
         ingameStats: {
             damage: 45,
             capacity: 30,
@@ -93,7 +124,7 @@ export const primaryWeaponData = [
         id: 3,
         type: 'Assault rifle',
         name: "AR23C Liberator Concussive",
-        icon: null,
+        icon: libConc,
         ingameStats: {
             damage: 55,
             capacity: 30,
@@ -111,7 +142,7 @@ export const primaryWeaponData = [
         id: 4,
         type: 'Marksman rifle',
         name: "BR-14 Adjudicator",
-        icon: null,
+        icon: adjudicator,
         ingameStats: {
             damage: 80,
             capacity: 25,
@@ -129,7 +160,7 @@ export const primaryWeaponData = [
         id: 5,
         type: 'Marksman rifle',
         name: "R-63 Diligence",
-        icon: null,
+        icon: diligence,
         ingameStats: {
             damage: 112,
             capacity: 20,
@@ -147,7 +178,7 @@ export const primaryWeaponData = [
         id: 6,
         type: 'Marksman rifle',
         name: "R-63CS Diligence Counter Sniper",
-        icon: null,
+        icon: diligenceCs,
         ingameStats: {
             damage: 128,
             capacity: 15,
@@ -165,7 +196,7 @@ export const primaryWeaponData = [
         id: 7,
         type: 'SMG',
         name: "SMG-37 Defender",
-        icon: null,
+        icon: defender,
         ingameStats: {
             damage: 70,
             capacity: 45,
@@ -183,7 +214,7 @@ export const primaryWeaponData = [
         id: 8,
         type: 'Shotgun',
         name: "SG-8 Punisher",
-        icon: null,
+        icon: punisher,
         ingameStats: {
             damage: 405,
             capacity: 16,
@@ -201,7 +232,7 @@ export const primaryWeaponData = [
         id: 9,
         type: 'Shotgun',
         name: "SG-8S Slugger",
-        icon: null,
+        icon: slug,
         ingameStats: {
             damage: 250,
             capacity: 16,
@@ -219,7 +250,7 @@ export const primaryWeaponData = [
         id: 10,
         type: 'Shotgun',
         name: "SG-8P Punisher Plasma",
-        icon: null,
+        icon: punisherPl,
         ingameStats: {
             damage: 250,
             capacity: 8,
@@ -237,7 +268,7 @@ export const primaryWeaponData = [
         id: 11,
         type: 'Shotgun',
         name: "ARC-12 Blitzer",
-        icon: null,
+        icon: blitz,
         ingameStats: {
             damage: 250,
             capacity: 'infinite',
@@ -255,7 +286,7 @@ export const primaryWeaponData = [
         id: 12,
         type: 'Shotgun',
         name: "SG-225 Breaker",
-        icon: null,
+        icon: breaker,
         ingameStats: {
             damage: 330,
             capacity: 13,
@@ -273,7 +304,7 @@ export const primaryWeaponData = [
         id: 13,
         type: 'Shotgun',
         name: "SG-225SP Breaker Spray&Pray",
-        icon: null,
+        icon: breakSp,
         ingameStats: {
             damage: 192,
             capacity: 26,
@@ -291,7 +322,7 @@ export const primaryWeaponData = [
         id: 14,
         type: 'Shotgun',
         name: "SG-225IE Breaker Incendiary",
-        icon: null,
+        icon: breakInc,
         ingameStats: {
             damage: 240,
             capacity: 25,
@@ -309,7 +340,7 @@ export const primaryWeaponData = [
         id: 15,
         type: 'Explosive',
         name: "CB-9 Exploding Crossbow",
-        icon: null,
+        icon: crossbow,
         ingameStats: {
             damage: 420,
             capacity: 5,
@@ -327,7 +358,7 @@ export const primaryWeaponData = [
         id: 16,
         type: 'Explosive',
         name: "JAR-5 Dominator",
-        icon: null,
+        icon: dominator,
         ingameStats: {
             damage: 300,
             capacity: 15,
@@ -345,7 +376,7 @@ export const primaryWeaponData = [
         id: 17,
         type: 'Explosive',
         name: "R-36 Eruptor",
-        icon: null,
+        icon: eruptor,
         ingameStats: {
             damage: 380,
             capacity: 5,
@@ -363,7 +394,7 @@ export const primaryWeaponData = [
         id: 18,
         type: 'Energy',
         name: "LAS-5 Scythe",
-        icon: null,
+        icon: scythe,
         ingameStats: {
             dps: 300,
             fireLimit: 8,
@@ -380,7 +411,7 @@ export const primaryWeaponData = [
         id: 19,
         type: 'Energy',
         name: "LAS-16 Sickle",
-        icon: null,
+        icon: sickle,
         ingameStats: {
             damage: 55,
             fireLimit: 9,
@@ -398,7 +429,7 @@ export const primaryWeaponData = [
         id: 20,
         type: 'Energy',
         name: "PLAS-1 Scorcher",
-        icon: null,
+        icon: scor,
         ingameStats: {
             damage: 200,
             fireLimit: 15,
@@ -455,7 +486,7 @@ export const secondaryWeaponData = [
         id: 2,
         type: 'pistol',
         name: "P-19 Redeemer",
-        icon: '#',
+        icon: redeemer,
         ingameStats: {
             damage: 60,
             capacity: 31,
@@ -473,7 +504,7 @@ export const secondaryWeaponData = [
         id: 3,
         type: 'pistol',
         name: "GP-31 Grenade Pistol",
-        icon: '#',
+        icon: grenadePistol,
         ingameStats: {
             damage: 600,
             capacity: 1,
@@ -491,7 +522,7 @@ export const secondaryWeaponData = [
         id: 4,
         type: 'pistol',
         name: "LAS-7 Dagger",
-        icon: '#',
+        icon: dagger,
         ingameStats: {
             dps: 150,
             fireLimit: 5,
@@ -508,7 +539,7 @@ export const secondaryWeaponData = [
         id: 5,
         type: 'pistol',
         name: "P-4 Senator",
-        icon: '#',
+        icon: senator,
         ingameStats: {
             damage: 150,
             capacity: 6,
@@ -528,7 +559,7 @@ export const grenadeData = [
     {
         id: 1,
         name: "G-6 Frag",
-        icon: '#',
+        icon: frag,
         ingameStats: {
             damage: 250,
             penetration: 3,
@@ -544,7 +575,7 @@ export const grenadeData = [
     {
         id: 2,
         name: "G-12 High Explosive",
-        icon: '#',
+        icon: he,
         ingameStats: {
             damage: 400,
             penetration: 4,
@@ -560,7 +591,7 @@ export const grenadeData = [
     {
         id: 3,
         name: "G-10 Incendiary",
-        icon: '#',
+        icon: incendiary,
         ingameStats: {
             damage: 150,
             penetration: 3,
@@ -576,7 +607,7 @@ export const grenadeData = [
     {
         id: 4,
         name: "G-16 Impact",
-        icon: '#',
+        icon: impact,
         ingameStats: {
             damage: 400,
             penetration: 4,
@@ -592,7 +623,7 @@ export const grenadeData = [
     {
         id: 5,
         name: "G-23 Stun",
-        icon: '#',
+        icon: null,
         ingameStats: {
             damage: 0,
             penetration: 6,
@@ -608,7 +639,7 @@ export const grenadeData = [
     {
         id: 6,
         name: "G-3 Smoke",
-        icon: '#',
+        icon: smoke,
         ingameStats: {
             damage: 0,
             penetration: 0,
@@ -624,7 +655,7 @@ export const grenadeData = [
     {
         id: 7,
         name: "G-123 Thermite",
-        icon: '#',
+        icon: thermite,
         ingameStats: {
             damage: 100,
             penetration: 7,

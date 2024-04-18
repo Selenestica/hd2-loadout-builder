@@ -18,8 +18,8 @@ export default function PrimaryDetails({ primary, active, ...props }) {
             `} {...props}>
 
         {primary?.icon ?
-            <img src={primary?.icon} alt="" className={css`width: 3em; height: 3em; background: black;`} />
-            : <div className={css`width: 3em; height: 3em; background: black;`} />
+            <img src={primary?.icon} alt="" className={css`width: 3em; height: 3em; background: ${colors.lighter};`} />
+            : <div className={css`width: 3em; height: 3em; background: ${colors.lighter};`} />
         }
 
         <div>{primary?.name || 'Empty Primary'}</div>

@@ -42,7 +42,7 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
             overflow: auto;
 
             img, div > div{
-                background: black;
+                background: ${colors.lighter};;
                 width: 3em;
                 height: 3em;
             }
@@ -64,6 +64,7 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
 
             <div className={css`
                 display: flex;
+                gap: 2px;
             `}>
                  {prim ? <img src={prim?.icon} alt={''} title={prim?.name}/> : <div />}
                  {sec ? <img src={sec?.icon} alt={''} title={sec?.name}/> : <div />}

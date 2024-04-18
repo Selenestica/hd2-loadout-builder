@@ -45,7 +45,7 @@ export default function SecondaryList({ handleClick, filterArr }) {
                         onClick={() => filterArr.includes(secondary.id) ? handleClick(null) : handleClick(secondary.id)}
                         onPointerEnter={() => setHoverState(secondary)}
                     >
-                        <img src={secondary.icon} alt={''} />
+                        <img src={secondary.icon} alt={''}  className={css`width: 3em; height: 3em;`} />
                         {secondary.name}
                     </div>
                 })}

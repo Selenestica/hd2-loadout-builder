@@ -43,7 +43,7 @@ export default function GrenadeList({ handleClick, filterArr }) {
                         onClick={() => filterArr.includes(grenade.id) ? handleClick(null) : handleClick(grenade.id)}
                         onPointerEnter={() => setHoverState(grenade)}
                     >
-                        <img src={grenade.icon} alt={''} />
+                        <img src={grenade.icon} alt={''} className={css`width: 3em; height: 3em;`} />
                         {grenade.name}
                     </div>
                 })}

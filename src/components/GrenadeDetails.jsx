@@ -18,8 +18,8 @@ export default function GrenadeDetails({ grenade, active, ...props }) {
             `} {...props}>
 
         {grenade?.icon ?
-            <img src={grenade?.icon} alt="" className={css`width: 3em; height: 3em; background: black;`} />
-            : <div className={css`width: 3em; height: 3em; background: black;`} />
+            <img src={grenade?.icon} alt="" className={css`width: 3em; height: 3em; background: ${colors.lighter};`} />
+            : <div className={css`width: 3em; height: 3em; background: ${colors.lighter};`} />
         }
 
         <div>{grenade?.name || 'Empty Grenade'}</div>

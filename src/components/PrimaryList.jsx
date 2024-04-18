@@ -46,7 +46,7 @@ export default function PrimaryList({ handleClick, filterArr }) {
                         onClick={() => filterArr.includes(primary.id) ? handleClick(null) : handleClick(primary.id)}
                         onPointerEnter={() => setHoverState(primary)}
                     >
-                        <img src={primary.icon} alt={''} />
+                        <img src={primary.icon} alt={''} className={css`width: 3em; height: 3em;`} />
                         {primary.name}
                     </div>
                 })}
