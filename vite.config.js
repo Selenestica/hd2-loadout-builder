@@ -5,5 +5,5 @@ export default defineConfig({
   plugins: [
     react(),
   ],
-  assetsInclude: ['**/*.bmp']
+  assetsInclude: ['**/*.webp']
 });

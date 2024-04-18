@@ -44,7 +44,7 @@ export default function LoadoutList({ setSelectedLoadout, selectedLoadout,
                     key={loadout.id}
                     data={loadout}
                     onClick={() => {setSelectedLoadout(loadout)}}
-                    active={selectedLoadout.id === loadout.id}
+                    active={selectedLoadout?.id === loadout.id}
                 />)}
             </div>
             <button
