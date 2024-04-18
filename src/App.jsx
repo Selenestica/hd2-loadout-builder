@@ -20,9 +20,13 @@ export default function App() {
 }
 
 // TO DO:
-// add armor
-// add images to prim, sec, grenade, armor
+// add bugs / bots tag
 // add prim, sec, grenades and armor calculation into the charts.
+// add stacked bar chart for removal
+
+// supply pack / engi armor adding to grenade coverage and limited ammo coverage
+// not cumulating multiple support weapons, except eat
+
 // random loadout
 // random heavy loadout, light loadout, long / short range etc...
 // import / export app data
