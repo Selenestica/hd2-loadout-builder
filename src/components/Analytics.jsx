@@ -61,14 +61,14 @@ export default function Analytics({ strat1, strat2, strat3, strat4, primary, sec
             }
         }
 
-
         // to do: take into account multiple support weapons that require the same weapon slot 3:
-        const supportSlotIndices = []
+        const supportSlotIndices = [];
         [s1, s2, s3, s4].forEach((s, i) => {
-            if (!!s?.supportSlotNecessary) overlappingStratagemIndices.push(i)
+            if (!!s?.supportSlotNecessary) supportSlotIndices.push(i)
         })
         const overlapDivisor = supportSlotIndices.length || 1
 
+        // to do: take into account uptime.. NEVERMIND this is factored into the base 'coverage'
 
         // coverage is normalized for the equipment category, add weights to factor in their relative power
         const strat1Weight = supportSlotIndices.includes(0) ? 1 / overlapDivisor : 1

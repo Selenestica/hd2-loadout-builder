@@ -18,7 +18,7 @@ import ArmorList from './ArmorList'
 
 export default function LoadoutDetails({ ...props }) {
 
-    const { selectedLoadout, setSelectedLoadout, setLoadouts } = useContext(LoadoutsContext)
+    const { selectedLoadout, setSelectedLoadout, setLoadouts, loadouts } = useContext(LoadoutsContext)
 
     useEffect(() => {
         preloadImages()
@@ -28,6 +28,71 @@ export default function LoadoutDetails({ ...props }) {
     const [selectedTarget, setSelectedTarget] = useState({ type: null, target: null })
     const [newLoadout, setNewLoadout] = useState(selectedLoadout)
     const [confirmDelete, setConfirmDelete] = useState(false)
+
+    const generateRandomLoadout = useCallback(() => {
+
+        setName('Random Loadout')
+
+        function pickRandom(arr) {
+            return arr[Math.floor(Math.random() * arr.length)]
+        }
+
+        function generateRandomObject() {
+            let strats
+            while (true) { // there has to be a better way to do this...
+                const first = pickRandom(strategemData)
+                const second = pickRandom(strategemData)
+                if (first.id === second.id) continue
+                const third = pickRandom(strategemData)
+                if (third.id === first.id || third.id === second.id) continue
+                const fourth = pickRandom(strategemData)
+                if (fourth.id === first.id || fourth.id === second.id || fourth.id === third.id) continue
+                strats = [first, second, third, fourth]
+                break
+            }
+
+            return {
+                name: 'Random Loadout',
+                strat1: strats[0],
+                strat2: strats[1],
+                strat3: strats[2],
+                strat4: strats[3],
+                primary: pickRandom(primaryWeaponData),
+                secondary: pickRandom(secondaryWeaponData),
+                grenade: pickRandom(grenadeData),
+                armor: pickRandom(armorData),
+            }
+        }
+
+        let resultingData
+        while (true) {
+            const attempt = generateRandomObject()
+            // strats may not contain multiple backpacks
+            const containsMultipleBackpacks = [attempt.strat1, attempt.strat2, attempt.strat3, attempt.strat4].map(x => x.hasBackpack).filter(x => !!x).length > 1
+            if (containsMultipleBackpacks) continue
+            // strats may not contain multiple support slot consumers
+            const containsMultipleSupportSlots = [attempt.strat1, attempt.strat2, attempt.strat3, attempt.strat4].map(x => x.supportSlotNecessary).filter(x => !!x).length > 1
+            if (containsMultipleSupportSlots) continue
+            resultingData = attempt
+            break
+        }
+
+        setNewLoadout(prev => {
+            return {
+                id: prev.id,
+                strat1: resultingData.strat1.id,
+                strat2: resultingData.strat2.id,
+                strat3: resultingData.strat3.id,
+                strat4: resultingData.strat4.id,
+                primary: resultingData.primary.id,
+                secondary: resultingData.secondary.id,
+                grenade: resultingData.grenade.id,
+                armor: resultingData.armor.id,
+            }
+        })
+    }, [loadouts])
+
+
 
     useEffect(() => {
         setName(selectedLoadout.name)
@@ -63,7 +128,7 @@ export default function LoadoutDetails({ ...props }) {
             || newPrimary?.id !== selectedLoadout.primary
             || newSecondary?.id !== selectedLoadout.secondary
             || newGrenade?.id !== selectedLoadout.grenade
-            || newArmor?.id !== selectedLoadout.grenade
+            || newArmor?.id !== selectedLoadout.armor
     }, [name, selectedLoadout, newStrat1, newStrat2, newStrat3, newStrat4, newPrimary, newSecondary, newGrenade, newArmor])
 
     const handleSave = useCallback(() => {
@@ -193,6 +258,13 @@ export default function LoadoutDetails({ ...props }) {
 
 
                 <div className={css`flex-grow: 1;`} />
+
+                <button
+                    className={css`padding: 0.2em;`}
+                    onClick={generateRandomLoadout}
+                >
+                    Randomize
+                </button>
 
                 <div className={css`
                         width: 100%; 
