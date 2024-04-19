@@ -3,7 +3,7 @@ import { css } from "@emotion/css"
 import { colors } from "../data/constants"
 import RangeRemovalMatrix from "./RangeRemovalMatrix"
 
-function prepRangeCoverageData(obj, weight = 1) {
+/* function prepRangeCoverageData(obj, weight = 1) {
     const output = []
     for (const coverage of [4, 3, 2, 1, 0]) {
         const cov = { id: coverage, data: [] }
@@ -42,6 +42,48 @@ function sumRangeCoverages(rangeCoverageArrays) {
             })
         }
         output.push(cov)
+    }
+    return output
+} */
+function prepRangeCoverageData(obj, weight = 1) {
+    const output = []
+    for (const RANGE of [2, 1, 0]) {
+        const RAN = { id: RANGE, data: [] }
+        for (const COVERAGE of [0, 1, 2, 3, 4]) {
+            if (!obj || !obj.offensiveRange || !obj.coverage) {
+                RAN.data.push({
+                    x: COVERAGE,
+                    y: 0
+                })
+                continue
+            }
+            const score = obj.offensiveRange[RANGE] * obj.coverage[COVERAGE]
+            RAN.data.push({
+                x: COVERAGE,
+                y: score * weight
+            })
+        }
+        output.push(RAN)
+    }
+    return output
+}
+
+function sumRangeCoverages(rangeCoverageArrays) {
+    const output = []
+
+    for (const RANGE of [2, 1, 0]) {
+        const RAN = { id: RANGE, data: [] }
+        for (const COVERAGE of [0, 1, 2, 3, 4]) {
+            const yValues = rangeCoverageArrays.map(arr => {
+                return arr.find(x => x.id === RANGE).data.find(d => d.x === COVERAGE).y
+            })
+            const sum = yValues.reduce((a, b) => a + b, 0)
+            RAN.data.push({
+                x: COVERAGE,
+                y: sum
+            })
+        }
+        output.push(RAN)
     }
     return output
 }
@@ -99,45 +141,45 @@ export default function Analytics({ strat1, strat2, strat3, strat4, primary, sec
     `}>
         <div className={css`
             display: grid;
-            grid-template: 18em 3em / 3em 10em;
+            grid-template: 13em 3em / 3em 20em;
         `}>
             <div className={css`
                 place-self: center; 
                 transform: rotate(-90deg);
                 display: flex;
                 justify-content: space-around;
-                width: 20em;
+                width: 14em;
             `}>
                 <div className={css`
                     transform: translate(0, 0.5em);
                     opacity: 0.4;
-                `}>lights</div>
+                `}>short</div>
                 <div className={css`
                     transform: translate(0, -0.5em);
-                `}>Removal</div>
+                `}>Range</div>
                 <div className={css`
                     transform: translate(0, 0.5em);
                     opacity: 0.4;
-                `}>heavies</div>
+                `}>long</div>
             </div>
             <RangeRemovalMatrix data={rangeRemovalData} />
             <div></div>
             <div className={css`
                 display: flex;
-                justify-content: space-around;
-                width: 10em;
+                justify-content: space-between;
+                width: 100%;
             `}>
                 <div className={css`
                     transform: translate(0, -0.5em);
                     opacity: 0.4;
-                `}>short</div>
+                `}>lights</div>
                 <div className={css`
                     transform: translate(0, 0.5em);
-                `}>Range</div>
+                `}>Removal</div>
                 <div className={css`
                     transform: translate(0, -0.5em);
                     opacity: 0.4;
-                `}>long</div>
+                `}>heavies</div>
             </div>
         </div>
     </div>
