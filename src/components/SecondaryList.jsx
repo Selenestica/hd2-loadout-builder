@@ -118,8 +118,8 @@ export default function SecondaryList({ handleClick, filterArr }) {
                         `}>
                             {hoverState.offensiveRange.map((el, i) => <div key={i} className={css`
                             width: 100%;
-                            height: ${el * el * 100}%;
-                            background: white;
+                            height: ${el * 100}%;
+                            background: ${el > 1 ? colors.gold : 'white'};
                             align-self: center;
                         `} title={i === 0 ? 'short' : i === 1 ? 'medium' : i === 2 ? 'long' : ''} />)}
                         </div>
@@ -136,9 +136,9 @@ export default function SecondaryList({ handleClick, filterArr }) {
                         `}>
                             {hoverState.coverage.map((el, i) => <div key={i} className={css`
                             width: 100%;
-                            height: ${el * el * 100}%;
+                            height: ${el * 100}%;
                             align-self: center;
-                            background: white;
+                            background: ${el > 1 ? colors.gold : 'white'};
                         `} />)}
                         </div>
 

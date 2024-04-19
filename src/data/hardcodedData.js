@@ -115,7 +115,7 @@ export const primaryWeaponData = [
             traits: ['medium armor penetrating']
         },
         offensiveRange: [1, 1, 0],
-        coverage: [1, 1, 0.5, 0, 0],
+        coverage: [0.8, 1, 0.5, 0, 0],
         sluggish: false,
         stun: false,
         objectives: []
@@ -133,7 +133,7 @@ export const primaryWeaponData = [
             traits: ['light armor penetrating', 'explosive damage type']
         },
         offensiveRange: [1, 1, 0],
-        coverage: [1, 0.5, 0, 0, 0],
+        coverage: [0.8, 0.5, 0, 0, 0],
         sluggish: false,
         stun: true,
         objectives: []
@@ -151,7 +151,7 @@ export const primaryWeaponData = [
             traits: ['medium armor penetrating']
         },
         offensiveRange: [1, 1, 0.5],
-        coverage: [1, 1, 0.5, 0, 0],
+        coverage: [0.8, 1, 0.5, 0, 0],
         sluggish: false,
         stun: false,
         objectives: []
@@ -948,10 +948,10 @@ export const strategemData = [
         id: 7,
         name: "AC-8 Autocannon",
         icon: strat7,
-        offensiveRange: [1, 1, 0.5],
+        offensiveRange: [0.8, 1, 0.5],
         type: 'support-weapon',
         color: 'blue',
-        coverage: [1, 1, 1, 1, 0.2],
+        coverage: [0.5, 1, 1, 1, 0.2],
         supportSlotNecessary: true,
         uptime: 'very high',
         hasBackpack: true,
