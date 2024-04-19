@@ -615,7 +615,7 @@ export const grenadeData = [
             fuse: 0,
             traits: []
         },
-        offensiveRange: [0.5, 1, 0],
+        offensiveRange: [0.7, 1, 0],
         coverage: [1, 1, 1, 0.5, 0.5],
         stun: true,
         objectives: []
@@ -664,7 +664,7 @@ export const grenadeData = [
             traits: []
         },
         offensiveRange: [1, 1, 0],
-        coverage: [0, 0, 0, 1, 0.5],
+        coverage: [0, 0, 0, 1, 0.75],
         stun: false,
         objectives: []
     },
@@ -875,6 +875,8 @@ export const strategemData = [
         type: 'support-weapon',
         color: 'blue',
         coverage: [1, 1, 0.5, 0, 0],
+        supplyBuffedCoverage: [1.5, 1.5, 1, 0, 0],
+        supportSlotNecessary: true,
         uptime: 'high',
         objectives: []
     },
@@ -882,10 +884,12 @@ export const strategemData = [
         id: 2,
         name: "APW-1 Anti-Materiel Rifle",
         icon: strat2,
-        offensiveRange: [1, 1, 0],
+        offensiveRange: [0.5, 1, 1],
         type: 'support-weapon',
         color: 'blue',
         coverage: [0.5, 1, 1.5, 1, 0],
+        supplyBuffedCoverage: [0.75, 1.5, 2.25, 1.5, 0],
+        supportSlotNecessary: true,
         uptime: 'very high',
         objectives: []
     },
@@ -897,6 +901,8 @@ export const strategemData = [
         type: 'support-weapon',
         color: 'blue',
         coverage: [2, 0.5, 0, 0, 0],
+        supplyBuffedCoverage: [2.5, 1, 0, 0, 0],
+        supportSlotNecessary: true,
         uptime: 'very high',
         objectives: []
     },
@@ -908,6 +914,7 @@ export const strategemData = [
         type: 'support-weapon',
         color: 'blue',
         coverage: [0, 0, 0, 1, 1],
+        supportSlotNecessary: false,
         uptime: 'very high',
         objectives: []
     },
@@ -919,6 +926,7 @@ export const strategemData = [
         type: 'support-weapon',
         color: 'blue',
         coverage: [0, 0, 0, 1, 1],
+        supportSlotNecessary: true,
         uptime: 'very high',
         objectives: []
     },
@@ -930,6 +938,8 @@ export const strategemData = [
         type: 'support-weapon',
         color: 'blue',
         coverage: [1, 1, 1, 1, 0],
+        supplyBuffedCoverage: [1.5, 1.5, 1.5, 1.5, 0],
+        supportSlotNecessary: true,
         uptime: 'very high',
         objectives: []
     },
@@ -941,6 +951,7 @@ export const strategemData = [
         type: 'support-weapon',
         color: 'blue',
         coverage: [1, 1, 1, 1, 0],
+        supportSlotNecessary: true,
         uptime: 'very high',
         objectives: []
     },
@@ -952,6 +963,8 @@ export const strategemData = [
         type: 'support-weapon',
         color: 'blue',
         coverage: [0.5, 1, 1, 1, 0],
+        supplyBuffedCoverage: [0.75, 1.5, 1.5, 1.5, 0],
+        supportSlotNecessary: true,
         uptime: 'medium',
         objectives: []
     },
@@ -962,7 +975,9 @@ export const strategemData = [
         offensiveRange: [1, 1, 0.5],
         type: 'support-weapon',
         color: 'blue',
-        coverage: [0, 1, 2, 0.5, 0],
+        coverage: [0, 1, 2, 0.25, 0],
+        supplyBuffedCoverage: [0.5, 1.5, 3, 0.5, 0],
+        supportSlotNecessary: true,
         uptime: 'very high',
         objectives: []
     },
@@ -974,6 +989,7 @@ export const strategemData = [
         type: 'support-weapon',
         color: 'blue',
         coverage: [0, 0, 0, 0.5, 1],
+        supportSlotNecessary: true,
         uptime: 'very high',
         objectives: []
     },
@@ -1249,6 +1265,8 @@ export const strategemData = [
         type: 'support-weapon',
         color: 'blue',
         coverage: [1, 1, 1, 0.5, 0],
+        supplyBuffedCoverage: [2, 1.5, 1.5, 0.666, 0],
+        supportSlotNecessary: true,
         uptime: 'very high',
         objectives: []
     },
@@ -1260,6 +1278,7 @@ export const strategemData = [
         type: 'support-weapon',
         color: 'blue',
         coverage: [1, 1, 1, 1, 0],
+        supportSlotNecessary: true,
         uptime: 'very high',
         objectives: []
     },
@@ -1304,6 +1323,7 @@ export const strategemData = [
         type: 'support-weapon',
         color: 'blue',
         coverage: [1, 1, 1, 0.5, 0],
+        supportSlotNecessary: true,
         uptime: 'very high',
         objectives: []
     },
@@ -1315,6 +1335,7 @@ export const strategemData = [
         type: 'support-weapon',
         color: 'blue',
         coverage: [0, 0, 0, 1, 1],
+        supportSlotNecessary: true,
         uptime: 'very high',
         objectives: []
     },
@@ -1369,7 +1390,8 @@ export const strategemData = [
         offensiveRange: [1, 0.5, 0],
         type: 'backpack',
         color: 'blue',
-        coverage: [1, 1, 0, 0, 0],
+        coverage: [0.75, 0.75, 0, 0, 0],
+        supplyBuffedCoverage: [1, 1, 0, 0, 0],
         uptime: 'very high',
         objectives: []
     },
@@ -1414,6 +1436,7 @@ export const strategemData = [
         type: 'support-weapon',
         color: 'blue',
         coverage: [1, 1, 1, 1, 1],
+        supportSlotNecessary: false,
         uptime: 'low',
         objectives: []
     },

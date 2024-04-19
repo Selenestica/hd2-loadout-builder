@@ -14,6 +14,7 @@ export default function RangeRemovalMatrix({ data, ...props }) {
             axisBottom={null}
             axisRight={null}
             hoverTarget={'column'}
+            valueFormat={'>-.2g'}
             tooltip={(data) => <div></div>}
             colors={{
                 scheme: 'blues',

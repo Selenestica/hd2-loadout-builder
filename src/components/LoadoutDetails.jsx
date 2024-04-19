@@ -5,7 +5,7 @@ import { strategemData, primaryWeaponData, secondaryWeaponData, preloadImages, g
 import { updateLoadout, deleteLoadout } from '../data/indexedDB'
 import StrategemList from './StrategemList'
 import StrategemDetails from './StrategemDetails'
-import LoadoutSummary from './LoadoutSummary'
+import Analytics from './Analytics'
 import PrimaryDetails from './PrimaryDetails'
 import PrimaryList from './PrimaryList'
 import SecondaryList from './SecondaryList'
@@ -290,7 +290,7 @@ export default function LoadoutDetails({ ...props }) {
                 />
             }
             {!selectedTarget.type &&
-                <LoadoutSummary
+                <Analytics
                     strat1={newStrat1}
                     strat2={newStrat2}
                     strat3={newStrat3}
@@ -298,6 +298,7 @@ export default function LoadoutDetails({ ...props }) {
                     primary={newPrimary}
                     secondary={newSecondary}
                     grenade={newGrenade}
+                    armor={newArmor}
                 />
             }
         </>
