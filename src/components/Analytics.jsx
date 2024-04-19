@@ -89,28 +89,6 @@ export default function Analytics({ strat1, strat2, strat3, strat4, primary, sec
 
         return sumRangeCoverages([strat1Data, strat2Data, strat3Data, strat4Data, primaryData, secondaryData, grenadeData])
 
-
-
-        /* const arr = [strat1, strat2, strat3, strat4].filter(x => !!x)
-        const output = []
-
-        for (const coverage of [4, 3, 2, 1, 0]) {
-            const cov = { id: coverage, data: [] }
-            for (const range of [0, 1, 2]) {
-                const sum = arr
-                    .map(strat => strat.offensiveRange[range] * strat.coverage[coverage])
-                    ?.reduce(((a, b) => a + b), 0)
-                cov.data.push({
-                    x: range,
-                    y: sum || 0
-                })
-            }
-            output.push(cov)
-        }
-
-        return output */
-
-
     }, [strat1, strat2, strat3, strat4, primary, secondary, grenade, armor])
 
     return <div {...props} className={css`
