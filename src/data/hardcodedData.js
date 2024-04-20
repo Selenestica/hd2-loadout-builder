@@ -900,7 +900,16 @@ export const armorData = [
         longText: 'Increases initial inventory and holding capacity of stims by +2. Increases stim effect duration by 2.0s.',
         icon: heavySVG,
         type: 'heavy',
-    }
+    },
+    {
+        id: 22,
+        name: 'light arc',
+        bonus: 'electrical conduit',
+        abbr: 'ARC',
+        longText: 'Provides 95% resistance to arc damage.',
+        icon: mediumSVG,
+        type: 'light',
+    },
 ]
 
 /* const strategemTypes = ['back']

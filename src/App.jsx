@@ -18,7 +18,7 @@ export default function App() {
                     grid-template: 90vh / 39em 34em 1fr;
                     gap: 1em;
                     max-width: 100%;
-                    min-width: min(100%, 120em); 
+                    min-width: min(100%, 100em); 
                 `}>
                 <LoadoutList />
                 {selectedLoadout && <LoadoutDetails />}
