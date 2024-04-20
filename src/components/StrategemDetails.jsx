@@ -1,7 +1,7 @@
 import { css } from '@emotion/css'
 import { colors } from '../data/constants'
 
-export default function StrategemDetails({ strat, active, ...props }) {
+export default function StrategemDetails({ strat, active, reset, ...props }) {
 
     return (
         <div className={css`
@@ -12,11 +12,28 @@ export default function StrategemDetails({ strat, active, ...props }) {
             align-items: center;
             background: ${active ? colors.lighter : colors.darkBlue};
             padding: 0.4em;
+            position: relative;
 
             &:hover {
                 background: ${colors.lighter};
             }
         `} {...props}>
+            {strat && <div className={css`
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 20px;
+                height: 20px;
+                display: grid;
+                place-items: center;
+                font-size: 0.7em;
+                
+                &:hover {
+                    background: ${colors.lighter};
+                }
+            `} onClick={(e) => {e.stopPropagation(); reset(null)}}>&#x2718;
+            </div>}
+
             {strat?.icon ?
                 <img src={strat?.icon} alt="" className={css`width: 3em; height: 3em; background: black;`} />
                 : <div className={css`width: 3em; height: 3em; background: black;`} />

@@ -165,6 +165,20 @@ export default function LoadoutDetails({ ...props }) {
         }
     }, [selectedLoadout, setSelectedLoadout, setLoadouts])
 
+    const clearLoadout = useCallback(() => {
+        setNewLoadout(prev => ({
+            id: prev.id,
+            strat1: null,
+            strat2: null,
+            strat3: null,
+            strat4: null,
+            primary: null,
+            secondary: null,
+            grenade: null,
+            armor: null
+        }))
+    },[])
+
     return (
         <>
             <div className={css`
@@ -198,6 +212,10 @@ export default function LoadoutDetails({ ...props }) {
                 />
 
                 <StrategemDetails strat={newStrat1} active={selectedTarget.target === 'strat1'}
+                    reset={() => {
+                        setNewLoadout(prev => ({ ...prev, strat1: null }))
+                        setSelectedTarget({ type: null, target: null })
+                    }}
                     onClick={() => {
                         setSelectedTarget(
                             selectedTarget.target === 'strat1' ?
@@ -207,6 +225,10 @@ export default function LoadoutDetails({ ...props }) {
                     }}
                 />
                 <StrategemDetails strat={newStrat2} active={selectedTarget.target === 'strat2'}
+                    reset={() => {
+                        setNewLoadout(prev => ({ ...prev, strat2: null }))
+                        setSelectedTarget({ type: null, target: null })
+                    }}
                     onClick={() => setSelectedTarget(
                         selectedTarget.target === 'strat2' ?
                             { type: null, target: null }
@@ -214,6 +236,10 @@ export default function LoadoutDetails({ ...props }) {
                     )}
                 />
                 <StrategemDetails strat={newStrat3} active={selectedTarget.target === 'strat3'}
+                    reset={() => {
+                        setNewLoadout(prev => ({ ...prev, strat3: null }))
+                        setSelectedTarget({ type: null, target: null })
+                    }}
                     onClick={() => setSelectedTarget(
                         selectedTarget.target === 'strat3' ?
                             { type: null, target: null }
@@ -221,6 +247,10 @@ export default function LoadoutDetails({ ...props }) {
                     )}
                 />
                 <StrategemDetails strat={newStrat4} active={selectedTarget.target === 'strat4'}
+                    reset={() => {
+                        setNewLoadout(prev => ({ ...prev, strat4: null }))
+                        setSelectedTarget({ type: null, target: null })
+                    }}
                     onClick={() => setSelectedTarget(
                         selectedTarget.target === 'strat4' ?
                             { type: null, target: null }
@@ -228,6 +258,10 @@ export default function LoadoutDetails({ ...props }) {
                     )}
                 />
                 <PrimaryDetails primary={newPrimary} active={selectedTarget.target === 'primary'}
+                    reset={() => {
+                        setNewLoadout(prev => ({ ...prev, primary: null }))
+                        setSelectedTarget({ type: null, target: null })
+                    }}
                     onClick={() => setSelectedTarget(
                         selectedTarget.target === 'primary' ?
                             { type: null, target: null }
@@ -235,6 +269,10 @@ export default function LoadoutDetails({ ...props }) {
                     )}
                 />
                 <SecondaryDetails secondary={newSecondary} active={selectedTarget.target === 'secondary'}
+                    reset={() => {
+                        setNewLoadout(prev => ({ ...prev, secondary: null }))
+                        setSelectedTarget({ type: null, target: null })
+                    }}
                     onClick={() => setSelectedTarget(
                         selectedTarget.target === 'secondary' ?
                             { type: null, target: null }
@@ -242,6 +280,10 @@ export default function LoadoutDetails({ ...props }) {
                     )}
                 />
                 <GrenadeDetails grenade={newGrenade} active={selectedTarget.target === 'grenade'}
+                    reset={() => {
+                        setNewLoadout(prev => ({ ...prev, grenade: null }))
+                        setSelectedTarget({ type: null, target: null })
+                    }}
                     onClick={() => setSelectedTarget(
                         selectedTarget.target === 'grenade' ?
                             { type: null, target: null }
@@ -249,6 +291,10 @@ export default function LoadoutDetails({ ...props }) {
                     )}
                 />
                 <ArmorDetails armor={newArmor} active={selectedTarget.target === 'armor'}
+                    reset={() => {
+                        setNewLoadout(prev => ({ ...prev, armor: null }))
+                        setSelectedTarget({ type: null, target: null })
+                    }}
                     onClick={() => setSelectedTarget(
                         selectedTarget.target === 'armor' ?
                             { type: null, target: null }
@@ -258,13 +304,6 @@ export default function LoadoutDetails({ ...props }) {
 
 
                 <div className={css`flex-grow: 1;`} />
-
-                <button
-                    className={css`padding: 0.2em;`}
-                    onClick={generateRandomLoadout}
-                >
-                    Randomize
-                </button>
 
                 <div className={css`
                         width: 100%; 
@@ -284,6 +323,18 @@ export default function LoadoutDetails({ ...props }) {
                             Remove
                         </button>}
                 </div>
+                <button
+                    className={css`padding: 0.2em;`}
+                    onClick={generateRandomLoadout}
+                >
+                    Randomize
+                </button>
+                <button
+                    className={css`padding: 0.2em;`}
+                    onClick={clearLoadout}
+                >
+                    Clear
+                </button>
                 <button disabled={!activeChanges} onClick={handleSave} className={css`
                     grid-column: span 2;
                 `}>
