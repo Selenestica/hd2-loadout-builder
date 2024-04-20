@@ -80,13 +80,16 @@ import incendiary from '../assets/weapons/incendiary.webp'
 import smoke from '../assets/weapons/smoke.webp'
 import frag from '../assets/weapons/frag.webp'
 import impact from '../assets/weapons/impact.webp'
+import stun from '../assets/weapons/stun.webp'
 import he from '../assets/weapons/he.webp'
+import knight from '../assets/weapons/knight.webp'
+import peacemaker from '../assets/weapons/peacemaker.webp'
 import { colors } from './constants'
 
 const {primaryWeaponColor, secondaryWeaponColor, grenadeColor} = colors
 const stratBlue = '#457b9d'
 const stratRed = '#e76f51'
-const stratGreen = '#2a9d8f'
+const stratGreen =  '#266653'
 
 export const primaryWeaponData = [
     {
@@ -473,7 +476,7 @@ export const primaryWeaponData = [
         color: primaryWeaponColor,
         type: 'SMG',
         name: "MP-98 Knight",
-        icon: null,
+        icon: knight,
         ingameStats: {
             damage: 50,
             fireLimit: 50,
@@ -495,7 +498,7 @@ export const secondaryWeaponData = [
         color: secondaryWeaponColor,
         type: 'pistol',
         name: "P-2 Peacemaker",
-        icon: null,
+        icon: peacemaker,
         ingameStats: {
             damage: 60,
             capacity: 15,
@@ -659,7 +662,7 @@ export const grenadeData = [
         id: 5,
         color: grenadeColor,
         name: "G-23 Stun",
-        icon: null,
+        icon: stun,
         ingameStats: {
             damage: 0,
             penetration: 6,

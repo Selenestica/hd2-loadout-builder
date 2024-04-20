@@ -6,5 +6,5 @@ export const colors = {
     gold: 'yellow',
     primaryWeaponColor: 'rgba(255,200,255, 0.3)',
     secondaryWeaponColor: 'rgba(255,255,230, 0.2)',
-    grenadeColor: '#266653',
+    grenadeColor: '#2a9d8f',
 }

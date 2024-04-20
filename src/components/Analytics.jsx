@@ -47,29 +47,6 @@ function sumRangeCoverages(rangeCoverageArrays) {
     return output
 }
 
-/* 
-
-[
-  {
-    "removal": 0,               //coverage property :(array) element at index 0
-    "<name>": 97,               // name is the name property
-    "<name>Color": "hsl(104, 70%, 50%)",
-    "burger": 47,
-    "burgerColor": "hsl(308, 70%, 50%)",
-    ...
-  },
-  {
-    "removal": 1,               // property: coverage (array) element at index 1  (of first object)
-    "<name1>": 96,               // name is the name property
-    "<name1>Color": <color1>,     // color property
-    "<name2>": 51,                  // properties of second object:....
-    "<name2>Color": <color2>,
-    ...
-  },
-  ...
-
-*/
-
 function prepRemovalBreakdownData(equipmentObjs, weights) {
     const output = []
 
@@ -137,7 +114,7 @@ export default function Analytics({ strat1, strat2, strat3, strat4, primary, sec
 
         const graph1Data = sumRangeCoverages([strat1Data, strat2Data, strat3Data, strat4Data, primaryData, secondaryData, grenadeData])
 
-        const graph2Data = prepRemovalBreakdownData([s1, s2, s3, s4, prim, sec, gren], [strat1Weight, strat2Weight, strat3Weight, strat4Weight, primaryWeight, secondaryWeight, grenadeWeight])
+        const graph2Data = prepRemovalBreakdownData([s1, s2, s3, s4, gren, sec, prim], [strat1Weight, strat2Weight, strat3Weight, strat4Weight, grenadeWeight, secondaryWeight, primaryWeight])
 
         return [graph1Data, graph2Data]
 
@@ -268,3 +245,25 @@ export default function Analytics({ strat1, strat2, strat3, strat4, primary, sec
 
 
 
+/* 
+
+[
+  {
+    "removal": 0,               //coverage property :(array) element at index 0
+    "<name>": 97,               // name is the name property
+    "<name>Color": "hsl(104, 70%, 50%)",
+    "burger": 47,
+    "burgerColor": "hsl(308, 70%, 50%)",
+    ...
+  },
+  {
+    "removal": 1,               // property: coverage (array) element at index 1  (of first object)
+    "<name1>": 96,               // name is the name property
+    "<name1>Color": <color1>,     // color property
+    "<name2>": 51,                  // properties of second object:....
+    "<name2>Color": <color2>,
+    ...
+  },
+  ...
+
+*/

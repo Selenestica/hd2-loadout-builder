@@ -18,7 +18,7 @@ export default function RemovalBreakdownChart({ data, ...props }) {
             axisLeft={{
                 tickSize: 0,
                 tickPadding: 0,
-                truncateTickAt: 1,
+                tickValues: [1,2,3,4,5,6,7]
             }}
             labelSkipHeight={14}
             padding={0.1}
@@ -32,7 +32,7 @@ export default function RemovalBreakdownChart({ data, ...props }) {
             tooltip={(data) => <div className={css`
         display: flex;
         `}>{data.id + ' | ' + data.value}</div>}
-            margin={{ top: 0, right: 0, bottom: 5, left: 18 }}
+            margin={{ top: 5, right: 0, bottom: 5, left: 18 }}
             theme={{
                 axis: {
                     ticks: {
