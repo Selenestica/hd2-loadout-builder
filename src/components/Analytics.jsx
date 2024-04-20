@@ -136,19 +136,20 @@ export default function Analytics({ strat1, strat2, strat3, strat4, primary, sec
     return <div {...props} className={css`
         background: ${colors.lighter};
         display: grid;
-        place-items: center;
+        justify-items: center;
         width: 43em;
+        padding-top: 3em;
     `}>
         <div className={css`
             display: grid;
-            grid-template: 13em 3em / 3em 20em;
+            grid-template: 18em 3em / 3em 30em;
         `}>
             <div className={css`
                 place-self: center; 
                 transform: rotate(-90deg);
                 display: flex;
                 justify-content: space-around;
-                width: 14em;
+                width: 22em;
             `}>
                 <div className={css`
                     transform: translate(0, 0.5em);
@@ -168,6 +169,7 @@ export default function Analytics({ strat1, strat2, strat3, strat4, primary, sec
                 display: flex;
                 justify-content: space-between;
                 width: 100%;
+                margin-top: 0.5em;
             `}>
                 <div className={css`
                     transform: translate(0, -0.5em);
