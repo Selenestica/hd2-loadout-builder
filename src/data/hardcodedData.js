@@ -907,7 +907,7 @@ export const armorData = [
         bonus: 'electrical conduit',
         abbr: 'ARC',
         longText: 'Provides 95% resistance to arc damage.',
-        icon: mediumSVG,
+        icon: lightSVG,
         type: 'light',
     },
 ]
