@@ -110,24 +110,15 @@ export default function LoadoutDetails({ ...props }) {
     const newArmor = armorData.find(x => x.id === newLoadout.armor) || null
 
     const activeChanges = useMemo(() => {
-        if (newStrat1 === null
-            || newStrat2 === null
-            || newStrat3 === null
-            || newStrat4 === null
-            || newPrimary === null
-            || newSecondary === null
-            || newGrenade === null
-            || newArmor === null
-        ) return false
         return name !== selectedLoadout.name
-            || newStrat1?.id !== selectedLoadout.strat1
-            || newStrat2?.id !== selectedLoadout.strat2
-            || newStrat3?.id !== selectedLoadout.strat3
-            || newStrat4?.id !== selectedLoadout.strat4
-            || newPrimary?.id !== selectedLoadout.primary
-            || newSecondary?.id !== selectedLoadout.secondary
-            || newGrenade?.id !== selectedLoadout.grenade
-            || newArmor?.id !== selectedLoadout.armor
+            || (newStrat1?.id || null) !== selectedLoadout.strat1
+            || (newStrat2?.id || null) !== selectedLoadout.strat2
+            || (newStrat3?.id || null) !== selectedLoadout.strat3
+            || (newStrat4?.id || null) !== selectedLoadout.strat4
+            || (newPrimary?.id || null) !== selectedLoadout.primary
+            || (newSecondary?.id || null) !== selectedLoadout.secondary
+            || (newGrenade?.id || null) !== selectedLoadout.grenade
+            || (newArmor?.id || null) !== selectedLoadout.armor
     }, [name, selectedLoadout, newStrat1, newStrat2, newStrat3, newStrat4, newPrimary, newSecondary, newGrenade, newArmor])
 
     const handleSave = useCallback(() => {
