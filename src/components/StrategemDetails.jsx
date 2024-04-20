@@ -39,7 +39,7 @@ export default function StrategemDetails({ strat, active, reset, ...props }) {
                 : <div className={css`width: 3em; height: 3em; background: black;`} />
             }
 
-            <div>{strat?.name || 'Empty Stratagem'}</div>
+            <div className={css`width: 90%;`}>{strat?.name || 'Empty Stratagem'}</div>
 
             {strat &&
                 <>

@@ -41,7 +41,7 @@ export default function ArmorDetails({ armor, active, reset, ...props }) {
             : <div className={css`width: 3em; height: 3em; background: ${colors.lighter};`} />
         }
 
-        <div>{armor?.name || 'Empty Armor'}</div>
+        <div className={css`width: 90%;`}>{armor?.name || 'Empty Armor'}</div>
 
         {armor &&
             <>

@@ -39,7 +39,7 @@ export default function SecondaryDetails({ secondary, active, reset, ...props })
             : <div className={css`width: 3em; height: 3em; background: ${colors.lighter};`} />
         }
 
-        <div>{secondary?.name || 'Empty Secondary'}</div>
+        <div className={css`width: 90%;`}>{secondary?.name || 'Empty Secondary'}</div>
 
         {secondary &&
             <>

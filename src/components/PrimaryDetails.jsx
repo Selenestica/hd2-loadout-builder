@@ -39,7 +39,7 @@ export default function PrimaryDetails({ primary, active, reset, ...props }) {
             : <div className={css`width: 3em; height: 3em; background: ${colors.lighter};`} />
         }
 
-        <div>{primary?.name || 'Empty Primary'}</div>
+        <div className={css`width: 90%;`}>{primary?.name || 'Empty Primary'}</div>
 
         {primary &&
             <>
