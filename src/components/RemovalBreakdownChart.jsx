@@ -5,8 +5,6 @@ export default function RemovalBreakdownChart({ data, ...props }) {
 
     const keys = Object.keys(data[0]).filter(str => !str.includes('Color') && str !== 'removal')
 
-    console.log(data)
-
     return <div className={css`
         width: 100%;
     `}>
