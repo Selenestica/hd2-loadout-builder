@@ -81,11 +81,17 @@ import smoke from '../assets/weapons/smoke.webp'
 import frag from '../assets/weapons/frag.webp'
 import impact from '../assets/weapons/impact.webp'
 import he from '../assets/weapons/he.webp'
+import { colors } from './constants'
 
+const {primaryWeaponColor, secondaryWeaponColor, grenadeColor} = colors
+const stratBlue = '#457b9d'
+const stratRed = '#e76f51'
+const stratGreen = '#2a9d8f'
 
 export const primaryWeaponData = [
     {
         id: 1,
+        color: primaryWeaponColor,
         type: 'Assault rifle',
         name: "AR23 Liberator",
         icon: lib,
@@ -104,6 +110,7 @@ export const primaryWeaponData = [
     },
     {
         id: 2,
+        color: primaryWeaponColor,
         type: 'Assault rifle',
         name: "AR23P Liberator Penetrator",
         icon: libPen,
@@ -122,6 +129,7 @@ export const primaryWeaponData = [
     },
     {
         id: 3,
+        color: primaryWeaponColor,
         type: 'Assault rifle',
         name: "AR23C Liberator Concussive",
         icon: libConc,
@@ -140,6 +148,7 @@ export const primaryWeaponData = [
     },
     {
         id: 4,
+        color: primaryWeaponColor,
         type: 'Marksman rifle',
         name: "BR-14 Adjudicator",
         icon: adjudicator,
@@ -158,6 +167,7 @@ export const primaryWeaponData = [
     },
     {
         id: 5,
+        color: primaryWeaponColor,
         type: 'Marksman rifle',
         name: "R-63 Diligence",
         icon: diligence,
@@ -176,6 +186,7 @@ export const primaryWeaponData = [
     },
     {
         id: 6,
+        color: primaryWeaponColor,
         type: 'Marksman rifle',
         name: "R-63CS Diligence Counter Sniper",
         icon: diligenceCs,
@@ -194,6 +205,7 @@ export const primaryWeaponData = [
     },
     {
         id: 7,
+        color: primaryWeaponColor,
         type: 'SMG',
         name: "SMG-37 Defender",
         icon: defender,
@@ -212,6 +224,7 @@ export const primaryWeaponData = [
     },
     {
         id: 8,
+        color: primaryWeaponColor,
         type: 'Shotgun',
         name: "SG-8 Punisher",
         icon: punisher,
@@ -230,6 +243,7 @@ export const primaryWeaponData = [
     },
     {
         id: 9,
+        color: primaryWeaponColor,
         type: 'Shotgun',
         name: "SG-8S Slugger",
         icon: slug,
@@ -248,6 +262,7 @@ export const primaryWeaponData = [
     },
     {
         id: 10,
+        color: primaryWeaponColor,
         type: 'Shotgun',
         name: "SG-8P Punisher Plasma",
         icon: punisherPl,
@@ -266,6 +281,7 @@ export const primaryWeaponData = [
     },
     {
         id: 11,
+        color: primaryWeaponColor,
         type: 'Shotgun',
         name: "ARC-12 Blitzer",
         icon: blitz,
@@ -284,6 +300,7 @@ export const primaryWeaponData = [
     },
     {
         id: 12,
+        color: primaryWeaponColor,
         type: 'Shotgun',
         name: "SG-225 Breaker",
         icon: breaker,
@@ -302,6 +319,7 @@ export const primaryWeaponData = [
     },
     {
         id: 13,
+        color: primaryWeaponColor,
         type: 'Shotgun',
         name: "SG-225SP Breaker Spray&Pray",
         icon: breakSp,
@@ -320,6 +338,7 @@ export const primaryWeaponData = [
     },
     {
         id: 14,
+        color: primaryWeaponColor,
         type: 'Shotgun',
         name: "SG-225IE Breaker Incendiary",
         icon: breakInc,
@@ -338,6 +357,7 @@ export const primaryWeaponData = [
     },
     {
         id: 15,
+        color: primaryWeaponColor,
         type: 'Explosive',
         name: "CB-9 Exploding Crossbow",
         icon: crossbow,
@@ -356,6 +376,7 @@ export const primaryWeaponData = [
     },
     {
         id: 16,
+        color: primaryWeaponColor,
         type: 'Explosive',
         name: "JAR-5 Dominator",
         icon: dominator,
@@ -374,6 +395,7 @@ export const primaryWeaponData = [
     },
     {
         id: 17,
+        color: primaryWeaponColor,
         type: 'Explosive',
         name: "R-36 Eruptor",
         icon: eruptor,
@@ -392,6 +414,7 @@ export const primaryWeaponData = [
     },
     {
         id: 18,
+        color: primaryWeaponColor,
         type: 'Energy',
         name: "LAS-5 Scythe",
         icon: scythe,
@@ -409,6 +432,7 @@ export const primaryWeaponData = [
     },
     {
         id: 19,
+        color: primaryWeaponColor,
         type: 'Energy',
         name: "LAS-16 Sickle",
         icon: sickle,
@@ -427,6 +451,7 @@ export const primaryWeaponData = [
     },
     {
         id: 20,
+        color: primaryWeaponColor,
         type: 'Energy',
         name: "PLAS-1 Scorcher",
         icon: scor,
@@ -445,6 +470,7 @@ export const primaryWeaponData = [
     },
     {
         id: 21,
+        color: primaryWeaponColor,
         type: 'SMG',
         name: "MP-98 Knight",
         icon: null,
@@ -466,6 +492,7 @@ export const primaryWeaponData = [
 export const secondaryWeaponData = [
     {
         id: 1,
+        color: secondaryWeaponColor,
         type: 'pistol',
         name: "P-2 Peacemaker",
         icon: null,
@@ -484,6 +511,7 @@ export const secondaryWeaponData = [
     },
     {
         id: 2,
+        color: secondaryWeaponColor,
         type: 'pistol',
         name: "P-19 Redeemer",
         icon: redeemer,
@@ -502,6 +530,7 @@ export const secondaryWeaponData = [
     },
     {
         id: 3,
+        color: secondaryWeaponColor,
         type: 'pistol',
         name: "GP-31 Grenade Pistol",
         icon: grenadePistol,
@@ -520,6 +549,7 @@ export const secondaryWeaponData = [
     },
     {
         id: 4,
+        color: secondaryWeaponColor,
         type: 'pistol',
         name: "LAS-7 Dagger",
         icon: dagger,
@@ -537,6 +567,7 @@ export const secondaryWeaponData = [
     },
     {
         id: 5,
+        color: secondaryWeaponColor,
         type: 'pistol',
         name: "P-4 Senator",
         icon: senator,
@@ -558,6 +589,7 @@ export const secondaryWeaponData = [
 export const grenadeData = [
     {
         id: 1,
+        color: grenadeColor,
         name: "G-6 Frag",
         icon: frag,
         ingameStats: {
@@ -574,6 +606,7 @@ export const grenadeData = [
     },
     {
         id: 2,
+        color: grenadeColor,
         name: "G-12 High Explosive",
         icon: he,
         ingameStats: {
@@ -590,6 +623,7 @@ export const grenadeData = [
     },
     {
         id: 3,
+        color: grenadeColor,
         name: "G-10 Incendiary",
         icon: incendiary,
         ingameStats: {
@@ -606,6 +640,7 @@ export const grenadeData = [
     },
     {
         id: 4,
+        color: grenadeColor,
         name: "G-16 Impact",
         icon: impact,
         ingameStats: {
@@ -622,6 +657,7 @@ export const grenadeData = [
     },
     {
         id: 5,
+        color: grenadeColor,
         name: "G-23 Stun",
         icon: null,
         ingameStats: {
@@ -638,6 +674,7 @@ export const grenadeData = [
     },
     {
         id: 6,
+        color: grenadeColor,
         name: "G-3 Smoke",
         icon: smoke,
         ingameStats: {
@@ -654,6 +691,7 @@ export const grenadeData = [
     },
     {
         id: 7,
+        color: grenadeColor,
         name: "G-123 Thermite",
         icon: thermite,
         ingameStats: {
@@ -873,7 +911,7 @@ export const strategemData = [
         icon: strat1,
         offensiveRange: [1, 1, 0],
         type: 'support-weapon',
-        color: 'blue',
+        color: stratBlue,
         coverage: [1, 1, 0.5, 0, 0],
         supplyBuffedCoverage: [1.5, 1.5, 1, 0, 0],
         supportSlotNecessary: true,
@@ -886,7 +924,7 @@ export const strategemData = [
         icon: strat2,
         offensiveRange: [0.5, 1, 1],
         type: 'support-weapon',
-        color: 'blue',
+        color: stratBlue,
         coverage: [0.25, 1, 1.5, 1, 0],
         supplyBuffedCoverage: [0.5, 1.5, 2.25, 1.5, 0],
         supportSlotNecessary: true,
@@ -899,7 +937,7 @@ export const strategemData = [
         icon: strat3,
         offensiveRange: [1, 1, 0],
         type: 'support-weapon',
-        color: 'blue',
+        color: stratBlue,
         coverage: [2, 0.5, 0, 0, 0],
         supplyBuffedCoverage: [2.5, 1, 0, 0, 0],
         supportSlotNecessary: true,
@@ -912,7 +950,7 @@ export const strategemData = [
         icon: strat4,
         offensiveRange: [1, 1, 0],
         type: 'support-weapon',
-        color: 'blue',
+        color: stratBlue,
         coverage: [0, 0, 0, 1, 1],
         supportSlotNecessary: false,
         uptime: 'very high',
@@ -924,7 +962,7 @@ export const strategemData = [
         icon: strat5,
         offensiveRange: [1, 1, 0],
         type: 'support-weapon',
-        color: 'blue',
+        color: stratBlue,
         coverage: [0, 0, 0, 1, 1],
         supportSlotNecessary: true,
         uptime: 'very high',
@@ -937,7 +975,7 @@ export const strategemData = [
         icon: strat6,
         offensiveRange: [1, 0, 0],
         type: 'support-weapon',
-        color: 'blue',
+        color: stratBlue,
         coverage: [1, 1, 1, 1, 0],
         supplyBuffedCoverage: [1.5, 1.5, 1.5, 1.5, 0],
         supportSlotNecessary: true,
@@ -950,7 +988,7 @@ export const strategemData = [
         icon: strat7,
         offensiveRange: [0.8, 1, 0.5],
         type: 'support-weapon',
-        color: 'blue',
+        color: stratBlue,
         coverage: [0.5, 1, 1, 1, 0.2],
         supportSlotNecessary: true,
         uptime: 'very high',
@@ -963,7 +1001,7 @@ export const strategemData = [
         icon: strat8,
         offensiveRange: [0.5, 1, 0],
         type: 'support-weapon',
-        color: 'blue',
+        color: stratBlue,
         coverage: [0.5, 1, 1, 1, 0],
         supplyBuffedCoverage: [0.75, 1.5, 1.5, 1.5, 0],
         supportSlotNecessary: true,
@@ -976,7 +1014,7 @@ export const strategemData = [
         icon: strat9,
         offensiveRange: [1, 1, 0.5],
         type: 'support-weapon',
-        color: 'blue',
+        color: stratBlue,
         coverage: [0, 1, 2, 0.25, 0],
         supplyBuffedCoverage: [0.5, 1.5, 3, 0.5, 0],
         supportSlotNecessary: true,
@@ -989,7 +1027,7 @@ export const strategemData = [
         icon: strat10,
         offensiveRange: [0, 0.5, 1],
         type: 'support-weapon',
-        color: 'blue',
+        color: stratBlue,
         coverage: [0, 0, 0, 0.5, 1],
         supportSlotNecessary: true,
         uptime: 'very high',
@@ -1002,7 +1040,7 @@ export const strategemData = [
         icon: stratgatlingbarrage,
         offensiveRange: [1, 1, 0],
         type: 'orbital',
-        color: 'red',
+        color: stratRed,
         coverage: [1, 1, 0.5, 0, 0],
         uptime: 'high',
         objectives: []
@@ -1013,7 +1051,7 @@ export const strategemData = [
         icon: stratairburst,
         offensiveRange: [0.5, 1, 0],
         type: 'orbital',
-        color: 'red',
+        color: stratRed,
         coverage: [1, 1, 0.5, 0, 0],
         uptime: 'high',
         objectives: []
@@ -1024,7 +1062,7 @@ export const strategemData = [
         icon: strat120mm,
         offensiveRange: [0, 1, 0],
         type: 'orbital',
-        color: 'red',
+        color: stratRed,
         coverage: [0.3, 0.3, 0.3, 0.3, 0.2],
         uptime: 'low',
         objectives: []
@@ -1035,7 +1073,7 @@ export const strategemData = [
         icon: strat380mm,
         offensiveRange: [0, 1, 0],
         type: 'orbital',
-        color: 'red',
+        color: stratRed,
         coverage: [0.3, 0.3, 0.3, 0.35, 0.35],
         uptime: 'low',
         objectives: []
@@ -1046,7 +1084,7 @@ export const strategemData = [
         icon: stratwalkingbarrage,
         offensiveRange: [0.5, 1, 0.5],
         type: 'orbital',
-        color: 'red',
+        color: stratRed,
         coverage: [0.3, 0.3, 0.3, 0.3, 0.3],
         uptime: 'low',
         objectives: []
@@ -1057,7 +1095,7 @@ export const strategemData = [
         icon: stratorbitalLaser,
         offensiveRange: [1, 1, 0],
         type: 'orbital',
-        color: 'red',
+        color: stratRed,
         coverage: [0.3, 0.3, 0.3, 0.3, 0.2],
         uptime: 'very low',
         objectives: []
@@ -1068,7 +1106,7 @@ export const strategemData = [
         icon: stratorbitalRail,
         offensiveRange: [1, 1, 0],
         type: 'orbital',
-        color: 'red',
+        color: stratRed,
         coverage: [0, 0, 0, 0.5, 0.5],
         uptime: 'low',
         objectives: []
@@ -1079,7 +1117,7 @@ export const strategemData = [
         icon: stratstrafingrun,
         offensiveRange: [1, 1, 0],
         type: 'eagle',
-        color: 'red',
+        color: stratRed,
         coverage: [1, 0.75, 0.5, 0, 0],
         uptime: 'high',
         objectives: []
@@ -1090,7 +1128,7 @@ export const strategemData = [
         icon: stratairstrike,
         offensiveRange: [1, 1, 0],
         type: 'eagle',
-        color: 'red',
+        color: stratRed,
         coverage: [1, 1, 1, 0.5, 0],
         uptime: 'medium',
         objectives: []
@@ -1101,7 +1139,7 @@ export const strategemData = [
         icon: stratcluster,
         offensiveRange: [1, 1, 0],
         type: 'eagle',
-        color: 'red',
+        color: stratRed,
         coverage: [1, 1, 1, 0, 0],
         uptime: 'high',
         objectives: []
@@ -1112,7 +1150,7 @@ export const strategemData = [
         icon: stratnapalm,
         offensiveRange: [1, 1, 0],
         type: 'eagle',
-        color: 'red',
+        color: stratRed,
         coverage: [1, 1, 0.5, 0, 0],
         uptime: 'high',
         objectives: []
@@ -1123,7 +1161,7 @@ export const strategemData = [
         icon: stratjumppack,
         offensiveRange: [0, 0, 0],
         type: 'backpack',
-        color: 'blue',
+        color: stratBlue,
         coverage: [0, 0, 0, 0, 0],
         uptime: 'very high',
         hasBackpack: true,
@@ -1135,7 +1173,7 @@ export const strategemData = [
         icon: stratsmokestrike,
         offensiveRange: [0, 0, 0],
         type: 'eagle',
-        color: 'red',
+        color: stratRed,
         coverage: [0, 0, 0, 0, 0],
         uptime: 'high',
         objectives: []
@@ -1146,7 +1184,7 @@ export const strategemData = [
         icon: stratrocketpods,
         offensiveRange: [1, 1, 0],
         type: 'eagle',
-        color: 'red',
+        color: stratRed,
         coverage: [0, 0, 0, 0.5, 0.5],
         uptime: 'high',
         objectives: []
@@ -1157,7 +1195,7 @@ export const strategemData = [
         icon: strat500kg,
         offensiveRange: [1, 1, 0],
         type: 'eagle',
-        color: 'red',
+        color: stratRed,
         coverage: [0, 0, 0, 0.5, 1],
         uptime: 'medium',
         objectives: []
@@ -1168,7 +1206,7 @@ export const strategemData = [
         icon: stratprecisionstrike,
         offensiveRange: [1, 1, 0],
         type: 'orbital',
-        color: 'red',
+        color: stratRed,
         coverage: [0, 0, 0.5, 0.5, 0.5],
         uptime: 'high',
         objectives: []
@@ -1179,7 +1217,7 @@ export const strategemData = [
         icon: stratgasstrike,
         offensiveRange: [1, 1, 0],
         type: 'orbital',
-        color: 'red',
+        color: stratRed,
         coverage: [1.5, 1.5, 0.5, 0, 0],
         uptime: 'high',
         objectives: []
@@ -1190,7 +1228,7 @@ export const strategemData = [
         icon: stratems,
         offensiveRange: [0, 0, 0],
         type: 'orbital',
-        color: 'red',
+        color: stratRed,
         coverage: [0, 0, 0, 0, 0],
         uptime: 'high',
         objectives: []
@@ -1201,7 +1239,7 @@ export const strategemData = [
         icon: stratorbitalsmoke,
         offensiveRange: [0, 0, 0],
         type: 'orbital',
-        color: 'red',
+        color: stratRed,
         coverage: [0, 0, 0, 0, 0],
         uptime: 'high',
         objectives: []
@@ -1212,7 +1250,7 @@ export const strategemData = [
         icon: strathmgemplacement,
         offensiveRange: [0.5, 1, 1],
         type: 'turret',
-        color: 'green',
+        color: stratGreen,
         coverage: [1, 1, 1, 0.5, 0],
         uptime: 'medium',
         objectives: []
@@ -1223,7 +1261,7 @@ export const strategemData = [
         icon: stratshieldrelay,
         offensiveRange: [0, 0, 0],
         type: 'emplacement',
-        color: 'green',
+        color: stratGreen,
         coverage: [0, 0, 0, 0, 0],
         uptime: 'high',
         objectives: []
@@ -1234,7 +1272,7 @@ export const strategemData = [
         icon: stratteslatower,
         offensiveRange: [0, 1, 0],
         type: 'turret',
-        color: 'green',
+        color: stratGreen,
         coverage: [0.75, 0.75, 0.75, 0.3, 0],
         uptime: 'medium',
         objectives: []
@@ -1245,7 +1283,7 @@ export const strategemData = [
         icon: stratminefieldpersonn,
         offensiveRange: [0, 1, 0],
         type: 'emplacement',
-        color: 'green',
+        color: stratGreen,
         coverage: [0.75, 0.75, 0.75, 0, 0],
         uptime: 'medium',
         objectives: []
@@ -1256,7 +1294,7 @@ export const strategemData = [
         icon: stratsupply,
         offensiveRange: [0, 0, 0],
         type: 'backpack',
-        color: 'blue',
+        color: stratBlue,
         coverage: [0, 0, 0, 0, 0],
         uptime: 'very high',
         hasBackpack: true,
@@ -1268,7 +1306,7 @@ export const strategemData = [
         icon: stratgrenadelauncher,
         offensiveRange: [1, 1, 0],
         type: 'support-weapon',
-        color: 'blue',
+        color: stratBlue,
         coverage: [1, 1, 1, 0.5, 0],
         supplyBuffedCoverage: [2, 1.5, 1.5, 0.666, 0],
         supportSlotNecessary: true,
@@ -1281,7 +1319,7 @@ export const strategemData = [
         icon: stratlasercannon,
         offensiveRange: [0.5, 1, 1],
         type: 'support-weapon',
-        color: 'blue',
+        color: stratBlue,
         coverage: [1, 1, 1, 1, 0],
         supportSlotNecessary: true,
         uptime: 'very high',
@@ -1293,7 +1331,7 @@ export const strategemData = [
         icon: stratincendiarymines,
         offensiveRange: [0, 1, 0],
         type: 'emplacement',
-        color: 'green',
+        color: stratGreen,
         coverage: [0.75, 0.75, 0.75, 0, 0],
         uptime: 'medium',
         objectives: []
@@ -1304,7 +1342,7 @@ export const strategemData = [
         icon: stratguarddogrover,
         offensiveRange: [1, 0.5, 0],
         type: 'backpack',
-        color: 'blue',
+        color: stratBlue,
         coverage: [1, 1, 0.5, 0, 0],
         uptime: 'very high',
         hasBackpack: true,
@@ -1316,7 +1354,7 @@ export const strategemData = [
         icon: stratballisticshield,
         offensiveRange: [0, 0, 0],
         type: 'backpack',
-        color: 'blue',
+        color: stratBlue,
         coverage: [0, 0, 0, 0, 0],
         uptime: 'very high',
         hasBackpack: true,
@@ -1328,7 +1366,7 @@ export const strategemData = [
         icon: stratarcthrower,
         offensiveRange: [0, 1, 0],
         type: 'support-weapon',
-        color: 'blue',
+        color: stratBlue,
         coverage: [1, 1, 1, 0.5, 0],
         supportSlotNecessary: true,
         uptime: 'very high',
@@ -1340,7 +1378,7 @@ export const strategemData = [
         icon: stratquasar,
         offensiveRange: [0, 1, 1],
         type: 'support-weapon',
-        color: 'blue',
+        color: stratBlue,
         coverage: [0, 0, 0, 1, 1],
         supportSlotNecessary: true,
         uptime: 'very high',
@@ -1352,7 +1390,7 @@ export const strategemData = [
         icon: stratshieldpack,
         offensiveRange: [0, 0, 0],
         type: 'backpack',
-        color: 'blue',
+        color: stratBlue,
         coverage: [0, 0, 0, 0, 0],
         uptime: 'very high',
         hasBackpack: true,
@@ -1364,7 +1402,7 @@ export const strategemData = [
         icon: stratmg43sentry,
         offensiveRange: [1, 1, 0],
         type: 'turret',
-        color: 'green',
+        color: stratGreen,
         coverage: [0.8, 0.8, 0, 0, 0],
         uptime: 'medium',
         objectives: []
@@ -1375,7 +1413,7 @@ export const strategemData = [
         icon: stratgatlingturret,
         offensiveRange: [1, 1, 0],
         type: 'turret',
-        color: 'green',
+        color: stratGreen,
         coverage: [0.8, 0.8, 0, 0, 0],
         uptime: 'medium',
         objectives: []
@@ -1386,7 +1424,7 @@ export const strategemData = [
         icon: stratmortar,
         offensiveRange: [1, 1, 0.5],
         type: 'turret',
-        color: 'green',
+        color: stratGreen,
         coverage: [0.8, 0.8, 0.8, 0, 0],
         uptime: 'medium',
         objectives: []
@@ -1397,7 +1435,7 @@ export const strategemData = [
         icon: stratguarddogAR,
         offensiveRange: [1, 0.5, 0],
         type: 'backpack',
-        color: 'blue',
+        color: stratBlue,
         coverage: [0.75, 0.75, 0, 0, 0],
         supplyBuffedCoverage: [1, 1, 0, 0, 0],
         uptime: 'very high',
@@ -1410,7 +1448,7 @@ export const strategemData = [
         icon: stratautocannonturret,
         offensiveRange: [0, 1, 1],
         type: 'turret',
-        color: 'green',
+        color: stratGreen,
         coverage: [0.4, 0.7, 0.7, 0.7, 0.7],
         uptime: 'medium',
         objectives: []
@@ -1421,7 +1459,7 @@ export const strategemData = [
         icon: stratrocketsentry,
         offensiveRange: [0.5, 1, 0],
         type: 'turret',
-        color: 'green',
+        color: stratGreen,
         coverage: [0.4, 0.75, 0.75, 0.4, 0],
         uptime: 'medium',
         objectives: []
@@ -1432,7 +1470,7 @@ export const strategemData = [
         icon: stratmortarEMSsentry,
         offensiveRange: [1, 1, 0.5],
         type: 'turret',
-        color: 'green',
+        color: stratGreen,
         coverage: [0, 0, 0, 0, 0],
         uptime: 'medium',
         objectives: []
@@ -1443,7 +1481,7 @@ export const strategemData = [
         icon: stratexo45patriot,
         offensiveRange: [1, 1, 0],
         type: 'support-weapon',
-        color: 'blue',
+        color: stratBlue,
         coverage: [0.5, 0.5, 0.5, 0.5, 0.5],
         supportSlotNecessary: false,
         uptime: 'low',

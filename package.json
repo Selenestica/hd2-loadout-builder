@@ -12,6 +12,7 @@
   "dependencies": {
     "@emotion/css": "^11.11.2",
     "@emotion/styled": "^11.11.5",
+    "@nivo/bar": "^0.85.1",
     "@nivo/core": "^0.85.1",
     "@nivo/heatmap": "^0.85.1",
     "@rollup/plugin-babel": "^6.0.4",
