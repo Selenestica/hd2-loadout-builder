@@ -41,7 +41,7 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
             grid-template: auto / 11em 1fr min-content;
             grid-gap: 1em;
             padding: 0.5em;
-            overflow: auto;
+            overflow: hidden;
 
             img, > div > div{
                 background: ${colors.lighter};;

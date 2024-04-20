@@ -20,7 +20,7 @@ export default function SecondaryList({ handleClick, filterArr }) {
         <div className={css`
             display: grid;
             width: 100%;
-            grid-template: auto / 20em 1fr;
+            grid-template: auto / 20em 20em;
         `}>
             <div className={css`
                 background: ${colors.darkBlue};
@@ -59,9 +59,11 @@ export default function SecondaryList({ handleClick, filterArr }) {
             `}>
                 {hoverState &&
                     <div className={css`
+                        padding: 1em;
                         display: grid;
+                        min-width: 10em;
                         width: 100%;
-                        max-width: 30em;
+                        max-width: calc(100% - 3em);
                         grid-template: auto / auto 1fr;
                         grid-gap: 0.2em 1em;
                         align-items: center;

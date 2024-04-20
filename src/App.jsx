@@ -8,13 +8,20 @@ export default function App() {
     const { selectedLoadout } = useContext(LoadoutsContext)
     return (
         <div className={css`
-                display: grid;
-                grid-template: 90vh / 39em 34em 40em;
-                padding: 2em;
-                gap: 1em;
-             `}>
-            <LoadoutList />
-            {selectedLoadout && <LoadoutDetails />}
+            max-width: 100vw;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        `}>
+            <div className={css`
+                    display: grid;
+                    grid-template: 90vh / 39em 34em 1fr;
+                    gap: 1em;
+                    max-width: 100%;
+                `}>
+                <LoadoutList />
+                {selectedLoadout && <LoadoutDetails />}
+            </div>
         </div>
     )
 }

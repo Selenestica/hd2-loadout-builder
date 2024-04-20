@@ -135,9 +135,9 @@ export default function Analytics({ strat1, strat2, strat3, strat4, primary, sec
 
     return <div {...props} className={css`
         background: ${colors.lighter};
-        padding: 1em;
         display: grid;
         place-items: center;
+        width: 43em;
     `}>
         <div className={css`
             display: grid;

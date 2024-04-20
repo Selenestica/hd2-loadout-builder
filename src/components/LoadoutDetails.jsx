@@ -31,8 +31,6 @@ export default function LoadoutDetails({ ...props }) {
 
     const generateRandomLoadout = useCallback(() => {
 
-        setName('Random Loadout')
-
         function pickRandom(arr) {
             return arr[Math.floor(Math.random() * arr.length)]
         }
@@ -80,6 +78,7 @@ export default function LoadoutDetails({ ...props }) {
         setNewLoadout(prev => {
             return {
                 id: prev.id,
+                name: prev.name,
                 strat1: resultingData.strat1.id,
                 strat2: resultingData.strat2.id,
                 strat3: resultingData.strat3.id,
@@ -337,6 +336,11 @@ export default function LoadoutDetails({ ...props }) {
                 </button>
                 <button disabled={!activeChanges} onClick={handleSave} className={css`
                     grid-column: span 2;
+                    cursor: ${!activeChanges ? 'unset' : 'pointer'};
+                    ${!activeChanges && 'border: none;'}
+                    background: ${!activeChanges ? colors.lighter  : '#1a1a1a' };
+                    color: ${!activeChanges ? 'unset'  : 'unset' };
+                    transition: background 1s;
                 `}>
                     Save
                 </button>

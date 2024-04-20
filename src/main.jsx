@@ -6,6 +6,6 @@ import { LoadoutsProvider } from './context/Loadouts.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <LoadoutsProvider>
-        <App />,
+        <App />
     </LoadoutsProvider>
 )

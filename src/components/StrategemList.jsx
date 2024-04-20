@@ -20,7 +20,7 @@ export default function StrategemList({ handleClick, filterArr }) {
         <div className={css`
             display: grid;
             width: 100%;
-            grid-template: auto / 20em 1fr;
+            grid-template: auto / 20em 20em;
         `}>
             <div className={css`
                 background: ${colors.darkBlue};
