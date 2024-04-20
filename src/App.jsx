@@ -18,6 +18,7 @@ export default function App() {
                     grid-template: 90vh / 39em 34em 1fr;
                     gap: 1em;
                     max-width: 100%;
+                    min-width: 120em; 
                 `}>
                 <LoadoutList />
                 {selectedLoadout && <LoadoutDetails />}
@@ -27,13 +28,6 @@ export default function App() {
 }
 
 // TO DO:
-// add bugs / bots tag
-// add prim, sec, grenades and armor calculation into the charts.
+// add bugs / bots tag and filter
 // add stacked bar chart for removal
-
-// supply pack / engi armor adding to grenade coverage and limited ammo coverage
-// not cumulating multiple support weapons, except eat
-
-// random loadout
-// random heavy loadout, light loadout, long / short range etc...
 // import / export app data

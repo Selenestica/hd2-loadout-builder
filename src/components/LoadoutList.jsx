@@ -5,11 +5,11 @@ import { colors } from '../data/constants'
 import Loadout from './Loadout'
 import LoadoutsContext from '../context/Loadouts'
 
-export default function LoadoutList({ 
+export default function LoadoutList({
     ...props
 }) {
-    
-    const {setSelectedLoadout, selectedLoadout, loadouts, setLoadouts, loading } = useContext(LoadoutsContext)
+
+    const { setSelectedLoadout, selectedLoadout, loadouts, setLoadouts, loading } = useContext(LoadoutsContext)
 
     const handleAddLoadout = useCallback(() => {
         const newLoadout = {
@@ -45,16 +45,24 @@ export default function LoadoutList({
                 {loadouts.map(loadout => <Loadout
                     key={loadout.id}
                     data={loadout}
-                    onClick={() => {setSelectedLoadout(loadout)}}
+                    onClick={() => { setSelectedLoadout(loadout) }}
                     active={selectedLoadout?.id === loadout.id}
                 />)}
             </div>
-            <button
-                className={css`width: auto; margin: 1em;`}
-                onClick={handleAddLoadout}
-            >
-                Add loadout
-            </button>
+            <div className={css`
+                width: auto; 
+                padding: 1em;
+                position: sticky;
+                bottom: 0;
+            `}>
+
+                <button  className={css`width: 100%; height: 100%;`}
+                    
+                    onClick={handleAddLoadout}
+                >
+                    Add loadout
+                </button>
+            </div>
         </div >
     )
 }

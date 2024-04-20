@@ -38,7 +38,7 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
             
             display: grid;
             align-items: center;
-            grid-template: auto / 11em 1fr min-content;
+            grid-template: auto / auto 1fr min-content;
             grid-gap: 1em;
             padding: 0.5em;
             overflow: hidden;
@@ -50,13 +50,14 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
             }
         `} {...props}>
             <div className={css`
-                white-space: nowrap;
+                //white-space: nowrap;
             `}>
                 {name}
             </div>
             <div className={css`
                 display: flex;
                 gap: 2px;
+                justify-content: end;
             `}>
                 {s1 ? <img src={s1?.icon} alt="" title={s1?.name}/> : <div />}
                 {s2 ? <img src={s2?.icon} alt="" title={s2?.name}/> : <div />}
