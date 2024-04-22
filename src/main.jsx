@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<App />} >
-                    <Route path="receiveshared" element={<ReceivedLoadoutModal />} />
+                    <Route path="s" element={<ReceivedLoadoutModal />} />
                 </Route>
             </Routes>
         </BrowserRouter>

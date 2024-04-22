@@ -5,10 +5,18 @@ export default function ShareButton({ newLoadout, ...props }) {
     const [copied, setCopied] = useState(false)
 
     const clipboardText = useMemo(() => {
-        const copy = {...newLoadout}
-        delete copy.id
-        const encodedObj = encodeURIComponent(JSON.stringify(copy))
-        return `https://divers-lab.io/receiveshared?data=${encodedObj}`
+        const encodedName = encodeURIComponent(newLoadout.name)
+        const encodedData = [
+            newLoadout.strat1 || 'x',
+            newLoadout.strat2 || 'x',
+            newLoadout.strat3 || 'x',
+            newLoadout.strat4 || 'x',
+            newLoadout.primary || 'x',
+            newLoadout.secondary || 'x',
+            newLoadout.grenade || 'x',
+            newLoadout.armor || 'x',
+        ].join('i')
+        return `https://divers-lab.io/s?n=${encodedName}&d=${encodedData}`
     }, [newLoadout])
 
     useEffect(() => {

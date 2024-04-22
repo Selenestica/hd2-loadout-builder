@@ -36,3 +36,4 @@ export default function App() {
 // add bugs / bots tag and filter
 // add stacked bar chart for removal
 // import / export app data
+// add 'lock' to equipment to not randomize
