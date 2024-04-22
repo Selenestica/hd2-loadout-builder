@@ -15,6 +15,7 @@ import GrenadeDetails from './GrenadeDetails'
 import GrenadeList from './GrenadeList'
 import ArmorDetails from './ArmorDetails'
 import ArmorList from './ArmorList'
+import ShareButton from './ShareButton'
 
 export default function LoadoutDetails({ ...props }) {
 
@@ -167,7 +168,7 @@ export default function LoadoutDetails({ ...props }) {
             grenade: null,
             armor: null
         }))
-    },[])
+    }, [])
 
     return (
         <>
@@ -313,25 +314,32 @@ export default function LoadoutDetails({ ...props }) {
                             Remove
                         </button>}
                 </div>
-                <button
-                    className={css`padding: 0.2em;`}
-                    onClick={generateRandomLoadout}
-                >
-                    Randomize
-                </button>
-                <button
-                    className={css`padding: 0.2em;`}
-                    onClick={clearLoadout}
-                >
-                    Clear
-                </button>
+                <div className={css`
+                    width: 100%; 
+                    grid-column: span 2;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;      
+                    gap: 0.2em;  
+                `}>
+
+                    <button
+                        className={css`padding: 0.2em;`}
+                        onClick={generateRandomLoadout}
+                    >
+                        Randomize
+                    </button>
+                    <button
+                        className={css`padding: 0.2em;`}
+                        onClick={clearLoadout}
+                    >
+                        Clear
+                    </button>
+                    <ShareButton className={css`padding: 0.2em;`} newLoadout={newLoadout}>
+                        Share
+                    </ShareButton>
+                </div>
                 <button disabled={!activeChanges} onClick={handleSave} className={css`
                     grid-column: span 2;
-                    cursor: ${!activeChanges ? 'unset' : 'pointer'};
-                    ${!activeChanges && 'border: none;'}
-                    background: ${!activeChanges ? colors.lighter  : '#1a1a1a' };
-                    color: ${!activeChanges ? 'unset'  : 'unset' };
-                    transition: background 1s;
                 `}>
                     Save
                 </button>

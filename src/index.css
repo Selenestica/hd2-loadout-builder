@@ -54,6 +54,14 @@ button {
     transition: border-color 0.25s;
 }
 
+button:disabled {
+    cursor: unset;
+    border: none;
+    background: rgba(255,255,255, 0.1);
+    color: rgba(255,255,255, 0.5);
+    transition: background 1s;
+}
+
 button:hover {
     border-color: #646cff;
 }

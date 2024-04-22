@@ -17,10 +17,13 @@
     "@nivo/heatmap": "^0.85.1",
     "@rollup/plugin-babel": "^6.0.4",
     "@types/react": "^18.2.78",
+    "clipboard": "^2.0.11",
     "d3": "^7.9.0",
     "idb": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
+    "react-router-dom": "^6.22.3",
     "react-svg": "^16.1.34"
   },
   "devDependencies": {
