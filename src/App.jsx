@@ -10,22 +10,18 @@ export default function App() {
     return (
         <>
             <div className={css`
-                max-width: 100vw;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-            `}>
+                display: grid;
+                grid-template-columns: 1.2fr 1fr 1fr;
+                grid-gap: 1em;
+                padding: 2em;
+                height: 100%;
 
-                <div className={css`
-                    display: grid;
-                    grid-template: 90vh / 39em 34em 1fr;
-                    gap: 1em;
-                    max-width: 100%;
-                    min-width: min(100%, 100em); 
-                    `}>
-                    <LoadoutList />
-                    {selectedLoadout && <LoadoutDetails />}
-                </div>
+                @media screen and (max-width: 1400px) {
+                    grid-template: 1.2fr 0.8fr / 1fr 1fr;
+                }
+            `}>
+                <LoadoutList />
+                {selectedLoadout && <LoadoutDetails />}
             </div>
             <Outlet />
         </>
