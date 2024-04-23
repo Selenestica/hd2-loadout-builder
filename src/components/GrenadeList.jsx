@@ -18,7 +18,27 @@ export default function GrenadeList({ handleClick, filterArr }) {
         <div className={css`
             display: grid;
             width: 100%;
-            grid-template: auto / 20em 20em;
+            grid-template: auto / 1fr 1fr;
+            overflow: auto;
+
+            @media screen and (max-width: 1400px) {
+                grid-column: span 2;
+                position: fixed;
+                right: 0;
+                height: 95svh;
+                width: 40em;
+                background: black;
+            }
+    
+            @media screen and (max-width: 800px) {
+                grid-column: span 1;
+                position: fixed;
+                right: 0;
+                height: 95svh;
+                width: 40em;
+                max-width: 95svw;
+                background: black;
+            }
         `}>
             <div className={css`
                 background: ${colors.darkBlue};
