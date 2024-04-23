@@ -48,9 +48,15 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
                 width: 3em;
                 height: 3em;
             }
+
+            @media screen and (max-width: 400px) {
+                grid-template: min-content auto / min-content min-content;
+            }
         `} {...props}>
             <div className={css`
-                //white-space: nowrap;
+                @media screen and (max-width: 400px) {
+                    grid-column: span 2;
+                }
             `}>
                 {name}
             </div>

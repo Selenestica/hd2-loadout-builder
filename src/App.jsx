@@ -19,6 +19,13 @@ export default function App() {
                 @media screen and (max-width: 1400px) {
                     grid-template: 1.2fr 0.8fr / 1fr 1fr;
                 }
+
+                @media screen and (max-width: 800px) {
+                    grid-template: 50vh max-content max-content / 1fr;
+                    flex-direction: column;
+                    padding: 1em 0.5em 0.5em 0.5em;
+
+                }
             `}>
                 <LoadoutList />
                 {selectedLoadout && <LoadoutDetails />}

@@ -122,12 +122,27 @@ export default function Analytics({ strat1, strat2, strat3, strat4, primary, sec
 
     return <div {...props} className={css`
         background: ${colors.lighter};
-        display: grid;
-        justify-items: center;
-        align-items: start;
-        width: 43em;
-        padding-top: 3em;
-        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        place-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 5em 0;
+        overflow: auto;
+
+        @media screen and (max-width: 1400px) {
+            grid-column: span 2;
+            flex-direction: row;
+            padding: 1em;
+        }
+
+        @media screen and (max-width: 800px) {
+            grid-column: span 1;
+            flex-direction: column;
+            padding: 1em;
+        }
+
     `}>
         <div className={css`
             display: grid;
