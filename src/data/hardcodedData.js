@@ -85,6 +85,7 @@ import he from '../assets/weapons/he.webp'
 import knight from '../assets/weapons/knight.webp'
 import peacemaker from '../assets/weapons/peacemaker.webp'
 import { colors } from './constants'
+import airburstLauncher from '../assets/airburstLauncher.webp'
 
 const {primaryWeaponColor, secondaryWeaponColor, grenadeColor} = colors
 const stratBlue = '#457b9d'
@@ -1001,7 +1002,7 @@ export const strategemData = [
         offensiveRange: [0.8, 1, 0.5],
         type: 'support-weapon',
         color: stratBlue,
-        coverage: [0.5, 1, 1, 1, 0.2],
+        coverage: [0.5, 1, 1.5, 1, 0.2],
         supportSlotNecessary: true,
         uptime: 'very high',
         hasBackpack: true,
@@ -1027,8 +1028,8 @@ export const strategemData = [
         offensiveRange: [1, 1, 0.5],
         type: 'support-weapon',
         color: stratBlue,
-        coverage: [0, 1, 2, 0.25, 0],
-        supplyBuffedCoverage: [0.5, 1.5, 3, 0.5, 0],
+        coverage: [0, 1, 1.75, 0.25, 0],
+        supplyBuffedCoverage: [0.5, 1.5, 2.5, 0.5, 0],
         supportSlotNecessary: true,
         uptime: 'very high',
         objectives: []
@@ -1355,7 +1356,7 @@ export const strategemData = [
         offensiveRange: [1, 0.5, 0],
         type: 'backpack',
         color: stratBlue,
-        coverage: [1, 1, 0.5, 0, 0],
+        coverage: [1, 0.5, 0, 0, 0],
         uptime: 'very high',
         hasBackpack: true,
         objectives: []
@@ -1448,8 +1449,7 @@ export const strategemData = [
         offensiveRange: [1, 0.5, 0],
         type: 'backpack',
         color: stratBlue,
-        coverage: [0.75, 0.75, 0, 0, 0],
-        supplyBuffedCoverage: [1, 1, 0, 0, 0],
+        coverage: [0.8, 0.4, 0, 0, 0],
         uptime: 'very high',
         hasBackpack: true,
         objectives: []
@@ -1499,7 +1499,19 @@ export const strategemData = [
         uptime: 'low',
         objectives: []
     },
-
+    {
+        id: 51,
+        name: "RL-77 Airburst Rocket Launcher",
+        icon: airburstLauncher,
+        offensiveRange: [0, 0.25, 1],
+        type: 'support-weapon',
+        color: stratBlue,
+        coverage: [1, 1, 0.5, 0, 0],
+        supportSlotNecessary: true,
+        hasBackpack: true,
+        uptime: 'very high',
+        objectives: []
+    },
 ]
 
 // to do: balance coverage and offensiveRange once you get the visualisations going
