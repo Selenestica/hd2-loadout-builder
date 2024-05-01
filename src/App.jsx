@@ -29,6 +29,15 @@ export default function App() {
             `}>
                 <LoadoutList />
                 {selectedLoadout && <LoadoutDetails />}
+
+                <div className={css`
+                    position: fixed;
+                    bottom: 0;
+                    left: 2em;
+                    opacity: 0.2;
+                `}>
+                    v1.000.300
+                </div>
             </div>
             <Outlet />
         </>

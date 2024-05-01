@@ -129,7 +129,7 @@ export default function Analytics({ strat1, strat2, strat3, strat4, primary, sec
         width: 100%;
         height: 100%;
         padding: 5em 0;
-        overflow: auto;
+        overflow: hidden;
 
         @media screen and (max-width: 1400px) {
             grid-column: span 2;
@@ -213,7 +213,7 @@ export default function Analytics({ strat1, strat2, strat3, strat4, primary, sec
             <div className={css`
                 display: flex;
                 justify-content: space-between;
-                width: calc(100% - 40px);
+                width: calc(100% - 10px);
                 padding-left: 28px;
             `}>
                 <div className={css`

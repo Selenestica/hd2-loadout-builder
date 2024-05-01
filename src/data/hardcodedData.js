@@ -100,7 +100,7 @@ export const primaryWeaponData = [
         name: "AR23 Liberator",
         icon: lib,
         ingameStats: {
-            damage: 55,
+            damage: 60,
             capacity: 45,
             recoil: 15,
             fireRate: 640,
@@ -138,7 +138,7 @@ export const primaryWeaponData = [
         name: "AR23C Liberator Concussive",
         icon: libConc,
         ingameStats: {
-            damage: 55,
+            damage: 65,
             capacity: 30,
             recoil: 28,
             fireRate: 320,
@@ -153,17 +153,17 @@ export const primaryWeaponData = [
     {
         id: 4,
         color: primaryWeaponColor,
-        type: 'Marksman rifle',
+        type: 'Assault rifle',
         name: "BR-14 Adjudicator",
         icon: adjudicator,
         ingameStats: {
             damage: 80,
             capacity: 25,
-            recoil: 50,
+            recoil: 40,
             fireRate: 550,
             traits: ['medium armor penetrating']
         },
-        offensiveRange: [1, 1, 0.5],
+        offensiveRange: [1, 1, 0],
         coverage: [0.8, 1, 0.5, 0, 0],
         sluggish: false,
         stun: false,
@@ -176,7 +176,7 @@ export const primaryWeaponData = [
         name: "R-63 Diligence",
         icon: diligence,
         ingameStats: {
-            damage: 112,
+            damage: 125,
             capacity: 20,
             recoil: 35,
             fireRate: 350,
@@ -195,16 +195,16 @@ export const primaryWeaponData = [
         name: "R-63CS Diligence Counter Sniper",
         icon: diligenceCs,
         ingameStats: {
-            damage: 128,
+            damage: 140,
             capacity: 15,
             recoil: 53,
             fireRate: 350,
             traits: ['medium armor penetrating']
         },
-        offensiveRange: [0.5, 1, 1],
+        offensiveRange: [1, 1, 1],
         coverage: [1, 1, 0.5, 0, 0],
         stun: false,
-        sluggish: true,
+        sluggish: false,
         objectives: []
     },
     {
@@ -267,7 +267,7 @@ export const primaryWeaponData = [
     {
         id: 10,
         color: primaryWeaponColor,
-        type: 'Shotgun',
+        type: 'Energy',
         name: "SG-8P Punisher Plasma",
         icon: punisherPl,
         ingameStats: {
@@ -277,7 +277,7 @@ export const primaryWeaponData = [
             fireRate: 80,
             traits: ['explosive']
         },
-        offensiveRange: [1, 0.5, 0],
+        offensiveRange: [1, 1, 0],
         coverage: [1, 1, 1, 0.2, 0],
         stun: true,
         sluggish: false,
@@ -286,17 +286,17 @@ export const primaryWeaponData = [
     {
         id: 11,
         color: primaryWeaponColor,
-        type: 'Shotgun',
+        type: 'Energy',
         name: "ARC-12 Blitzer",
         icon: blitz,
         ingameStats: {
             damage: 250,
             capacity: 'infinite',
             recoil: 60,
-            fireRate: 30,
+            fireRate: 45,
             traits: []
         },
-        offensiveRange: [0.75, 0, 0],
+        offensiveRange: [1, 0, 0],
         coverage: [1, 1, 0.5, 0, 0],
         stun: true,
         sluggish: false,
@@ -373,7 +373,7 @@ export const primaryWeaponData = [
             traits: ['explosive']
         },
         offensiveRange: [1, 1, 0],
-        coverage: [1, 1, 0.5, 0.2, 0],
+        coverage: [0.25, 1, 0.5, 0.2, 0],
         stun: true,
         sluggish: false,
         objectives: []
@@ -385,7 +385,7 @@ export const primaryWeaponData = [
         name: "JAR-5 Dominator",
         icon: dominator,
         ingameStats: {
-            damage: 300,
+            damage: 275,
             capacity: 15,
             recoil: 75,
             fireRate: 250,
@@ -423,7 +423,7 @@ export const primaryWeaponData = [
         name: "LAS-5 Scythe",
         icon: scythe,
         ingameStats: {
-            dps: 300,
+            dps: 350,
             fireLimit: 8,
             recoil: 1,
             traits: ['light armor penetrating', 'beam', 'heat']
@@ -447,7 +447,7 @@ export const primaryWeaponData = [
             fireRate: 750,
             traits: ['light armor penetrating', 'heat']
         },
-        offensiveRange: [1, 1, 0.5],
+        offensiveRange: [1, 1, 0.25],
         coverage: [1, 0.5, 0, 0, 0],
         stun: false,
         sluggish: false,
@@ -466,7 +466,7 @@ export const primaryWeaponData = [
             fireRate: 250,
             traits: ['light armor penetrating', 'explosive']
         },
-        offensiveRange: [0.8, 1, 0.5],
+        offensiveRange: [0.8, 1, 0.25],
         coverage: [1, 1, 1, 0.2, 0],
         stun: false,
         sluggish: false,
@@ -501,13 +501,13 @@ export const secondaryWeaponData = [
         name: "P-2 Peacemaker",
         icon: peacemaker,
         ingameStats: {
-            damage: 60,
+            damage: 75,
             capacity: 15,
             recoil: 23,
             fireRate: 900,
             traits: ['light armor penetrating', 'one handed']
         },
-        offensiveRange: [0.5, 0.5, 0],
+        offensiveRange: [0.5, 0.75, 0],
         coverage: [1, 0.5, 0, 0, 0],
         sluggish: false,
         stun: false,
@@ -522,7 +522,7 @@ export const secondaryWeaponData = [
         ingameStats: {
             damage: 60,
             capacity: 31,
-            recoil: 11,
+            recoil: 15,
             fireRate: 1100,
             traits: ['light armor penetrating', 'one handed']
         },
@@ -558,13 +558,13 @@ export const secondaryWeaponData = [
         name: "LAS-7 Dagger",
         icon: dagger,
         ingameStats: {
-            dps: 150,
+            dps: 200,
             fireLimit: 5,
             recoil: 1,
             traits: ['light armor penetrating', 'one handed', 'beam', 'heat']
         },
         offensiveRange: [1, 1, 0],
-        coverage: [0.5, 0.25, 0, 0, 0],
+        coverage: [0.75, 0.4, 0, 0, 0],
         sluggish: false,
         stun: false,
         objectives: []
@@ -576,14 +576,14 @@ export const secondaryWeaponData = [
         name: "P-4 Senator",
         icon: senator,
         ingameStats: {
-            damage: 150,
+            damage: 175,
             capacity: 6,
             recoil: 43,
             fireRate: 200,
             traits: ['medium armor penetrating', 'one handed', 'rounds reload']
         },
-        offensiveRange: [1, 0.666, 0],
-        coverage: [0.5, 1, 0.5, 0, 0],
+        offensiveRange: [1, 0.75, 0],
+        coverage: [0.75, 1, 0.5, 0, 0],
         sluggish: false,
         stun: false,
         objectives: []
@@ -1028,8 +1028,8 @@ export const strategemData = [
         offensiveRange: [1, 1, 0.5],
         type: 'support-weapon',
         color: stratBlue,
-        coverage: [0, 1, 1.75, 0.25, 0],
-        supplyBuffedCoverage: [0.5, 1.5, 2.5, 0.5, 0],
+        coverage: [0, 1, 1.75, 0.5, 0],
+        supplyBuffedCoverage: [0.5, 1.5, 2.5, 0.75, 0],
         supportSlotNecessary: true,
         uptime: 'very high',
         objectives: []
@@ -1333,7 +1333,7 @@ export const strategemData = [
         offensiveRange: [0.5, 1, 1],
         type: 'support-weapon',
         color: stratBlue,
-        coverage: [1, 1, 1, 1, 0],
+        coverage: [0.75, 1, 1, 1, 0],
         supportSlotNecessary: true,
         uptime: 'very high',
         objectives: []
