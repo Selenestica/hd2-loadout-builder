@@ -1143,7 +1143,7 @@ export const strategemData = [
         type: 'eagle',
         color: stratRed,
         coverage: [1, 1, 1, 0.5, 0],
-        uptime: 'medium',
+        uptime: 'high',
         objectives: []
     },
     {

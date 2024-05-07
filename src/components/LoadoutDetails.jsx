@@ -196,6 +196,7 @@ export default function LoadoutDetails({ ...props }) {
                         background: black;
                         border-radius: 5px;
                         grid-column: span 2;
+                        font-family: 'sinclair';
                     `}
                     maxLength='24'
                     value={name}

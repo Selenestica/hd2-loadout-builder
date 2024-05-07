@@ -4,6 +4,7 @@ import LoadoutsContext from './context/Loadouts'
 import LoadoutList from './components/LoadoutList'
 import LoadoutDetails from './components/LoadoutDetails'
 import { Outlet } from 'react-router-dom'
+import NameScroller from './components/NameScroller'
 
 export default function App() {
     const { selectedLoadout } = useContext(LoadoutsContext)
@@ -39,20 +40,19 @@ export default function App() {
                     height: 2em;
                     overflow: hidden;
                     width: 100%;
-                    display: flex;
+                    display: grid;
+                    grid-template-columns: auto auto auto 1fr;
                     place-items: center;
                     background: rgb(25,25,25);
                     color: rgba(255,255,255,0.2);
                 `}>
-                    <div>
-
-                    </div>
-                    v1.000.300
+                    v1.000.302
 
                     <span className={css`
                         margin-left: 1em;
                         cursor: pointer;
                         text-decoration: underline;
+                        white-space: nowrap;
 
                         &: hover{
                             color: yellow;
@@ -62,12 +62,12 @@ export default function App() {
                     <span className={css`
                         margin-left: 1em;
                         cursor: pointer;
-                        text-decoration: underline;
+                    `}>
+                        Thanks to:&nbsp;
+                    </span>
 
-                        &: hover{
-                            color: yellow;
-                        }
-                    `}>View supporters</span>
+                        <NameScroller />
+                    
                     {/* <form action="https://www.paypal.com/donate" method="post" target="_top" className={css`scale: 0.5;`}>
                         <input type="hidden" name="hosted_button_id" value="S4PWZALBVH6NU" />
                         <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
