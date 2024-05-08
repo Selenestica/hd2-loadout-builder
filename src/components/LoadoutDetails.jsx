@@ -194,7 +194,6 @@ export default function LoadoutDetails({ ...props }) {
                         cursor: pointer;
                         padding: 0.5em 0;
                         background: black;
-                        border-radius: 5px;
                         grid-column: span 2;
                         font-family: 'sinclair';
                     `}
@@ -297,29 +296,12 @@ export default function LoadoutDetails({ ...props }) {
 
                 <div className={css`flex-grow: 1;`} />
 
-                <div className={css`
-                        width: 100%; 
-                        text-align: center;
-                        font-size: 0.8em;
-                        cursor: pointer;
-                        grid-column: span 2;
-                    `}
-                    onClick={() => setConfirmDelete(prev => !prev)}
-                >
-                    {!confirmDelete && 'Remove'}
-                    {confirmDelete &&
-                        <button
-                            className={css`padding: 0.2em;`}
-                            onClick={handleDelete}
-                        >
-                            Remove
-                        </button>}
-                </div>
+
                 <div className={css`
                     width: 100%; 
                     grid-column: span 2;
                     display: grid;
-                    grid-template-columns: 1fr 1fr 1fr;      
+                    grid-template-columns: 1fr 1fr 1fr 1fr;      
                     gap: 0.2em;  
                 `}>
 
@@ -334,6 +316,15 @@ export default function LoadoutDetails({ ...props }) {
                         onClick={clearLoadout}
                     >
                         Clear
+                    </button>
+                    <button onClick={() => setConfirmDelete(prev => !prev)} className={css`
+                        background: ${confirmDelete ? 'red' : ''};`
+                    }>
+                        {!confirmDelete && 'Delete'}
+                        {confirmDelete &&
+                            <div onClick={handleDelete} >
+                                Confirm?
+                            </div>}
                     </button>
                     <ShareButton className={css`padding: 0.2em;`} newLoadout={newLoadout}>
                         Share

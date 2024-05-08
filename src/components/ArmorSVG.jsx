@@ -2,13 +2,14 @@ import { ReactSVG } from "react-svg"
 import { css } from "@emotion/css"
 import { colors } from "../data/constants"
 
-export default function ArmorSVG({ armor, ...props }) {
+export default function ArmorSVG({ armor, color, ...props }) {
 
     return <span className={css`
-            background: ${colors.lighter}; 
+            background: ${color ? color : colors.lighter}; 
             width: 3em; 
             height: 3em;
             position: relative;
+            ${color ? 'border: 2px solid black;' : ''}
         `
     }{...props}>
         <ReactSVG

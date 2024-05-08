@@ -29,29 +29,40 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
 
     return (
         <div className={css`
-            background: ${active ? colors.lighter : colors.darkBlue};
+            background: ${active ? colors.darkGrey : colors.grey};
+            border-top: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+            transition: border ease 0.2s;
 
             &:hover {
-                background: ${colors.lighter};
+                border-bottom: 3px solid yellow;
                 cursor: pointer;
             }
-            
+            ${active ? 'border-bottom: 3px solid yellow;' : ''};
+
             display: grid;
             align-items: center;
             grid-template: auto / auto 1fr min-content;
             grid-gap: 1em;
-            padding: 0.5em;
+            padding: 0.4em;
+            padding-left: 1em;
             overflow: hidden;
 
             img, > div > div{
-                background: ${colors.lighter};;
+                background: ${active ? colors.grey : colors.lighter};
                 width: 3em;
                 height: 3em;
+                ${active ? 'border: 2px solid black;' : ''}
             }
 
             @media screen and (max-width: 400px) {
                 grid-template: min-content auto / min-content min-content;
             }
+
+            ${active ? `
+                background-image: ${colors.backgroundStripes};
+                background-size: 9px 9px;
+            ` : ''}
         `} {...props}>
             <div className={css`
                 @media screen and (max-width: 400px) {
@@ -65,20 +76,20 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
                 gap: 2px;
                 justify-content: end;
             `}>
-                {s1 ? <img src={s1?.icon} alt="" title={s1?.name}/> : <div />}
-                {s2 ? <img src={s2?.icon} alt="" title={s2?.name}/> : <div />}
-                {s3 ? <img src={s3?.icon} alt="" title={s3?.name}/> : <div />}
-                {s4 ? <img src={s4?.icon} alt="" title={s4?.name}/> : <div />}
+                {s1 ? <img src={s1?.icon} alt="" title={s1?.name} /> : <div />}
+                {s2 ? <img src={s2?.icon} alt="" title={s2?.name} /> : <div />}
+                {s3 ? <img src={s3?.icon} alt="" title={s3?.name} /> : <div />}
+                {s4 ? <img src={s4?.icon} alt="" title={s4?.name} /> : <div />}
             </div>
 
             <div className={css`
                 display: flex;
                 gap: 2px;
             `}>
-                 {prim ? <img src={prim?.icon} alt={''} title={prim?.name}/> : <div />}
-                 {sec ? <img src={sec?.icon} alt={''} title={sec?.name}/> : <div />}
-                 {gren ? <img src={gren?.icon} alt={''} title={gren?.name}/> : <div />}
-                 {arm ? <ArmorSVG armor={arm} title={arm?.name}/> : <div />}
+                {prim ? <img src={prim?.icon} alt={''} title={prim?.name} /> : <div />}
+                {sec ? <img src={sec?.icon} alt={''} title={sec?.name} /> : <div />}
+                {gren ? <img src={gren?.icon} alt={''} title={gren?.name} /> : <div />}
+                {arm ? <ArmorSVG armor={arm} title={arm?.name} color={active ? colors.grey : undefined} /> : <div />}
             </div>
         </div >
     )
