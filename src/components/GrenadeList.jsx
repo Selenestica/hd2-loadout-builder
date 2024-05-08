@@ -27,7 +27,6 @@ export default function GrenadeList({ handleClick, filterArr }) {
                 right: 0;
                 height: 95svh;
                 width: 40em;
-                background: black;
             }
     
             @media screen and (max-width: 800px) {
@@ -37,12 +36,19 @@ export default function GrenadeList({ handleClick, filterArr }) {
                 height: 95svh;
                 width: 40em;
                 max-width: 95svw;
-                background: black;
             }
         `}>
             <div className={css`
                 background: ${colors.darkBlue};
                 overflow-Y: auto;
+                
+                @media screen and (max-width: 1400px) {
+                    background: ${colors.darkBlueSolid};
+                }
+
+                @media screen and (max-width: 800px) {
+                   grid-column: span 2;
+                }
             `}>
                 {sortedGrenades.map(grenade => {
                     return <div key={grenade.id} className={css`
@@ -70,6 +76,14 @@ export default function GrenadeList({ handleClick, filterArr }) {
             </div >
             <div className={css`
                 background: ${colors.lighter};
+
+                @media screen and (max-width: 1400px) {
+                    background: ${colors.grey};
+                }
+
+                @media screen and (max-width: 800px) {
+                    display: none;
+                }
             `}>
                 {hoverState &&
                     <div className={css`

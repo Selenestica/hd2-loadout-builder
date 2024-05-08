@@ -1,7 +1,7 @@
 
 export const colors = {
     darkBlue: 'rgba(023,056,090, 0.5)',
-    darkBlueSolid: 'rgba(023,056,090, 1)',
+    darkBlueSolid: 'rgba(13,26,40, 1)',
     grey: 'rgb(78,78,78)',
     darkGrey: 'rgb(48,48,48)',
     lightBlue: 'rgba(023,056,090, 1)',

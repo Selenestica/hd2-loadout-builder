@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { css } from '@emotion/css'
 import LoadoutsContext from './context/Loadouts'
 import LoadoutList from './components/LoadoutList'
@@ -7,9 +7,12 @@ import { Outlet } from 'react-router-dom'
 import NameScroller from './components/NameScroller'
 import backgroundUrl from './assets/backgrounds/super-earth-flag.svg'
 import videoUrl from './assets/backgrounds/particles.mp4'
+import DonateModal from './components/DonateModal'
 
 export default function App() {
     const { selectedLoadout } = useContext(LoadoutsContext)
+    const [showDonateModal, setShowDonateModal] = useState(false)
+
     return (
         <>
             <div className={css`
@@ -85,7 +88,9 @@ export default function App() {
                             &: hover{
                                 color: yellow;
                             }
-                        `}>Support us by donating!</span>
+                        `}
+                        onClick={() => setShowDonateModal(true)}
+                    >Support us by donating!</span>
 
                     <span className={css`
                             margin-left: 1em;
@@ -94,6 +99,8 @@ export default function App() {
                     </span>
 
                     <NameScroller />
+
+                    {showDonateModal && <DonateModal setShowDonateModal={setShowDonateModal}/>}
 
                     {/* <form action="https://www.paypal.com/donate" method="post" target="_top" className={css`scale: 0.5;`}>
                         <input type="hidden" name="hosted_button_id" value="S4PWZALBVH6NU" />

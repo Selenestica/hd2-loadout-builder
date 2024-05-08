@@ -28,7 +28,6 @@ export default function ArmorList({ handleClick, filterArr }) {
                 right: 0;
                 height: 95svh;
                 width: 40em;
-                background: black;
             }
     
             @media screen and (max-width: 800px) {
@@ -38,12 +37,19 @@ export default function ArmorList({ handleClick, filterArr }) {
                 height: 95svh;
                 width: 40em;
                 max-width: 95svw;
-                background: black;
             }
         `}>
             <div className={css`
                 background: ${colors.darkBlue};
                 overflow-Y: auto;
+                
+                @media screen and (max-width: 1400px) {
+                    background: ${colors.darkBlueSolid};
+                }
+
+                @media screen and (max-width: 800px) {
+                   grid-column: span 2;
+                }
             `}>
                 {sortedArmors.map(armor => {
                     return <div key={armor.id} className={css`
@@ -75,6 +81,14 @@ export default function ArmorList({ handleClick, filterArr }) {
                 display: grid;
                 place-items: start;
                 padding: 1em;
+
+                @media screen and (max-width: 1400px) {
+                    background: ${colors.grey};
+                }
+
+                @media screen and (max-width: 800px) {
+                    display: none;
+                }
             `}>
                 {hoverState &&
                     <div className={css`

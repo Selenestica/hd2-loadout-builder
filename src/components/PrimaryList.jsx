@@ -30,7 +30,6 @@ export default function PrimaryList({ handleClick, filterArr }) {
                 right: 0;
                 height: 95svh;
                 width: 40em;
-                background: black;
             }
     
             @media screen and (max-width: 800px) {
@@ -40,12 +39,19 @@ export default function PrimaryList({ handleClick, filterArr }) {
                 height: 95svh;
                 width: 40em;
                 max-width: 95svw;
-                background: black;
             }
         `}>
             <div className={css`
                 background: ${colors.darkBlue};
                 overflow-Y: auto;
+                
+                @media screen and (max-width: 1400px) {
+                    background: ${colors.darkBlueSolid};
+                }
+
+                @media screen and (max-width: 800px) {
+                   grid-column: span 2;
+                }
             `}>
                 {sortedPrimaries.map(primary => {
                     return <div key={primary.id} className={css`
@@ -76,7 +82,14 @@ export default function PrimaryList({ handleClick, filterArr }) {
                 width: 100%;
                 display: grid;
                 place-items: start;
-                padding: 1em;
+
+                @media screen and (max-width: 1400px) {
+                    background: ${colors.grey};
+                }
+
+                @media screen and (max-width: 800px) {
+                    display: none;
+                }
             `}>
                 {hoverState &&
                     <div className={css`

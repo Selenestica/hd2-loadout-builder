@@ -1,13 +1,12 @@
 import { useSearchParams } from 'react-router-dom'
 import { useCallback, useContext, useMemo, useState } from 'react'
-import Modal from 'react-modal'
-import { colors } from '../data/constants'
 import { css } from '@emotion/css'
 import '../index.css'
 import Loadout from './Loadout'
 import { useNavigate } from 'react-router-dom'
 import LoadoutsContext from '../context/Loadouts'
 import { addLoadout } from '../data/indexedDB'
+import GenericModalLayout from './GenericModalLayout'
 
 export default function ReceivedLoadoutModal({ ...props }) {
 
@@ -75,22 +74,13 @@ export default function ReceivedLoadoutModal({ ...props }) {
     }, [loadouts, data, setSelectedLoadout, navigate])
 
     const [isOpen, setIsOpen] = useState(true)
-    function openModal() { setIsOpen(true) }
-    function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-    }
+
     function closeModal() {
         navigate('/')
         setIsOpen(false)
     }
 
-    return <Modal
-        isOpen={isOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="receive loadout modal"
-    >
+    return isOpen ? <GenericModalLayout closeModal={closeModal}>
         <section className={css`
             display: grid;
             font-size: 0.5em;
@@ -117,25 +107,6 @@ export default function ReceivedLoadoutModal({ ...props }) {
                 </button>
             </div>
         </section>
-    </Modal>
-}
-
-const customStyles = {
-    content: {
-        borderRadius: 0,
-        border: 'none',
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-        fontSize: '2em',
-        background: colors.darkGrey,
-        borderBottom: '3px solid yellow',
-        boxShadow: '0px 0px 10px 2px black'
-    },
-    overlay: {
-        background: 'rgba(0,0,0,0.4)'
-    }
+    </GenericModalLayout>
+    : null
 }
