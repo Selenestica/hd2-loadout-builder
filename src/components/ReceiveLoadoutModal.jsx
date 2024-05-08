@@ -95,13 +95,16 @@ export default function ReceivedLoadoutModal({ ...props }) {
             display: grid;
             font-size: 0.5em;
         `}>
-            <h3>{message}</h3>
-            {data && <Loadout data={data} />}
+            <h3 className={css`
+                width: 100%; 
+                padding: 0 0 1em 0;
+            `}>{message}</h3>
+            {data && <Loadout data={data} active={true} />}
             <div className={css`
                 display: flex; 
                 justify-content: center; 
                 gap: 2em; 
-                margin-top: 1em; 
+                margin-top: 2em;
                 > button {
                     width: 10em;
                 }
@@ -119,16 +122,18 @@ export default function ReceivedLoadoutModal({ ...props }) {
 
 const customStyles = {
     content: {
+        borderRadius: 0,
+        border: 'none',
         top: '50%',
         left: '50%',
         right: 'auto',
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
-
-        background: colors.darkBlueSolid,
-        fontSize: '2em'
-
+        fontSize: '2em',
+        background: colors.darkGrey,
+        borderBottom: '3px solid yellow',
+        boxShadow: '0px 0px 10px 2px black'
     },
     overlay: {
         background: 'rgba(0,0,0,0.4)'

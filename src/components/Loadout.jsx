@@ -38,7 +38,6 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
                 border-bottom: 3px solid yellow;
                 cursor: pointer;
             }
-            ${active ? 'border-bottom: 3px solid yellow;' : ''};
 
             display: grid;
             align-items: center;
@@ -68,6 +67,7 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
                 @media screen and (max-width: 400px) {
                     grid-column: span 2;
                 }
+                ${active ? 'background: black; border-radius: 5px; padding: 0 2px;' : ''}
             `}>
                 {name}
             </div>

@@ -31,7 +31,7 @@ export default function PrimaryDetails({ primary, active, reset, ...props }) {
                 &:hover {
                     background: ${colors.lighter};
                 }
-            `} onClick={(e) => {e.stopPropagation(); reset(null)}}>&#x2718;
+            `} onClick={(e) => {e.stopPropagation(); reset(null)}}>X
         </div>}
 
         {primary?.icon ?

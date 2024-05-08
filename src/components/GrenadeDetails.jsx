@@ -31,7 +31,7 @@ export default function GrenadeDetails({ grenade, active, reset, ...props }) {
                 &:hover {
                     background: ${colors.lighter};
                 }
-            `} onClick={(e) => {e.stopPropagation(); reset(null)}}>&#x2718;
+            `} onClick={(e) => {e.stopPropagation(); reset(null)}}>X
         </div>}
 
         {grenade?.icon ?
