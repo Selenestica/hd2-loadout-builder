@@ -29,7 +29,7 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
 
     return (
         <div className={css`
-            background: ${active ? colors.darkGrey : colors.grey};
+            background: ${active ? colors.darkGrey : colors.darker};
             border-top: 3px solid transparent;
             border-bottom: 3px solid transparent;
             transition: border ease 0.2s;
@@ -51,7 +51,7 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
                 background: ${active ? colors.grey : colors.lighter};
                 width: 3em;
                 height: 3em;
-                ${active ? 'border: 2px solid black;' : ''}
+                ${active ? 'border: 1px solid black;' : ''}
             }
 
             @media screen and (max-width: 400px) {
@@ -60,14 +60,17 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
 
             ${active ? `
                 background-image: ${colors.backgroundStripes};
-                background-size: 9px 9px;
+                background-size: 20px 20px;
             ` : ''}
         `} {...props}>
             <div className={css`
                 @media screen and (max-width: 400px) {
                     grid-column: span 2;
                 }
-                ${active ? 'background: black; border-radius: 5px; padding: 0 2px;' : ''}
+                ${active ? `
+                background: ${colors.grey}; padding: 0.2em;
+                transform: translate(-0.2em, 0);
+                ` : ''}
             `}>
                 {name}
             </div>

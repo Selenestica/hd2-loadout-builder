@@ -6,6 +6,7 @@ import LoadoutDetails from './components/LoadoutDetails'
 import { Outlet } from 'react-router-dom'
 import NameScroller from './components/NameScroller'
 import backgroundUrl from './assets/backgrounds/super-earth-flag.svg'
+import videoUrl from './assets/backgrounds/particles.mp4'
 
 export default function App() {
     const { selectedLoadout } = useContext(LoadoutsContext)
@@ -16,7 +17,24 @@ export default function App() {
                 height: 100%;
                 grid-template-rows: 1fr 2em;
                 background: url(${backgroundUrl}) no-repeat center / 80% auto;
+                position: relative;
             `}>
+                {<video autoPlay loop muted playsInline className={css`
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    position: absolute;
+                    z-index: -1;
+                    opacity: 0.2;
+                    filter: brightness(35%) grayscale(0.7);
+
+                    @media (max-width: 768px) { 
+                        display: none;
+                    }
+                `}>
+                    <source src={videoUrl} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>}
 
                 <div className={css`
                     display: grid;
@@ -36,6 +54,10 @@ export default function App() {
                         padding: 1em 0.5em 2em 0.5em;
                         margin-bottom: 1em;
                     }
+
+                    >div {
+                        background: rgba(180,200,250,0.15);
+                    }
                 `}>
                     <LoadoutList />
                     {selectedLoadout && <LoadoutDetails />}
@@ -52,9 +74,9 @@ export default function App() {
                         place-items: center;
                         color: rgba(255,255,255,0.2);
                     `}>
-                        v1.000.302
+                    v1.000.302
 
-                        <span className={css`
+                    <span className={css`
                             margin-left: 1em;
                             cursor: pointer;
                             text-decoration: underline;
@@ -65,20 +87,20 @@ export default function App() {
                             }
                         `}>Support us by donating!</span>
 
-                        <span className={css`
+                    <span className={css`
                             margin-left: 1em;
                         `}>
-                            Thanks to:&nbsp;
-                        </span>
+                        Thanks to:&nbsp;
+                    </span>
 
-                        <NameScroller />
+                    <NameScroller />
 
-                        {/* <form action="https://www.paypal.com/donate" method="post" target="_top" className={css`scale: 0.5;`}>
+                    {/* <form action="https://www.paypal.com/donate" method="post" target="_top" className={css`scale: 0.5;`}>
                         <input type="hidden" name="hosted_button_id" value="S4PWZALBVH6NU" />
                         <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
                         <img alt="" border="0" src="https://www.paypal.com/en_BE/i/scr/pixel.gif" width="1" height="1" />
                     </form> */}
-                    </div>
+                </div>
             </div>
             <Outlet />
         </>

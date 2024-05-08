@@ -60,6 +60,7 @@ button {
     background-color: #1a1a1a;
     cursor: pointer;
     transition: border-color 0.25s;
+    outline: none;
 }
 
 button:hover {
@@ -76,8 +77,9 @@ button:disabled {
 }
 
 button:focus,
-button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+button:focus-visible, input:focus-visible {
+    outline: none;
+    border-bottom: 3px solid yellow;
 }
 
 @media screen and (max-width: 1900px) {
@@ -93,20 +95,5 @@ button:focus-visible {
 @media screen and (max-width: 1600px) {
     :root {
         font-size: 10px;
-    }
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-
-    a:hover {
-        color: yellow;
-    }
-
-    button {
-        background-color: #f9f9f9;
     }
 }

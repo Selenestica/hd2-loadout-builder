@@ -1,5 +1,7 @@
 import { css } from '@emotion/css'
 import { colors } from '../data/constants'
+import RemovalBar from './RemovalBar';
+import RangeBar from './RangeBar';
 
 export default function PrimaryDetails({ primary, active, reset, ...props }) {
 
@@ -9,12 +11,20 @@ export default function PrimaryDetails({ primary, active, reset, ...props }) {
                 grid-gap: 0.2em 1em;
                 cursor: pointer;
                 align-items: center;
-                background: ${active ? colors.lighter : colors.darkBlue};
+                border-bottom: 3px solid transparent;
+                background: ${colors.darker};
+
+                ${active ? `    
+                    background: ${colors.darkGrey};
+                    background-image: ${colors.backgroundStripes};
+                    background-size: 20px 20px;
+                ` : ''}
+    
                 padding: 0.4em;
                 position: relative;
-
+    
                 &:hover {
-                    background: ${colors.lighter};
+                    border-bottom: 3px solid yellow;
                 }
             `} {...props}>
 
@@ -31,7 +41,7 @@ export default function PrimaryDetails({ primary, active, reset, ...props }) {
                 &:hover {
                     background: ${colors.lighter};
                 }
-            `} onClick={(e) => {e.stopPropagation(); reset(null)}}>X
+            `} onClick={(e) => { e.stopPropagation(); reset(null) }}>X
         </div>}
 
         {primary?.icon ?
@@ -43,55 +53,9 @@ export default function PrimaryDetails({ primary, active, reset, ...props }) {
 
         {primary &&
             <>
-                <div>Range:</div>
-                <div className={css`
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    grid-gap: 2px;
-                    height: 50%;
-                    background: ${colors.lighter};
-                    border-radius: 15px;
-                    overflow: hidden;
-                `}>
-                    {primary.offensiveRange.map((el, i) => <div key={i} className={css`
-                        width: 100%;
-                        height: ${el * 100}%;
-                        background: ${el > 1 ? colors.gold : 'white'};
-                        align-self: center;
-                    `} title={i === 0 ? 'short' : i === 1 ? 'medium' : i === 2 ? 'long' : ''} />)}
-                </div>
+                <RangeBar range={primary.offensiveRange} />
 
-                <div>Removal:</div>
-                <div className={css`
-                    display: grid;
-                    grid-template-columns: repeat(5, 1fr);
-                    grid-gap: 2px;
-                    height: 50%;
-                    background: ${colors.lighter};
-                    border-radius: 15px;
-                    overflow: hidden;
-                `}>
-                    {primary.coverage.map((el, i) => <div key={i} className={css`
-                        width: 100%;
-                        height: ${el * 100}%;
-                        align-self: center;
-                        background: ${el > 1 ? colors.gold : 'white'};
-                    `} />)}
-                </div>
-
-                <div></div>
-                <div className={css`
-                    display: flex;
-                    justify-content: space-between;
-                    color: ${colors.lighter};
-                `}>
-                    <div>
-                        {'lights'}
-                    </div>
-                    <div>
-                        {'heavies'}
-                    </div>
-                </div>
+                <RemovalBar coverage={primary.coverage} />
             </>
         }
 

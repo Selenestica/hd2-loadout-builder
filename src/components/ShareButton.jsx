@@ -41,7 +41,7 @@ export default function ShareButton({ newLoadout, ...props }) {
 
     return (
         <button id="btn-copy" {...props} >
-            {copied ? 'Link Copied!' : 'Share'}
+            {copied ? 'Link Copied!' : 'Share url'}
         </button>
     )
 }

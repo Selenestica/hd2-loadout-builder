@@ -10,13 +10,20 @@ export default function ArmorDetails({ armor, active, reset, ...props }) {
                 grid-gap: 0.2em 1em;
                 cursor: pointer;
                 align-items: center;
-                background: ${active ? colors.lighter : colors.darkBlue};
+                border-bottom: 3px solid transparent;
+                background: ${colors.darker};
+                
+                ${active ? `    
+                    background: ${colors.darkGrey};
+                    background-image: ${colors.backgroundStripes};
+                    background-size: 20px 20px;
+                ` : ''}
+    
                 padding: 0.4em;
-                text-transform: capitalize;
                 position: relative;
-
+    
                 &:hover {
-                    background: ${colors.lighter};
+                    border-bottom: 3px solid yellow;
                 }
             `} {...props}>
 

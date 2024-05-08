@@ -193,9 +193,15 @@ export default function LoadoutDetails({ ...props }) {
                         border: none;
                         cursor: pointer;
                         padding: 0.5em 0;
-                        background: black;
+                        background: #1a1a1a;
                         grid-column: span 2;
                         font-family: 'sinclair';
+                        border-bottom: 3px solid transparent;
+                        border-top: 3px solid transparent;
+
+                        &:hover {
+                            border-bottom: 3px solid yellow;
+                        }
                     `}
                     maxLength='24'
                     value={name}
@@ -326,9 +332,8 @@ export default function LoadoutDetails({ ...props }) {
                                 Confirm?
                             </div>}
                     </button>
-                    <ShareButton className={css`padding: 0.2em;`} newLoadout={newLoadout}>
-                        Share
-                    </ShareButton>
+                    <ShareButton className={css`padding: 0.2em;`} newLoadout={newLoadout} />
+
                 </div>
                 <button disabled={!activeChanges} onClick={handleSave} className={css`
                     grid-column: span 2;

@@ -9,7 +9,7 @@ export default function ArmorSVG({ armor, color, ...props }) {
             width: 3em; 
             height: 3em;
             position: relative;
-            ${color ? 'border: 2px solid black;' : ''}
+            ${color ? 'border: 1px solid black;' : ''}
         `
     }{...props}>
         <ReactSVG
