@@ -77,7 +77,7 @@ export default function App() {
                         place-items: center;
                         color: rgba(255,255,255,0.2);
                     `}>
-                    v1.000.302
+                    v1.000.303
 
                     <span className={css`
                             margin-left: 1em;
@@ -97,16 +97,8 @@ export default function App() {
                         `}>
                         Thanks to:&nbsp;
                     </span>
-
                     <NameScroller />
-
                     {showDonateModal && <DonateModal setShowDonateModal={setShowDonateModal}/>}
-
-                    {/* <form action="https://www.paypal.com/donate" method="post" target="_top" className={css`scale: 0.5;`}>
-                        <input type="hidden" name="hosted_button_id" value="S4PWZALBVH6NU" />
-                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-                        <img alt="" border="0" src="https://www.paypal.com/en_BE/i/scr/pixel.gif" width="1" height="1" />
-                    </form> */}
                 </div>
             </div>
             <Outlet />
@@ -116,6 +108,5 @@ export default function App() {
 
 // TO DO:
 // add bugs / bots tag and filter
-// add stacked bar chart for removal
 // import / export app data
 // add 'lock' to equipment to not randomize
