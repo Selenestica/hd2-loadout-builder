@@ -84,6 +84,11 @@ import stun from '../assets/weapons/stun.webp'
 import he from '../assets/weapons/he.webp'
 import knight from '../assets/weapons/knight.webp'
 import peacemaker from '../assets/weapons/peacemaker.webp'
+import pummeler from '../assets/weapons/pummeler.webp'
+import incendiaryImpact from '../assets/weapons/incendiaryImpact.webp'
+import verdict from '../assets/weapons/verdict.webp'
+import purifier from '../assets/weapons/purifier.webp'
+import tenderizer from '../assets/weapons/tenderizer.webp'
 import { colors } from './constants'
 import airburstLauncher from '../assets/airburstLauncher.webp'
 
@@ -491,6 +496,63 @@ export const primaryWeaponData = [
         sluggish: false,
         objectives: []
     },
+    {
+        id: 22,
+        color: primaryWeaponColor,
+        type: 'SMG',
+        name: "SMG-72 Pummeler",
+        icon: pummeler,
+        ingameStats: {
+            damage: 65,
+            fireLimit: 45,
+            recoil: 10,
+            fireRate: 475,
+            traits: ['light armor penetrating', 'one handed']
+        },
+        offensiveRange: [1, 0.5, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 23,
+        color: primaryWeaponColor,
+        type: 'Assault rifle',
+        name: "AR-61 Tenderizer",
+        icon: tenderizer,
+        ingameStats: {
+            damage: 60,
+            fireLimit: 35,
+            recoil: 10,
+            fireRate: 600,
+            traits: ['light armor penetrating']
+        },
+        offensiveRange: [1, 0.5, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 24,
+        color: primaryWeaponColor,
+        type: 'Energy',
+        name: "PLAS-101 Purifier",
+        icon: purifier,
+        ingameStats: {
+            damage: 250,
+            fireLimit: 15,
+            recoil: 20,
+            fireRate: 250,
+            traits: ['light armor penetrating', 'Chargeup', 'explosive']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [1, 1, 0.5, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
 ]
 
 export const secondaryWeaponData = [
@@ -584,6 +646,25 @@ export const secondaryWeaponData = [
         },
         offensiveRange: [1, 0.75, 0],
         coverage: [0.75, 1, 0.5, 0, 0],
+        sluggish: false,
+        stun: false,
+        objectives: []
+    },
+    {
+        id: 6,
+        color: secondaryWeaponColor,
+        type: 'pistol',
+        name: "P-113 Verdict",
+        icon: verdict,
+        ingameStats: {
+            damage: 125,
+            capacity: 10,
+            recoil: 40,
+            fireRate: 450,
+            traits: ['light armor penetrating', 'one handed']
+        },
+        offensiveRange: [1, 0.75, 0],
+        coverage: [1, 0.5, 0, 0, 0],
         sluggish: false,
         stun: false,
         objectives: []
@@ -707,6 +788,23 @@ export const grenadeData = [
         },
         offensiveRange: [1, 1, 0],
         coverage: [0, 0, 0, 0.75, 0.75],
+        stun: false,
+        objectives: []
+    },
+    {
+        id: 8,
+        color: grenadeColor,
+        name: "G-13 Incendiary Impact",
+        icon: incendiaryImpact,
+        ingameStats: {
+            damage: 150,
+            penetration: 3,
+            radius: 7,
+            fuse: 0,
+            traits: ['Incendiary']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [1, 1, 0, 0, 0],
         stun: false,
         objectives: []
     },
