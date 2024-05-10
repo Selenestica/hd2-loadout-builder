@@ -548,8 +548,8 @@ export const primaryWeaponData = [
             traits: ['light armor penetrating', 'Chargeup', 'explosive']
         },
         offensiveRange: [1, 1, 0],
-        coverage: [1, 1, 0.5, 0, 0],
-        stun: false,
+        coverage: [0.5, 0.5, 0.5, 0, 0],
+        stun: true,
         sluggish: false,
         objectives: []
     },
