@@ -1240,7 +1240,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'eagle',
         color: stratRed,
-        coverage: [1, 1, 1, 0.5, 0],
+        coverage: [0.75, 1, 1, 0.75, 0.5],
         uptime: 'high',
         objectives: []
     },
