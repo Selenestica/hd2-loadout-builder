@@ -1,15 +1,25 @@
 let dbPromise
 
+const STORES = [
+    'loadouts',
+    'stratOverrides',
+    'primaryOverrides',
+    'secondaryOverrides',
+    'grenadeOverrides'
+];
+
 function openDB() {
     if (!dbPromise) {
         dbPromise = new Promise((resolve, reject) => {
-            const request = indexedDB.open('loadoutsDB', 2)
+            const request = indexedDB.open('loadoutsDB', 3)
 
             request.onupgradeneeded = function(event) {
                 const db = event.target.result
-                if (!db.objectStoreNames.contains('loadouts')) {
-                    db.createObjectStore('loadouts', { keyPath: 'id' })
-                }
+                STORES.forEach(storeName => {
+                    if (!db.objectStoreNames.contains(storeName)) {
+                        db.createObjectStore(storeName, { keyPath: 'id' });
+                    }
+                })
             }
 
             request.onsuccess = function(event) {
@@ -26,35 +36,35 @@ function openDB() {
     return dbPromise
 }
 
-export function addLoadout(loadout) {
+export function addObject(storeName, object) {
     return openDB().then(db => {
-        const transaction = db.transaction(['loadouts'], 'readwrite')
-        const store = transaction.objectStore('loadouts')
-        store.add(loadout)
+        const transaction = db.transaction([storeName], 'readwrite')
+        const store = transaction.objectStore(storeName)
+        store.add(object)
 
         return new Promise((resolve, reject) => {
             transaction.oncomplete = () => {
-                console.log('Loadout added to the database')
-                resolve(loadout)
+                console.log('added to the database')
+                resolve(object)
             }
 
             transaction.onerror = () => {
-                console.error('Error adding loadout to the database')
+                console.error('Error adding to the database')
                 reject(transaction.error)
             }
         })
     })
 }
 
-export function loadLoadouts() {
+export function getAll(storeName) {
     return openDB().then(db => {
-        const transaction = db.transaction(['loadouts'], 'readonly')
-        const store = transaction.objectStore('loadouts')
+        const transaction = db.transaction([storeName], 'readonly')
+        const store = transaction.objectStore(storeName)
         const request = store.getAll()
 
         return new Promise((resolve, reject) => {
             request.onsuccess = () => {
-                console.log('Loadouts retrieved:', request.result)
+                console.log('retrieved:', request.result)
                 resolve(request.result)
             }
 
@@ -66,31 +76,52 @@ export function loadLoadouts() {
     })
 }
 
-export function updateLoadout(loadout) {
+export function updateObject(storeName, object) {
     return openDB().then(db => {
-        const transaction = db.transaction(['loadouts'], 'readwrite')
-        const store = transaction.objectStore('loadouts')
-        store.put(loadout) // Automatically replaces the loadout with matching 'id'
+        const transaction = db.transaction([storeName], 'readwrite')
+        const store = transaction.objectStore(storeName)
+        console.log(object)
+        store.put(object) // Automatically replaces the object with matching 'id'
 
         return new Promise((resolve, reject) => {
             transaction.oncomplete = () => {
-                console.log('Loadout updated')
-                resolve(loadout)
+                console.log('object updated')
+                resolve(object)
             }
 
             transaction.onerror = () => {
-                console.error('Error updating loadout in the database')
+                console.error('Error retrieving object in the database')
                 reject(transaction.error)
             }
         })
     })
 }
 
-export function deleteLoadout(loadoutId) {
+export function getObject(storeName, id) {
     return openDB().then(db => {
-        const transaction = db.transaction(['loadouts'], 'readwrite')
-        const store = transaction.objectStore('loadouts')
-        store.delete(loadoutId)
+        const transaction = db.transaction([storeName], 'readonly')
+        const store = transaction.objectStore(storeName)
+        store.get(id) // Automatically replaces the object with matching 'id'
+
+        return new Promise((resolve, reject) => {
+            transaction.oncomplete = () => {
+                console.log('object retrieved')
+                resolve(object)
+            }
+
+            transaction.onerror = () => {
+                console.error('Error updating object in the database')
+                reject(transaction.error)
+            }
+        })
+    })
+}
+
+export function deleteObject(storeName, id) {
+    return openDB().then(db => {
+        const transaction = db.transaction([storeName], 'readwrite')
+        const store = transaction.objectStore(storeName)
+        store.delete(id)
 
         return new Promise((resolve, reject) => {
             transaction.oncomplete = () => {

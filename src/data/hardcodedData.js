@@ -19,6 +19,7 @@ import stratballisticshield from '../assets/strat-ballisticshield.webp'
 import stratcluster from '../assets/strat-cluster.webp'
 import stratems from '../assets/strat-ems.webp'
 import stratexo45patriot from '../assets/strat-exo45patriot.webp'
+import stratexo49Emancipator from '../assets/strat-exo49Emancipator.webp'
 import stratgasstrike from '../assets/strat-gasstrike.webp'
 import stratgatlingbarrage from '../assets/strat-gatlingbarrage.webp'
 import stratgatlingturret from '../assets/strat-gatlingturret.webp'
@@ -1589,7 +1590,7 @@ export const strategemData = [
         id: 50,
         name: "EXO-45 Patriot Exosuit",
         icon: stratexo45patriot,
-        offensiveRange: [1, 1, 0],
+        offensiveRange: [1, 1, 0.5],
         type: 'support-weapon',
         color: stratBlue,
         coverage: [0.5, 0.5, 0.5, 0.5, 0.5],
@@ -1608,6 +1609,18 @@ export const strategemData = [
         supportSlotNecessary: true,
         hasBackpack: true,
         uptime: 'very high',
+        objectives: []
+    },
+    {
+        id: 52,
+        name: "EXO-49 Emancipator Exosuit",
+        icon: stratexo49Emancipator,
+        offensiveRange: [1, 1, 0.5],
+        type: 'support-weapon',
+        color: stratBlue,
+        coverage: [0.5, 0.5, 0.75, 0.75, 0.2],
+        supportSlotNecessary: false,
+        uptime: 'low',
         objectives: []
     },
 ]

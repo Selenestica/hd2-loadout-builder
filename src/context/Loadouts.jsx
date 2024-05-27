@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react'
-import { addLoadout, updateLoadout, deleteLoadout, loadLoadouts } from '../data/indexedDB'
+import { addObject as addLoadout, updateObject as updateLoadout, deleteObject as deleteLoadout, getAll as loadLoadouts } from '../data/indexedDB'
 
 const LoadoutsContext = createContext()
 export default LoadoutsContext
@@ -10,7 +10,7 @@ export function LoadoutsProvider({...props}) {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        loadLoadouts().then(result => {
+        loadLoadouts('loadouts').then(result => {
             setLoadouts(result)
             setLoading(false)
         }).catch(error => {
@@ -20,13 +20,13 @@ export function LoadoutsProvider({...props}) {
     }, [])
 
     const handleAdd = loadout => {
-        addLoadout(loadout).then(() => {
+        addLoadout('loadouts', loadout).then(() => {
             setLoadouts([...loadouts, loadout])
         })
     }
 
     const handleUpdate = updatedLoadout => {
-        updateLoadout(updatedLoadout).then(() => {
+        updateLoadout('loadouts', updatedLoadout).then(() => {
             const updatedLoadouts = loadouts.map(loadout =>
                 loadout.id === updatedLoadout.id ? updatedLoadout : loadout
             )
@@ -35,7 +35,7 @@ export function LoadoutsProvider({...props}) {
     }
 
     const handleDelete = id => {
-        deleteLoadout(id).then(() => {
+        deleteLoadout('loadouts', id).then(() => {
             const filteredLoadouts = loadouts.filter(loadout => loadout.id !== id)
             setLoadouts(filteredLoadouts)
         })

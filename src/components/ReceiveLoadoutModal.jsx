@@ -5,7 +5,7 @@ import '../index.css'
 import Loadout from './Loadout'
 import { useNavigate } from 'react-router-dom'
 import LoadoutsContext from '../context/Loadouts'
-import { addLoadout } from '../data/indexedDB'
+import { addObject as addLoadout } from '../data/indexedDB'
 import GenericModalLayout from './GenericModalLayout'
 
 export default function ReceivedLoadoutModal({ ...props }) {
@@ -60,7 +60,7 @@ export default function ReceivedLoadoutModal({ ...props }) {
             armor: data.armor,
         }
 
-        addLoadout(newLoadout).then(loadout => {
+        addLoadout('loadouts', newLoadout).then(loadout => {
             setLoadouts(current => [
                 ...current,
                 loadout

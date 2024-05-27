@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { strategemData } from '../data/hardcodedData'
 import { css } from '@emotion/css'
 import { colors } from '../data/constants'
+import ScoreOverrider from './ScoreOverrider'
 
 export default function StrategemList({ handleClick, filterArr }) {
     const [hoverState, setHoverState] = useState()
@@ -142,7 +143,7 @@ export default function StrategemList({ handleClick, filterArr }) {
                         </div>
 
                         <div></div>
-                            <div className={css`
+                        <div className={css`
                             display: flex;
                             justify-content: space-between;
                             color: ${colors.lighter};
@@ -154,6 +155,9 @@ export default function StrategemList({ handleClick, filterArr }) {
                                 {'heavies'}
                             </div>
                         </div>
+                        {/* {hoverState.id &&
+                            <ScoreOverrider equipmentType={'strat'} id={hoverState.id} />
+                        } */}
                     </div>
                 }
 

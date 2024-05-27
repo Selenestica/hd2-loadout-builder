@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState, useContext } from 'react'
 import { css } from '@emotion/css'
 import { colors } from '../data/constants'
 import { strategemData, primaryWeaponData, secondaryWeaponData, preloadImages, grenadeData, armorData } from '../data/hardcodedData'
-import { updateLoadout, deleteLoadout } from '../data/indexedDB'
+import { updateObject as updateLoadout, deleteObject as deleteLoadout } from '../data/indexedDB'
 import StrategemList from './StrategemList'
 import StrategemDetails from './StrategemDetails'
 import Analytics from './Analytics'
@@ -128,7 +128,7 @@ export default function LoadoutDetails({ ...props }) {
             name: name
         }
         try {
-            updateLoadout(data).then(res => {
+            updateLoadout('loadouts', data).then(res => {
                 setLoadouts(prev => {
                     const newData = [...prev]
                     const i = newData.indexOf(newData.find(x => x.id === data.id))
@@ -146,7 +146,7 @@ export default function LoadoutDetails({ ...props }) {
 
     const handleDelete = useCallback(() => {
         try {
-            deleteLoadout(selectedLoadout.id).then(res => {
+            deleteLoadout('loadouts', selectedLoadout.id).then(res => {
                 setLoadouts(prev => prev.filter(x => x.id !== selectedLoadout.id))
                 setSelectedLoadout()
             })

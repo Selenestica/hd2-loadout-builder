@@ -1,6 +1,6 @@
-import { useCallback, useContext } from 'react'
+import { useCallback, useContext, useMemo } from 'react'
 import { css } from '@emotion/css'
-import { addLoadout } from '../data/indexedDB'
+import { addObject as addLoadout } from '../data/indexedDB'
 import { colors } from '../data/constants'
 import Loadout from './Loadout'
 import LoadoutsContext from '../context/Loadouts'
@@ -24,13 +24,17 @@ export default function LoadoutList({
             grenade: null,
             armor: null,
         }
-        addLoadout(newLoadout).then(loadout => {
+        addLoadout('loadouts', newLoadout).then(loadout => {
             setLoadouts(current => [
                 ...current,
                 loadout
             ])
         })
     }, [loadouts, setLoadouts])
+
+    const sortedLoadouts = useMemo(() => {
+        return loadouts.slice(0).sort((a,b) => a.name.localeCompare(b.name))
+    }, [loadouts])
 
     return (loading ? 'loading...' :
         <div className={css`
@@ -42,7 +46,7 @@ export default function LoadoutList({
             justify-content: space-between;
         `}>
             <div className={css`display: flex; flex-direction: column; gap: 0.2em`}>
-                {loadouts.map(loadout => <Loadout
+                {sortedLoadouts.map(loadout => <Loadout
                     key={loadout.id}
                     data={loadout}
                     onClick={() => { setSelectedLoadout(loadout) }}
@@ -56,8 +60,8 @@ export default function LoadoutList({
                 bottom: 0;
             `}>
 
-                <button  className={css`width: 100%; height: 100%;`}
-                    
+                <button className={css`width: 100%; height: 100%;`}
+
                     onClick={handleAddLoadout}
                 >
                     Add loadout
