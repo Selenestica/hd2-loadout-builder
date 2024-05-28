@@ -6,17 +6,21 @@ import { LoadoutsProvider } from './context/Loadouts.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ReceivedLoadoutModal from './components/ReceiveLoadoutModal.jsx'
 import Modal from 'react-modal'
+import { OverridesProvider } from './context/Overrides.jsx'
 
 Modal.setAppElement('#root')
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+
     <LoadoutsProvider >
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<App />} >
-                    <Route path="s" element={<ReceivedLoadoutModal />} />
-                </Route>
-            </Routes>
-        </BrowserRouter>
+        <OverridesProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<App />} >
+                        <Route path="s" element={<ReceivedLoadoutModal />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </OverridesProvider>
     </LoadoutsProvider>
 )

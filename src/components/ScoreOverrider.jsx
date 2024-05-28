@@ -1,50 +1,32 @@
-import { useCallback, useEffect, useMemo, useState } from "react"
+import { useCallback, useContext, useEffect, useState } from "react"
 import { colors } from "../data/constants"
 import { css } from "@emotion/css"
 import InputNumber from "rc-input-number"
-import { getObject, updateObject } from "../data/indexedDB"
+import OverridesContext from "../context/Overrides"
 
-export default function ScoreOverrider({ equipmentType, id, ...props }) {
-    const objectStoreName = equipmentType + 'Overrides'
+export default function ScoreOverrider({ objectStoreName, id, defaultValues, ...props }) {
 
-    const [rangeOverrides, setRangeOverrides] = useState([0, 0, 0])
-    const [scoreOverrides, setScoreOverrides] = useState([0, 0, 0, 0, 0])
-    const [usingOverrides, setUsingOverrides] = useState(false)
+    const { overrides: allOverrides, handleAdd, handleUpdate, handleDelete } = useContext(OverridesContext)
+    const thisOverride = allOverrides[objectStoreName].find(x => x.id === id)
 
-
-    useEffect(() => {
-        async function getInitialState() {
-            let res
-            try {
-                res = await getObject(objectStoreName, id)
-                if (res) {
-                    setRangeOverrides(res.offensiveRange)
-                    setScoreOverrides(res.coverage)
-                }
-            } catch (e) {
-                console.log('no override in database for ' + objectStoreName + '-' + id)
-            }
-        }
-
-        getInitialState()
-
-    }, [])
+    const [rangeOverrides, setRangeOverrides] = useState(!!thisOverride ? thisOverride.offensiveRange : defaultValues.offensiveRange)
+    const [scoreOverrides, setScoreOverrides] = useState(!!thisOverride ? thisOverride.coverage : defaultValues.coverage)
+    const [usingOverrides, setUsingOverrides] = useState(!!thisOverride)
+    const [valuesHaveChanged, setValuesHaveChanged] = useState(false)
 
     useEffect(() => {
-        if (!usingOverrides) return
-        updateObject(objectStoreName, {
-            id,
-            offensiveRange: rangeOverrides,
-            coverage: scoreOverrides,
-        })
-    }, [rangeOverrides, scoreOverrides, usingOverrides])
+        setRangeOverrides(!!thisOverride ? thisOverride.offensiveRange : defaultValues.offensiveRange)
+        setScoreOverrides(!!thisOverride ? thisOverride.coverage : defaultValues.coverage)
+        setUsingOverrides(!!thisOverride)
+        setValuesHaveChanged(false)
+    }, [id, defaultValues])
 
     const changeRange = useCallback((index, value) => {
         if (value.length > 4 || value === '') return
         if (!/^\d*\.?\d*$/.test(value)) return
 
+        setValuesHaveChanged(true)
         setRangeOverrides(prev => {
-            console.log('setrange ran')
             const newArr = [...prev]
             newArr[index] = value
             return newArr
@@ -54,6 +36,7 @@ export default function ScoreOverrider({ equipmentType, id, ...props }) {
     const changeScore = useCallback((index, value) => {
         if (value.length > 4) return
         if (!/^\d*\.?\d*$/.test(value)) return
+        setValuesHaveChanged(true)
         setScoreOverrides(prev => {
             const newArr = [...prev]
             newArr[index] = value
@@ -61,43 +44,37 @@ export default function ScoreOverrider({ equipmentType, id, ...props }) {
         })
     }, [setScoreOverrides])
 
+    const handleCheckboxtoggle = useCallback(() => {
+        // TO DO: also allow supplybuffed overrides
+        const prevValue = usingOverrides
+        if (!prevValue) { // gets turned on
+            // handle put
+            const data = { id, offensiveRange: rangeOverrides, coverage: scoreOverrides }
+            handleAdd(objectStoreName, data)
+        } else { // gets turned off
+            // handle delete
+            handleDelete(objectStoreName, id)
+        }
+        setUsingOverrides(current => !current)
+        setValuesHaveChanged(false)
+    }, [setUsingOverrides, setValuesHaveChanged, usingOverrides, handleDelete, handleAdd, objectStoreName, rangeOverrides, scoreOverrides, id])
 
+    const handleApplyChanges = useCallback(() => {
+        const data = { id, offensiveRange: rangeOverrides, coverage: scoreOverrides }
+        handleUpdate(objectStoreName, data)
+        setValuesHaveChanged(false)
+        setUsingOverrides(true)
+    }, [ handleUpdate, objectStoreName, rangeOverrides, scoreOverrides, id, setValuesHaveChanged])
 
-    return <div className={css`
-        white-space: nowrap;
-        display: grid;
-        gap: 1em;
-        grid-column: span 2;
-    `}>
-
-        <label className={css`
-                cursor: pointer;
-                white-space: nowrap;
-                display: flex;
-                align-items: center;
-                user-select: none;
-                &:hover {
-                    opacity: 0.8;
-                }
-            `}>
-
-            <div className={css`
-                    border: 4px solid ${colors.darkGrey};
-                    background: ${usingOverrides ? colors.gold : 'unset'};
-                    width: 2em;
-                    height: 2em;
-                    `} />
+    return <div className={styles.root}>
+        <label className={styles.label}>
+            <div className={styles.checkbox(usingOverrides)} />
             <input
-                onChange={() => setUsingOverrides(current => !current)}
+                onChange={handleCheckboxtoggle}
                 type="checkbox"
-                className={css`
-                            width: 0px;
-                            height: 0px;
-                            visibility: hidden;
-                        `}
+                className={styles.hiddenInput}
                 checked={usingOverrides}
             />
-
             Use custom values?
         </label>
 
@@ -116,25 +93,7 @@ export default function ScoreOverrider({ equipmentType, id, ...props }) {
             </div>
 
         </div>
-
-        <div className={css`
-            >div {
-                display: flex;
-                gap: 0.2em;
-            }
-            input {
-                font-size: 0.9em;
-                text-align: center;
-                width: 3em;
-                -moz-appearance: textfield;
-                appearance: textfield;
-                border: none;
-            }
-            -webkit-outer-spin-button, -webkit-inner-spin-button {
-                -webkit-appearance: none;
-                margin: 0;
-            }
-        `}>
+        <div className={styles.inputWrapper}>
             Custom range:
             <div>
                 <InputNumber step={0.05} onChange={(val) => changeRange(0, val)} value={rangeOverrides[0]} max={5} min={0} maxLength={4} precision={2} />
@@ -146,11 +105,66 @@ export default function ScoreOverrider({ equipmentType, id, ...props }) {
                 <InputNumber step={0.05} onChange={(val) => changeScore(0, val)} value={scoreOverrides[0]} max={5} min={0} maxLength={4} precision={2} />
                 <InputNumber step={0.05} onChange={(val) => changeScore(1, val)} value={scoreOverrides[1]} max={5} min={0} maxLength={4} precision={2} />
                 <InputNumber step={0.05} onChange={(val) => changeScore(2, val)} value={scoreOverrides[2]} max={5} min={0} maxLength={4} precision={2} />
-                <InputNumber step={0.05} onChange={(val) => changeScore(3, val)} value={scoreOverrides[2]} max={5} min={0} maxLength={4} precision={2} />
-                <InputNumber step={0.05} onChange={(val) => changeScore(4, val)} value={scoreOverrides[2]} max={5} min={0} maxLength={4} precision={2} />
+                <InputNumber step={0.05} onChange={(val) => changeScore(3, val)} value={scoreOverrides[3]} max={5} min={0} maxLength={4} precision={2} />
+                <InputNumber step={0.05} onChange={(val) => changeScore(4, val)} value={scoreOverrides[4]} max={5} min={0} maxLength={4} precision={2} />
             </div>
         </div>
 
+        {valuesHaveChanged && usingOverrides &&
+            <button onClick={handleApplyChanges}>
+                Apply Changes
+            </button>
+        }
+
     </div>
 
+}
+
+const styles = {
+    root: css`
+        white-space: nowrap;
+        display: grid;
+        gap: 1em;
+        grid-column: span 2;
+    `,
+    inputWrapper: css`
+        >div {
+            display: flex;
+            gap: 0.2em;
+        }
+        input {
+            font-size: 0.9em;
+            text-align: center;
+            width: 3em;
+            -moz-appearance: textfield;
+            appearance: textfield;
+            border: none;
+            padding: 0.5em 0;
+        }
+        -webkit-outer-spin-button, -webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    `,
+    label: css`
+        cursor: pointer;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        user-select: none;
+        &:hover {
+            opacity: 0.8;
+        }
+    `,
+    checkbox: (usingOverrides) => css`
+        border: 4px solid ${colors.darkGrey};
+        background: ${usingOverrides ? colors.gold : 'unset'};
+        width: 2em;
+        height: 2em;
+    `,
+    hiddenInput: css`
+        width: 0px;
+        height: 0px;
+        visibility: hidden;
+    `
 }

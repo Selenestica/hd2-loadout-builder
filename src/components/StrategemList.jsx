@@ -100,6 +100,9 @@ export default function StrategemList({ handleClick, filterArr }) {
                         grid-gap: 0.2em 1em;
                         align-items: center;
                     `}>
+                        <div>Name:</div>
+                        <div>{hoverState.name}</div>
+
                         <div>Type:</div>
                         <div>{hoverState.type}</div>
 
@@ -155,9 +158,10 @@ export default function StrategemList({ handleClick, filterArr }) {
                                 {'heavies'}
                             </div>
                         </div>
-                        {/* {hoverState.id &&
-                            <ScoreOverrider equipmentType={'strat'} id={hoverState.id} />
-                        } */}
+
+                        {hoverState.id &&
+                            <ScoreOverrider objectStoreName={'stratOverrides'} id={hoverState.id} defaultValues={hoverState} />
+                        }
                     </div>
                 }
 
