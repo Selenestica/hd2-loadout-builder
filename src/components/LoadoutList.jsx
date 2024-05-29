@@ -1,6 +1,6 @@
 import { useCallback, useContext, useMemo } from 'react'
 import { css } from '@emotion/css'
-import { addObject as addLoadout } from '../data/indexedDB'
+import { addObject} from '../data/indexedDB'
 import { colors } from '../data/constants'
 import Loadout from './Loadout'
 import LoadoutsContext from '../context/Loadouts'
@@ -24,11 +24,12 @@ export default function LoadoutList({
             grenade: null,
             armor: null,
         }
-        addLoadout('loadouts', newLoadout).then(loadout => {
+        addObject('loadouts', newLoadout).then(loadout => {
             setLoadouts(current => [
                 ...current,
                 loadout
             ])
+            setSelectedLoadout(loadout)
         })
     }, [loadouts, setLoadouts])
 

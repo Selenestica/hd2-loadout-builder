@@ -64,7 +64,7 @@ export default function ScoreOverrider({ objectStoreName, id, defaultValues, ...
         handleUpdate(objectStoreName, data)
         setValuesHaveChanged(false)
         setUsingOverrides(true)
-    }, [ handleUpdate, objectStoreName, rangeOverrides, scoreOverrides, id, setValuesHaveChanged])
+    }, [handleUpdate, objectStoreName, rangeOverrides, scoreOverrides, id, setValuesHaveChanged])
 
     return <div className={styles.root}>
         <label className={styles.label}>
@@ -78,37 +78,41 @@ export default function ScoreOverrider({ objectStoreName, id, defaultValues, ...
             Use custom values?
         </label>
 
-        <div className={css`
-            white-space: nowrap;
-            display: grid;
-        `}>
-            <div>
-                {'(1 = baseline effectiveness)'}
-            </div>
-            <div>
-                {'(0 = not effective)'}
-            </div>
-            <div>
-                {'(1+ = exceptionally effective)'}
-            </div>
+        {usingOverrides &&
+            <>
+                <div className={css`
+                    white-space: nowrap;
+                    display: grid;
+                `}>
+                    <div>
+                        {'(1 = baseline effectiveness)'}
+                    </div>
+                    <div>
+                        {'(0 = not effective)'}
+                    </div>
+                    <div>
+                        {'(1+ = exceptionally effective)'}
+                    </div>
 
-        </div>
-        <div className={styles.inputWrapper}>
-            Custom range:
-            <div>
-                <InputNumber step={0.05} onChange={(val) => changeRange(0, val)} value={rangeOverrides[0]} max={5} min={0} maxLength={4} precision={2} />
-                <InputNumber step={0.05} onChange={(val) => changeRange(1, val)} value={rangeOverrides[1]} max={5} min={0} maxLength={4} precision={2} />
-                <InputNumber step={0.05} onChange={(val) => changeRange(2, val)} value={rangeOverrides[2]} max={5} min={0} maxLength={4} precision={2} />
-            </div>
-            Custom Removal:
-            <div>
-                <InputNumber step={0.05} onChange={(val) => changeScore(0, val)} value={scoreOverrides[0]} max={5} min={0} maxLength={4} precision={2} />
-                <InputNumber step={0.05} onChange={(val) => changeScore(1, val)} value={scoreOverrides[1]} max={5} min={0} maxLength={4} precision={2} />
-                <InputNumber step={0.05} onChange={(val) => changeScore(2, val)} value={scoreOverrides[2]} max={5} min={0} maxLength={4} precision={2} />
-                <InputNumber step={0.05} onChange={(val) => changeScore(3, val)} value={scoreOverrides[3]} max={5} min={0} maxLength={4} precision={2} />
-                <InputNumber step={0.05} onChange={(val) => changeScore(4, val)} value={scoreOverrides[4]} max={5} min={0} maxLength={4} precision={2} />
-            </div>
-        </div>
+                </div>
+                <div className={styles.inputWrapper}>
+                    Custom range:
+                    <div>
+                        <InputNumber step={0.05} onChange={(val) => changeRange(0, val)} value={rangeOverrides[0]} max={5} min={0} maxLength={4} precision={2} />
+                        <InputNumber step={0.05} onChange={(val) => changeRange(1, val)} value={rangeOverrides[1]} max={5} min={0} maxLength={4} precision={2} />
+                        <InputNumber step={0.05} onChange={(val) => changeRange(2, val)} value={rangeOverrides[2]} max={5} min={0} maxLength={4} precision={2} />
+                    </div>
+                    Custom Removal:
+                    <div>
+                        <InputNumber step={0.05} onChange={(val) => changeScore(0, val)} value={scoreOverrides[0]} max={5} min={0} maxLength={4} precision={2} />
+                        <InputNumber step={0.05} onChange={(val) => changeScore(1, val)} value={scoreOverrides[1]} max={5} min={0} maxLength={4} precision={2} />
+                        <InputNumber step={0.05} onChange={(val) => changeScore(2, val)} value={scoreOverrides[2]} max={5} min={0} maxLength={4} precision={2} />
+                        <InputNumber step={0.05} onChange={(val) => changeScore(3, val)} value={scoreOverrides[3]} max={5} min={0} maxLength={4} precision={2} />
+                        <InputNumber step={0.05} onChange={(val) => changeScore(4, val)} value={scoreOverrides[4]} max={5} min={0} maxLength={4} precision={2} />
+                    </div>
+                </div>
+            </>
+        }
 
         {valuesHaveChanged && usingOverrides &&
             <button onClick={handleApplyChanges}>
@@ -126,6 +130,7 @@ const styles = {
         display: grid;
         gap: 1em;
         grid-column: span 2;
+        margin-top: 2em;
     `,
     inputWrapper: css`
         >div {
@@ -140,6 +145,12 @@ const styles = {
             appearance: textfield;
             border: none;
             padding: 0.5em 0;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+
+            &:hover{
+                border-bottom: 3px solid ${colors.gold};
+            }
         }
         -webkit-outer-spin-button, -webkit-inner-spin-button {
             -webkit-appearance: none;
