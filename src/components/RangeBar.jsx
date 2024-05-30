@@ -1,7 +1,10 @@
 import { css } from "@emotion/css"
 import { colors } from "../data/constants"
 
-export default function RangeBar({ range, ...props }) {
+export default function RangeBar({ range, special, ...props }) {
+    
+    const highColor = special ? 'rgb(80,120,200)' : colors.gold
+    const normalColor = special ? 'skyblue' : 'white'
 
     return (<>
         <div>Range:</div>
@@ -17,7 +20,7 @@ export default function RangeBar({ range, ...props }) {
             {range.map((el, i) => <div key={i} className={css`
                 width: 100%;
                 height: ${el * 100}%;
-                background: ${el > 1 ? colors.gold : 'white'};
+                background: ${el > 1 ? highColor :  normalColor};
                 align-self: center;
             `} title={i === 0 ? 'short' : i === 1 ? 'medium' : i === 2 ? 'long' : ''} />)}
         </div>

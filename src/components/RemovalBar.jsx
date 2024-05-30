@@ -1,7 +1,10 @@
 import { css } from "@emotion/css"
 import { colors } from "../data/constants"
 
-export default function RemovalBar({ coverage, ...props }) {
+export default function RemovalBar({ coverage, special, ...props }) {
+
+    const highColor = special ? 'rgb(80,120,200)' : colors.gold
+    const normalColor = special ? 'skyblue' : 'white'
 
     return (<>
         <div>Removal:</div>
@@ -18,7 +21,7 @@ export default function RemovalBar({ coverage, ...props }) {
                 width: 100%;
                 height: ${el * 100}%;
                 align-self: center;
-                background: ${el > 1 ? colors.gold : 'white'};
+                background: ${el > 1 ? highColor :  normalColor};
             `} />)}
         </div>
 

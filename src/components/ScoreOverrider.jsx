@@ -3,6 +3,8 @@ import { colors } from "../data/constants"
 import { css } from "@emotion/css"
 import InputNumber from "rc-input-number"
 import OverridesContext from "../context/Overrides"
+import RangeBar from "./RangeBar"
+import RemovalBar from "./RemovalBar"
 
 export default function ScoreOverrider({ objectStoreName, id, defaultValues, ...props }) {
 
@@ -66,7 +68,7 @@ export default function ScoreOverrider({ objectStoreName, id, defaultValues, ...
         setUsingOverrides(true)
     }, [handleUpdate, objectStoreName, rangeOverrides, scoreOverrides, id, setValuesHaveChanged])
 
-    return <div className={styles.root}>
+    return <div className={styles.root(usingOverrides)}>
         <label className={styles.label}>
             <div className={styles.checkbox(usingOverrides)} />
             <input
@@ -83,6 +85,7 @@ export default function ScoreOverrider({ objectStoreName, id, defaultValues, ...
                 <div className={css`
                     white-space: nowrap;
                     display: grid;
+
                 `}>
                     <div>
                         {'(1 = baseline effectiveness)'}
@@ -111,6 +114,17 @@ export default function ScoreOverrider({ objectStoreName, id, defaultValues, ...
                         <InputNumber step={0.05} onChange={(val) => changeScore(4, val)} value={scoreOverrides[4]} max={5} min={0} maxLength={4} precision={2} />
                     </div>
                 </div>
+
+                <div className={css`
+                    display: grid;
+                    grid-template-columns: min-content 1fr;
+                    gap: 0.5em;
+                    grid-auto-rows: 1.5em;
+                    align-items: center;
+                `}>
+                    <RangeBar range={rangeOverrides} special={true}/>
+                    <RemovalBar coverage={scoreOverrides} special={true}/>
+                </div>
             </>
         }
 
@@ -125,12 +139,14 @@ export default function ScoreOverrider({ objectStoreName, id, defaultValues, ...
 }
 
 const styles = {
-    root: css`
+    root: (active) => css`
         white-space: nowrap;
         display: grid;
         gap: 1em;
         grid-column: span 2;
         margin-top: 2em;
+        background: ${active ? colors.darker : 'transparent'};
+        padding: 1em;
     `,
     inputWrapper: css`
         >div {
