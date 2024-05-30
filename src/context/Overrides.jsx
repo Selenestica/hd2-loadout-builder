@@ -1,10 +1,15 @@
-import { createContext, useEffect, useState } from 'react'
+import { createContext, useEffect, useState, useContext, useMemo } from 'react'
 import { addObject, updateObject, deleteObject, getAll } from '../data/indexedDB'
+import { strategemData, primaryWeaponData, secondaryWeaponData, grenadeData, armorData } from '../data/hardcodedData'
+import LoadoutsContext from './Loadouts'
 
 const OverridesContext = createContext()
 export default OverridesContext
 
 export function OverridesProvider({ ...props }) {
+
+    const { selectedLoadout } = useContext(LoadoutsContext)
+
     const [overrides, setOverrides] = useState({})
     const [loading, setLoading] = useState(true)
 
@@ -33,7 +38,6 @@ export function OverridesProvider({ ...props }) {
                 newOverrides.push(object)
                 const newObj = { ...prev }
                 newObj[store] = newOverrides
-                console.log(newObj)
                 return newObj
             })
         })
@@ -61,10 +65,50 @@ export function OverridesProvider({ ...props }) {
         })
     }
 
+    const selectedLoadoutData = useMemo(() => {
+        if (!selectedLoadout) return
+
+        const newObj = { ...selectedLoadout }
+
+        Object.entries(selectedLoadout).forEach(([key, value]) => {
+            if (key === 'strat1' || key === 'strat2' || key === 'strat3' || key === 'strat4') {
+                newObj[key] = structuredClone(strategemData.find(x => x.id === value))
+                const foundOverride = overrides.stratOverrides.find(x => x.id === value)
+                if (!!foundOverride) {
+                    newObj[key] = { ...newObj[key], ...foundOverride }
+                }
+            } else if (key === 'primary') {
+                newObj[key] = structuredClone(primaryWeaponData.find(x => x.id === value))
+                const foundOverride = overrides.primaryOverrides.find(x => x.id === value)
+                if (!!foundOverride) {
+                    newObj[key] = { ...newObj[key], ...foundOverride }
+                }
+            } else if (key === 'secondary') {
+                newObj[key] = structuredClone(secondaryWeaponData.find(x => x.id === value))
+                const foundOverride = overrides.secondaryOverrides.find(x => x.id === value)
+                if (!!foundOverride) {
+                    newObj[key] = { ...newObj[key], ...foundOverride }
+                }
+            } else if (key === 'grenade') {
+                newObj[key] = structuredClone(grenadeData.find(x => x.id === value))
+                const foundOverride = overrides.grenadeOverrides.find(x => x.id === value)
+                if (!!foundOverride) {
+                    newObj[key] = { ...newObj[key], ...foundOverride }
+                }
+            } else if (key === 'armor') {
+                newObj[key] = structuredClone(armorData.find(x => x.id === value))
+            }
+        })
+
+        return newObj
+
+    }, [selectedLoadout, overrides, strategemData, primaryWeaponData, secondaryWeaponData, grenadeData, armorData])
+
     return (
         <OverridesContext.Provider
             value={{
                 overrides,
+                selectedLoadoutData,
                 loading,
                 setLoading,
                 handleAdd,

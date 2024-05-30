@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { grenadeData } from '../data/hardcodedData'
 import { css } from '@emotion/css'
 import { colors } from '../data/constants'
+import ScoreOverrider from './ScoreOverrider'
 
 export default function GrenadeList({ handleClick, filterArr }) {
     const [hoverState, setHoverState] = useState()
@@ -170,6 +171,10 @@ export default function GrenadeList({ handleClick, filterArr }) {
 
                         <div>Traits:</div>
                         <div>{hoverState.ingameStats.traits.join(', ')}</div>
+
+                        {hoverState.id &&
+                            <ScoreOverrider objectStoreName={'grenadeOverrides'} id={hoverState.id} defaultValues={hoverState} />
+                        }
                     </div>
                 }
 

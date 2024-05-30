@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { primaryWeaponData } from '../data/hardcodedData'
 import { css } from '@emotion/css'
 import { colors } from '../data/constants'
+import ScoreOverrider from './ScoreOverrider'
 
 export default function PrimaryList({ handleClick, filterArr }) {
     const [hoverState, setHoverState] = useState()
@@ -193,6 +194,10 @@ export default function PrimaryList({ handleClick, filterArr }) {
 
                         <div>Traits:</div>
                         <div>{hoverState.ingameStats.traits.join(', ')}</div>
+
+                        {hoverState.id &&
+                            <ScoreOverrider objectStoreName={'primaryOverrides'} id={hoverState.id} defaultValues={hoverState} />
+                        }
                     </div>
                 }
 
