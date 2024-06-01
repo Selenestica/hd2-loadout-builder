@@ -192,7 +192,7 @@ export function exportAllData() {
     });
 }
 
-async function importData(file, storesArray) {
+export async function importData(file, storesArray) {
     const reader = new FileReader();
 
     reader.onload = async function (event) {
@@ -238,7 +238,7 @@ async function importData(file, storesArray) {
     reader.readAsText(file);
 }
 
-export async function importAllDataFromFile(storesArray) {
+/* export async function importAllDataFromFile(storesArray) {
     try {
         const [fileHandle] = await window.showOpenFilePicker({
             types: [{
@@ -256,4 +256,4 @@ export async function importAllDataFromFile(storesArray) {
     } catch (error) {
         console.error('Error opening file:', error);
     }
-}
+} */

@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
 import { useCallback, useContext, useState } from "react";
-import { clearStore, exportAllData, importAllDataFromFile } from "../data/indexedDB";
+import { clearStore, exportAllData, importData } from "../data/indexedDB";
 import OverridesContext from "../context/Overrides";
 
 
@@ -35,25 +35,22 @@ export default function ImportExport({ closeModal, ...props }) {
         }
     }, [exportAllData, closeModal])
 
-    const handleImportAll = useCallback(() => {
-        try {
-            importAllDataFromFile()
-            closeModal()
-        } catch (e) {
-            console.error(e)
-            alert('something went wrong')
-        }
-    }, [importAllDataFromFile, closeModal])
-
-    const handleImportSome = useCallback((storesArray) => {
-        try {
-            importAllDataFromFile(storesArray) // only imports these stores
-            closeModal()
-        } catch (e) {
-            console.error(e)
-            alert('something went wrong')
-        }
-    }, [importAllDataFromFile, closeModal])
+    const importStores = useCallback((storesArray) => {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = '.txt';
+        input.onchange = (event) => {
+            const file = event.target.files[0]
+            if (file) {
+                importData(file, storesArray).then(res => window.location.reload());
+                closeModal();
+            }
+        };
+        input.style.display = 'none';
+        document.body.appendChild(input);
+        input.click();
+        document.body.removeChild(input);
+    }, [importData])
 
     return <div className={css`
         display: grid;
@@ -74,14 +71,14 @@ export default function ImportExport({ closeModal, ...props }) {
 `}>
 
         <ConfirmAction handleAction={handleExport} confirmMessage='Confirm Export?' actionName='Export All App Data' selectedActionName={selectedActionName} setSelectedActionName={setSelectedActionName} />
-        <ConfirmAction handleAction={handleImportAll} confirmMessage='Confirm Import All Data?' actionName='Import+Replace All App Data' selectedActionName={selectedActionName} setSelectedActionName={setSelectedActionName} />
-        <ConfirmAction handleAction={() => handleImportSome([
+        <ConfirmAction handleAction={() => importStores()} confirmMessage='Confirm Import All Data?' actionName='Import+Replace All App Data' selectedActionName={selectedActionName} setSelectedActionName={setSelectedActionName} />
+        <ConfirmAction handleAction={() => importStores([
             'stratOverrides',
             'primaryOverrides',
             'secondaryOverrides',
             'grenadeOverrides'
         ])} confirmMessage='Confirm Import Values?' actionName='Import+Replace all Custom Values' selectedActionName={selectedActionName} setSelectedActionName={setSelectedActionName} />
-        <ConfirmAction handleAction={() => handleImportSome(['loadouts'])} confirmMessage='Confirm Import Loadouts?' actionName='Import+Replace all Loadouts' selectedActionName={selectedActionName} setSelectedActionName={setSelectedActionName} />
+        <ConfirmAction handleAction={() => importStores(['loadouts'])} confirmMessage='Confirm Import Loadouts?' actionName='Import+Replace all Loadouts' selectedActionName={selectedActionName} setSelectedActionName={setSelectedActionName} />
         <ConfirmAction handleAction={handleDeleteCustomValues} confirmMessage='Confirm Delete Values?' actionName='Delete All Custom Values' selectedActionName={selectedActionName} setSelectedActionName={setSelectedActionName} />
 
     </div>
