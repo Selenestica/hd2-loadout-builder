@@ -69,7 +69,7 @@ export default function PrimaryList({ handleClick, filterArr }) {
                         opacity: ${filterArr.includes(primary.id) ? '0.5' : '1'};
                         white-space: nowrap;
                         user-select: none;
-                        min-height: 3em;
+                        //min-height: 3em;
                         
                         &:hover {
                             background: ${colors.lighter};
@@ -88,6 +88,8 @@ export default function PrimaryList({ handleClick, filterArr }) {
                 width: 100%;
                 display: grid;
                 place-items: start;
+                padding: 1em;
+
 
                 @media screen and (max-width: 1400px) {
                     background: ${colors.grey};
@@ -99,11 +101,9 @@ export default function PrimaryList({ handleClick, filterArr }) {
             `}>
                 {hoverState &&
                     <div className={css`
-                        padding: 1em;
                         display: grid;
-                        min-width: 10em;
                         width: 100%;
-                        max-width: calc(100% - 3em);
+                        max-width: 30em;
                         grid-template: auto / auto 1fr;
                         grid-gap: 0.2em 1em;
                         align-items: center;

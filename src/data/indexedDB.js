@@ -136,3 +136,23 @@ export function deleteObject(storeName, id) {
         })
     })
 }
+
+export function clearStore(storeName) {
+    return openDB().then(db => {
+        const transaction = db.transaction([storeName], 'readwrite')
+        const store = transaction.objectStore(storeName)
+        store.clear()
+
+        return new Promise((resolve, reject) => {
+            transaction.oncomplete = () => {
+                console.log(`All objects in ${storeName} cleared`)
+                resolve()
+            }
+
+            transaction.onerror = () => {
+                console.error(`Error clearing objects in ${storeName}`)
+                reject(transaction.error)
+            }
+        })
+    })
+}

@@ -85,7 +85,7 @@ export default function LoadoutList({
                 </div>
             </div>
 
-            {dataModal && <GenericModalLayout closeModal={(e) => { { e.stopPropagation(); setDataModal(false) } }} >
+            {dataModal && <GenericModalLayout closeModal={(e) => { e.stopPropagation(); setDataModal(false) }} >
                 <section className={css`
                     display: grid;
                     grid-template: auto / auto 1fr;
@@ -96,7 +96,7 @@ export default function LoadoutList({
                     <div className={css`grid-column: span 2; font-size: 1.5em;margin-bottom: 1em;`}>
                         Data Actions
                     </div>
-                    <ImportExport />
+                    <ImportExport closeModal={() => { setDataModal(false) }} />
 
                     <button className={css`grid-column: span 2;`} onClick={(e) => { e.stopPropagation(); setDataModal(false) }}>Close</button>
                 </section>
