@@ -703,7 +703,7 @@ export const grenadeData = [
             traits: []
         },
         offensiveRange: [0.8, 1, 0],
-        coverage: [1, 1, 1, 0.25, 0.25],
+        coverage: [1, 1, 1, 0.25, 0],
         stun: true,
         objectives: []
     },
@@ -737,7 +737,7 @@ export const grenadeData = [
             traits: []
         },
         offensiveRange: [0.7, 1, 0],
-        coverage: [1, 1, 1, 0.5, 0.5],
+        coverage: [1, 1, 1, 0.5, 0],
         stun: true,
         objectives: []
     },
@@ -788,7 +788,7 @@ export const grenadeData = [
             traits: []
         },
         offensiveRange: [1, 1, 0],
-        coverage: [0, 0, 0, 0.75, 0.75],
+        coverage: [0, 0, 0, 0.7, 0.7],
         stun: false,
         objectives: []
     },
