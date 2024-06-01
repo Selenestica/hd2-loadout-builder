@@ -1,8 +1,9 @@
-import { useMemo } from "react"
+import { useMemo, useState } from "react"
 import { css } from "@emotion/css"
 import { colors } from "../data/constants"
 import RangeRemovalMatrix from "./RangeRemovalMatrix"
 import RemovalBreakdownChart from "./RemovalBreakdownChart"
+import GenericModalLayout from "./GenericModalLayout"
 
 function prepRangeCoverageData(obj, weight = 1) {
     const output = []
@@ -120,6 +121,8 @@ export default function Analytics({ strat1, strat2, strat3, strat4, primary, sec
 
     }, [strat1, strat2, strat3, strat4, primary, secondary, grenade, armor])
 
+    const [showInfoModal, setShowInfoModal] = useState(false)
+
     return <div {...props} className={css`
         background: ${colors.lighter};
         display: flex;
@@ -130,6 +133,7 @@ export default function Analytics({ strat1, strat2, strat3, strat4, primary, sec
         height: 100%;
         padding: 5em 0;
         overflow: hidden;
+        position: relative;
 
         @media screen and (max-width: 1400px) {
             grid-column: span 2;
@@ -144,6 +148,62 @@ export default function Analytics({ strat1, strat2, strat3, strat4, primary, sec
         }
 
     `}>
+        <div className={css`
+            position: absolute;
+            bottom: 1em;
+            right: 0em;
+            transform: translate(-50%, 0);
+            width: 2em;
+            height: 2em;
+            border-radius: 999px;
+            background: ${colors.lighter};
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            z-index: 50;
+
+            &:hover {
+                background: ${colors.darker};
+            }
+        `} onClick={() => setShowInfoModal(true)}>
+            ?
+        </div>
+
+        {showInfoModal && <GenericModalLayout closeModal={() => setShowInfoModal(false)} >
+            <section className={css`
+                display: grid;
+                font-size: 0.5em;
+                padding-bottom: 1em;
+                place-items: center;
+            `}>
+                <p>
+                Ranges signify short, medium and long range effectiveness. <br/>
+                This can be due to damage at range, good/bad projectile speed, weapon handling and scope quality. <br/> <br/>
+                Removal signifies the quantity and efficiency of killing of 5 tiers of enemies from light to heavy. <br/>
+                First and all, penetration breakpoints are considered: Tier 1 is light pen, Tier 2 is medium pen, Tier 3 is where medium pen does half damage.<br/>
+                Tier 5 is the heaviest body armor of tanks, hulks and bile titans. (think everything exclusively damageable by rocket launchers). <br/> 
+                Tier 4 is everything between 5 and 3. So stuff like hulk faceplates and gunship thrusters.<br/>
+                Weapon uptime and efficiency of removing groups / multiple targets is also considered.<br/><br/>
+
+                A score of 1 means baseline effective for that weapon class. <br/>
+                In the UI range / removal bars, a full segment means a score of 1. <br/>
+                A slimmer bar signifies a lower score. A yellow bar signifies an exceptional score above 1. <br/>
+                The secondary's scores are lowered for calculation in the graphs. (x0.5 default and x0.666 with supply pack)<br/>
+                The grenades scores also have multipliers: (x0.5 default, always x1 with supply pack, and x0.7 with engineer armor)<br/><br/>
+
+                Scores can be adjusted to your liking with the checkbox in the equipment picker menus. <br/>
+                When these score overrides are in use they will show up with an alternate color (blue). <br/>
+
+                All the data for this app is stored locally in the browser cache, but you can share loadouts with the 'Share url' button.  <br/>
+                An option to export/import all data (including overrides) is being worked on. <br/>
+
+                </p>
+
+                <button onClick={() => setShowInfoModal(false)}>Close</button>
+               
+            </section>
+        </GenericModalLayout>}
+
         <div className={css`
             display: grid;
             grid-template: 18em 3em / 3em 30em;
