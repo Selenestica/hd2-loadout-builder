@@ -56,9 +56,9 @@ export default function StrategemDetails({ strat, active, reset, ...props }) {
                     <div>Uptime:</div>
                     <div>{strat.uptime}</div>
 
-                    <RangeBar range={strat.offensiveRange} />
+                    <RangeBar range={strat.offensiveRange} special={strat.special}/>
                     
-                    <RemovalBar coverage={strat.coverage}/>
+                    <RemovalBar coverage={strat.coverage} special={strat.special}/>
                 </>
             }
 

@@ -13,12 +13,14 @@ export default function ScoreOverrider({ objectStoreName, id, defaultValues, ...
 
     const [rangeOverrides, setRangeOverrides] = useState(!!thisOverride ? thisOverride.offensiveRange : defaultValues.offensiveRange)
     const [scoreOverrides, setScoreOverrides] = useState(!!thisOverride ? thisOverride.coverage : defaultValues.coverage)
+    const [buffedScoreOverrides, setBuffedScoreOverrides] = useState(!!thisOverride ? thisOverride.supplyBuffedCoverage : defaultValues.supplyBuffedCoverage)
     const [usingOverrides, setUsingOverrides] = useState(!!thisOverride)
     const [valuesHaveChanged, setValuesHaveChanged] = useState(false)
 
     useEffect(() => {
         setRangeOverrides(!!thisOverride ? thisOverride.offensiveRange : defaultValues.offensiveRange)
         setScoreOverrides(!!thisOverride ? thisOverride.coverage : defaultValues.coverage)
+        setBuffedScoreOverrides(!!thisOverride ? thisOverride.supplyBuffedCoverage : defaultValues.supplyBuffedCoverage)
         setUsingOverrides(!!thisOverride)
         setValuesHaveChanged(false)
     }, [id, defaultValues])
@@ -46,12 +48,26 @@ export default function ScoreOverrider({ objectStoreName, id, defaultValues, ...
         })
     }, [setScoreOverrides])
 
+    const changeBuffedScore = useCallback((index, value) => {
+        if (value.length > 4) return
+        if (!/^\d*\.?\d*$/.test(value)) return
+        setValuesHaveChanged(true)
+        setBuffedScoreOverrides(prev => {
+            const newArr = [...prev]
+            newArr[index] = value
+            return newArr
+        })
+    }, [setBuffedScoreOverrides])
+
     const handleCheckboxtoggle = useCallback(() => {
         // TO DO: also allow supplybuffed overrides
         const prevValue = usingOverrides
         if (!prevValue) { // gets turned on
             // handle put
             const data = { id, offensiveRange: rangeOverrides, coverage: scoreOverrides }
+            if (buffedScoreOverrides) {
+                data.supplyBuffedCoverage = buffedScoreOverrides
+            }
             handleAdd(objectStoreName, data)
         } else { // gets turned off
             // handle delete
@@ -59,14 +75,14 @@ export default function ScoreOverrider({ objectStoreName, id, defaultValues, ...
         }
         setUsingOverrides(current => !current)
         setValuesHaveChanged(false)
-    }, [setUsingOverrides, setValuesHaveChanged, usingOverrides, handleDelete, handleAdd, objectStoreName, rangeOverrides, scoreOverrides, id])
+    }, [setUsingOverrides, setValuesHaveChanged, usingOverrides, handleDelete, handleAdd, objectStoreName, rangeOverrides, scoreOverrides, id, buffedScoreOverrides])
 
     const handleApplyChanges = useCallback(() => {
-        const data = { id, offensiveRange: rangeOverrides, coverage: scoreOverrides }
+        const data = { id, offensiveRange: rangeOverrides, coverage: scoreOverrides, supplyBuffedCoverage: buffedScoreOverrides }
         handleUpdate(objectStoreName, data)
         setValuesHaveChanged(false)
         setUsingOverrides(true)
-    }, [handleUpdate, objectStoreName, rangeOverrides, scoreOverrides, id, setValuesHaveChanged])
+    }, [handleUpdate, objectStoreName, rangeOverrides, scoreOverrides, buffedScoreOverrides, id, setValuesHaveChanged])
 
     return <div className={styles.root(usingOverrides)}>
         <label className={styles.label}>
@@ -113,17 +129,25 @@ export default function ScoreOverrider({ objectStoreName, id, defaultValues, ...
                         <InputNumber step={0.05} onChange={(val) => changeScore(3, val)} value={scoreOverrides[3]} max={5} min={0} maxLength={4} precision={2} />
                         <InputNumber step={0.05} onChange={(val) => changeScore(4, val)} value={scoreOverrides[4]} max={5} min={0} maxLength={4} precision={2} />
                     </div>
+
+                    {!!buffedScoreOverrides && <>
+                        Custom removal with supply pack:
+                        <div>
+                            <InputNumber step={0.05} onChange={(val) => changeBuffedScore(0, val)} value={buffedScoreOverrides[0]} max={5} min={0} maxLength={4} precision={2} />
+                            <InputNumber step={0.05} onChange={(val) => changeBuffedScore(1, val)} value={buffedScoreOverrides[1]} max={5} min={0} maxLength={4} precision={2} />
+                            <InputNumber step={0.05} onChange={(val) => changeBuffedScore(2, val)} value={buffedScoreOverrides[2]} max={5} min={0} maxLength={4} precision={2} />
+                            <InputNumber step={0.05} onChange={(val) => changeBuffedScore(3, val)} value={buffedScoreOverrides[3]} max={5} min={0} maxLength={4} precision={2} />
+                            <InputNumber step={0.05} onChange={(val) => changeBuffedScore(4, val)} value={buffedScoreOverrides[4]} max={5} min={0} maxLength={4} precision={2} />
+                        </div>
+                    </>}
                 </div>
 
-                <div className={css`
-                    display: grid;
-                    grid-template-columns: min-content 1fr;
-                    gap: 0.5em;
-                    grid-auto-rows: 1.5em;
-                    align-items: center;
-                `}>
-                    <RangeBar range={rangeOverrides} special={true}/>
-                    <RemovalBar coverage={scoreOverrides} special={true}/>
+                <div className={styles.barGridWrapper}>
+                    <RangeBar range={rangeOverrides} special={true} />
+                    <RemovalBar coverage={scoreOverrides} special={true} />
+                    {!!buffedScoreOverrides &&
+                        <RemovalBar coverage={buffedScoreOverrides} special={true} />
+                    }
                 </div>
             </>
         }
@@ -193,5 +217,12 @@ const styles = {
         width: 0px;
         height: 0px;
         visibility: hidden;
+    `,
+    barGridWrapper: css`
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        gap: 0.5em;
+        grid-auto-rows: 1.5em;
+        align-items: center;
     `
 }

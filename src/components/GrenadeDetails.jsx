@@ -53,9 +53,9 @@ export default function GrenadeDetails({ grenade, active, reset, ...props }) {
 
         {grenade &&
             <>
-                <RangeBar range={grenade.offensiveRange} />
+                <RangeBar range={grenade.offensiveRange} special={grenade.special} />
 
-                <RemovalBar coverage={grenade.coverage} />
+                <RemovalBar coverage={grenade.coverage} special={grenade.special} />
             </>
         }
 

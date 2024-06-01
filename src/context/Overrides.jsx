@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState, useContext, useMemo } from 'react'
+import { createContext, useEffect, useState, useContext, useMemo, useCallback } from 'react'
 import { addObject, updateObject, deleteObject, getAll } from '../data/indexedDB'
 import { strategemData, primaryWeaponData, secondaryWeaponData, grenadeData, armorData } from '../data/hardcodedData'
 import LoadoutsContext from './Loadouts'
@@ -65,55 +65,38 @@ export function OverridesProvider({ ...props }) {
         })
     }
 
-    const selectedLoadoutData = useMemo(() => {
-        if (!selectedLoadout) return
-
-        const newObj = { ...selectedLoadout }
-
-        Object.entries(selectedLoadout).forEach(([key, value]) => {
-            if (key === 'strat1' || key === 'strat2' || key === 'strat3' || key === 'strat4') {
-                newObj[key] = structuredClone(strategemData.find(x => x.id === value))
-                const foundOverride = overrides.stratOverrides.find(x => x.id === value)
-                if (!!foundOverride) {
-                    newObj[key] = { ...newObj[key], ...foundOverride }
-                }
-            } else if (key === 'primary') {
-                newObj[key] = structuredClone(primaryWeaponData.find(x => x.id === value))
-                const foundOverride = overrides.primaryOverrides.find(x => x.id === value)
-                if (!!foundOverride) {
-                    newObj[key] = { ...newObj[key], ...foundOverride }
-                }
-            } else if (key === 'secondary') {
-                newObj[key] = structuredClone(secondaryWeaponData.find(x => x.id === value))
-                const foundOverride = overrides.secondaryOverrides.find(x => x.id === value)
-                if (!!foundOverride) {
-                    newObj[key] = { ...newObj[key], ...foundOverride }
-                }
-            } else if (key === 'grenade') {
-                newObj[key] = structuredClone(grenadeData.find(x => x.id === value))
-                const foundOverride = overrides.grenadeOverrides.find(x => x.id === value)
-                if (!!foundOverride) {
-                    newObj[key] = { ...newObj[key], ...foundOverride }
-                }
-            } else if (key === 'armor') {
-                newObj[key] = structuredClone(armorData.find(x => x.id === value))
-            }
-        })
-
-        return newObj
-
-    }, [selectedLoadout, overrides, strategemData, primaryWeaponData, secondaryWeaponData, grenadeData, armorData])
+    const getFinalData = useCallback((id, type) => {
+        if (type === 'strat1' || type === 'strat2' || type === 'strat3' || type === 'strat4') {
+            const defaultData = structuredClone(strategemData.find(x => x.id === id))
+            const foundOverride = structuredClone(overrides.stratOverrides.find(x => x.id === id))
+            return !!foundOverride ? { ...defaultData, ...foundOverride, special: true } : defaultData
+        } else if (type === 'primary') {
+            const defaultData = structuredClone(primaryWeaponData.find(x => x.id === id))
+            const foundOverride = structuredClone(overrides.primaryOverrides.find(x => x.id === id))
+            return !!foundOverride ? { ...defaultData, ...foundOverride, special: true } : defaultData
+        } else if (type === 'secondary') {
+            const defaultData = structuredClone(secondaryWeaponData.find(x => x.id === id))
+            const foundOverride = structuredClone(overrides.secondaryOverrides.find(x => x.id === id))
+            return !!foundOverride ? { ...defaultData, ...foundOverride, special: true } : defaultData
+        } else if (type === 'grenade') {
+            const defaultData = structuredClone(grenadeData.find(x => x.id === id))
+            const foundOverride = structuredClone(overrides.grenadeOverrides.find(x => x.id === id))
+            return !!foundOverride ? { ...defaultData, ...foundOverride, special: true } : defaultData
+        } else if (type === 'armor') {
+            return structuredClone(armorData.find(x => x.id === id))
+        }
+    }, [strategemData, primaryWeaponData, secondaryWeaponData, grenadeData, armorData, overrides])
 
     return (
         <OverridesContext.Provider
             value={{
                 overrides,
-                selectedLoadoutData,
                 loading,
                 setLoading,
                 handleAdd,
                 handleUpdate,
                 handleDelete,
+                getFinalData
             }}
             {...props}
         >

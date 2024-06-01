@@ -53,9 +53,9 @@ export default function PrimaryDetails({ primary, active, reset, ...props }) {
 
         {primary &&
             <>
-                <RangeBar range={primary.offensiveRange} />
+                <RangeBar range={primary.offensiveRange} special={primary.special} />
 
-                <RemovalBar coverage={primary.coverage} />
+                <RemovalBar coverage={primary.coverage} special={primary.special} />
             </>
         }
 

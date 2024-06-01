@@ -16,10 +16,12 @@ import GrenadeList from './GrenadeList'
 import ArmorDetails from './ArmorDetails'
 import ArmorList from './ArmorList'
 import ShareButton from './ShareButton'
+import OverridesContext from '../context/Overrides'
 
 export default function LoadoutDetails({ ...props }) {
 
     const { selectedLoadout, setSelectedLoadout, setLoadouts, loadouts } = useContext(LoadoutsContext)
+    const { getFinalData } = useContext(OverridesContext)
 
     useEffect(() => {
         preloadImages()
@@ -101,14 +103,14 @@ export default function LoadoutDetails({ ...props }) {
         setConfirmDelete(false)
     }, [selectedLoadout])
 
-    const newStrat1 = strategemData.find(x => x.id === newLoadout.strat1) || null
-    const newStrat2 = strategemData.find(x => x.id === newLoadout.strat2) || null
-    const newStrat3 = strategemData.find(x => x.id === newLoadout.strat3) || null
-    const newStrat4 = strategemData.find(x => x.id === newLoadout.strat4) || null
-    const newPrimary = primaryWeaponData.find(x => x.id === newLoadout.primary) || null
-    const newSecondary = secondaryWeaponData.find(x => x.id === newLoadout.secondary) || null
-    const newGrenade = grenadeData.find(x => x.id === newLoadout.grenade) || null
-    const newArmor = armorData.find(x => x.id === newLoadout.armor) || null
+    const newStrat1 = newLoadout.strat1 ? getFinalData( newLoadout.strat1, 'strat1') : null
+    const newStrat2 = newLoadout.strat2 ? getFinalData( newLoadout.strat2, 'strat2') : null
+    const newStrat3 = newLoadout.strat3 ? getFinalData( newLoadout.strat3, 'strat3') : null
+    const newStrat4 = newLoadout.strat4 ? getFinalData( newLoadout.strat4, 'strat4') : null
+    const newPrimary = newLoadout.primary ? getFinalData( newLoadout.primary, 'primary') : null
+    const newSecondary = newLoadout.secondary ? getFinalData( newLoadout.secondary, 'secondary') : null
+    const newGrenade =  newLoadout.grenade ? getFinalData( newLoadout.grenade, 'grenade') : null
+    const newArmor =  newLoadout.armor ? getFinalData( newLoadout.armor, 'armor') : null
 
     const activeChanges = useMemo(() => {
         return name !== selectedLoadout.name

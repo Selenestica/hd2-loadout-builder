@@ -53,9 +53,9 @@ export default function SecondaryDetails({ secondary, active, reset, ...props })
 
         {secondary &&
             <>
-                <RangeBar range={secondary.offensiveRange} />
+                <RangeBar range={secondary.offensiveRange} special={secondary.special} />
 
-                <RemovalBar coverage={secondary.coverage}/>
+                <RemovalBar coverage={secondary.coverage} special={secondary.special} />
             </>
         }
 
