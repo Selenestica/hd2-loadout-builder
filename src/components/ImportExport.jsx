@@ -4,6 +4,8 @@ import { useCallback, useState } from "react";
 
 export default function ImportExport({ ...props }) {
 
+    const [selectedActionName, setSelectedActionName] = useState('')
+
     const handleResetValues = useCallback(() => {
         //
     }, [])
@@ -26,30 +28,37 @@ export default function ImportExport({ ...props }) {
         }
 `}>
 
-        <ConfirmAction handleAction={handleResetValues} confirmMessage='Confirm Export?' actionName='Export All App Data' />
-        <ConfirmAction handleAction={handleResetValues} confirmMessage='Confirm Import All Data?' actionName='Import+Replace All App Data' />
-        <ConfirmAction handleAction={handleResetValues} confirmMessage='Confirm Import Values?' actionName='Import+Replace all Custom Values' />
-        <ConfirmAction handleAction={handleResetValues} confirmMessage='Confirm Import Loadouts?' actionName='Import+Replace all Loadouts' />
-        <ConfirmAction handleAction={handleResetValues} confirmMessage='Confirm Delete Values?' actionName='Delete All Custom Values' />
+        <ConfirmAction handleAction={handleResetValues} confirmMessage='Confirm Export?' actionName='Export All App Data' selectedActionName={selectedActionName} setSelectedActionName={setSelectedActionName} />
+        <ConfirmAction handleAction={handleResetValues} confirmMessage='Confirm Import All Data?' actionName='Import+Replace All App Data' selectedActionName={selectedActionName} setSelectedActionName={setSelectedActionName} />
+        <ConfirmAction handleAction={handleResetValues} confirmMessage='Confirm Import Values?' actionName='Import+Replace all Custom Values' selectedActionName={selectedActionName} setSelectedActionName={setSelectedActionName} />
+        <ConfirmAction handleAction={handleResetValues} confirmMessage='Confirm Import Loadouts?' actionName='Import+Replace all Loadouts' selectedActionName={selectedActionName} setSelectedActionName={setSelectedActionName} />
+        <ConfirmAction handleAction={handleResetValues} confirmMessage='Confirm Delete Values?' actionName='Delete All Custom Values' selectedActionName={selectedActionName} setSelectedActionName={setSelectedActionName} />
 
     </div>
 }
 
-function ConfirmAction({ handleAction, confirmMessage, actionName, ...props }) {
+function ConfirmAction({ handleAction, confirmMessage, actionName, selectedActionName, setSelectedActionName, ...props }) {
     const [preConfirm, setPreConfirm] = useState(false)
 
     return <>
-        <button onClick={() => {
+        <button disabled={selectedActionName !== '' && selectedActionName !== actionName} onClick={() => {
             if (preConfirm) {
                 handleAction()
+                setSelectedActionName('')
                 setPreConfirm(false)
             } else {
+                setSelectedActionName(actionName)
                 setPreConfirm(true)
             }
-        }}>
+        }} className={css`${selectedActionName !== actionName ? 'grid-column: span 2;' : ''}`}>
             {preConfirm ? confirmMessage : actionName}
         </button>
-        <button disabled={!preConfirm} onClick={() => setPreConfirm(false)}>Cancel</button>
+        {preConfirm && <button onClick={() => {
+            setSelectedActionName('')
+            setPreConfirm(false)
+        }}>
+            Cancel
+        </button>}
     </>
 
 }
