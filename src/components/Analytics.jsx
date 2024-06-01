@@ -189,7 +189,8 @@ export default function Analytics({ strat1, strat2, strat3, strat4, primary, sec
                 In the UI range / removal bars, a full segment means a score of 1. <br/>
                 A slimmer bar signifies a lower score. A yellow bar signifies an exceptional score above 1. <br/>
                 The secondary's scores are lowered for calculation in the graphs. (x0.5 default and x0.666 with supply pack)<br/>
-                The grenades scores also have multipliers: (x0.5 default, always x1 with supply pack, and x0.7 with engineer armor)<br/><br/>
+                The grenades scores also have multipliers: (x0.5 default, always x1 with supply pack, and x0.7 with engineer armor)<br/>
+                Weapons limited in ammo receive higher removal scores when paired with a supply pack. (depending on the weapon)<br/><br/>
 
                 Scores can be adjusted to your liking with the checkbox in the equipment picker menus. <br/>
                 When these score overrides are in use they will show up with an alternate color (blue). <br/>
