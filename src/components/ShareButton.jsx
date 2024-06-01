@@ -16,7 +16,7 @@ export default function ShareButton({ newLoadout, ...props }) {
             newLoadout.grenade || 'x',
             newLoadout.armor || 'x',
         ].join('i')
-        return `https://divers-lab.io/s?n=${encodedName}&d=${encodedData}`
+        return `${window.location.origin}/s?n=${encodedName}&d=${encodedData}`
     }, [newLoadout])
 
     useEffect(() => {
