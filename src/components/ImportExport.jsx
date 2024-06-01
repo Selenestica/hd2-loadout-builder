@@ -72,13 +72,13 @@ export default function ImportExport({ closeModal, ...props }) {
 
         <ConfirmAction handleAction={handleExport} confirmMessage='Confirm Export?' actionName='Export All App Data' selectedActionName={selectedActionName} setSelectedActionName={setSelectedActionName} />
         <ConfirmAction handleAction={() => importStores()} confirmMessage='Confirm Import All Data?' actionName='Import+Replace All App Data' selectedActionName={selectedActionName} setSelectedActionName={setSelectedActionName} />
+        <ConfirmAction handleAction={() => importStores(['loadouts'])} confirmMessage='Confirm Import Loadouts?' actionName='Import+Replace all Loadouts' selectedActionName={selectedActionName} setSelectedActionName={setSelectedActionName} />
         <ConfirmAction handleAction={() => importStores([
             'stratOverrides',
             'primaryOverrides',
             'secondaryOverrides',
             'grenadeOverrides'
         ])} confirmMessage='Confirm Import Values?' actionName='Import+Replace all Custom Values' selectedActionName={selectedActionName} setSelectedActionName={setSelectedActionName} />
-        <ConfirmAction handleAction={() => importStores(['loadouts'])} confirmMessage='Confirm Import Loadouts?' actionName='Import+Replace all Loadouts' selectedActionName={selectedActionName} setSelectedActionName={setSelectedActionName} />
         <ConfirmAction handleAction={handleDeleteCustomValues} confirmMessage='Confirm Delete Values?' actionName='Delete All Custom Values' selectedActionName={selectedActionName} setSelectedActionName={setSelectedActionName} />
 
     </div>
