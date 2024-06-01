@@ -237,23 +237,3 @@ export async function importData(file, storesArray) {
 
     reader.readAsText(file);
 }
-
-/* export async function importAllDataFromFile(storesArray) {
-    try {
-        const [fileHandle] = await window.showOpenFilePicker({
-            types: [{
-                description: 'Text Files',
-                accept: {
-                    'text/plain': ['.txt'],
-                },
-            }],
-            multiple: false,
-        });
-
-        const file = await fileHandle.getFile();
-        await importData(file, storesArray);
-        window.location.reload()
-    } catch (error) {
-        console.error('Error opening file:', error);
-    }
-} */

@@ -54,7 +54,7 @@ export default function ImportExport({ closeModal, ...props }) {
 
     return <div className={css`
         display: grid;
-        gap: 1em 0.2em;
+        gap: 0.5em 0.2em;
         width: 100%;
         grid-template-columns: 17em 10em;
         grid-auto-rows: 4em;

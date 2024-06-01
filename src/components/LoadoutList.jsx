@@ -88,8 +88,6 @@ export default function LoadoutList({
             {dataModal && <GenericModalLayout closeModal={(e) => { e.stopPropagation(); setDataModal(false) }} >
                 <section className={css`
                     display: grid;
-                    grid-template: auto / auto 1fr;
-                    grid-gap: 0.2em 1em;
                     font-size: 0.5em;
                     padding-bottom: 1em;
                 `}>
