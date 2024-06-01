@@ -8,13 +8,16 @@ export default function SecondaryList({ handleClick, filterArr }) {
     const [hoverState, setHoverState] = useState()
 
     const sortedSecondaries = useMemo(() => {
-        secondaryWeaponData.sort((a, b) => (
-            a.type !== b.type ?
-                a.type > b.type
-                : a.name.split(' ').slice(1).join(' ').localeCompare(b.name.split(' ').slice(1).join(' '))
-        ))
-        return secondaryWeaponData
-
+        const sorted = secondaryWeaponData.slice(0).sort((a, b) => {
+            if (a.type !== b.type) {
+                return a.type > b.type ? 1 : -1;
+            } else {
+                const aName = a.name.split(' ').slice(1).join(' ');
+                const bName = b.name.split(' ').slice(1).join(' ');
+                return aName.localeCompare(bName);
+            }
+        });
+        return sorted
     }, [secondaryWeaponData])
 
     return (

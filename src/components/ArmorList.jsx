@@ -8,11 +8,15 @@ export default function ArmorList({ handleClick, filterArr }) {
     const [hoverState, setHoverState] = useState()
 
     const sortedArmors = useMemo(() => {
-        armorData.sort((a, b) => (
-            a.type === b.type ? a.name.localeCompare(b.name) :
-                    (a.type === 'light' ? 1 : a.type === 'medium' ? 2 : 3) > (b.type === 'light' ? 1 : b.type === 'medium' ? 2 : 3)
-        ))
-        return armorData
+        const sorted = armorData.slice(0).sort((a, b) => {
+            if (a.type === b.type) {
+                return a.name.localeCompare(b.name);
+            } else {
+                const typeOrder = { 'light': 1, 'medium': 2, 'heavy': 3 };
+                return typeOrder[a.type] - typeOrder[b.type];
+            }
+        });
+        return sorted;
     }, [armorData])
 
     return (

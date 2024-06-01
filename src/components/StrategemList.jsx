@@ -17,7 +17,6 @@ export default function StrategemList({ handleClick, filterArr }) {
             }
         });
 
-        console.log(sortedData)
         return sortedData
 
     }, [strategemData])
