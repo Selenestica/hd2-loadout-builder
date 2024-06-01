@@ -8,12 +8,17 @@ export default function StrategemList({ handleClick, filterArr }) {
     const [hoverState, setHoverState] = useState()
 
     const sortedStrats = useMemo(() => {
-        strategemData.sort((a, b) => (
-            a.color !== b.color ?
-                a.color > b.color
-                : a.type > b.type
-        ))
-        return strategemData
+
+        const sortedData = strategemData.slice(0).sort((a, b) => {
+            if (a.color !== b.color) {
+                return a.color < b.color ? 1 : -1;
+            } else {
+                return a.type > b.type ? 1 : -1;
+            }
+        });
+
+        console.log(sortedData)
+        return sortedData
 
     }, [strategemData])
 

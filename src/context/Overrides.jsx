@@ -69,19 +69,19 @@ export function OverridesProvider({ ...props }) {
         if (type === 'strat1' || type === 'strat2' || type === 'strat3' || type === 'strat4') {
             const defaultData = structuredClone(strategemData.find(x => x.id === id))
             const foundOverride = structuredClone(overrides.stratOverrides.find(x => x.id === id))
-            return !!foundOverride ? { ...defaultData, ...foundOverride, special: true } : defaultData
+            return !!foundOverride ? { ...defaultData, ...foundOverride, special: true, default: defaultData } : {...defaultData, default: defaultData  }
         } else if (type === 'primary') {
             const defaultData = structuredClone(primaryWeaponData.find(x => x.id === id))
             const foundOverride = structuredClone(overrides.primaryOverrides.find(x => x.id === id))
-            return !!foundOverride ? { ...defaultData, ...foundOverride, special: true } : defaultData
+            return !!foundOverride ? { ...defaultData, ...foundOverride, special: true, default: defaultData  } : {...defaultData, default: defaultData }
         } else if (type === 'secondary') {
             const defaultData = structuredClone(secondaryWeaponData.find(x => x.id === id))
             const foundOverride = structuredClone(overrides.secondaryOverrides.find(x => x.id === id))
-            return !!foundOverride ? { ...defaultData, ...foundOverride, special: true } : defaultData
+            return !!foundOverride ? { ...defaultData, ...foundOverride, special: true, default: defaultData  } : {...defaultData, default: defaultData }
         } else if (type === 'grenade') {
             const defaultData = structuredClone(grenadeData.find(x => x.id === id))
             const foundOverride = structuredClone(overrides.grenadeOverrides.find(x => x.id === id))
-            return !!foundOverride ? { ...defaultData, ...foundOverride, special: true } : defaultData
+            return !!foundOverride ? { ...defaultData, ...foundOverride, special: true, default: defaultData  } : {...defaultData, default: defaultData }
         } else if (type === 'armor') {
             return structuredClone(armorData.find(x => x.id === id))
         }

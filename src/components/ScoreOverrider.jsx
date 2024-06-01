@@ -208,7 +208,7 @@ const styles = {
         }
     `,
     checkbox: (usingOverrides) => css`
-        border: 4px solid ${colors.darkGrey};
+        border: 4px solid ${colors.darker};
         background: ${usingOverrides ? colors.gold : 'unset'};
         width: 2em;
         height: 2em;
