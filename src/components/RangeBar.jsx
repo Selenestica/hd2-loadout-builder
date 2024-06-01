@@ -12,9 +12,9 @@ export default function RangeBar({ range, special, ...props }) {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 2px;
-            height: 50%;
+            height: 80%;
             background: ${colors.grey};
-            border-radius: 15px;
+            border-radius: 3px;
             overflow: hidden;
         `}>
             {range.map((el, i) => <div key={i} className={css`

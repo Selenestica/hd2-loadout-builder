@@ -3,6 +3,8 @@ import { grenadeData } from '../data/hardcodedData'
 import { css } from '@emotion/css'
 import { colors } from '../data/constants'
 import ScoreOverrider from './ScoreOverrider'
+import RangeBar from './RangeBar'
+import RemovalBar from './RemovalBar'
 
 export default function GrenadeList({ handleClick, filterArr }) {
     const [hoverState, setHoverState] = useState()
@@ -119,55 +121,8 @@ export default function GrenadeList({ handleClick, filterArr }) {
                         <div>Stagger:</div>
                         <div>{hoverState.stun ? 'Yes' : 'No'}</div>
 
-                        <div>Range:</div>
-                        <div className={css`
-                            display: grid;
-                            grid-template-columns: repeat(3, 1fr);
-                            grid-gap: 2px;
-                            height: 40%;
-                            background: ${colors.lighter};
-                            border-radius: 15px;
-                            overflow: hidden;
-                        `}>
-                            {hoverState.offensiveRange.map((el, i) => <div key={i} className={css`
-                            width: 100%;
-                            height: ${el * 100}%;
-                            background: ${el > 1 ? colors.gold : 'white'};
-                            align-self: center;
-                        `} title={i === 0 ? 'short' : i === 1 ? 'medium' : i === 2 ? 'long' : ''} />)}
-                        </div>
-
-                        <div>Removal:</div>
-                        <div className={css`
-                            display: grid;
-                            grid-template-columns: repeat(5, 1fr);
-                            grid-gap: 2px;
-                            height: 50%;
-                            background: ${colors.lighter};
-                            border-radius: 15px;
-                            overflow: hidden;
-                        `}>
-                            {hoverState.coverage.map((el, i) => <div key={i} className={css`
-                            width: 100%;
-                            height: ${el * 100}%;
-                            align-self: center;
-                            background: ${el > 1 ? colors.gold : 'white'};
-                        `} />)}
-                        </div>
-
-                        <div></div>
-                        <div className={css`
-                            display: flex;
-                            justify-content: space-between;
-                            color: ${colors.lighter};
-                        `}>
-                            <div>
-                                {'lights'}
-                            </div>
-                            <div>
-                                {'heavies'}
-                            </div>
-                        </div>
+                        <RangeBar range={hoverState.offensiveRange}/>
+                        <RemovalBar coverage={hoverState.coverage}/>
 
                         <div>Traits:</div>
                         <div>{hoverState.ingameStats.traits.join(', ')}</div>
