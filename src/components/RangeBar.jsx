@@ -11,7 +11,7 @@ export default function RangeBar({ range, special, ...props }) {
         <div className={css`
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-gap: 2px;
+            grid-gap: 3px;
             height: 80%;
             background: ${colors.grey};
             border-radius: 3px;

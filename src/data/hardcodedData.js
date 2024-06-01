@@ -570,7 +570,7 @@ export const secondaryWeaponData = [
             fireRate: 900,
             traits: ['light armor penetrating', 'one handed']
         },
-        offensiveRange: [0.5, 0.75, 0],
+        offensiveRange: [1, 0.75, 0],
         coverage: [1, 0.5, 0, 0, 0],
         sluggish: false,
         stun: false,
