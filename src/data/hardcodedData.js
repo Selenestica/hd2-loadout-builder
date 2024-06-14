@@ -92,6 +92,9 @@ import purifier from '../assets/weapons/purifier.webp'
 import tenderizer from '../assets/weapons/tenderizer.webp'
 import { colors } from './constants'
 import airburstLauncher from '../assets/airburstLauncher.webp'
+import bushwacker from '../assets/weapons/bushwacker.webp'
+import knife from '../assets/weapons/knife.webp'
+import liberatorCarbine from '../assets/weapons/liberatorCarbine.webp'
 
 const {primaryWeaponColor, secondaryWeaponColor, grenadeColor} = colors
 const stratBlue = '#457b9d'
@@ -559,7 +562,7 @@ export const primaryWeaponData = [
         color: primaryWeaponColor,
         type: 'Assault rifle',
         name: "AR-23A Liberator Carbine",
-        icon: purifier, //TO DO
+        icon: liberatorCarbine,
         ingameStats: {
             damage: 60,
             capacity: 45,
@@ -689,6 +692,25 @@ export const secondaryWeaponData = [
         stun: false,
         objectives: []
     },
+    {
+        id: 7,
+        color: secondaryWeaponColor,
+        type: 'shotgun',
+        name: "SG-22 Bushwhacker",
+        icon: bushwacker,
+        ingameStats: {
+            damage: 405,
+            capacity: 3,
+            recoil: 170,
+            fireRate: 650,
+            traits: ['light armor penetrating', 'one handed']
+        },
+        offensiveRange: [1, 0, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        sluggish: false,
+        stun: true,
+        objectives: []
+    },
 ]
 
 export const grenadeData = [
@@ -807,7 +829,7 @@ export const grenadeData = [
             traits: []
         },
         offensiveRange: [1, 1, 0],
-        coverage: [0, 0, 0, 0.7, 0.7],
+        coverage: [0, 0, 0, 0.5, 0.5],
         stun: false,
         objectives: []
     },
@@ -826,6 +848,19 @@ export const grenadeData = [
         offensiveRange: [1, 1, 0],
         coverage: [1, 1, 0, 0, 0],
         stun: false,
+        objectives: []
+    },
+    {
+        id: 9,
+        color: grenadeColor,
+        name: "K-2 Throwing Knife",
+        icon: knife,
+        ingameStats: {
+            traits: []
+        },
+        offensiveRange: [1, 0, 0],
+        coverage: [0.5, 0.5, 0.2, 0, 0],
+        stun: true,
         objectives: []
     },
 ]
@@ -1029,6 +1064,24 @@ export const armorData = [
         icon: lightSVG,
         type: 'light',
     },
+    {
+        id: 23,
+        name: 'light physique',
+        bonus: 'peak physique',
+        abbr: 'PHY',
+        longText: 'Increases melee damage by 50%.  Improves weapons handling with less drag on weapon movement.',
+        icon: lightSVG,
+        type: 'light',
+    },
+    {
+        id: 24,
+        name: 'medium physique',
+        bonus: 'peak physique',
+        abbr: 'PHY',
+        longText: 'Increases melee damage by 50%.  Improves weapons handling with less drag on weapon movement.',
+        icon: mediumSVG,
+        type: 'medium',
+    }
 ]
 
 /* const strategemTypes = ['back']

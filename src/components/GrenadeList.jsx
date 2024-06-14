@@ -114,9 +114,6 @@ export default function GrenadeList({ handleClick, filterArr }) {
                         <div>Fuse:</div>
                         <div>{hoverState.ingameStats.fuse}</div>
 
-                        <div>Fuse:</div>
-                        <div>{hoverState.ingameStats.fuse}</div>
-
                         <div>Stagger:</div>
                         <div>{hoverState.stun ? 'Yes' : 'No'}</div>
 

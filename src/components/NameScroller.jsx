@@ -11,7 +11,8 @@ export default function NameScroller({ ...props }) {
     const [scrollerWidth, setScrollerWidth] = useState()
 
     const checkOverflow = useCallback(() => {
-        const current = ref.current
+        const current = ref?.current
+        if (!current) return
         const overflow = isOverflowing ?
             current.clientWidth * 2 < current.scrollWidth
             : current.clientWidth < current.scrollWidth

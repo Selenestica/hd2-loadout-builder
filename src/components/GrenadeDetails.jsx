@@ -57,7 +57,7 @@ export default function GrenadeDetails({ grenade, active, reset, ...props }) {
                 : <div className={css`width: 3em; height: 3em; background: ${colors.lighter};`} />
             }
 
-            <div className={css`width: 90%;`}>{grenade?.name || 'Empty Grenade'}</div>
+            <div className={css`width: 90%;`}>{grenade?.name || 'Empty Throwable'}</div>
 
             {grenade &&
                 <>
