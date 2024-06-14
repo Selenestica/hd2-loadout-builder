@@ -164,7 +164,7 @@ export const primaryWeaponData = [
         icon: adjudicator,
         ingameStats: {
             damage: 80,
-            capacity: 25,
+            capacity: 30,
             recoil: 40,
             fireRate: 550,
             traits: ['medium armor penetrating']
@@ -379,7 +379,7 @@ export const primaryWeaponData = [
             traits: ['explosive']
         },
         offensiveRange: [1, 1, 0],
-        coverage: [0.25, 1, 0.5, 0.2, 0],
+        coverage: [0.5, 1, 0.5, 0.2, 0],
         stun: true,
         sluggish: false,
         objectives: []
@@ -410,7 +410,7 @@ export const primaryWeaponData = [
         name: "R-36 Eruptor",
         icon: eruptor,
         ingameStats: {
-            damage: 380,
+            damage: 570,
             capacity: 5,
             recoil: 75,
             fireRate: 25,
@@ -523,13 +523,13 @@ export const primaryWeaponData = [
         name: "AR-61 Tenderizer",
         icon: tenderizer,
         ingameStats: {
-            damage: 60,
-            fireLimit: 35,
+            damage: 95,
+            fireLimit: 30,
             recoil: 10,
             fireRate: 600,
             traits: ['light armor penetrating']
         },
-        offensiveRange: [1, 0.5, 0],
+        offensiveRange: [1, 1, 0],
         coverage: [1, 0.5, 0, 0, 0],
         stun: false,
         sluggish: false,
@@ -554,6 +554,25 @@ export const primaryWeaponData = [
         sluggish: false,
         objectives: []
     },
+    {
+        id: 25,
+        color: primaryWeaponColor,
+        type: 'Assault rifle',
+        name: "AR-23A Liberator Carbine",
+        icon: purifier, //TO DO
+        ingameStats: {
+            damage: 60,
+            capacity: 45,
+            recoil: 26,
+            fireRate: 920,
+            traits: ['light armor penetrating']
+        },
+        offensiveRange: [1.2, 0.8, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    }
 ]
 
 export const secondaryWeaponData = [
@@ -1153,7 +1172,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'orbital',
         color: stratRed,
-        coverage: [1, 1, 0.5, 0, 0],
+        coverage: [1, 1, 1, 0.5, 0.2],
         uptime: 'high',
         objectives: []
     },
@@ -1230,7 +1249,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'eagle',
         color: stratRed,
-        coverage: [1, 0.75, 0.5, 0, 0],
+        coverage: [1, 0.75, 0.75, 0.2, 0.15],
         uptime: 'high',
         objectives: []
     },
@@ -1297,7 +1316,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'eagle',
         color: stratRed,
-        coverage: [0, 0, 0, 0.5, 0.5],
+        coverage: [0, 0, 0, 0.65, 0.65],
         uptime: 'high',
         objectives: []
     },
@@ -1515,8 +1534,8 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'turret',
         color: stratGreen,
-        coverage: [0.8, 0.8, 0, 0, 0],
-        uptime: 'medium',
+        coverage: [1, 0.8, 0, 0, 0],
+        uptime: 'high',
         objectives: []
     },
     {
@@ -1526,7 +1545,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'turret',
         color: stratGreen,
-        coverage: [0.8, 0.8, 0, 0, 0],
+        coverage: [1, 0.8, 0, 0, 0],
         uptime: 'medium',
         objectives: []
     },
@@ -1568,10 +1587,10 @@ export const strategemData = [
         id: 48,
         name: "A/MLS-4X Rocket Sentry",
         icon: stratrocketsentry,
-        offensiveRange: [0.5, 1, 0],
+        offensiveRange: [0.5, 1, 0.25],
         type: 'turret',
         color: stratGreen,
-        coverage: [0.4, 0.75, 0.75, 0.4, 0],
+        coverage: [0.75, 0.75, 0.75, 0.5, 0.2],
         uptime: 'medium',
         objectives: []
     },
