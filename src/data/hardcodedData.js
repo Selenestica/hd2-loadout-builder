@@ -92,6 +92,7 @@ import purifier from '../assets/weapons/purifier.webp'
 import tenderizer from '../assets/weapons/tenderizer.webp'
 import { colors } from './constants'
 import airburstLauncher from '../assets/airburstLauncher.webp'
+import commando from '../assets/strat-commando.webp'
 import bushwacker from '../assets/weapons/bushwacker.webp'
 import knife from '../assets/weapons/knife.webp'
 import liberatorCarbine from '../assets/weapons/liberatorCarbine.webp'
@@ -1081,6 +1082,15 @@ export const armorData = [
         longText: 'Increases melee damage by 50%.  Improves weapons handling with less drag on weapon movement.',
         icon: mediumSVG,
         type: 'medium',
+    },
+    {
+        id: 25,
+        name: 'heavy physique',
+        bonus: 'peak physique',
+        abbr: 'PHY',
+        longText: 'Increases melee damage by 50%.  Improves weapons handling with less drag on weapon movement.',
+        icon: heavySVG,
+        type: 'heavy',
     }
 ]
 
@@ -1693,6 +1703,18 @@ export const strategemData = [
         coverage: [0.5, 0.5, 0.75, 0.75, 0.2],
         supportSlotNecessary: false,
         uptime: 'low',
+        objectives: []
+    },
+    {
+        id: 53,
+        name: "MLS-4X Commando",
+        icon: commando,
+        offensiveRange: [1, 1, 0.5],
+        type: 'support-weapon',
+        color: stratBlue,
+        coverage: [0, 0, 0, 1, 1],
+        supportSlotNecessary: false,
+        uptime: 'very high',
         objectives: []
     },
 ]
