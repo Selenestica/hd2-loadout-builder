@@ -268,9 +268,9 @@ export const primaryWeaponData = [
             fireRate: 80,
             traits: ['medium armor penetrating', 'rounds reload']
         },
-        offensiveRange: [1, 1, 0.5],
+        offensiveRange: [1, 1, 0],
         coverage: [1, 1, 0.5, 0, 0],
-        stun: false,
+        stun: true,
         sluggish: false,
         objectives: []
     },
@@ -359,7 +359,7 @@ export const primaryWeaponData = [
         ingameStats: {
             damage: 240,
             capacity: 25,
-            recoil: 28,
+            recoil: 41,
             fireRate: 330,
             traits: ['light armor penetrating, incendiary']
         },
@@ -380,7 +380,7 @@ export const primaryWeaponData = [
             capacity: 5,
             recoil: 35,
             fireRate: 50,
-            traits: ['explosive']
+            traits: ['explosive', 'one handed']
         },
         offensiveRange: [1, 1, 0],
         coverage: [0.5, 1, 0.5, 0.2, 0],
@@ -1199,7 +1199,7 @@ export const strategemData = [
         coverage: [0.5, 1, 1, 1, 0],
         supplyBuffedCoverage: [0.75, 1.5, 1.5, 1.5, 0],
         supportSlotNecessary: true,
-        uptime: 'medium',
+        uptime: 'high',
         objectives: []
     },
     {
