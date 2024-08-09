@@ -96,6 +96,10 @@ import commando from '../assets/strat-commando.webp'
 import bushwacker from '../assets/weapons/bushwacker.webp'
 import knife from '../assets/weapons/knife.webp'
 import liberatorCarbine from '../assets/weapons/liberatorCarbine.webp'
+import cookout from '../assets/weapons/cookout.webp'
+import torcher from '../assets/weapons/torcher.webp'
+import crisper from '../assets/weapons/crispr.webp'
+import stratATmines from '../assets/strat-atmines.webp'
 
 const {primaryWeaponColor, secondaryWeaponColor, grenadeColor} = colors
 const stratBlue = '#457b9d'
@@ -576,6 +580,43 @@ export const primaryWeaponData = [
         stun: false,
         sluggish: false,
         objectives: []
+    },
+    {
+        id: 26,
+        color: primaryWeaponColor,
+        type: 'Shotgun',
+        name: "SG-451 Cookout",
+        icon: cookout,
+        ingameStats: {
+            damage: 320,
+            capacity: 16,
+            recoil: 100,
+            fireRate: 80,
+            traits: ['light armor penetrating', 'rounds reload', 'incendiary']
+        },
+        offensiveRange: [1, 0.5, 0],
+        coverage: [1, 0.5, 0.2, 0, 0],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 27,
+        color: primaryWeaponColor,
+        type: 'Special',
+        name: "FLAM-66 Torcher",
+        icon: torcher,
+        ingameStats: {
+            dps: 250,
+            capacity: 80,
+            recoil: 3,
+            traits: ['medium armor penetrating', 'incendiary']
+        },
+        offensiveRange: [1, 0, 0],
+        coverage: [1, 1, 0.2, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
     }
 ]
 
@@ -621,7 +662,7 @@ export const secondaryWeaponData = [
     {
         id: 3,
         color: secondaryWeaponColor,
-        type: 'pistol',
+        type: 'special',
         name: "GP-31 Grenade Pistol",
         icon: grenadePistol,
         ingameStats: {
@@ -640,7 +681,7 @@ export const secondaryWeaponData = [
     {
         id: 4,
         color: secondaryWeaponColor,
-        type: 'pistol',
+        type: 'special',
         name: "LAS-7 Dagger",
         icon: dagger,
         ingameStats: {
@@ -696,7 +737,7 @@ export const secondaryWeaponData = [
     {
         id: 7,
         color: secondaryWeaponColor,
-        type: 'shotgun',
+        type: 'special',
         name: "SG-22 Bushwhacker",
         icon: bushwacker,
         ingameStats: {
@@ -710,6 +751,24 @@ export const secondaryWeaponData = [
         coverage: [1, 0.5, 0, 0, 0],
         sluggish: false,
         stun: true,
+        objectives: []
+    },
+    {
+        id: 8,
+        color: secondaryWeaponColor,
+        type: 'special',
+        name: "P-72 Crisper",
+        icon: crisper,
+        ingameStats: {
+            dps: 250,
+            capacity: 30,
+            recoil: 3,
+            traits: ['medium armor penetrating', 'incendiary', 'one handed']
+        },
+        offensiveRange: [1, 0, 0],
+        coverage: [1, 1, 0.2, 0, 0],
+        sluggish: false,
+        stun: false,
         objectives: []
     },
 ]
@@ -1091,7 +1150,34 @@ export const armorData = [
         longText: 'Increases melee damage by 50%.  Improves weapons handling with less drag on weapon movement.',
         icon: heavySVG,
         type: 'heavy',
-    }
+    },
+    {
+        id: 26,
+        name: 'light inflammable',
+        bonus: 'inflammable',
+        abbr: 'FLA',
+        longText: 'Provides 75% damage resistance to fire, allowing bearer to rest assured in their inflammability.',
+        icon: lightSVG,
+        type: 'light',
+    },
+    {
+        id: 27,
+        name: 'medium inflammable',
+        bonus: 'inflammable',
+        abbr: 'FLA',
+        longText: 'Provides 75% damage resistance to fire, allowing bearer to rest assured in their inflammability.',
+        icon: mediumSVG,
+        type: 'medium',
+    },
+    {
+        id: 28,
+        name: 'heavy inflammable',
+        bonus: 'inflammable',
+        abbr: 'FLA',
+        longText: 'Provides 75% damage resistance to fire, allowing bearer to rest assured in their inflammability.',
+        icon: heavySVG,
+        type: 'heavy',
+    },
 ]
 
 /* const strategemTypes = ['back']
@@ -1715,6 +1801,17 @@ export const strategemData = [
         coverage: [0, 0, 0, 1, 1],
         supportSlotNecessary: false,
         uptime: 'very high',
+        objectives: []
+    },
+    {
+        id: 54,
+        name: "AT Anti-Tank Mines",
+        icon: stratATmines,
+        offensiveRange: [0, 1, 0],
+        type: 'emplacement',
+        color: stratGreen,
+        coverage: [0.2, 0.2, 0.2, 0.3, 0.3],
+        uptime: 'medium',
         objectives: []
     },
 ]
