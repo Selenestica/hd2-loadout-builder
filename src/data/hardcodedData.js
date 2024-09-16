@@ -100,6 +100,7 @@ import cookout from '../assets/weapons/cookout.webp'
 import torcher from '../assets/weapons/torcher.webp'
 import crisper from '../assets/weapons/crispr.webp'
 import stratATmines from '../assets/strat-atmines.webp'
+import orbitalNapalm from '../assets/orbitalNapalm.webp'
 
 const {primaryWeaponColor, secondaryWeaponColor, grenadeColor} = colors
 const stratBlue = '#457b9d'
@@ -1812,6 +1813,17 @@ export const strategemData = [
         color: stratGreen,
         coverage: [0.2, 0.2, 0.2, 0.3, 0.3],
         uptime: 'medium',
+        objectives: []
+    },
+    {
+        id: 55,
+        name: "Orbital Napalm Barrage",
+        icon: orbitalNapalm,
+        offensiveRange: [0, 1, 0],
+        type: 'orbital',
+        color: stratRed,
+        coverage: [1, 1, 1, 0.5, 0],
+        uptime: 'low',
         objectives: []
     },
 ]
