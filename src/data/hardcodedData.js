@@ -101,6 +101,9 @@ import torcher from '../assets/weapons/torcher.webp'
 import crisper from '../assets/weapons/crispr.webp'
 import stratATmines from '../assets/strat-atmines.webp'
 import orbitalNapalm from '../assets/orbitalNapalm.webp'
+import steriliser from '../assets/steriliser.webp'
+import dogBreath from '../assets/dogBreath.webp'
+import gasGrenade from '../assets/weapons/gasGrenade.webp'
 
 const {primaryWeaponColor, secondaryWeaponColor, grenadeColor} = colors
 const stratBlue = '#457b9d'
@@ -115,7 +118,7 @@ export const primaryWeaponData = [
         name: "AR23 Liberator",
         icon: lib,
         ingameStats: {
-            damage: 60,
+            damage: 70,
             capacity: 45,
             recoil: 15,
             fireRate: 640,
@@ -134,7 +137,7 @@ export const primaryWeaponData = [
         name: "AR23P Liberator Penetrator",
         icon: libPen,
         ingameStats: {
-            damage: 45,
+            damage: 60,
             capacity: 30,
             recoil: 19,
             fireRate: 640,
@@ -154,7 +157,7 @@ export const primaryWeaponData = [
         icon: libConc,
         ingameStats: {
             damage: 65,
-            capacity: 30,
+            capacity: 60,
             recoil: 28,
             fireRate: 320,
             traits: ['light armor penetrating', 'explosive damage type']
@@ -191,7 +194,7 @@ export const primaryWeaponData = [
         name: "R-63 Diligence",
         icon: diligence,
         ingameStats: {
-            damage: 125,
+            damage: 165,
             capacity: 20,
             recoil: 35,
             fireRate: 350,
@@ -210,7 +213,7 @@ export const primaryWeaponData = [
         name: "R-63CS Diligence Counter Sniper",
         icon: diligenceCs,
         ingameStats: {
-            damage: 140,
+            damage: 200,
             capacity: 15,
             recoil: 53,
             fireRate: 350,
@@ -229,7 +232,7 @@ export const primaryWeaponData = [
         name: "SMG-37 Defender",
         icon: defender,
         ingameStats: {
-            damage: 70,
+            damage: 75,
             capacity: 45,
             recoil: 10,
             fireRate: 520,
@@ -325,7 +328,7 @@ export const primaryWeaponData = [
         icon: breaker,
         ingameStats: {
             damage: 330,
-            capacity: 13,
+            capacity: 16,
             recoil: 55,
             fireRate: 300,
             traits: ['light armor penetrating']
@@ -343,7 +346,7 @@ export const primaryWeaponData = [
         name: "SG-225SP Breaker Spray&Pray",
         icon: breakSp,
         ingameStats: {
-            damage: 192,
+            damage: 240,
             capacity: 26,
             recoil: 45,
             fireRate: 330,
@@ -381,14 +384,14 @@ export const primaryWeaponData = [
         name: "CB-9 Exploding Crossbow",
         icon: crossbow,
         ingameStats: {
-            damage: 420,
+            damage: 620,
             capacity: 5,
             recoil: 35,
             fireRate: 50,
             traits: ['explosive', 'one handed']
         },
         offensiveRange: [1, 1, 0],
-        coverage: [0.5, 1, 0.5, 0.2, 0],
+        coverage: [1, 1, 1, 0.2, 0],
         stun: true,
         sluggish: false,
         objectives: []
@@ -419,7 +422,7 @@ export const primaryWeaponData = [
         name: "R-36 Eruptor",
         icon: eruptor,
         ingameStats: {
-            damage: 570,
+            damage: 455,
             capacity: 5,
             recoil: 75,
             fireRate: 25,
@@ -440,7 +443,7 @@ export const primaryWeaponData = [
         ingameStats: {
             dps: 350,
             fireLimit: 8,
-            recoil: 1,
+            recoil: 0,
             traits: ['light armor penetrating', 'beam', 'heat']
         },
         offensiveRange: [1, 1, 0.5],
@@ -494,13 +497,13 @@ export const primaryWeaponData = [
         name: "MP-98 Knight",
         icon: knight,
         ingameStats: {
-            damage: 50,
+            damage: 65,
             fireLimit: 50,
-            recoil: 20,
+            recoil: 15,
             fireRate: 1380,
             traits: ['light armor penetrating', 'one handed']
         },
-        offensiveRange: [1, 0, 0],
+        offensiveRange: [1.2, 0.25, 0],
         coverage: [1, 0.5, 0, 0, 0],
         stun: false,
         sluggish: false,
@@ -533,7 +536,7 @@ export const primaryWeaponData = [
         icon: tenderizer,
         ingameStats: {
             damage: 95,
-            fireLimit: 30,
+            fireLimit: 35,
             recoil: 10,
             fireRate: 600,
             traits: ['light armor penetrating']
@@ -570,7 +573,7 @@ export const primaryWeaponData = [
         name: "AR-23A Liberator Carbine",
         icon: liberatorCarbine,
         ingameStats: {
-            damage: 60,
+            damage: 70,
             capacity: 45,
             recoil: 26,
             fireRate: 920,
@@ -608,13 +611,13 @@ export const primaryWeaponData = [
         name: "FLAM-66 Torcher",
         icon: torcher,
         ingameStats: {
-            dps: 250,
+            dps: 375,
             capacity: 80,
             recoil: 3,
-            traits: ['medium armor penetrating', 'incendiary']
+            traits: ['incendiary']
         },
         offensiveRange: [1, 0, 0],
-        coverage: [1, 1, 0.2, 0, 0],
+        coverage: [1, 1, 1, 0.5, 0],
         stun: false,
         sluggish: false,
         objectives: []
@@ -686,13 +689,13 @@ export const secondaryWeaponData = [
         name: "LAS-7 Dagger",
         icon: dagger,
         ingameStats: {
-            dps: 200,
+            dps: 250,
             fireLimit: 5,
             recoil: 1,
             traits: ['light armor penetrating', 'one handed', 'beam', 'heat']
         },
         offensiveRange: [1, 1, 0],
-        coverage: [0.75, 0.4, 0, 0, 0],
+        coverage: [1, 0.75, 0, 0, 0],
         sluggish: false,
         stun: false,
         objectives: []
@@ -761,13 +764,13 @@ export const secondaryWeaponData = [
         name: "P-72 Crisper",
         icon: crisper,
         ingameStats: {
-            dps: 250,
+            dps: 375,
             capacity: 30,
             recoil: 3,
-            traits: ['medium armor penetrating', 'incendiary', 'one handed']
+            traits: ['incendiary', 'one handed']
         },
         offensiveRange: [1, 0, 0],
-        coverage: [1, 1, 0.2, 0, 0],
+        coverage: [1, 1, 1, 0.5, 0],
         sluggish: false,
         stun: false,
         objectives: []
@@ -788,7 +791,7 @@ export const grenadeData = [
             traits: []
         },
         offensiveRange: [0.8, 1, 0],
-        coverage: [0.5, 0.5, 0, 0, 0],
+        coverage: [0.8, 0.8, 0.2, 0, 0],
         stun: true,
         objectives: []
     },
@@ -883,14 +886,14 @@ export const grenadeData = [
         name: "G-123 Thermite",
         icon: thermite,
         ingameStats: {
-            damage: 100,
+            damage: 2000,
             penetration: 7,
             radius: 2,
             fuse: 2.9,
             traits: []
         },
         offensiveRange: [1, 1, 0],
-        coverage: [0, 0, 0, 0.5, 0.5],
+        coverage: [0, 0, 0, 0, 1.5],
         stun: false,
         objectives: []
     },
@@ -921,6 +924,19 @@ export const grenadeData = [
         },
         offensiveRange: [1, 0, 0],
         coverage: [0.5, 0.5, 0.2, 0, 0],
+        stun: true,
+        objectives: []
+    },
+    {
+        id: 10,
+        color: grenadeColor,
+        name: "G-4 Gas",
+        icon: gasGrenade,
+        ingameStats: {
+            traits: ['Caustic']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [1, 0.5, 0, 0, 0],
         stun: true,
         objectives: []
     },
@@ -1179,6 +1195,33 @@ export const armorData = [
         icon: heavySVG,
         type: 'heavy',
     },
+    {
+        id: 29,
+        name: 'light filtration',
+        bonus: 'advanced filtration',
+        abbr: 'FIL',
+        longText: 'Provides 80% resistance to gas damage and effects.',
+        icon: lightSVG,
+        type: 'light',
+    },
+    {
+        id: 30,
+        name: 'medium filtration',
+        bonus: 'advanced filtration',
+        abbr: 'FIL',
+        longText: 'Provides 80% resistance to gas damage and effects.',
+        icon: mediumSVG,
+        type: 'medium',
+    },
+    {
+        id: 31,
+        name: 'heavy filtration',
+        bonus: 'advanced filtration',
+        abbr: 'FIL',
+        longText: 'Provides 80% resistance to gas damage and effects.',
+        icon: heavySVG,
+        type: 'heavy',
+    },
 ]
 
 /* const strategemTypes = ['back']
@@ -1232,7 +1275,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'support-weapon',
         color: stratBlue,
-        coverage: [0, 0, 0, 1, 1],
+        coverage: [0, 0, 0, 1, 1.5],
         supportSlotNecessary: false,
         uptime: 'very high',
         objectives: []
@@ -1244,7 +1287,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'support-weapon',
         color: stratBlue,
-        coverage: [0, 0, 0, 1, 1],
+        coverage: [0, 0, 0, 1, 2],
         supportSlotNecessary: true,
         uptime: 'very high',
         hasBackpack: true,
@@ -1296,8 +1339,8 @@ export const strategemData = [
         offensiveRange: [1, 1, 0.5],
         type: 'support-weapon',
         color: stratBlue,
-        coverage: [0, 1, 1.75, 0.5, 0],
-        supplyBuffedCoverage: [0.5, 1.5, 2.5, 0.75, 0],
+        coverage: [0, 1, 1.75, 1, 0],
+        supplyBuffedCoverage: [0.5, 1.5, 2.5, 1.5, 0],
         supportSlotNecessary: true,
         uptime: 'very high',
         objectives: []
@@ -1309,7 +1352,7 @@ export const strategemData = [
         offensiveRange: [0, 0.5, 1],
         type: 'support-weapon',
         color: stratBlue,
-        coverage: [0, 0, 0, 0.5, 1],
+        coverage: [0, 0, 0, 0.5, 2],
         supportSlotNecessary: true,
         uptime: 'very high',
         hasBackpack: true,
@@ -1377,7 +1420,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'orbital',
         color: stratRed,
-        coverage: [0.3, 0.3, 0.3, 0.3, 0.2],
+        coverage: [0.3, 0.3, 0.3, 0.3, 0.3],
         uptime: 'very low',
         objectives: []
     },
@@ -1477,7 +1520,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'eagle',
         color: stratRed,
-        coverage: [0, 0, 0, 0.5, 1],
+        coverage: [0, 0.2, 0.2, 0.5, 1],
         uptime: 'medium',
         objectives: []
     },
@@ -1488,7 +1531,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'orbital',
         color: stratRed,
-        coverage: [0, 0, 0.5, 0.5, 0.5],
+        coverage: [0, 0, 0.2, 0.5, 0.75],
         uptime: 'high',
         objectives: []
     },
@@ -1499,7 +1542,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'orbital',
         color: stratRed,
-        coverage: [1.5, 1.5, 0.5, 0, 0],
+        coverage: [1.5, 1.5, 0.2, 0, 0],
         uptime: 'high',
         objectives: []
     },
@@ -1660,7 +1703,7 @@ export const strategemData = [
         offensiveRange: [0, 1, 1],
         type: 'support-weapon',
         color: stratBlue,
-        coverage: [0, 0, 0, 1, 1],
+        coverage: [0, 0, 0, 1, 1.5],
         supportSlotNecessary: true,
         uptime: 'very high',
         objectives: []
@@ -1787,7 +1830,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0.5],
         type: 'support-weapon',
         color: stratBlue,
-        coverage: [0.5, 0.5, 0.75, 0.75, 0.2],
+        coverage: [0.6, 0.6, 1, 1, 0.2],
         supportSlotNecessary: false,
         uptime: 'low',
         objectives: []
@@ -1799,7 +1842,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0.5],
         type: 'support-weapon',
         color: stratBlue,
-        coverage: [0, 0, 0, 1, 1],
+        coverage: [0, 0, 0, 1, 1.25],
         supportSlotNecessary: false,
         uptime: 'very high',
         objectives: []
@@ -1824,6 +1867,30 @@ export const strategemData = [
         color: stratRed,
         coverage: [1, 1, 1, 0.5, 0],
         uptime: 'low',
+        objectives: []
+    },
+    {
+        id: 56,
+        name: "TX-41 Sterilizer",
+        icon: steriliser,
+        offensiveRange: [1, 0, 0],
+        type: 'support-weapon',
+        color: stratBlue,
+        coverage: [1, 0, 0, 0, 0],
+        supportSlotNecessary: true,
+        uptime: 'very high',
+        objectives: []
+    },
+    {
+        id: 57,
+        name: "AX/TX-13 Guard Dog Dog Breath",
+        icon: dogBreath,
+        offensiveRange: [0.5, 0, 0],
+        type: 'backpack',
+        color: stratBlue,
+        coverage: [0.5, 0, 0, 0, 0],
+        hasBackpack: true,
+        uptime: 'very high',
         objectives: []
     },
 ]

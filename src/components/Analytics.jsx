@@ -181,8 +181,8 @@ export default function Analytics({ strat1, strat2, strat3, strat4, primary, sec
                 This can be due to damage at range, good/bad projectile speed, weapon handling and scope quality. <br/> <br/>
                 Removal signifies the quantity and efficiency of killing of 5 tiers of enemies from light to heavy. <br/>
                 First and all, penetration breakpoints are considered: Tier 1 is light pen, Tier 2 is medium pen, Tier 3 is where medium pen does half damage.<br/>
-                Tier 5 is the heaviest body armor of tanks, hulks and bile titans. (think everything exclusively damageable by rocket launchers). <br/> 
-                Tier 4 is everything between 5 and 3. So stuff like hulk faceplates and gunship thrusters.<br/>
+                Tier 5 is everything exclusively damageable by rocket launchers. <br/> 
+                Tier 4 is everything between 5 and 3. Recently, Hulk bodies, Bile Titan heads and Charger bodies have also been made AP4<br/>
                 Weapon uptime and efficiency of removing groups / multiple targets is also considered.<br/><br/>
 
                 A score of 1 means baseline effective for that weapon class. <br/>
@@ -196,7 +196,6 @@ export default function Analytics({ strat1, strat2, strat3, strat4, primary, sec
                 When these score overrides are in use they will show up with an alternate color (blue). <br/>
 
                 All the data for this app is stored locally in the browser cache, but you can share loadouts with the 'Share url' button.  <br/>
-                An option to export/import all data (including overrides) is being worked on. <br/>
 
                 </p>
 
