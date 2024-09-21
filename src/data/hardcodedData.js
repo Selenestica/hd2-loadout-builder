@@ -104,6 +104,7 @@ import orbitalNapalm from '../assets/orbitalNapalm.webp'
 import steriliser from '../assets/steriliser.webp'
 import dogBreath from '../assets/dogBreath.webp'
 import gasGrenade from '../assets/weapons/gasGrenade.webp'
+import stimPistol from '../assets/weapons/stimPistol.webp'
 
 const {primaryWeaponColor, secondaryWeaponColor, grenadeColor} = colors
 const stratBlue = '#457b9d'
@@ -771,6 +772,25 @@ export const secondaryWeaponData = [
         },
         offensiveRange: [1, 0, 0],
         coverage: [1, 1, 1, 0.5, 0],
+        sluggish: false,
+        stun: false,
+        objectives: []
+    },
+    {
+        id: 9,
+        color: secondaryWeaponColor,
+        type: 'special',
+        name: "P-11 Stim Pistol",
+        icon: stimPistol,
+        ingameStats: {
+            damage: 0,
+            capacity: 6,
+            recoil: 23,
+            fireRate: 70,
+            traits: ['one handed', 'rounds reload', 'stimulative']
+        },
+        offensiveRange: [1, 0, 0],
+        coverage: [0, 0, 0, 0, 0],
         sluggish: false,
         stun: false,
         objectives: []
