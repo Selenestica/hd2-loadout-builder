@@ -6,7 +6,7 @@ import LoadoutDetails from './components/LoadoutDetails'
 import { Outlet } from 'react-router-dom'
 import NameScroller from './components/NameScroller'
 import backgroundUrl from './assets/backgrounds/super-earth-flag.svg'
-import videoUrl from './assets/backgrounds/particles.mp4'
+import videoUrl from './assets/backgrounds/particles2.mp4'
 import DonateModal from './components/DonateModal'
 
 export default function App() {
