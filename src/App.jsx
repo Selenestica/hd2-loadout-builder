@@ -29,7 +29,6 @@ export default function App() {
                     position: absolute;
                     z-index: -1;
                     opacity: 0.2;
-                    filter: brightness(35%) grayscale(0.7);
 
                     @media (max-width: 768px) { 
                         display: none;
