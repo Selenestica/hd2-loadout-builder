@@ -76,7 +76,7 @@ export default function App() {
                         place-items: center;
                         color: rgba(255,255,255,0.2);
                     `}>
-                    v1.001.101
+                    v1.001.104
 
                     <span className={css`
                             margin-left: 1em;
