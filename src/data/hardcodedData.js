@@ -106,6 +106,9 @@ import dogBreath from '../assets/dogBreath.webp'
 import gasGrenade from '../assets/weapons/gasGrenade.webp'
 import stimPistol from '../assets/weapons/stimPistol.webp'
 import constitution from '../assets/weapons/constitution.webp'
+import halt from '../assets/weapons/halt.webp'
+import loyalist from '../assets/weapons/loyalist.webp'
+import reprimand from '../assets/weapons/reprimand.webp'
 
 const {primaryWeaponColor, secondaryWeaponColor, grenadeColor} = colors
 const stratBlue = '#457b9d'
@@ -292,12 +295,12 @@ export const primaryWeaponData = [
         icon: punisherPl,
         ingameStats: {
             damage: 250,
-            capacity: 8,
+            capacity: 10,
             recoil: 35,
             fireRate: 100,
             traits: ['medium armor penetrating', 'explosive']
         },
-        offensiveRange: [1, 0.5, 0],
+        offensiveRange: [1, 1, 0],
         coverage: [1, 1, 1, 0, 0],
         stun: true,
         sluggish: false,
@@ -643,6 +646,44 @@ export const primaryWeaponData = [
         sluggish: false,
         objectives: []
     },
+    {
+        id: 29,
+        color: primaryWeaponColor,
+        type: 'Shotgun',
+        name: "SG-20 Halt",
+        icon: halt,
+        ingameStats: {
+            damage: 385,
+            capacity: 16,
+            recoil: 120,
+            fireRate: 80,
+            traits: ['light armor penetrating', 'medium armor penetrating', 'rounds reload']
+        },
+        offensiveRange: [1, 0, 0],
+        coverage: [0.75, 1, 0.5, 0, 0],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 30,
+        color: primaryWeaponColor,
+        type: 'SMG',
+        name: "SMG-32 Reprimand",
+        icon: reprimand,
+        ingameStats: {
+            damage: 125,
+            capacity: 25,
+            recoil: 44,
+            fireRate: 490,
+            traits: ['medium armor penetrating']
+        },
+        offensiveRange: [1, 0.25, 0],
+        coverage: [1, 1, 0.5, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
 ]
 
 export const secondaryWeaponData = [
@@ -813,6 +854,25 @@ export const secondaryWeaponData = [
         coverage: [0, 0, 0, 0, 0],
         sluggish: false,
         stun: false,
+        objectives: []
+    },
+    {
+        id: 10,
+        color: secondaryWeaponColor,
+        type: 'special',
+        name: "PLAS-15 Loyalist",
+        icon: loyalist,
+        ingameStats: {
+            damage: 125,
+            capacity: 7,
+            recoil: 8,
+            fireRate: 1000,
+            traits: ['medium armor penetrating', 'one handed', 'chargeup', 'explosive']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [1, 1, 0.5, 0, 0],
+        sluggish: false,
+        stun: true,
         objectives: []
     },
 ]
@@ -1259,6 +1319,33 @@ export const armorData = [
         bonus: 'advanced filtration',
         abbr: 'FIL',
         longText: 'Provides 80% resistance to gas damage and effects.',
+        icon: heavySVG,
+        type: 'heavy',
+    },
+    {
+        id: 32,
+        name: 'light unflinching',
+        bonus: 'unflinching',
+        abbr: 'UNF',
+        longText: 'Helps prevent Helldivers from flinching when hit.',
+        icon: lightSVG,
+        type: 'light',
+    },
+    {
+        id: 33,
+        name: 'medium unflinching',
+        bonus: 'unflinching',
+        abbr: 'UNF',
+        longText: 'Helps prevent Helldivers from flinching when hit.',
+        icon: mediumSVG,
+        type: 'medium',
+    },
+    {
+        id: 34,
+        name: 'heavy unflinching',
+        bonus: 'unflinching',
+        abbr: 'UNF',
+        longText: 'Helps prevent Helldivers from flinching when hit.',
         icon: heavySVG,
         type: 'heavy',
     },
