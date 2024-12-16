@@ -19,7 +19,7 @@ import stratballisticshield from '../assets/strat-ballisticshield.webp'
 import stratcluster from '../assets/strat-cluster.webp'
 import stratems from '../assets/strat-ems.webp'
 import stratexo45patriot from '../assets/strat-exo45patriot.webp'
-import stratexo49Emancipator from '../assets/strat-exo49Emancipator.webp'
+import stratexo49Emancipator from '../assets/emancipator.webp'
 import stratgasstrike from '../assets/strat-gasstrike.webp'
 import stratgatlingbarrage from '../assets/strat-gatlingbarrage.webp'
 import stratgatlingturret from '../assets/strat-gatlingturret.webp'
@@ -109,6 +109,11 @@ import constitution from '../assets/weapons/constitution.webp'
 import halt from '../assets/weapons/halt.webp'
 import loyalist from '../assets/weapons/loyalist.webp'
 import reprimand from '../assets/weapons/reprimand.webp'
+import stunLance from '../assets/weapons/stunLance.webp'
+import stunBaton from '../assets/weapons/stunBaton.webp'
+import flameSentry from '../assets/flameSentry.webp'
+import ATemplacement from '../assets/ATemplacement.webp'
+import directionalShield from '../assets/directionalShield.webp'
 
 const {primaryWeaponColor, secondaryWeaponColor, grenadeColor} = colors
 const stratBlue = '#457b9d'
@@ -875,6 +880,44 @@ export const secondaryWeaponData = [
         stun: true,
         objectives: []
     },
+    {
+        id: 11,
+        color: secondaryWeaponColor,
+        type: 'melee',
+        name: "CQC-19 Stun Lance",
+        icon: stunLance,
+        ingameStats: {
+            /* damage: 125,
+            capacity: 7, */
+            recoil: 8,
+            /* fireRate: 1000, */
+            traits: ['light armor penetrating', 'one handed', 'stun']
+        },
+        offensiveRange: [0.5, 0, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        sluggish: false,
+        stun: true,
+        objectives: []
+    },
+    {
+        id: 12,
+        color: secondaryWeaponColor,
+        type: 'melee',
+        name: "CQC-30 Stun Baton",
+        icon: stunBaton,
+        ingameStats: {
+            /* damage: 125,
+            capacity: 7, */
+            recoil: 8,
+            /* fireRate: 1000, */
+            traits: ['light armor penetrating', 'one handed', 'stun']
+        },
+        offensiveRange: [0.5, 0, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        sluggish: false,
+        stun: true,
+        objectives: []
+    },
 ]
 
 export const grenadeData = [
@@ -1346,6 +1389,33 @@ export const armorData = [
         bonus: 'unflinching',
         abbr: 'UNF',
         longText: 'Helps prevent Helldivers from flinching when hit.',
+        icon: heavySVG,
+        type: 'heavy',
+    },
+    {
+        id: 35,
+        name: 'light siege-ready',
+        bonus: 'siege-ready',
+        abbr: 'SGR',
+        longText: 'Increases reload speed of primary weapons by 30%. Increases ammo capacity of primary weapons by 20%.',
+        icon: lightSVG,
+        type: 'light',
+    },
+    {
+        id: 36,
+        name: 'medium siege-ready',
+        bonus: 'siege-ready',
+        abbr: 'SGR',
+        longText: 'Increases reload speed of primary weapons by 30%. Increases ammo capacity of primary weapons by 20%.',
+        icon: mediumSVG,
+        type: 'medium',
+    },
+    {
+        id: 37,
+        name: 'heavy siege-ready',
+        bonus: 'siege-ready',
+        abbr: 'SGR',
+        longText: 'Increases reload speed of primary weapons by 30%. Increases ammo capacity of primary weapons by 20%.',
         icon: heavySVG,
         type: 'heavy',
     },
@@ -2018,6 +2088,40 @@ export const strategemData = [
         coverage: [0.5, 0, 0, 0, 0],
         hasBackpack: true,
         uptime: 'very high',
+        objectives: []
+    },
+    {
+        id: 58,
+        name: "A/FLAM-40 Flame Sentry",
+        icon: flameSentry,
+        offensiveRange: [1, 0, 0],
+        type: 'turret',
+        color: stratGreen,
+        coverage: [1, 1, 0.75, 0, 0],
+        uptime: 'medium',
+        objectives: []
+    },
+    {
+        id: 59,
+        name: "E/AT-12 Anti-Tank Emplacement",
+        icon: ATemplacement,
+        offensiveRange: [0, 1, 1],
+        type: 'turret',
+        color: stratGreen,
+        coverage: [0.25, 0.25, 0.25, 1, 1],
+        uptime: 'medium',
+        objectives: []
+    },
+    {
+        id: 60,
+        name: "SH-51 Directional Shield",
+        icon: directionalShield,
+        offensiveRange: [0, 0, 0],
+        type: 'backpack',
+        color: stratBlue,
+        coverage: [0, 0, 0, 0, 0],
+        uptime: 'very high',
+        hasBackpack: true,
         objectives: []
     },
 ]
