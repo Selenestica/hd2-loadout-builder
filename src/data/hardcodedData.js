@@ -114,6 +114,10 @@ import stunBaton from '../assets/weapons/stunBaton.webp'
 import flameSentry from '../assets/flameSentry.webp'
 import ATemplacement from '../assets/ATemplacement.webp'
 import directionalShield from '../assets/directionalShield.webp'
+import frv from '../assets/frv.webp'
+import plasAcceleratorRifle from '../assets/weapons/plasAcceleratorRifle.webp'
+import StAAssaultRifle from '../assets/weapons/StAAssaultRifle.webp'
+import StASmg from '../assets/weapons/StASmg.webp'
 
 const {primaryWeaponColor, secondaryWeaponColor, grenadeColor} = colors
 const stratBlue = '#457b9d'
@@ -684,6 +688,63 @@ export const primaryWeaponData = [
             traits: ['medium armor penetrating']
         },
         offensiveRange: [1, 0.25, 0],
+        coverage: [1, 1, 0.5, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 31,
+        color: primaryWeaponColor,
+        type: 'Assault rifle',
+        name: "StA-52 Assault Rifle",
+        icon: StAAssaultRifle,
+        ingameStats: {
+            damage: 70,
+            fireLimit: 56,
+            recoil: 19,
+            fireRate: 790,
+            traits: ['light armor penetrating']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 32,
+        color: primaryWeaponColor,
+        type: 'SMG',
+        name: "StA-11 SMG",
+        icon: StASmg,
+        ingameStats: {
+            damage: 65,
+            capacity: 48,
+            recoil: 13,
+            fireRate: 1050,
+            traits: ['light armor penetrating', 'one handed']
+        },
+        offensiveRange: [1, 0.25, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 33,
+        color: primaryWeaponColor,
+        type: 'Sniper rifle',
+        name: "PLAS-39 Accelerator Rifle",
+        icon: plasAcceleratorRifle,
+        ingameStats: {
+            damage: 350,
+            capacity: 9,
+            recoil: 3,
+            fireRate: 550,
+            traits: ['medium armor penetrating', 'explosive']
+        },
+        offensiveRange: [0.75, 1, 0.5],
         coverage: [1, 1, 0.5, 0, 0],
         stun: false,
         sluggish: false,
@@ -1419,6 +1480,33 @@ export const armorData = [
         icon: heavySVG,
         type: 'heavy',
     },
+    {
+        id: 38,
+        name: 'light acclimated',
+        bonus: 'acclimated',
+        abbr: 'ACC',
+        longText: 'Provides 50% resistance to fire, gas, acid, and electrical damage.',
+        icon: lightSVG,
+        type: 'light',
+    },
+    {
+        id: 39,
+        name: 'medium acclimated',
+        bonus: 'acclimated',
+        abbr: 'ACC',
+        longText: 'Provides 50% resistance to fire, gas, acid, and electrical damage.',
+        icon: mediumSVG,
+        type: 'medium',
+    },
+    {
+        id: 40,
+        name: 'heavy acclimated',
+        bonus: 'acclimated',
+        abbr: 'ACC',
+        longText: 'Provides 50% resistance to fire, gas, acid, and electrical damage.',
+        icon: heavySVG,
+        type: 'heavy',
+    },
 ]
 
 /* const strategemTypes = ['back']
@@ -2122,6 +2210,18 @@ export const strategemData = [
         coverage: [0, 0, 0, 0, 0],
         uptime: 'very high',
         hasBackpack: true,
+        objectives: []
+    },
+    {
+        id: 61,
+        name: "M-102 Fast Recon Vehicle",
+        icon: frv,
+        offensiveRange: [1, 0, 0],
+        type: 'support-weapon',
+        color: stratBlue,
+        coverage: [1, 0.5, 0.5, 0.5, 0],
+        supportSlotNecessary: false,
+        uptime: 'medium',
         objectives: []
     },
 ]
