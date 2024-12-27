@@ -115,6 +115,8 @@ import flameSentry from '../assets/flameSentry.webp'
 import ATemplacement from '../assets/ATemplacement.webp'
 import directionalShield from '../assets/directionalShield.webp'
 import frv from '../assets/frv.webp'
+import wasp from '../assets/wasp.webp'
+import gasMines from '../assets/gasMines.webp'
 import plasAcceleratorRifle from '../assets/weapons/plasAcceleratorRifle.webp'
 import StAAssaultRifle from '../assets/weapons/StAAssaultRifle.webp'
 import StASmg from '../assets/weapons/StASmg.webp'
@@ -2221,6 +2223,29 @@ export const strategemData = [
         color: stratBlue,
         coverage: [1, 0.5, 0.5, 0.5, 0],
         supportSlotNecessary: false,
+        uptime: 'medium',
+        objectives: []
+    },
+    {
+        id: 62,
+        name: "StA-X3 W.A.S.P. Launcher",
+        icon: wasp,
+        offensiveRange: [0, 1, 1],
+        type: 'support-weapon',
+        color: stratBlue,
+        coverage: [0, 0, 1, 1, 0.33],
+        hasBackpack: true,
+        uptime: 'very high',
+        objectives: []
+    },
+    {
+        id: 63,
+        name: "MD-8 Gas Mines",
+        icon: gasMines,
+        offensiveRange: [0, 1, 0],
+        type: 'emplacement',
+        color: stratGreen,
+        coverage: [1, 1, 0.5, 0.2, 0],
         uptime: 'medium',
         objectives: []
     },
