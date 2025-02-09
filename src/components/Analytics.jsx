@@ -78,7 +78,7 @@ export default function Analytics({ strat1, strat2, strat3, strat4, primary, sec
         const [s1, s2, s3, s4, prim, sec, gren, arm] = [strat1, strat2, strat3, strat4, primary, secondary, grenade, armor].map(x => ({ ...x }))
 
         // handle the benefit of running a supply pack on ammo hungry weapons
-        const supplyBuffed = (s1.id === 34) || (s2.id === 34) || (s3.id === 34) || (s4.id === 34)
+        const supplyBuffed = (s1.id === 34) || (s2.id === 34) || (s3.id === 34) || (s4.id === 34) || (arm.bonus === 'siege-ready')
         if (supplyBuffed) {
             for (const obj of [s1, s2, s3, s4, prim, sec, gren]) {
                 if (!obj.supplyBuffedCoverage || !obj.coverage) continue

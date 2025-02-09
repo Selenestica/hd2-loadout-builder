@@ -120,6 +120,11 @@ import gasMines from '../assets/gasMines.webp'
 import plasAcceleratorRifle from '../assets/weapons/plasAcceleratorRifle.webp'
 import StAAssaultRifle from '../assets/weapons/StAAssaultRifle.webp'
 import StASmg from '../assets/weapons/StASmg.webp'
+import portableHellbomb from '../assets/portable-hellbomb.webp'
+import doubleSickle from '../assets/weapons/double-sickle.webp'
+import seekerGrenade from '../assets/weapons/seeker-grenade.webp'
+import ultimatum from '../assets/weapons/ultimatum.webp'
+
 
 const {primaryWeaponColor, secondaryWeaponColor, grenadeColor} = colors
 const stratBlue = '#457b9d'
@@ -752,6 +757,25 @@ export const primaryWeaponData = [
         sluggish: false,
         objectives: []
     },
+    {
+        id: 34,
+        color: primaryWeaponColor,
+        type: 'Energy',
+        name: "LAS-17 Double-Edge Sickle",
+        icon: doubleSickle,
+        ingameStats: {
+            damage: 55,
+            fireLimit: 17,
+            recoil: 2,
+            fireRate: 700,
+            traits: ['medium armor penetrating', 'heat']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [1, 1, 0.5, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
 ]
 
 export const secondaryWeaponData = [
@@ -981,6 +1005,25 @@ export const secondaryWeaponData = [
         stun: true,
         objectives: []
     },
+    {
+        id: 13,
+        color: secondaryWeaponColor,
+        type: 'special',
+        name: "GP-31 Ultimatum",
+        icon: ultimatum,
+        ingameStats: {
+            damage: 4500,
+            capacity: 1,
+            recoil: 43,
+            fireRate: 900,
+            traits: ['medium armor penetrating', 'one handed', 'explosive']
+        },
+        offensiveRange: [1, 0.5, 0],
+        coverage: [0.25, 0.25, 0.33, 0.33, 0.20],
+        sluggish: false,
+        stun: false,
+        objectives: []
+    },
 ]
 
 export const grenadeData = [
@@ -1126,7 +1169,9 @@ export const grenadeData = [
         name: "K-2 Throwing Knife",
         icon: knife,
         ingameStats: {
-            traits: []
+            damage: 250,
+            penetration: 3,
+            traits: ['medium armor penetrating']
         },
         offensiveRange: [1, 0, 0],
         coverage: [0.75, 0.75, 0.2, 0, 0],
@@ -1144,6 +1189,22 @@ export const grenadeData = [
         offensiveRange: [1, 1, 0],
         coverage: [1, 0.5, 0, 0, 0],
         stun: true,
+        objectives: []
+    },
+    {
+        id: 11,
+        color: grenadeColor,
+        name: "G-50 Seeker",
+        icon: seekerGrenade,
+        ingameStats: {
+            damage: 400,
+            penetration: 4,
+            radius: 7,
+            traits: ['medium armor penetrating']
+        },
+        offensiveRange: [0.5, 1, 0.5],
+        coverage: [1, 1, 1, 0.5, 0],
+        stun: false,
         objectives: []
     },
 ]
@@ -1506,6 +1567,33 @@ export const armorData = [
         bonus: 'acclimated',
         abbr: 'ACC',
         longText: 'Provides 50% resistance to fire, gas, acid, and electrical damage.',
+        icon: heavySVG,
+        type: 'heavy',
+    },
+    {
+        id: 41,
+        name: 'light integrated explosives',
+        bonus: 'integrated explosives',
+        abbr: 'IEX',
+        longText: 'Armor explodes 1.5s after the wearer dies.',
+        icon: lightSVG,
+        type: 'light',
+    },
+    {
+        id: 42,
+        name: 'medium integrated explosives',
+        bonus: 'integrated explosives',
+        abbr: 'IEX',
+        longText: 'Armor explodes 1.5s after the wearer dies.',
+        icon: mediumSVG,
+        type: 'medium',
+    },
+    {
+        id: 43,
+        name: 'heavy integrated explosives',
+        bonus: 'integrated explosives',
+        abbr: 'IEX',
+        longText: 'Armor explodes 1.5s after the wearer dies.',
         icon: heavySVG,
         type: 'heavy',
     },
@@ -1943,7 +2031,7 @@ export const strategemData = [
         offensiveRange: [0, 1, 0],
         type: 'emplacement',
         color: stratGreen,
-        coverage: [0.75, 0.75, 0.75, 0, 0],
+        coverage: [1, 1, 0.75, 0, 0],
         uptime: 'medium',
         objectives: []
     },
@@ -2141,7 +2229,7 @@ export const strategemData = [
         offensiveRange: [0, 1, 0],
         type: 'emplacement',
         color: stratGreen,
-        coverage: [0, 0, 0, 0.75, 0.5],
+        coverage: [0, 0, 0, 0.8, 0.6],
         uptime: 'medium',
         objectives: []
     },
@@ -2172,7 +2260,7 @@ export const strategemData = [
         id: 57,
         name: "AX/TX-13 Guard Dog Dog Breath",
         icon: dogBreath,
-        offensiveRange: [0.5, 0, 0],
+        offensiveRange: [1, 0, 0],
         type: 'backpack',
         color: stratBlue,
         coverage: [0.5, 0, 0, 0, 0],
@@ -2247,6 +2335,17 @@ export const strategemData = [
         color: stratGreen,
         coverage: [1, 1, 0.5, 0.2, 0],
         uptime: 'medium',
+        objectives: []
+    },
+    {
+        id: 64,
+        name: "Portable Hellbomb",
+        icon: portableHellbomb,
+        offensiveRange: [1,0, 0],
+        type: 'backpack',
+        color: stratBlue,
+        coverage: [0.15, 0.15, 0.15, 0.15, 0.15],
+        uptime: 'low',
         objectives: []
     },
 ]
