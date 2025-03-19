@@ -139,7 +139,7 @@ export const primaryWeaponData = [
         name: "AR23 Liberator",
         icon: lib,
         ingameStats: {
-            damage: 70,
+            damage: 80,
             capacity: 45,
             recoil: 15,
             fireRate: 640,
@@ -174,13 +174,13 @@ export const primaryWeaponData = [
         id: 3,
         color: primaryWeaponColor,
         type: 'Assault rifle',
-        name: "AR23C Liberator Concussive",
+        name: "AR-23C Liberator Concussive",
         icon: libConc,
         ingameStats: {
             damage: 65,
             capacity: 60,
             recoil: 28,
-            fireRate: 320,
+            fireRate: 400,
             traits: ['light armor penetrating', 'explosive damage type']
         },
         offensiveRange: [1, 1, 0],
@@ -196,7 +196,7 @@ export const primaryWeaponData = [
         name: "BR-14 Adjudicator",
         icon: adjudicator,
         ingameStats: {
-            damage: 90,
+            damage: 95,
             capacity: 30,
             recoil: 40,
             fireRate: 550,
@@ -216,7 +216,7 @@ export const primaryWeaponData = [
         icon: diligence,
         ingameStats: {
             damage: 165,
-            capacity: 20,
+            capacity: 25,
             recoil: 35,
             fireRate: 350,
             traits: ['light armor penetrating']
@@ -253,7 +253,7 @@ export const primaryWeaponData = [
         name: "SMG-37 Defender",
         icon: defender,
         ingameStats: {
-            damage: 75,
+            damage: 80,
             capacity: 45,
             recoil: 10,
             fireRate: 520,
@@ -291,7 +291,7 @@ export const primaryWeaponData = [
         name: "SG-8S Slugger",
         icon: slug,
         ingameStats: {
-            damage: 250,
+            damage: 280,
             capacity: 16,
             recoil: 120,
             fireRate: 80,
@@ -449,8 +449,8 @@ export const primaryWeaponData = [
             fireRate: 25,
             traits: ['medium armor penetrating', 'explosive']
         },
-        offensiveRange: [0.5, 1, 0.5],
-        coverage: [1, 1, 0.5, 0.2, 0],
+        offensiveRange: [0.5, 1, 0.75],
+        coverage: [1, 1, 0.75, 0.25, 0],  /* to re-evaluate */
         stun: true,
         sluggish: true,
         objectives: []
@@ -518,7 +518,7 @@ export const primaryWeaponData = [
         name: "MP-98 Knight",
         icon: knight,
         ingameStats: {
-            damage: 65,
+            damage: 70,
             fireLimit: 50,
             recoil: 15,
             fireRate: 1380,
@@ -537,7 +537,7 @@ export const primaryWeaponData = [
         name: "SMG-72 Pummeler",
         icon: pummeler,
         ingameStats: {
-            damage: 65,
+            damage: 70,
             fireLimit: 45,
             recoil: 10,
             fireRate: 475,
@@ -556,7 +556,7 @@ export const primaryWeaponData = [
         name: "AR-61 Tenderizer",
         icon: tenderizer,
         ingameStats: {
-            damage: 95,
+            damage: 105,
             fireLimit: 35,
             recoil: 10,
             fireRate: 850,
@@ -594,7 +594,7 @@ export const primaryWeaponData = [
         name: "AR-23A Liberator Carbine",
         icon: liberatorCarbine,
         ingameStats: {
-            damage: 70,
+            damage: 80,
             capacity: 45,
             recoil: 26,
             fireRate: 920,
@@ -707,7 +707,7 @@ export const primaryWeaponData = [
         name: "StA-52 Assault Rifle",
         icon: StAAssaultRifle,
         ingameStats: {
-            damage: 70,
+            damage: 80,
             fireLimit: 56,
             recoil: 19,
             fireRate: 790,
@@ -726,7 +726,7 @@ export const primaryWeaponData = [
         name: "StA-11 SMG",
         icon: StASmg,
         ingameStats: {
-            damage: 65,
+            damage: 70,
             capacity: 48,
             recoil: 13,
             fireRate: 1050,
@@ -1884,7 +1884,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'eagle',
         color: stratRed,
-        coverage: [0, 0, 0, 0.65, 0.65],
+        coverage: [0, 0, 0, 0.75, 0.75],
         uptime: 'high',
         objectives: []
     },
@@ -2180,7 +2180,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0.5],
         type: 'support-weapon',
         color: stratBlue,
-        coverage: [0.5, 0.5, 0.5, 0.5, 0.5],
+        coverage: [0.6, 0.6, 0.6, 0.6, 0.6],
         supportSlotNecessary: false,
         uptime: 'low',
         objectives: []
@@ -2205,7 +2205,7 @@ export const strategemData = [
         offensiveRange: [1, 1, 0.5],
         type: 'support-weapon',
         color: stratBlue,
-        coverage: [0.6, 0.6, 1, 1, 0.2],
+        coverage: [0.7, 0.7, 1.1, 1.1, 0.3],
         supportSlotNecessary: false,
         uptime: 'low',
         objectives: []
@@ -2251,7 +2251,7 @@ export const strategemData = [
         offensiveRange: [1, 0, 0],
         type: 'support-weapon',
         color: stratBlue,
-        coverage: [1, 0, 0, 0, 0],
+        coverage: [1, 0.2, 0, 0, 0],
         supportSlotNecessary: true,
         uptime: 'very high',
         objectives: []
