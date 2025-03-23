@@ -124,7 +124,10 @@ import portableHellbomb from '../assets/portable-hellbomb.webp'
 import doubleSickle from '../assets/weapons/double-sickle.webp'
 import seekerGrenade from '../assets/weapons/seeker-grenade.webp'
 import ultimatum from '../assets/weapons/ultimatum.webp'
-
+import deadeye from '../assets/weapons/deadeye.webp'
+import talon from '../assets/weapons/talon.webp'
+import dynamite from '../assets/weapons/dynamite.webp'
+import hoverpack from  '../assets/hoverpack.webp'
 
 const {primaryWeaponColor, secondaryWeaponColor, grenadeColor} = colors
 const stratBlue = '#457b9d'
@@ -776,6 +779,25 @@ export const primaryWeaponData = [
         sluggish: false,
         objectives: []
     },
+    {
+        id: 35,
+        color: primaryWeaponColor,
+        type: 'Marksman rifle',
+        name: 'R-6 Deadeye',
+        icon: deadeye,
+        ingameStats: {
+            damage: 300,
+            capacity: 8,
+            recoil: 120,
+            fireRate: 100,
+            traits: ['medium armor penetrating' , 'rounds reload']
+        },
+        offensiveRange: [0.5, 1, 1],
+        coverage: [0.33, 1, 0.5, 0, 0],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
 ]
 
 export const secondaryWeaponData = [
@@ -1024,6 +1046,25 @@ export const secondaryWeaponData = [
         stun: false,
         objectives: []
     },
+    {
+        id: 14,
+        color: secondaryWeaponColor,
+        type: 'special',
+        name: "LAS-58 Talon",
+        icon: talon,
+        ingameStats: {
+            damage: 200,
+            fireLimit: 1,
+            recoil: 2,
+            fireRate: 750,
+            traits: ['medium armor penetrating', 'one handed', 'heat']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [1.5, 1.5, 0.75, 0, 0],
+        sluggish: false,
+        stun: false,
+        objectives: []
+    },
 ]
 
 export const grenadeData = [
@@ -1184,6 +1225,9 @@ export const grenadeData = [
         name: "G-4 Gas",
         icon: gasGrenade,
         ingameStats: {
+            fuse: 2.9,
+            penetration: 6,
+            radius: 7,
             traits: ['Caustic']
         },
         offensiveRange: [1, 1, 0],
@@ -1200,6 +1244,23 @@ export const grenadeData = [
             damage: 400,
             penetration: 4,
             radius: 7,
+            traits: ['medium armor penetrating']
+        },
+        offensiveRange: [0.5, 1, 0.5],
+        coverage: [1, 1, 1, 0.5, 0],
+        stun: false,
+        objectives: []
+    },
+    {
+        id: 12,
+        color: grenadeColor,
+        name: "TED-63 Dynamite",
+        icon: dynamite,
+        ingameStats: {
+            damage: 700,
+            penetration: 3,
+            radius: 12,
+            fuse: 5,
             traits: ['medium armor penetrating']
         },
         offensiveRange: [0.5, 1, 0.5],
@@ -1597,6 +1658,34 @@ export const armorData = [
         icon: heavySVG,
         type: 'heavy',
     },
+    {
+        id: 44,
+        name: 'light gunslinger',
+        bonus: 'gunslinger',
+        abbr: 'GSL',
+        longText: 'Sidearm reload speed +40%, swap speed +50%, recoil -70%.',
+        icon: lightSVG,
+        type: 'light',
+    },
+    {
+        id: 45,
+        name: 'medium gunslinger',
+        bonus: 'gunslinger',
+        abbr: 'GSL',
+        longText: 'Sidearm reload speed +40%, swap speed +50%, recoil -70%.',
+        icon: mediumSVG,
+        type: 'medium',
+    },
+    {
+        id: 46,
+        name: 'heavy gunslinger',
+        bonus: 'gunslinger',
+        abbr: 'GSL',
+        longText: 'Sidearm reload speed +40%, swap speed +50%, recoil -70%.',
+        icon: heavySVG,
+        type: 'heavy',
+    },
+
 ]
 
 /* const strategemTypes = ['back']
@@ -2346,6 +2435,17 @@ export const strategemData = [
         color: stratBlue,
         coverage: [0.15, 0.15, 0.15, 0.15, 0.15],
         uptime: 'low',
+        objectives: []
+    },
+    {
+        id: 65,
+        name: "LIFT-860 Hover Pack",
+        icon: hoverpack,
+        offensiveRange: [0 ,0, 0],
+        type: 'backpack',
+        color: stratBlue,
+        coverage: [0, 0, 0, 0, 0],
+        uptime: 'very high',
         objectives: []
     },
 ]
