@@ -2455,7 +2455,7 @@ export const strategemData = [
         icon: grenadierBattlement,
         offensiveRange: [1 ,1, 0],
         type: 'emplacement',
-        color: stratBlue,
+        color: stratGreen,
         coverage: [1, 1, 1, 0, 0],
         uptime: 'high',
         objectives: []
