@@ -128,6 +128,7 @@ import deadeye from '../assets/weapons/deadeye.webp'
 import talon from '../assets/weapons/talon.webp'
 import dynamite from '../assets/weapons/dynamite.webp'
 import hoverpack from  '../assets/hoverpack.webp'
+import grenadierBattlement from  '../assets/grenadierBattlement.webp'
 
 const {primaryWeaponColor, secondaryWeaponColor, grenadeColor} = colors
 const stratBlue = '#457b9d'
@@ -2446,6 +2447,17 @@ export const strategemData = [
         color: stratBlue,
         coverage: [0, 0, 0, 0, 0],
         uptime: 'very high',
+        objectives: []
+    },
+    {
+        id: 66,
+        name: "E/GL-21 Grenadier Battlement",
+        icon: grenadierBattlement,
+        offensiveRange: [1 ,1, 0],
+        type: 'emplacement',
+        color: stratBlue,
+        coverage: [1, 1, 1, 0, 0],
+        uptime: 'high',
         objectives: []
     },
 ]
