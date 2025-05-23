@@ -1,0 +1,780 @@
+import strat1 from '../assets/strat-1.webp'
+import strat2 from '../assets/strat-2.webp'
+import strat3 from '../assets/strat-3.webp'
+import strat4 from '../assets/strat-4.webp'
+import strat5 from '../assets/strat-5.webp'
+import strat6 from '../assets/strat-6.webp'
+import strat7 from '../assets/strat-7.webp'
+import strat8 from '../assets/strat-8.webp'
+import strat9 from '../assets/strat-9.webp'
+import strat10 from '../assets/strat-10.webp'
+import strat120mm from '../assets/strat-120mm.webp'
+import strat380mm from '../assets/strat-380mm.webp'
+import strat500kg from '../assets/strat-500kg.webp'
+import stratairburst from '../assets/strat-airburst.webp'
+import stratairstrike from '../assets/strat-airstrike.webp'
+import stratarcthrower from '../assets/strat-arcthrower.webp'
+import stratautocannonturret from '../assets/strat-autocannonturret.webp'
+import stratballisticshield from '../assets/strat-ballisticshield.webp'
+import stratcluster from '../assets/strat-cluster.webp'
+import stratems from '../assets/strat-ems.webp'
+import stratexo45patriot from '../assets/strat-exo45patriot.webp'
+import stratexo49Emancipator from '../assets/emancipator.webp'
+import stratgasstrike from '../assets/strat-gasstrike.webp'
+import stratgatlingbarrage from '../assets/strat-gatlingbarrage.webp'
+import stratgatlingturret from '../assets/strat-gatlingturret.webp'
+import stratgrenadelauncher from '../assets/strat-grenadelauncher.webp'
+import stratguarddogAR from '../assets/strat-guarddogAR.webp'
+import stratguarddogrover from '../assets/strat-guarddogrover.webp'
+import strathmgemplacement from '../assets/strat-hmgemplacement.webp'
+import stratincendiarymines from '../assets/strat-incendiarymines.webp'
+import stratjumppack from '../assets/strat-jumppack.webp'
+import stratlasercannon from '../assets/strat-lasercannon.webp'
+import stratmg43sentry from '../assets/strat-mg43sentry.webp'
+import stratminefieldpersonn from '../assets/strat-minefieldpersonn.webp'
+import stratmortar from '../assets/strat-mortar.webp'
+import stratmortarEMSsentry from '../assets/strat-mortarEMSsentry.webp'
+import stratnapalm from '../assets/strat-napalm.webp'
+import stratorbitalLaser from '../assets/strat-orbitalLaser.webp'
+import stratorbitalRail from '../assets/strat-orbitalRail.webp'
+import stratorbitalsmoke from '../assets/strat-orbitalsmoke.webp'
+import stratprecisionstrike from '../assets/strat-precisionstrike.webp'
+import stratquasar from '../assets/strat-quasar.webp'
+import stratrocketpods from '../assets/strat-rocketpods.webp'
+import stratrocketsentry from '../assets/strat-rocketsentry.webp'
+import stratshieldpack from '../assets/strat-shieldpack.webp'
+import stratshieldrelay from '../assets/strat-shieldrelay.webp'
+import stratsmokestrike from '../assets/strat-smokestrike.webp'
+import stratstrafingrun from '../assets/strat-strafingrun.webp'
+import stratsupply from '../assets/strat-supply.webp'
+import stratteslatower from '../assets/strat-teslatower.webp'
+import stratwalkingbarrage from '../assets/strat-walkingbarrage.webp'
+import adjudicator from '../assets/weapons/adj.webp'
+import grenadePistol from '../assets/weapons/grenade-pistol.webp'
+import redeemer from '../assets/weapons/redeemer.webp'
+import senator from '../assets/weapons/senator.webp'
+import dagger from '../assets/weapons/dagger.webp'
+import defender from '../assets/weapons/defender.webp'
+import lib from '../assets/weapons/lib.webp'
+import libPen from '../assets/weapons/lib-pen.webp'
+import libConc from '../assets/weapons/lib-conc.webp'
+import diligence from '../assets/weapons/diligence.webp'
+import diligenceCs from '../assets/weapons/diligence-cs.webp'
+import punisher from '../assets/weapons/punisher.webp'
+import breaker from '../assets/weapons/breaker.webp'
+import slug from '../assets/weapons/slug.webp'
+import breakInc from '../assets/weapons/break-inc.webp'
+import breakSp from '../assets/weapons/break-sp.webp'
+import punisherPl from '../assets/weapons/punisher-pl.webp'
+import blitz from '../assets/weapons/blitz.webp'
+import crossbow from '../assets/weapons/crossbow.webp'
+import eruptor from '../assets/weapons/eruptor.webp'
+import dominator from '../assets/weapons/dominator.webp'
+import scythe from '../assets/weapons/scythe.webp'
+import sickle from '../assets/weapons/sickle.webp'
+import scor from '../assets/weapons/scor.webp'
+import knight from '../assets/weapons/knight.webp'
+import pummeler from '../assets/weapons/pummeler.webp'
+import purifier from '../assets/weapons/purifier.webp'
+import tenderizer from '../assets/weapons/tenderizer.webp'
+import { colors } from './constants'
+import liberatorCarbine from '../assets/weapons/liberatorCarbine.webp'
+import cookout from '../assets/weapons/cookout.webp'
+import torcher from '../assets/weapons/torcher.webp'
+import constitution from '../assets/weapons/constitution.webp'
+import halt from '../assets/weapons/halt.webp'
+import reprimand from '../assets/weapons/reprimand.webp'
+import plasAcceleratorRifle from '../assets/weapons/plasAcceleratorRifle.webp'
+import StAAssaultRifle from '../assets/weapons/StAAssaultRifle.webp'
+import StASmg from '../assets/weapons/StASmg.webp'
+import doubleSickle from '../assets/weapons/double-sickle.webp'
+import deadeye from '../assets/weapons/deadeye.webp'
+import amendment from '../assets/weapons/amendment.webp'
+
+
+const { primaryWeaponColor } = colors
+
+export const primaryWeaponData = [
+    {
+        id: 1,
+        color: primaryWeaponColor,
+        type: 'Assault rifle',
+        name: "AR23 Liberator",
+        icon: lib,
+        ingameStats: {
+            damage: 80,
+            capacity: 45,
+            recoil: 15,
+            fireRate: 640,
+            traits: ['light armor penetrating']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        sluggish: false,
+        stun: false,
+        objectives: []
+    },
+    {
+        id: 2,
+        color: primaryWeaponColor,
+        type: 'Assault rifle',
+        name: "AR23P Liberator Penetrator",
+        icon: libPen,
+        ingameStats: {
+            damage: 60,
+            capacity: 45,
+            recoil: 19,
+            fireRate: 640,
+            traits: ['medium armor penetrating']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [0.8, 1, 0.5, 0, 0],
+        sluggish: false,
+        stun: false,
+        objectives: []
+    },
+    {
+        id: 3,
+        color: primaryWeaponColor,
+        type: 'Assault rifle',
+        name: "AR-23C Liberator Concussive",
+        icon: libConc,
+        ingameStats: {
+            damage: 65,
+            capacity: 60,
+            recoil: 28,
+            fireRate: 400,
+            traits: ['light armor penetrating', 'explosive damage type']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [0.8, 0.5, 0, 0, 0],
+        sluggish: false,
+        stun: true,
+        objectives: []
+    },
+    {
+        id: 4,
+        color: primaryWeaponColor,
+        type: 'Assault rifle',
+        name: "BR-14 Adjudicator",
+        icon: adjudicator,
+        ingameStats: {
+            damage: 95,
+            capacity: 30,
+            recoil: 40,
+            fireRate: 550,
+            traits: ['medium armor penetrating']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [0.8, 1, 0.5, 0, 0],
+        sluggish: false,
+        stun: false,
+        objectives: []
+    },
+    {
+        id: 5,
+        color: primaryWeaponColor,
+        type: 'Marksman rifle',
+        name: "R-63 Diligence",
+        icon: diligence,
+        ingameStats: {
+            damage: 165,
+            capacity: 25,
+            recoil: 35,
+            fireRate: 350,
+            traits: ['light armor penetrating']
+        },
+        offensiveRange: [1, 1, 1],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 6,
+        color: primaryWeaponColor,
+        type: 'Marksman rifle',
+        name: "R-63CS Diligence Counter Sniper",
+        icon: diligenceCs,
+        ingameStats: {
+            damage: 200,
+            capacity: 15,
+            recoil: 53,
+            fireRate: 350,
+            traits: ['medium armor penetrating']
+        },
+        offensiveRange: [1, 1, 1],
+        coverage: [1, 1, 0.5, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 7,
+        color: primaryWeaponColor,
+        type: 'SMG',
+        name: "SMG-37 Defender",
+        icon: defender,
+        ingameStats: {
+            damage: 80,
+            capacity: 45,
+            recoil: 10,
+            fireRate: 520,
+            traits: ['light armor penetrating', 'one handed']
+        },
+        offensiveRange: [1, 0.5, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 8,
+        color: primaryWeaponColor,
+        type: 'Shotgun',
+        name: "SG-8 Punisher",
+        icon: punisher,
+        ingameStats: {
+            damage: 405,
+            capacity: 16,
+            recoil: 120,
+            fireRate: 80,
+            traits: ['light armor penetrating', 'rounds reload']
+        },
+        offensiveRange: [1, 0.5, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 9,
+        color: primaryWeaponColor,
+        type: 'Shotgun',
+        name: "SG-8S Slugger",
+        icon: slug,
+        ingameStats: {
+            damage: 280,
+            capacity: 16,
+            recoil: 120,
+            fireRate: 80,
+            traits: ['medium armor penetrating', 'rounds reload']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [1, 1, 0.5, 0, 0],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 10,
+        color: primaryWeaponColor,
+        type: 'Energy',
+        name: "SG-8P Punisher Plasma",
+        icon: punisherPl,
+        ingameStats: {
+            damage: 250,
+            capacity: 10,
+            recoil: 35,
+            fireRate: 100,
+            traits: ['medium armor penetrating', 'explosive']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [1, 1, 1, 0, 0],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 11,
+        color: primaryWeaponColor,
+        type: 'Energy',
+        name: "ARC-12 Blitzer",
+        icon: blitz,
+        ingameStats: {
+            damage: 250,
+            capacity: 'infinite',
+            recoil: 60,
+            fireRate: 45,
+            traits: []
+        },
+        offensiveRange: [1, 0, 0],
+        coverage: [1, 1, 0.5, 0, 0],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 12,
+        color: primaryWeaponColor,
+        type: 'Shotgun',
+        name: "SG-225 Breaker",
+        icon: breaker,
+        ingameStats: {
+            damage: 330,
+            capacity: 16,
+            recoil: 55,
+            fireRate: 300,
+            traits: ['light armor penetrating']
+        },
+        offensiveRange: [1, 0.5, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 13,
+        color: primaryWeaponColor,
+        type: 'Shotgun',
+        name: "SG-225SP Breaker Spray&Pray",
+        icon: breakSp,
+        ingameStats: {
+            damage: 240,
+            capacity: 26,
+            recoil: 45,
+            fireRate: 330,
+            traits: ['light armor penetrating']
+        },
+        offensiveRange: [1.25, 0, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 14,
+        color: primaryWeaponColor,
+        type: 'Shotgun',
+        name: "SG-225IE Breaker Incendiary",
+        icon: breakInc,
+        ingameStats: {
+            damage: 240,
+            capacity: 25,
+            recoil: 41,
+            fireRate: 330,
+            traits: ['light armor penetrating, incendiary']
+        },
+        offensiveRange: [1, 0.5, 0],
+        coverage: [2, 0.5, 0.5, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 15,
+        color: primaryWeaponColor,
+        type: 'Explosive',
+        name: "CB-9 Exploding Crossbow",
+        icon: crossbow,
+        ingameStats: {
+            damage: 620,
+            capacity: 5,
+            recoil: 35,
+            fireRate: 50,
+            traits: ['explosive', 'one handed']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [1, 1, 1, 0.2, 0],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 16,
+        color: primaryWeaponColor,
+        type: 'Explosive',
+        name: "JAR-5 Dominator",
+        icon: dominator,
+        ingameStats: {
+            damage: 275,
+            capacity: 15,
+            recoil: 75,
+            fireRate: 250,
+            traits: ['medium armor penetrating', 'explosive damage type']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [0.5, 1, 1, 0, 0],
+        stun: true,
+        sluggish: true,
+        objectives: []
+    },
+    {
+        id: 17,
+        color: primaryWeaponColor,
+        type: 'Explosive',
+        name: "R-36 Eruptor",
+        icon: eruptor,
+        ingameStats: {
+            damage: 455,
+            capacity: 5,
+            recoil: 75,
+            fireRate: 25,
+            traits: ['medium armor penetrating', 'explosive']
+        },
+        offensiveRange: [0.5, 1, 0.75],
+        coverage: [1, 1, 0.75, 0.25, 0],  /* to re-evaluate */
+        stun: true,
+        sluggish: true,
+        objectives: []
+    },
+    {
+        id: 18,
+        color: primaryWeaponColor,
+        type: 'Energy',
+        name: "LAS-5 Scythe",
+        icon: scythe,
+        ingameStats: {
+            dps: 350,
+            fireLimit: 8,
+            recoil: 0,
+            traits: ['light armor penetrating', 'beam', 'heat']
+        },
+        offensiveRange: [1, 1, 0.5],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 19,
+        color: primaryWeaponColor,
+        type: 'Energy',
+        name: "LAS-16 Sickle",
+        icon: sickle,
+        ingameStats: {
+            damage: 55,
+            fireLimit: 9,
+            recoil: 2,
+            fireRate: 750,
+            traits: ['light armor penetrating', 'heat']
+        },
+        offensiveRange: [1, 1, 0.25],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 20,
+        color: primaryWeaponColor,
+        type: 'Energy',
+        name: "PLAS-1 Scorcher",
+        icon: scor,
+        ingameStats: {
+            damage: 200,
+            capacity: 20,
+            recoil: 20,
+            fireRate: 350,
+            traits: ['medium armor penetrating', 'explosive']
+        },
+        offensiveRange: [0.8, 1, 0],
+        coverage: [1, 1, 1, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 21,
+        color: primaryWeaponColor,
+        type: 'SMG',
+        name: "MP-98 Knight",
+        icon: knight,
+        ingameStats: {
+            damage: 70,
+            fireLimit: 50,
+            recoil: 15,
+            fireRate: 1380,
+            traits: ['light armor penetrating', 'one handed']
+        },
+        offensiveRange: [1.2, 0.25, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 22,
+        color: primaryWeaponColor,
+        type: 'SMG',
+        name: "SMG-72 Pummeler",
+        icon: pummeler,
+        ingameStats: {
+            damage: 70,
+            fireLimit: 45,
+            recoil: 10,
+            fireRate: 475,
+            traits: ['light armor penetrating', 'one handed']
+        },
+        offensiveRange: [1, 0.5, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 23,
+        color: primaryWeaponColor,
+        type: 'Assault rifle',
+        name: "AR-61 Tenderizer",
+        icon: tenderizer,
+        ingameStats: {
+            damage: 105,
+            fireLimit: 35,
+            recoil: 10,
+            fireRate: 850,
+            traits: ['light armor penetrating']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 24,
+        color: primaryWeaponColor,
+        type: 'Energy',
+        name: "PLAS-101 Purifier",
+        icon: purifier,
+        ingameStats: {
+            damage: 500,
+            fireLimit: 15,
+            recoil: 20,
+            fireRate: 1000,
+            traits: ['medium armor penetrating', 'Chargeup', 'explosive']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [1, 1, 1, 0, 0],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 25,
+        color: primaryWeaponColor,
+        type: 'Assault rifle',
+        name: "AR-23A Liberator Carbine",
+        icon: liberatorCarbine,
+        ingameStats: {
+            damage: 80,
+            capacity: 45,
+            recoil: 26,
+            fireRate: 920,
+            traits: ['light armor penetrating']
+        },
+        offensiveRange: [1.2, 0.8, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 26,
+        color: primaryWeaponColor,
+        type: 'Shotgun',
+        name: "SG-451 Cookout",
+        icon: cookout,
+        ingameStats: {
+            damage: 320,
+            capacity: 16,
+            recoil: 100,
+            fireRate: 80,
+            traits: ['light armor penetrating', 'rounds reload', 'incendiary']
+        },
+        offensiveRange: [1, 0.5, 0],
+        coverage: [1, 0.5, 0.2, 0, 0],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 27,
+        color: primaryWeaponColor,
+        type: 'Special',
+        name: "FLAM-66 Torcher",
+        icon: torcher,
+        ingameStats: {
+            dps: 375,
+            capacity: 80,
+            recoil: 3,
+            traits: ['incendiary']
+        },
+        offensiveRange: [1, 0, 0],
+        coverage: [1, 1, 1, 0.5, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 28,
+        color: primaryWeaponColor,
+        type: 'Marksman rifle',
+        name: "R-2124 Constitution",
+        icon: constitution,
+        ingameStats: {
+            damage: 180,
+            capacity: 5,
+            recoil: 43,
+            fireRate: 60,
+            traits: ['medium armor penetrating', 'rounds reload']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [0.5, 1, 0.5, 0, 0],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 29,
+        color: primaryWeaponColor,
+        type: 'Shotgun',
+        name: "SG-20 Halt",
+        icon: halt,
+        ingameStats: {
+            damage: 385,
+            capacity: 16,
+            recoil: 120,
+            fireRate: 80,
+            traits: ['light armor penetrating', 'medium armor penetrating', 'rounds reload']
+        },
+        offensiveRange: [1, 0, 0],
+        coverage: [0.75, 1, 0.5, 0, 0],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 30,
+        color: primaryWeaponColor,
+        type: 'SMG',
+        name: "SMG-32 Reprimand",
+        icon: reprimand,
+        ingameStats: {
+            damage: 125,
+            capacity: 25,
+            recoil: 44,
+            fireRate: 490,
+            traits: ['medium armor penetrating']
+        },
+        offensiveRange: [1, 0.25, 0],
+        coverage: [1, 1, 0.5, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 31,
+        color: primaryWeaponColor,
+        type: 'Assault rifle',
+        name: "StA-52 Assault Rifle",
+        icon: StAAssaultRifle,
+        ingameStats: {
+            damage: 80,
+            fireLimit: 56,
+            recoil: 19,
+            fireRate: 790,
+            traits: ['light armor penetrating']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 32,
+        color: primaryWeaponColor,
+        type: 'SMG',
+        name: "StA-11 SMG",
+        icon: StASmg,
+        ingameStats: {
+            damage: 70,
+            capacity: 48,
+            recoil: 13,
+            fireRate: 1050,
+            traits: ['light armor penetrating', 'one handed']
+        },
+        offensiveRange: [1, 0.25, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 33,
+        color: primaryWeaponColor,
+        type: 'Sniper rifle',
+        name: "PLAS-39 Accelerator Rifle",
+        icon: plasAcceleratorRifle,
+        ingameStats: {
+            damage: 350,
+            capacity: 9,
+            recoil: 3,
+            fireRate: 550,
+            traits: ['medium armor penetrating', 'explosive']
+        },
+        offensiveRange: [0.75, 1, 0.5],
+        coverage: [1, 1, 0.5, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 34,
+        color: primaryWeaponColor,
+        type: 'Energy',
+        name: "LAS-17 Double-Edge Sickle",
+        icon: doubleSickle,
+        ingameStats: {
+            damage: 55,
+            fireLimit: 17,
+            recoil: 2,
+            fireRate: 700,
+            traits: ['medium armor penetrating', 'heat']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [1, 1, 0.5, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 35,
+        color: primaryWeaponColor,
+        type: 'Marksman rifle',
+        name: 'R-6 Deadeye',
+        icon: deadeye,
+        ingameStats: {
+            damage: 300,
+            capacity: 8,
+            recoil: 120,
+            fireRate: 100,
+            traits: ['medium armor penetrating', 'rounds reload']
+        },
+        offensiveRange: [0.5, 1, 1],
+        coverage: [0.33, 1, 0.5, 0, 0],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 36,
+        color: primaryWeaponColor,
+        type: 'Marksman rifle',
+        name: 'R-2 Amendment',
+        icon: amendment,
+        ingameStats: {
+            damage: 200,
+            capacity: 20,
+            recoil: 29,
+            fireRate: 480,
+            traits: ['light armor penetrating']
+        },
+        offensiveRange: [0.75, 1, 1],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+]
