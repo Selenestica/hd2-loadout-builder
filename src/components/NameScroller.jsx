@@ -1,7 +1,7 @@
 import { css } from "@emotion/css"
 import { useCallback, useEffect, useRef, useState } from "react"
 
-const names = ["Jessica De Sousa"]
+const names = ["Jessica De Sousa", "SleepyFox"]
 const namesDouble = [...names, ...names]
 
 export default function NameScroller({ ...props }) {
