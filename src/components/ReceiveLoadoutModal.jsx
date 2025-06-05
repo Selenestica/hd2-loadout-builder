@@ -20,6 +20,7 @@ export default function ReceivedLoadoutModal({ ...props }) {
     const [data, message] = useMemo(() => {
         const paramData = searchParams.get('d')
         const paramName = searchParams.get('n')
+        const paramFaction = searchParams.get('f')
 
         if (!paramData || !paramName) return [undefined, errorMsg]
 
@@ -34,9 +35,13 @@ export default function ReceivedLoadoutModal({ ...props }) {
                 if (isNaN(el)) return [undefined, errorMsg]
                 output[dataMapping[i]] = el
             }
+
+            const factionMapping = ['Generic', 'Bugs', 'Bots', 'Illuminate']
+            const faction = paramFaction ? factionMapping[Number(paramFaction)] : 'Generic'
             parsedData = {
                 name: decodeURIComponent(paramName).slice(0, 24),
-                ...output
+                ...output,
+                faction: faction
             }
         } catch (e) {
             console.log(e)
@@ -58,6 +63,7 @@ export default function ReceivedLoadoutModal({ ...props }) {
             secondary: data.secondary,
             grenade: data.grenade,
             armor: data.armor,
+            faction: data.faction,
         }
 
         addLoadout('loadouts', newLoadout).then(loadout => {
@@ -108,5 +114,5 @@ export default function ReceivedLoadoutModal({ ...props }) {
             </div>
         </section>
     </GenericModalLayout>
-    : null
+        : null
 }

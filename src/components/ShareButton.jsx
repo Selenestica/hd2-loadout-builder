@@ -4,6 +4,9 @@ import ClipboardJS from 'clipboard'
 export default function ShareButton({ newLoadout, ...props }) {
     const [copied, setCopied] = useState(false)
 
+    const factionMapping = ['Generic', 'Bugs', 'Bots', 'Illuminate']
+    const factionIndex = factionMapping.indexOf(newLoadout.faction)
+
     const clipboardText = useMemo(() => {
         const encodedName = encodeURIComponent(newLoadout.name)
         const encodedData = [
@@ -16,7 +19,7 @@ export default function ShareButton({ newLoadout, ...props }) {
             newLoadout.grenade || 'x',
             newLoadout.armor || 'x',
         ].join('i')
-        return `${window.location.origin}/s?n=${encodedName}&d=${encodedData}`
+        return `${window.location.origin}/s?n=${encodedName}&d=${encodedData}&f=${factionIndex}`
     }, [newLoadout])
 
     useEffect(() => {

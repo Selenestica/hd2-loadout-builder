@@ -16,6 +16,7 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
         secondary,
         grenade,
         armor,
+        faction,
     } = data
 
     const s1 = strategemData.find(x => x.id === strat1)
@@ -26,6 +27,13 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
     const sec = secondaryWeaponData.find(x => x.id === secondary)
     const gren = grenadeData.find(x => x.id === grenade)
     const arm = armorData.find(x => x.id === armor)
+
+    const factionColorMap = {
+        'Generic': 'rgba(100, 100, 100, 0.2)',
+        'Bugs': 'rgba(255, 176, 0, 0.6)',
+        'Bots': 'rgba(254, 109, 106, 0.6)',
+        'Illuminate': 'rgba(192, 106, 254, 0.6)',
+    }
 
     return (
         <div className={css`
@@ -62,6 +70,8 @@ export default function Loadout({ active, data, setLoadouts, ...props }) {
                 background-image: ${colors.backgroundStripes};
                 background-size: 20px 20px;
             ` : ''}
+
+            border-left: 3px solid ${factionColorMap[faction]};
         `} {...props}>
             <div className={css`
                 @media screen and (max-width: 400px) {

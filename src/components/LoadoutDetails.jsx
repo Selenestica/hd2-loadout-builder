@@ -17,6 +17,7 @@ import ArmorDetails from './ArmorDetails'
 import ArmorList from './ArmorList'
 import ShareButton from './ShareButton'
 import OverridesContext from '../context/Overrides'
+import Select from 'react-select'
 
 export default function LoadoutDetails({ ...props }) {
 
@@ -103,14 +104,15 @@ export default function LoadoutDetails({ ...props }) {
         setConfirmDelete(false)
     }, [selectedLoadout])
 
-    const newStrat1 = newLoadout.strat1 ? getFinalData( newLoadout.strat1, 'strat1') : null
-    const newStrat2 = newLoadout.strat2 ? getFinalData( newLoadout.strat2, 'strat2') : null
-    const newStrat3 = newLoadout.strat3 ? getFinalData( newLoadout.strat3, 'strat3') : null
-    const newStrat4 = newLoadout.strat4 ? getFinalData( newLoadout.strat4, 'strat4') : null
-    const newPrimary = newLoadout.primary ? getFinalData( newLoadout.primary, 'primary') : null
-    const newSecondary = newLoadout.secondary ? getFinalData( newLoadout.secondary, 'secondary') : null
-    const newGrenade =  newLoadout.grenade ? getFinalData( newLoadout.grenade, 'grenade') : null
-    const newArmor =  newLoadout.armor ? getFinalData( newLoadout.armor, 'armor') : null
+    const newStrat1 = newLoadout.strat1 ? getFinalData(newLoadout.strat1, 'strat1') : null
+    const newStrat2 = newLoadout.strat2 ? getFinalData(newLoadout.strat2, 'strat2') : null
+    const newStrat3 = newLoadout.strat3 ? getFinalData(newLoadout.strat3, 'strat3') : null
+    const newStrat4 = newLoadout.strat4 ? getFinalData(newLoadout.strat4, 'strat4') : null
+    const newPrimary = newLoadout.primary ? getFinalData(newLoadout.primary, 'primary') : null
+    const newSecondary = newLoadout.secondary ? getFinalData(newLoadout.secondary, 'secondary') : null
+    const newGrenade = newLoadout.grenade ? getFinalData(newLoadout.grenade, 'grenade') : null
+    const newArmor = newLoadout.armor ? getFinalData(newLoadout.armor, 'armor') : null
+    const newFaction = newLoadout.faction ?? 'Generic'
 
     const activeChanges = useMemo(() => {
         return name !== selectedLoadout.name
@@ -122,13 +124,16 @@ export default function LoadoutDetails({ ...props }) {
             || (newSecondary?.id || null) !== selectedLoadout.secondary
             || (newGrenade?.id || null) !== selectedLoadout.grenade
             || (newArmor?.id || null) !== selectedLoadout.armor
-    }, [name, selectedLoadout, newStrat1, newStrat2, newStrat3, newStrat4, newPrimary, newSecondary, newGrenade, newArmor])
+            || (newFaction !== selectedLoadout.faction)
+    }, [name, selectedLoadout, newStrat1, newStrat2, newStrat3, newStrat4, newPrimary, newSecondary, newGrenade, newArmor, newFaction])
 
     const handleSave = useCallback(() => {
         const data = {
             ...newLoadout,
-            name: name
+            name: name,
+            faction: newLoadout.faction ?? 'Generic'
         }
+
         try {
             updateLoadout('loadouts', data).then(res => {
                 setLoadouts(prev => {
@@ -172,6 +177,25 @@ export default function LoadoutDetails({ ...props }) {
         }))
     }, [])
 
+    const factionOptions = [
+        {
+            label: 'Generic',
+            value: 'Generic'
+        },
+        {
+            label: 'Bugs',
+            value: 'Bugs'
+        },
+        {
+            label: 'Bots',
+            value: 'Bots'
+        },
+        {
+            label: 'Illuminate',
+            value: 'Illuminate'
+        },
+    ]
+
     return (
         <>
             <div className={css`
@@ -185,9 +209,17 @@ export default function LoadoutDetails({ ...props }) {
                 height: auto;
                 overflow-Y: auto;
             `}>
-                <input
-                    type='text'
-                    className={css`
+                <div className={css`
+                        display: flex;
+                        grid-column: span 2;
+                        width: 100%;
+                        gap: 0.2em;
+                        height: 4em;
+                    `}>
+
+                    <input
+                        type='text'
+                        className={css`
                         align-self: center;
                         text-align: center;
                         width: 100%;
@@ -200,15 +232,24 @@ export default function LoadoutDetails({ ...props }) {
                         font-family: 'sinclair';
                         border-bottom: 3px solid transparent;
                         border-top: 3px solid transparent;
+                        height: 100%;
 
+                        
                         &:hover {
                             border-bottom: 3px solid yellow;
-                        }
-                    `}
-                    maxLength='24'
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
+                            }
+                            `}
+                        maxLength='24'
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+
+                    <StyledSelect
+                        value={factionOptions.find(o => o.value === newLoadout.faction) ?? factionOptions.find(o => o.value === 'Generic')}
+                        onChange={(val) => setNewLoadout(old => ({...old, faction: val.value}))}
+                        options={factionOptions}
+                    />
+                </div>
 
                 <StrategemDetails strat={newStrat1} active={selectedTarget.target === 'strat1'}
                     reset={() => {
@@ -428,4 +469,67 @@ export default function LoadoutDetails({ ...props }) {
             }
         </>
     )
+}
+
+const customStyles = {
+    control: (base, state) => ({
+        ...base,
+        alignSelf: 'center',
+        textAlign: 'center',
+        width: '100%',
+        height: '100%',
+        maxHeight: '100%',
+        minWidth: '10em',
+        fontSize: '1.2em',
+        border: 'none',
+        cursor: 'pointer',
+        background: '#1a1a1a',
+        gridColumn: 'span 2',
+        fontFamily: 'sinclair',
+        borderBottom: state.isFocused ? '3px solid yellow' : '3px solid transparent',
+        borderTop: '3px solid transparent',
+        borderRadius: 0,
+        boxShadow: 'none',
+        '&:hover': {
+            borderBottom: '3px solid yellow',
+        },
+    }),
+    singleValue: (base) => ({
+        ...base,
+        color: 'white',
+        textAlign: 'center',
+        width: '100%',
+    }),
+    dropdownIndicator: (base) => ({
+        ...base,
+        color: 'white',
+    }),
+    indicatorSeparator: () => ({
+        display: 'none',
+    }),
+    menu: (base) => ({
+        ...base,
+        backgroundColor: '#1a1a1a',
+        fontFamily: 'sinclair',
+    }),
+    option: (base, state) => ({
+        ...base,
+        backgroundColor: state.isFocused ? '#333' : '#1a1a1a',
+        color: 'white',
+        cursor: 'pointer',
+        textAlign: 'center',
+    }),
+};
+
+function StyledSelect({ options, value, onChange, ...props }) {
+    return (
+        <Select
+            value={value}
+            onChange={onChange}
+            options={options}
+            styles={customStyles}
+            isSearchable={false}
+            {...props}
+        />
+    );
 }
