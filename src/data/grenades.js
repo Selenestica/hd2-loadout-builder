@@ -11,6 +11,7 @@ import gasGrenade from '../assets/weapons/gasGrenade.webp'
 import seekerGrenade from '../assets/weapons/seeker-grenade.webp'
 import dynamite from '../assets/weapons/dynamite.webp'
 import pyrotech from '../assets/weapons/pyrotech.webp'
+import urchin from '../assets/weapons/urchin.webp'
 import { colors } from './constants'
 
 
@@ -232,6 +233,22 @@ export const grenadeData = [
         offensiveRange: [1, 1, 0],
         coverage: [1, 1, 0.8, 0.5, 0],
         stun: false,
+        objectives: []
+    },
+    {
+        id: 14,
+        color: grenadeColor,
+        name: "G-109 Urchin",
+        icon: urchin,
+        ingameStats: {
+            damage: 0,
+            penetration: 6,
+            radius: 4,
+            traits: ['stun']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [0, 0, 0, 0, 0],
+        stun: true,
         objectives: []
     },
 ]

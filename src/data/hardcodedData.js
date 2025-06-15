@@ -65,6 +65,8 @@ import portableHellbomb from '../assets/portable-hellbomb.webp'
 import hoverpack from '../assets/hoverpack.webp'
 import grenadierBattlement from '../assets/grenadierBattlement.webp'
 import oneTrueFlag from '../assets/oneTrueFlag.webp'
+import deescalator from '../assets/deescalator.webp'
+import k9 from '../assets/k9.webp'
 
 import { armorData } from './armors'
 import { grenadeData } from './grenades'
@@ -487,8 +489,8 @@ export const strategemData = [
         offensiveRange: [1, 1, 0],
         type: 'support-weapon',
         color: stratBlue,
-        coverage: [1, 1, 1, 0.5, 0],
-        supplyBuffedCoverage: [2, 1.5, 1.5, 0.666, 0],
+        coverage: [1.25, 1.25, 1.25, 0.2, 0],
+        supplyBuffedCoverage: [2, 1.5, 1.5, 0.5, 0],
         supportSlotNecessary: true,
         uptime: 'very high',
         objectives: []
@@ -860,6 +862,32 @@ export const strategemData = [
         color: stratBlue,
         coverage: [0.1, 0.1, 0.1, 0, 0],
         uptime: 'high',
+        objectives: []
+    },
+    {
+        id: 68,
+        name: "GL-52 De-Escalator",
+        icon: deescalator,
+        offensiveRange: [1, 1, 0],
+        type: 'support-weapon',
+        color: stratBlue,
+        coverage: [0.5, 0.5, 0.5, 0.5, 0],
+        supplyBuffedCoverage: [0.5, 0.5, 0.5, 0.5, 0],
+        supportSlotNecessary: true,
+        uptime: 'very high',
+        objectives: []
+    },
+    /* TO DO: ARC DOG */
+    {
+        id: 69,
+        name: "AX/ARC-3 Guard Dog K-9",
+        icon: k9,
+        offensiveRange: [1, 0.5, 0],
+        type: 'backpack',
+        color: stratBlue,
+        coverage: [0.5, 0.5, 0.5, 0, 0],
+        uptime: 'very high',
+        hasBackpack: true,
         objectives: []
     },
 ]

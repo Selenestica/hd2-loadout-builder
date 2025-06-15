@@ -14,6 +14,7 @@ import stunBaton from '../assets/weapons/stunBaton.webp'
 import ultimatum from '../assets/weapons/ultimatum.webp'
 import talon from '../assets/weapons/talon.webp'
 import sabre from '../assets/weapons/sabre.webp'
+import warrant from '../assets/weapons/smartpistol.webp'
 
 const { secondaryWeaponColor } = colors
 
@@ -25,7 +26,7 @@ export const secondaryWeaponData = [
         name: "P-2 Peacemaker",
         icon: peacemaker,
         ingameStats: {
-            damage: 75,
+            damage: 85,
             capacity: 15,
             recoil: 23,
             fireRate: 900,
@@ -258,7 +259,7 @@ export const secondaryWeaponData = [
             traits: ['medium armor penetrating', 'one handed', 'explosive']
         },
         offensiveRange: [1, 0.5, 0],
-        coverage: [0.25, 0.25, 0.33, 0.33, 0.20],
+        coverage: [0, 0, 0, 0.8, 0.8],
         sluggish: false,
         stun: false,
         objectives: []
@@ -294,6 +295,25 @@ export const secondaryWeaponData = [
         },
         offensiveRange: [0.5, 0, 0],
         coverage: [1, 0.5, 0, 0, 0],
+        sluggish: false,
+        stun: false,
+        objectives: []
+    },
+    {
+        id: 16,
+        color: secondaryWeaponColor,
+        type: 'pistol',
+        name: "P-92 Warrant",
+        icon: warrant,
+        ingameStats: {
+            damage: 80,
+            capacity: 13,
+            recoil: 31,
+            fireRate: 450,
+            traits: ['medium armor penetrating', 'one handed', 'guided']
+        },
+        offensiveRange: [1, 1, 0.5],
+        coverage: [1, 1, 0.5, 0, 0],
         sluggish: false,
         stun: false,
         objectives: []

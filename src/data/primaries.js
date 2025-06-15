@@ -90,6 +90,7 @@ import StASmg from '../assets/weapons/StASmg.webp'
 import doubleSickle from '../assets/weapons/double-sickle.webp'
 import deadeye from '../assets/weapons/deadeye.webp'
 import amendment from '../assets/weapons/amendment.webp'
+import pacifier from '../assets/weapons/pacifier.webp'
 
 
 const { primaryWeaponColor } = colors
@@ -108,7 +109,7 @@ export const primaryWeaponData = [
             fireRate: 640,
             traits: ['light armor penetrating']
         },
-        offensiveRange: [1, 1, 0],
+        offensiveRange: [1, 1, 0.5],
         coverage: [1, 0.5, 0, 0, 0],
         sluggish: false,
         stun: false,
@@ -127,7 +128,7 @@ export const primaryWeaponData = [
             fireRate: 640,
             traits: ['medium armor penetrating']
         },
-        offensiveRange: [1, 1, 0],
+        offensiveRange: [1, 1, 0.5],
         coverage: [0.8, 1, 0.5, 0, 0],
         sluggish: false,
         stun: false,
@@ -146,7 +147,7 @@ export const primaryWeaponData = [
             fireRate: 400,
             traits: ['light armor penetrating', 'explosive damage type']
         },
-        offensiveRange: [1, 1, 0],
+        offensiveRange: [1, 1, 0.5],
         coverage: [0.8, 0.5, 0, 0, 0],
         sluggish: false,
         stun: true,
@@ -165,7 +166,7 @@ export const primaryWeaponData = [
             fireRate: 550,
             traits: ['medium armor penetrating']
         },
-        offensiveRange: [1, 1, 0],
+        offensiveRange: [1, 1, 0.5],
         coverage: [0.8, 1, 0.5, 0, 0],
         sluggish: false,
         stun: false,
@@ -525,7 +526,7 @@ export const primaryWeaponData = [
             fireRate: 850,
             traits: ['light armor penetrating']
         },
-        offensiveRange: [1, 1, 0],
+        offensiveRange: [1, 1, 0.5],
         coverage: [1, 0.5, 0, 0, 0],
         stun: false,
         sluggish: false,
@@ -563,7 +564,7 @@ export const primaryWeaponData = [
             fireRate: 920,
             traits: ['light armor penetrating']
         },
-        offensiveRange: [1.2, 0.8, 0],
+        offensiveRange: [1.2, 0.8, 0.25],
         coverage: [1, 0.5, 0, 0, 0],
         stun: false,
         sluggish: false,
@@ -676,7 +677,7 @@ export const primaryWeaponData = [
             fireRate: 790,
             traits: ['light armor penetrating']
         },
-        offensiveRange: [1, 1, 0],
+        offensiveRange: [1, 1, 0.5],
         coverage: [1, 0.5, 0, 0, 0],
         stun: false,
         sluggish: false,
@@ -774,6 +775,25 @@ export const primaryWeaponData = [
         offensiveRange: [0.75, 1, 1],
         coverage: [1, 0.5, 0, 0, 0],
         stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 37,
+        color: primaryWeaponColor,
+        type: 'Assault rifle',
+        name: 'AR-32 Pacifier',
+        icon: pacifier,
+        ingameStats: {
+            damage: 50,
+            capacity: 40,
+            recoil: 11,
+            fireRate: 700,
+            traits: ['medium armor penetrating', 'stun']
+        },
+        offensiveRange: [1, 1, 0.5],
+        coverage: [1, 1, 0.5, 0, 0],
+        stun: true,
         sluggish: false,
         objectives: []
     },
