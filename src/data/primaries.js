@@ -1,59 +1,4 @@
-import strat1 from '../assets/strat-1.webp'
-import strat2 from '../assets/strat-2.webp'
-import strat3 from '../assets/strat-3.webp'
-import strat4 from '../assets/strat-4.webp'
-import strat5 from '../assets/strat-5.webp'
-import strat6 from '../assets/strat-6.webp'
-import strat7 from '../assets/strat-7.webp'
-import strat8 from '../assets/strat-8.webp'
-import strat9 from '../assets/strat-9.webp'
-import strat10 from '../assets/strat-10.webp'
-import strat120mm from '../assets/strat-120mm.webp'
-import strat380mm from '../assets/strat-380mm.webp'
-import strat500kg from '../assets/strat-500kg.webp'
-import stratairburst from '../assets/strat-airburst.webp'
-import stratairstrike from '../assets/strat-airstrike.webp'
-import stratarcthrower from '../assets/strat-arcthrower.webp'
-import stratautocannonturret from '../assets/strat-autocannonturret.webp'
-import stratballisticshield from '../assets/strat-ballisticshield.webp'
-import stratcluster from '../assets/strat-cluster.webp'
-import stratems from '../assets/strat-ems.webp'
-import stratexo45patriot from '../assets/strat-exo45patriot.webp'
-import stratexo49Emancipator from '../assets/emancipator.webp'
-import stratgasstrike from '../assets/strat-gasstrike.webp'
-import stratgatlingbarrage from '../assets/strat-gatlingbarrage.webp'
-import stratgatlingturret from '../assets/strat-gatlingturret.webp'
-import stratgrenadelauncher from '../assets/strat-grenadelauncher.webp'
-import stratguarddogAR from '../assets/strat-guarddogAR.webp'
-import stratguarddogrover from '../assets/strat-guarddogrover.webp'
-import strathmgemplacement from '../assets/strat-hmgemplacement.webp'
-import stratincendiarymines from '../assets/strat-incendiarymines.webp'
-import stratjumppack from '../assets/strat-jumppack.webp'
-import stratlasercannon from '../assets/strat-lasercannon.webp'
-import stratmg43sentry from '../assets/strat-mg43sentry.webp'
-import stratminefieldpersonn from '../assets/strat-minefieldpersonn.webp'
-import stratmortar from '../assets/strat-mortar.webp'
-import stratmortarEMSsentry from '../assets/strat-mortarEMSsentry.webp'
-import stratnapalm from '../assets/strat-napalm.webp'
-import stratorbitalLaser from '../assets/strat-orbitalLaser.webp'
-import stratorbitalRail from '../assets/strat-orbitalRail.webp'
-import stratorbitalsmoke from '../assets/strat-orbitalsmoke.webp'
-import stratprecisionstrike from '../assets/strat-precisionstrike.webp'
-import stratquasar from '../assets/strat-quasar.webp'
-import stratrocketpods from '../assets/strat-rocketpods.webp'
-import stratrocketsentry from '../assets/strat-rocketsentry.webp'
-import stratshieldpack from '../assets/strat-shieldpack.webp'
-import stratshieldrelay from '../assets/strat-shieldrelay.webp'
-import stratsmokestrike from '../assets/strat-smokestrike.webp'
-import stratstrafingrun from '../assets/strat-strafingrun.webp'
-import stratsupply from '../assets/strat-supply.webp'
-import stratteslatower from '../assets/strat-teslatower.webp'
-import stratwalkingbarrage from '../assets/strat-walkingbarrage.webp'
 import adjudicator from '../assets/weapons/adj.webp'
-import grenadePistol from '../assets/weapons/grenade-pistol.webp'
-import redeemer from '../assets/weapons/redeemer.webp'
-import senator from '../assets/weapons/senator.webp'
-import dagger from '../assets/weapons/dagger.webp'
 import defender from '../assets/weapons/defender.webp'
 import lib from '../assets/weapons/lib.webp'
 import libPen from '../assets/weapons/lib-pen.webp'
@@ -91,6 +36,7 @@ import doubleSickle from '../assets/weapons/double-sickle.webp'
 import deadeye from '../assets/weapons/deadeye.webp'
 import amendment from '../assets/weapons/amendment.webp'
 import pacifier from '../assets/weapons/pacifier.webp'
+import variable from '../assets/weapons/variable.webp'
 
 
 const { primaryWeaponColor } = colors
@@ -795,6 +741,24 @@ export const primaryWeaponData = [
         coverage: [1, 1, 0.5, 0, 0],
         stun: true,
         sluggish: false,
+        objectives: []
+    },
+    {
+        id: 38,
+        color: primaryWeaponColor,
+        type: 'Special',
+        name: 'VG-70 Variable',
+        icon: variable,
+        ingameStats: {
+            damage: 85,
+            capacity: 49,
+            recoil: 7,
+            fireRate: 550,
+            traits: ['light armor penetrating']
+        },
+        offensiveRange: [1, 1, 0.25],
+        coverage: [1, 0.5, 0, 0, 0],
+        sluggish: true,
         objectives: []
     },
 ]

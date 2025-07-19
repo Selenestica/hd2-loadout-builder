@@ -67,6 +67,9 @@ import grenadierBattlement from '../assets/grenadierBattlement.webp'
 import oneTrueFlag from '../assets/oneTrueFlag.webp'
 import deescalator from '../assets/deescalator.webp'
 import k9 from '../assets/k9.webp'
+import warp from '../assets/warp.webp'
+import epoch from '../assets/epoch.webp'
+import laserSentry from '../assets/laserSentry.webp'
 
 import { armorData } from './armors'
 import { grenadeData } from './grenades'
@@ -890,6 +893,41 @@ export const strategemData = [
         coverage: [0.5, 0.5, 0.5, 0, 0],
         uptime: 'very high',
         hasBackpack: true,
+        objectives: []
+    },
+    {
+        id: 70,
+        name: "LIFT-182 Warp Pack",
+        icon: warp,
+        offensiveRange: [0.5, 0, 0],
+        type: 'backpack',
+        color: stratBlue,
+        coverage: [0.25, 0.25, 0.25, 0, 0],
+        uptime: 'very high',
+        hasBackpack: true,
+        objectives: []
+    },
+    {
+        id: 71,
+        name: "PLAS-45 Epoch",
+        icon: epoch,
+        offensiveRange: [0.5, 1, 0.5],
+        type: 'support-weapon',
+        color: stratBlue,
+        coverage: [0, 0, 0.5, 1, 0.75],
+        supplyBuffedCoverage: [0, 0, 1, 1, 0.75],
+        uptime: 'very high',
+        objectives: []
+    },
+    {
+        id: 72,
+        name: "A/LAS-98 Laser Sentry",
+        icon: laserSentry,
+        offensiveRange: [1, 1, 0],
+        type: 'turret',
+        color: stratGreen,
+        coverage: [0.75, 0.75, 0.5, 0.25, 0],
+        uptime: 'medium',
         objectives: []
     },
 ]

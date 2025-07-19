@@ -471,5 +471,32 @@ export const armorData = [
         icon: heavySVG,
         type: 'heavy',
     },
+    {
+        id: 53,
+        name: 'light adreno defibrillator',
+        bonus: 'adreno defibrillator',
+        abbr: 'ADR',
+        longText: 'Provides one-time, short-lived resuscitation upon death, given that the body is still intact.  Increases stim effect duration by 2s. Provides 50% resistance to arc damage.',
+        icon: lightSVG,
+        type: 'light',
+    },
+    {
+        id: 54,
+        name: 'medium adreno defibrillator',
+        bonus: 'adreno defibrillator',
+        abbr: 'ADR',
+        longText: 'Provides one-time, short-lived resuscitation upon death, given that the body is still intact.  Increases stim effect duration by 2s. Provides 50% resistance to arc damage.',
+        icon: mediumSVG,
+        type: 'medium',
+    },
+    {
+        id: 55,
+        name: 'heavy adreno defibrillator',
+        bonus: 'adreno defibrillator',
+        abbr: 'ADR',
+        longText: 'Provides one-time, short-lived resuscitation upon death, given that the body is still intact.  Increases stim effect duration by 2s. Provides 50% resistance to arc damage.',
+        icon: heavySVG,
+        type: 'heavy',
+    },
 
 ]
