@@ -828,6 +828,7 @@ export const strategemData = [
         type: 'backpack',
         color: stratBlue,
         coverage: [0.15, 0.15, 0.15, 0.15, 0.15],
+        hasBackpack: true,
         uptime: 'low',
         objectives: []
     },
@@ -840,6 +841,7 @@ export const strategemData = [
         color: stratBlue,
         coverage: [0, 0, 0, 0, 0],
         uptime: 'very high',
+        hasBackpack: true,
         objectives: []
     },
     {
