@@ -498,5 +498,32 @@ export const armorData = [
         icon: heavySVG,
         type: 'heavy',
     },
+    {
+        id: 56,
+        name: 'light feet first',
+        bonus: 'feet first',
+        abbr: 'FEF',
+        longText: 'Wearer makes 50% less noise when moving. Increases point-of-interest identification range by 30%. Provides immunity to leg injuries',
+        icon: lightSVG,
+        type: 'light',
+    },
+    {
+        id: 57,
+        name: 'medium feet first',
+        bonus: 'feet first',
+        abbr: 'FEF',
+        longText: 'Wearer makes 50% less noise when moving. Increases point-of-interest identification range by 30%. Provides immunity to leg injuries',
+        icon: mediumSVG,
+        type: 'medium',
+    },
+    {
+        id: 58,
+        name: 'heavy feet first',
+        bonus: 'feet first',
+        abbr: 'FEF',
+        longText: 'Wearer makes 50% less noise when moving. Increases point-of-interest identification range by 30%. Provides immunity to leg injuries',
+        icon: heavySVG,
+        type: 'heavy',
+    },
 
 ]

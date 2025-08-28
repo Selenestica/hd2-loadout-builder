@@ -37,6 +37,9 @@ import deadeye from '../assets/weapons/deadeye.webp'
 import amendment from '../assets/weapons/amendment.webp'
 import pacifier from '../assets/weapons/pacifier.webp'
 import variable from '../assets/weapons/variable.webp'
+import haloAr from '../assets/weapons/haloAr.webp'
+import haloShotgun from '../assets/weapons/haloShotgun.webp'
+import haloSmg from '../assets/weapons/haloSmg.webp'
 
 
 const { primaryWeaponColor } = colors
@@ -759,6 +762,63 @@ export const primaryWeaponData = [
         offensiveRange: [1, 1, 0.25],
         coverage: [1, 0.5, 0, 0, 0],
         sluggish: true,
+        objectives: []
+    },
+    {
+        id: 39,
+        color: primaryWeaponColor,
+        type: 'Shotgun',
+        name: "M90A Shotgun",
+        icon: haloShotgun,
+        ingameStats: {
+            damage: 605,
+            capacity: 6,
+            recoil: 83,
+            fireRate: 80,
+            traits: ['light armor penetrating', 'rounds reload']
+        },
+        offensiveRange: [1, 0.5, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: true,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 40,
+        color: primaryWeaponColor,
+        type: 'SMG',
+        name: "M7S SMG",
+        icon: haloSmg,
+        ingameStats: {
+            damage: 70,
+            capacity: 48,
+            recoil: 8,
+            fireRate: 872,
+            traits: ['light armor penetrating', 'one handed', 'suppressed']
+        },
+        offensiveRange: [1, 0.5, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        stun: false,
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 41,
+        color: primaryWeaponColor,
+        type: 'Assault rifle',
+        name: "MA5C Assault Rifle",
+        icon: haloAr,
+        ingameStats: {
+            damage: 80,
+            capacity: 32,
+            recoil: 19,
+            fireRate: 640,
+            traits: ['medium armor penetrating']
+        },
+        offensiveRange: [1, 1, 0],
+        coverage: [1, 1, 0.5, 0, 0],
+        stun: false,
+        sluggish: false,
         objectives: []
     },
 ]

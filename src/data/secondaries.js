@@ -15,6 +15,7 @@ import ultimatum from '../assets/weapons/ultimatum.webp'
 import talon from '../assets/weapons/talon.webp'
 import sabre from '../assets/weapons/sabre.webp'
 import warrant from '../assets/weapons/smartpistol.webp'
+import haloPistol from '../assets/weapons/haloPistol.webp'
 
 const { secondaryWeaponColor } = colors
 
@@ -314,6 +315,25 @@ export const secondaryWeaponData = [
         },
         offensiveRange: [1, 1, 0.5],
         coverage: [1, 1, 0.5, 0, 0],
+        sluggish: false,
+        stun: false,
+        objectives: []
+    },
+    {
+        id: 17,
+        color: secondaryWeaponColor,
+        type: 'pistol',
+        name: "M6C/SOCOM Pistol",
+        icon: haloPistol,
+        ingameStats: {
+            damage: 100,
+            capacity: 12,
+            recoil: 20,
+            fireRate: 900,
+            traits: ['light armor penetrating', 'one handed', 'suppressed']
+        },
+        offensiveRange: [1, 0.75, 0],
+        coverage: [1, 0.5, 0, 0, 0],
         sluggish: false,
         stun: false,
         objectives: []

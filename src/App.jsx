@@ -76,7 +76,7 @@ export default function App() {
                         place-items: center;
                         color: rgba(255,255,255,0.2);
                     `}>
-                    v1.003.201
+                    v1.003.302
 
                     <span className={css`
                             margin-left: 1em;
@@ -106,6 +106,4 @@ export default function App() {
 }
 
 // TO DO:
-// add bugs / bots tag and filter
-// import / export app data
 // add 'lock' to equipment to not randomize
