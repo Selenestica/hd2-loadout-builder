@@ -16,6 +16,8 @@ import talon from '../assets/weapons/talon.webp'
 import sabre from '../assets/weapons/sabre.webp'
 import warrant from '../assets/weapons/smartpistol.webp'
 import haloPistol from '../assets/weapons/haloPistol.webp'
+import machete from '../assets/weapons/machete.webp'
+import hatchet from '../assets/weapons/hatchet.webp'
 
 const { secondaryWeaponColor } = colors
 
@@ -336,6 +338,42 @@ export const secondaryWeaponData = [
         coverage: [1, 0.5, 0, 0, 0],
         sluggish: false,
         stun: false,
+        objectives: []
+    },
+    {
+        id: 18,
+        color: secondaryWeaponColor,
+        type: 'melee',
+        name: "CQC-42 Machete",
+        icon: machete,
+        ingameStats: {
+            /* damage: 125,
+            capacity: 7, */
+            recoil: 0,
+            /* fireRate: 1000, */
+            traits: ['medium armor penetrating', 'one handed']
+        },
+        offensiveRange: [0.5, 0, 0],
+        coverage: [0.5, 1, 0.5, 0, 0],
+        sluggish: false,
+        objectives: []
+    },
+    {
+        id: 18,
+        color: secondaryWeaponColor,
+        type: 'melee',
+        name: "CQC-5 Combat Hatchet",
+        icon: machete,
+        ingameStats: {
+            /* damage: 125,
+            capacity: 7, */
+            recoil: 8,
+            /* fireRate: 1000, */
+            traits: [ 'one handed']
+        },
+        offensiveRange: [0.5, 0, 0],
+        coverage: [1, 0.5, 0, 0, 0],
+        sluggish: false,
         objectives: []
     },
 ]

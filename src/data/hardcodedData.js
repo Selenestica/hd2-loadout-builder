@@ -70,6 +70,9 @@ import k9 from '../assets/k9.webp'
 import warp from '../assets/warp.webp'
 import epoch from '../assets/epoch.webp'
 import laserSentry from '../assets/laserSentry.webp'
+import silo from '../assets/silo.webp'
+import spearGun from '../assets/spearGun.webp'
+import eatNapalm from '../assets/eatNapalm.webp'
 
 import { armorData } from './armors'
 import { grenadeData } from './grenades'
@@ -928,6 +931,42 @@ export const strategemData = [
         color: stratGreen,
         coverage: [0.75, 0.75, 0.5, 0.25, 0],
         uptime: 'medium',
+        objectives: []
+    },
+    {
+        id: 73,
+        name: "MS-11 Solo Silo",
+        icon: silo,
+        offensiveRange: [0, 0, 1],
+        type: 'support-weapon',
+        color: stratBlue,
+        coverage: [0, 0, 0, 0, 0.5],
+        uptime: 'low',
+        supportSlotNecessary: false,
+        objectives: []
+    },
+    {
+        id: 74,
+        name: "S-11 Speargun",
+        icon: spearGun,
+        offensiveRange: [1, 1, 0.5],
+        type: 'support-weapon',
+        color: stratBlue,
+        coverage: [0.5, 0.5, 0.5, 1, 0],
+        supplyBuffedCoverage: [1, 1, 1, 1, 0],
+        uptime: 'very high',
+        objectives: []
+    },
+    {
+        id: 75,
+        name: "EAT-700 Expendable Napalm",
+        icon: eatNapalm,
+        offensiveRange: [0, 1, 1],
+        type: 'support-weapon',
+        color: stratBlue,
+        coverage: [1, 1, 1, 0.75, 0],
+        uptime: 'high',
+        supportSlotNecessary: false,
         objectives: []
     },
 ]

@@ -525,5 +525,32 @@ export const armorData = [
         icon: heavySVG,
         type: 'heavy',
     },
+    {
+        id: 59,
+        name: 'light desert stormer',
+        bonus: 'desert stormer',
+        abbr: 'DES',
+        longText: 'Provides 40% resistance to fire, gas, acid, and electrical damage. Increases throwing range by 20%.',
+        icon: lightSVG,
+        type: 'light',
+    },
+    {
+        id: 60,
+        name: 'medium desert stormer',
+        bonus: 'desert stormer',
+        abbr: 'DES',
+        longText: 'Provides 40% resistance to fire, gas, acid, and electrical damage. Increases throwing range by 20%.',
+        icon: mediumSVG,
+        type: 'medium',
+    },
+    {
+        id: 61,
+        name: 'heavy desert stormer',
+        bonus: 'desert stormer',
+        abbr: 'DES',
+        longText: 'Provides 40% resistance to fire, gas, acid, and electrical damage. Increases throwing range by 20%.',
+        icon: heavySVG,
+        type: 'heavy',
+    },
 
 ]

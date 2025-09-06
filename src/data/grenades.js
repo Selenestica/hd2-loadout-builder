@@ -13,6 +13,7 @@ import dynamite from '../assets/weapons/dynamite.webp'
 import pyrotech from '../assets/weapons/pyrotech.webp'
 import urchin from '../assets/weapons/urchin.webp'
 import arcNade from '../assets/weapons/arcNade.webp'
+import pineapple from '../assets/weapons/pineapple.webp'
 import { colors } from './constants'
 
 
@@ -263,9 +264,26 @@ export const grenadeData = [
             radius: 10,
             traits: ['arc']
         },
-        offensiveRange: [1, 1, 0],
+        offensiveRange: [0.5, 1, 0],
         coverage: [1.5, 1, 0.5, 0.2, 0],
         stun: true,
+        objectives: []
+    },
+    {
+        id: 16,
+        color: grenadeColor,
+        name: "G-6 Frag",
+        icon: pineapple,
+        ingameStats: {
+            damage: 300,
+            penetration: 3,
+            radius: 10,
+            fuse: 2.4,
+            traits: []
+        },
+        offensiveRange: [0.8, 1, 0],
+        coverage: [0.5, 0.5, 0, 0, 0],
+        stun: false,
         objectives: []
     },
 ]

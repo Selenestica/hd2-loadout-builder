@@ -40,6 +40,7 @@ import variable from '../assets/weapons/variable.webp'
 import haloAr from '../assets/weapons/haloAr.webp'
 import haloShotgun from '../assets/weapons/haloShotgun.webp'
 import haloSmg from '../assets/weapons/haloSmg.webp'
+import coyote from '../assets/weapons/coyote.webp'
 
 
 const { primaryWeaponColor } = colors
@@ -819,6 +820,25 @@ export const primaryWeaponData = [
         coverage: [1, 1, 0.5, 0, 0],
         stun: false,
         sluggish: false,
+        objectives: []
+    },
+    {
+        id: 42,
+        color: primaryWeaponColor,
+        type: 'Assault rifle',
+        name: "AR-2 Coyote",
+        icon: coyote,
+        ingameStats: {
+            damage: 75,
+            capacity: 45,
+            recoil: 17,
+            fireRate: 600,
+            traits: ['medium armor penetrating', 'incendiary']
+        },
+        offensiveRange: [1, 1, 0.5],
+        coverage: [1.2, 1.2, 1.2, 0, 0],
+        sluggish: false,
+        stun: false,
         objectives: []
     },
 ]
