@@ -359,7 +359,7 @@ export const secondaryWeaponData = [
         objectives: []
     },
     {
-        id: 18,
+        id: 19,
         color: secondaryWeaponColor,
         type: 'melee',
         name: "CQC-5 Combat Hatchet",

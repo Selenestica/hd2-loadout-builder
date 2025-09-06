@@ -272,7 +272,7 @@ export const grenadeData = [
     {
         id: 16,
         color: grenadeColor,
-        name: "G-6 Frag",
+        name: "G-7 Pineapple",
         icon: pineapple,
         ingameStats: {
             damage: 300,
