@@ -41,6 +41,8 @@ import haloAr from '../assets/weapons/haloAr.webp'
 import haloShotgun from '../assets/weapons/haloShotgun.webp'
 import haloSmg from '../assets/weapons/haloSmg.webp'
 import coyote from '../assets/weapons/coyote.webp'
+import onetwo from '../assets/weapons/onetwo.webp'
+import doublefreedom from '../assets/weapons/doublefreedom.webp'
 
 
 const { primaryWeaponColor } = colors
@@ -839,6 +841,44 @@ export const primaryWeaponData = [
         coverage: [1.2, 1.2, 1.2, 0, 0],
         sluggish: false,
         stun: false,
+        objectives: []
+    },
+    {
+        id: 43,
+        color: primaryWeaponColor,
+        type: 'Assault rifle',
+        name: "AR/GL-21 One-Two",
+        icon: onetwo,
+        ingameStats: {
+            damage: 95,
+            capacity: 40,
+            recoil: 13,
+            fireRate: 650,
+            traits: ['light armor penetrating', 'explosive']
+        },
+        offensiveRange: [1, 1, 0.5],
+        coverage: [1, 0.75, 0.25, 0, 0],
+        sluggish: false,
+        stun: false,
+        objectives: []
+    },
+    {
+        id: 44,
+        color: primaryWeaponColor,
+        type: 'Shotgun',
+        name: "DBS-2 Double Freedom",
+        icon: doublefreedom,
+        ingameStats: {
+            damage: 840,
+            capacity: 2,
+            recoil: 163,
+            fireRate: 650,
+            traits: ['medium armor penetrating', 'rounds reload']
+        },
+        offensiveRange: [1, 0.5, 0],
+        coverage: [1, 1, 0.5, 0, 0],
+        sluggish: false,
+        stun: true,
         objectives: []
     },
 ]

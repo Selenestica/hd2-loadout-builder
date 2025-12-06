@@ -73,6 +73,9 @@ import laserSentry from '../assets/laserSentry.webp'
 import silo from '../assets/silo.webp'
 import spearGun from '../assets/spearGun.webp'
 import eatNapalm from '../assets/eatNapalm.webp'
+import chainsaw from '../assets/chainsaw.webp'
+import hotdog from '../assets/hotdog.webp'
+import minigun from '../assets/minigun.webp'
 
 import { armorData } from './armors'
 import { grenadeData } from './grenades'
@@ -967,6 +970,42 @@ export const strategemData = [
         coverage: [1, 1, 1, 0.75, 0],
         uptime: 'high',
         supportSlotNecessary: false,
+        objectives: []
+    },
+    {
+        id: 76,
+        name: "CQC-9 Defoliation Tool",
+        icon: chainsaw,
+        offensiveRange: [0.5, 0, 0],
+        type: 'support-weapon',
+        color: stratBlue,
+        coverage: [1, 1, 1, 0, 0],
+        supplyBuffedCoverage: [1, 1, 1, 1, 0],
+        uptime: 'very high',
+        objectives: []
+    },
+    {
+        id: 77,
+        name: "M-1000 Maxigun",
+        icon: minigun,
+        offensiveRange: [1, 1, 0],
+        type: 'support-weapon',
+        color: stratBlue,
+        coverage: [1, 1, 1, 0, 0],
+        hasBackpack: true,
+        uptime: 'very high',
+        objectives: []
+    },
+    {
+        id: 78,
+        name: 'AX/FLAM-75 Guard Dog Hot Dog',
+        icon: hotdog,
+        offensiveRange: [1, 0, 0],
+        type: 'backpack',
+        color: stratBlue,
+        coverage: [1, 1, 1, 0.5, 0],
+        hasBackpack: true,
+        uptime: 'very high',
         objectives: []
     },
 ]

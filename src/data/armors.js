@@ -552,5 +552,32 @@ export const armorData = [
         icon: heavySVG,
         type: 'heavy',
     },
+    {
+        id: 62,
+        name: 'light rock solid',
+        bonus: 'rock solid',
+        abbr: 'RCK',
+        longText: 'Increase melee damage by 100%.  Bearer is more resistant to being knocked prone.',
+        icon: lightSVG,
+        type: 'light',
+    },
+    {
+        id: 63,
+        name: 'medium rock solid',
+        bonus: 'rock solid',
+        abbr: 'RCK',
+        longText: 'Increase melee damage by 100%.  Bearer is more resistant to being knocked prone.',
+        icon: mediumSVG,
+        type: 'medium',
+    },
+    {
+        id: 64,
+        name: 'heavy rock solid',
+        bonus: 'rock solid',
+        abbr: 'RCK',
+        longText: 'Increase melee damage by 100%.  Bearer is more resistant to being knocked prone.',
+        icon: heavySVG,
+        type: 'heavy',
+    },
 
 ]
