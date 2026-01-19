@@ -7,13 +7,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReceivedLoadoutModal from "./components/ReceiveLoadoutModal.jsx";
 import Modal from "react-modal";
 import { OverridesProvider } from "./context/Overrides.jsx";
+const basename = import.meta.env.DEV ? "/" : "/loadoutbuilder";
 
 Modal.setAppElement("#root");
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <LoadoutsProvider>
     <OverridesProvider>
-      <BrowserRouter basename="/loadoutbuilder">
+      <BrowserRouter basename={basename}>
         <Routes>
           <Route path="/*" element={<App />}>
             <Route path="s" element={<ReceivedLoadoutModal />} />
@@ -21,5 +22,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </Routes>
       </BrowserRouter>
     </OverridesProvider>
-  </LoadoutsProvider>
+  </LoadoutsProvider>,
 );

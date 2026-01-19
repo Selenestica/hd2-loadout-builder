@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { css } from "@emotion/css";
 import LoadoutsContext from "./context/Loadouts";
 import LoadoutList from "./components/LoadoutList";
@@ -7,7 +7,6 @@ import { Outlet } from "react-router-dom";
 import NameScroller from "./components/NameScroller";
 import backgroundUrl from "./assets/backgrounds/super-earth-flag.svg";
 import videoUrl from "./assets/backgrounds/particles2.mp4";
-import DonateModal from "./components/DonateModal";
 
 export default function App() {
   const { selectedLoadout } = useContext(LoadoutsContext);
@@ -18,7 +17,7 @@ export default function App() {
         className={css`
           display: grid;
           height: 100%;
-          grid-template-rows: 1fr 2em;
+          grid-template-rows: 2em 1fr 2em;
           background: url(${backgroundUrl}) no-repeat center / 80% auto;
           position: relative;
         `}
@@ -46,13 +45,36 @@ export default function App() {
             Your browser does not support the video tag.
           </video>
         }
+        <div
+          className={css`
+            padding: 1em 0em 1em 2em;
+            display: flex;
+            height: 100%;
+            overflow: hidden;
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto auto auto 1fr;
+            place-items: center;
+            color: rgba(255, 255, 255, 0.2);
+          `}
+        >
+          <a href="../index.html">
+            <span
+              className={css`
+                color: yellow;
+              `}
+            >
+              &#8592; Main Menu
+            </span>
+          </a>
+        </div>
 
         <div
           className={css`
             display: grid;
             grid-template-columns: 1.2fr 1fr 1fr;
             grid-gap: 1em;
-            padding: 2em 2em 0em 2em;
+            padding: 1em 2em 0em 2em;
             height: 100%;
             overflow: auto;
 
@@ -93,6 +115,7 @@ export default function App() {
           <span
             className={css`
               margin-left: 1em;
+              color: yellow;
             `}
           >
             Thanks to Ultros and their supporters:&nbsp;
