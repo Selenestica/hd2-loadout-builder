@@ -377,7 +377,7 @@ export const secondaryWeaponData = [
     objectives: [],
   },
   {
-    id: 17,
+    id: 20,
     color: secondaryWeaponColor,
     type: 'pistol',
     name: 'P-35 Re-Educator',
