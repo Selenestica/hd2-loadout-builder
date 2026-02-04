@@ -1,48 +1,48 @@
-import adjudicator from '../assets/weapons/adj.webp';
-import defender from '../assets/weapons/defender.webp';
-import lib from '../assets/weapons/lib.webp';
-import libPen from '../assets/weapons/lib-pen.webp';
-import libConc from '../assets/weapons/lib-conc.webp';
-import diligence from '../assets/weapons/diligence.webp';
-import diligenceCs from '../assets/weapons/diligence-cs.webp';
-import punisher from '../assets/weapons/punisher.webp';
-import breaker from '../assets/weapons/breaker.webp';
-import slug from '../assets/weapons/slug.webp';
-import breakInc from '../assets/weapons/break-inc.webp';
-import breakSp from '../assets/weapons/break-sp.webp';
-import punisherPl from '../assets/weapons/punisher-pl.webp';
-import blitz from '../assets/weapons/blitz.webp';
-import crossbow from '../assets/weapons/crossbow.webp';
-import eruptor from '../assets/weapons/eruptor.webp';
-import dominator from '../assets/weapons/dominator.webp';
-import scythe from '../assets/weapons/scythe.webp';
-import sickle from '../assets/weapons/sickle.webp';
-import scor from '../assets/weapons/scor.webp';
-import knight from '../assets/weapons/knight.webp';
-import pummeler from '../assets/weapons/pummeler.webp';
-import purifier from '../assets/weapons/purifier.webp';
-import tenderizer from '../assets/weapons/tenderizer.webp';
-import { colors } from './constants';
-import liberatorCarbine from '../assets/weapons/liberatorCarbine.webp';
-import cookout from '../assets/weapons/cookout.webp';
-import torcher from '../assets/weapons/torcher.webp';
-import constitution from '../assets/weapons/constitution.webp';
-import halt from '../assets/weapons/halt.webp';
-import reprimand from '../assets/weapons/reprimand.webp';
-import plasAcceleratorRifle from '../assets/weapons/plasAcceleratorRifle.webp';
-import StAAssaultRifle from '../assets/weapons/StAAssaultRifle.webp';
-import StASmg from '../assets/weapons/StASmg.webp';
-import doubleSickle from '../assets/weapons/double-sickle.webp';
-import deadeye from '../assets/weapons/deadeye.webp';
-import amendment from '../assets/weapons/amendment.webp';
-import pacifier from '../assets/weapons/pacifier.webp';
-import variable from '../assets/weapons/variable.webp';
-import haloAr from '../assets/weapons/haloAr.webp';
-import haloShotgun from '../assets/weapons/haloShotgun.webp';
-import haloSmg from '../assets/weapons/haloSmg.webp';
-import coyote from '../assets/weapons/coyote.webp';
-import onetwo from '../assets/weapons/onetwo.webp';
-import doublefreedom from '../assets/weapons/doublefreedom.webp';
+import adjudicator from "../assets/weapons/adj.webp";
+import defender from "../assets/weapons/defender.webp";
+import lib from "../assets/weapons/lib.webp";
+import libPen from "../assets/weapons/lib-pen.webp";
+import libConc from "../assets/weapons/lib-conc.webp";
+import diligence from "../assets/weapons/diligence.webp";
+import diligenceCs from "../assets/weapons/diligence-cs.webp";
+import punisher from "../assets/weapons/punisher.webp";
+import breaker from "../assets/weapons/breaker.webp";
+import slug from "../assets/weapons/slug.webp";
+import breakInc from "../assets/weapons/break-inc.webp";
+import breakSp from "../assets/weapons/break-sp.webp";
+import punisherPl from "../assets/weapons/punisher-pl.webp";
+import blitz from "../assets/weapons/blitz.webp";
+import crossbow from "../assets/weapons/crossbow.webp";
+import eruptor from "../assets/weapons/eruptor.webp";
+import dominator from "../assets/weapons/dominator.webp";
+import scythe from "../assets/weapons/scythe.webp";
+import sickle from "../assets/weapons/sickle.webp";
+import scor from "../assets/weapons/scor.webp";
+import knight from "../assets/weapons/knight.webp";
+import pummeler from "../assets/weapons/pummeler.webp";
+import purifier from "../assets/weapons/purifier.webp";
+import tenderizer from "../assets/weapons/tenderizer.webp";
+import { colors } from "./constants";
+import liberatorCarbine from "../assets/weapons/liberatorCarbine.webp";
+import cookout from "../assets/weapons/cookout.webp";
+import torcher from "../assets/weapons/torcher.webp";
+import constitution from "../assets/weapons/constitution.webp";
+import halt from "../assets/weapons/halt.webp";
+import reprimand from "../assets/weapons/reprimand.webp";
+import plasAcceleratorRifle from "../assets/weapons/plasAcceleratorRifle.webp";
+import StAAssaultRifle from "../assets/weapons/StAAssaultRifle.webp";
+import StASmg from "../assets/weapons/StASmg.webp";
+import doubleSickle from "../assets/weapons/double-sickle.webp";
+import deadeye from "../assets/weapons/deadeye.webp";
+import amendment from "../assets/weapons/amendment.webp";
+import pacifier from "../assets/weapons/pacifier.webp";
+import variable from "../assets/weapons/variable.webp";
+import haloAr from "../assets/weapons/haloAr.webp";
+import haloShotgun from "../assets/weapons/haloShotgun.webp";
+import haloSmg from "../assets/weapons/haloSmg.webp";
+import coyote from "../assets/weapons/coyote.webp";
+import onetwo from "../assets/weapons/onetwo.webp";
+import doublefreedom from "../assets/weapons/doublefreedom.webp";
 
 const { primaryWeaponColor } = colors;
 
@@ -50,15 +50,15 @@ export const primaryWeaponData = [
   {
     id: 1,
     color: primaryWeaponColor,
-    type: 'Assault rifle',
-    name: 'AR23 Liberator',
+    type: "Assault rifle",
+    name: "AR23 Liberator",
     icon: lib,
     ingameStats: {
       damage: 80,
       capacity: 45,
       recoil: 15,
       fireRate: 640,
-      traits: ['light armor penetrating'],
+      traits: ["light armor penetrating"],
     },
     offensiveRange: [1, 1, 0.5],
     coverage: [1, 0.5, 0, 0, 0],
@@ -69,15 +69,15 @@ export const primaryWeaponData = [
   {
     id: 2,
     color: primaryWeaponColor,
-    type: 'Assault rifle',
-    name: 'AR23P Liberator Penetrator',
+    type: "Assault rifle",
+    name: "AR23P Liberator Penetrator",
     icon: libPen,
     ingameStats: {
       damage: 60,
       capacity: 45,
       recoil: 19,
       fireRate: 640,
-      traits: ['medium armor penetrating'],
+      traits: ["medium armor penetrating"],
     },
     offensiveRange: [1, 1, 0.5],
     coverage: [0.8, 1, 0.5, 0, 0],
@@ -88,15 +88,15 @@ export const primaryWeaponData = [
   {
     id: 3,
     color: primaryWeaponColor,
-    type: 'Assault rifle',
-    name: 'AR-23C Liberator Concussive',
+    type: "Assault rifle",
+    name: "AR-23C Liberator Concussive",
     icon: libConc,
     ingameStats: {
       damage: 65,
       capacity: 60,
       recoil: 28,
       fireRate: 400,
-      traits: ['light armor penetrating', 'explosive damage type'],
+      traits: ["light armor penetrating", "explosive damage type"],
     },
     offensiveRange: [1, 1, 0.5],
     coverage: [0.8, 0.5, 0, 0, 0],
@@ -107,15 +107,15 @@ export const primaryWeaponData = [
   {
     id: 4,
     color: primaryWeaponColor,
-    type: 'Assault rifle',
-    name: 'BR-14 Adjudicator',
+    type: "Assault rifle",
+    name: "BR-14 Adjudicator",
     icon: adjudicator,
     ingameStats: {
       damage: 95,
       capacity: 30,
       recoil: 40,
       fireRate: 550,
-      traits: ['medium armor penetrating'],
+      traits: ["medium armor penetrating"],
     },
     offensiveRange: [1, 1, 0.5],
     coverage: [0.8, 1, 0.5, 0, 0],
@@ -126,15 +126,15 @@ export const primaryWeaponData = [
   {
     id: 5,
     color: primaryWeaponColor,
-    type: 'Marksman rifle',
-    name: 'R-63 Diligence',
+    type: "Marksman rifle",
+    name: "R-63 Diligence",
     icon: diligence,
     ingameStats: {
       damage: 165,
       capacity: 25,
       recoil: 35,
       fireRate: 350,
-      traits: ['light armor penetrating'],
+      traits: ["light armor penetrating"],
     },
     offensiveRange: [1, 1, 1],
     coverage: [1, 0.5, 0, 0, 0],
@@ -145,15 +145,15 @@ export const primaryWeaponData = [
   {
     id: 6,
     color: primaryWeaponColor,
-    type: 'Marksman rifle',
-    name: 'R-63CS Diligence Counter Sniper',
+    type: "Marksman rifle",
+    name: "R-63CS Diligence Counter Sniper",
     icon: diligenceCs,
     ingameStats: {
       damage: 200,
       capacity: 15,
       recoil: 53,
       fireRate: 350,
-      traits: ['medium armor penetrating'],
+      traits: ["medium armor penetrating"],
     },
     offensiveRange: [1, 1, 1],
     coverage: [1, 1, 0.5, 0, 0],
@@ -164,15 +164,15 @@ export const primaryWeaponData = [
   {
     id: 7,
     color: primaryWeaponColor,
-    type: 'SMG',
-    name: 'SMG-37 Defender',
+    type: "SMG",
+    name: "SMG-37 Defender",
     icon: defender,
     ingameStats: {
       damage: 80,
       capacity: 45,
       recoil: 10,
       fireRate: 520,
-      traits: ['light armor penetrating', 'one handed'],
+      traits: ["light armor penetrating", "one handed"],
     },
     offensiveRange: [1, 0.5, 0],
     coverage: [1, 0.5, 0, 0, 0],
@@ -183,15 +183,15 @@ export const primaryWeaponData = [
   {
     id: 8,
     color: primaryWeaponColor,
-    type: 'Shotgun',
-    name: 'SG-8 Punisher',
+    type: "Shotgun",
+    name: "SG-8 Punisher",
     icon: punisher,
     ingameStats: {
       damage: 405,
       capacity: 16,
       recoil: 120,
       fireRate: 80,
-      traits: ['light armor penetrating', 'rounds reload'],
+      traits: ["light armor penetrating", "rounds reload"],
     },
     offensiveRange: [1, 0.5, 0],
     coverage: [1, 0.5, 0, 0, 0],
@@ -202,15 +202,15 @@ export const primaryWeaponData = [
   {
     id: 9,
     color: primaryWeaponColor,
-    type: 'Shotgun',
-    name: 'SG-8S Slugger',
+    type: "Shotgun",
+    name: "SG-8S Slugger",
     icon: slug,
     ingameStats: {
       damage: 280,
       capacity: 16,
       recoil: 120,
       fireRate: 80,
-      traits: ['medium armor penetrating', 'rounds reload'],
+      traits: ["medium armor penetrating", "rounds reload"],
     },
     offensiveRange: [1, 1, 0],
     coverage: [1, 1, 0.5, 0, 0],
@@ -221,15 +221,15 @@ export const primaryWeaponData = [
   {
     id: 10,
     color: primaryWeaponColor,
-    type: 'Energy',
-    name: 'SG-8P Punisher Plasma',
+    type: "Energy",
+    name: "SG-8P Punisher Plasma",
     icon: punisherPl,
     ingameStats: {
       damage: 250,
       capacity: 10,
       recoil: 35,
       fireRate: 100,
-      traits: ['medium armor penetrating', 'explosive'],
+      traits: ["medium armor penetrating", "explosive"],
     },
     offensiveRange: [1, 1, 0],
     coverage: [1, 1, 1, 0, 0],
@@ -240,12 +240,12 @@ export const primaryWeaponData = [
   {
     id: 11,
     color: primaryWeaponColor,
-    type: 'Energy',
-    name: 'ARC-12 Blitzer',
+    type: "Energy",
+    name: "ARC-12 Blitzer",
     icon: blitz,
     ingameStats: {
       damage: 250,
-      capacity: 'infinite',
+      capacity: "infinite",
       recoil: 60,
       fireRate: 45,
       traits: [],
@@ -259,15 +259,15 @@ export const primaryWeaponData = [
   {
     id: 12,
     color: primaryWeaponColor,
-    type: 'Shotgun',
-    name: 'SG-225 Breaker',
+    type: "Shotgun",
+    name: "SG-225 Breaker",
     icon: breaker,
     ingameStats: {
       damage: 330,
       capacity: 16,
       recoil: 55,
       fireRate: 300,
-      traits: ['light armor penetrating'],
+      traits: ["light armor penetrating"],
     },
     offensiveRange: [1, 0.5, 0],
     coverage: [1, 0.5, 0, 0, 0],
@@ -278,15 +278,15 @@ export const primaryWeaponData = [
   {
     id: 13,
     color: primaryWeaponColor,
-    type: 'Shotgun',
-    name: 'SG-225SP Breaker Spray&Pray',
+    type: "Shotgun",
+    name: "SG-225SP Breaker Spray&Pray",
     icon: breakSp,
     ingameStats: {
       damage: 240,
       capacity: 26,
       recoil: 45,
       fireRate: 330,
-      traits: ['light armor penetrating'],
+      traits: ["light armor penetrating"],
     },
     offensiveRange: [1.25, 0, 0],
     coverage: [1, 0.5, 0, 0, 0],
@@ -297,15 +297,15 @@ export const primaryWeaponData = [
   {
     id: 14,
     color: primaryWeaponColor,
-    type: 'Shotgun',
-    name: 'SG-225IE Breaker Incendiary',
+    type: "Shotgun",
+    name: "SG-225IE Breaker Incendiary",
     icon: breakInc,
     ingameStats: {
       damage: 240,
       capacity: 25,
       recoil: 41,
       fireRate: 330,
-      traits: ['light armor penetrating, incendiary'],
+      traits: ["light armor penetrating, incendiary"],
     },
     offensiveRange: [1, 0.5, 0],
     coverage: [2, 0.5, 0.5, 0, 0],
@@ -316,15 +316,15 @@ export const primaryWeaponData = [
   {
     id: 15,
     color: primaryWeaponColor,
-    type: 'Explosive',
-    name: 'CB-9 Exploding Crossbow',
+    type: "Explosive",
+    name: "CB-9 Exploding Crossbow",
     icon: crossbow,
     ingameStats: {
       damage: 620,
       capacity: 5,
       recoil: 35,
       fireRate: 50,
-      traits: ['explosive', 'one handed'],
+      traits: ["explosive", "one handed"],
     },
     offensiveRange: [1, 1, 0],
     coverage: [1, 1, 1, 0.2, 0],
@@ -335,15 +335,15 @@ export const primaryWeaponData = [
   {
     id: 16,
     color: primaryWeaponColor,
-    type: 'Explosive',
-    name: 'JAR-5 Dominator',
+    type: "Explosive",
+    name: "JAR-5 Dominator",
     icon: dominator,
     ingameStats: {
       damage: 275,
       capacity: 15,
       recoil: 75,
       fireRate: 250,
-      traits: ['medium armor penetrating', 'explosive damage type'],
+      traits: ["medium armor penetrating", "explosive damage type"],
     },
     offensiveRange: [1, 1, 0],
     coverage: [0.5, 1, 1, 0, 0],
@@ -354,15 +354,15 @@ export const primaryWeaponData = [
   {
     id: 17,
     color: primaryWeaponColor,
-    type: 'Explosive',
-    name: 'R-36 Eruptor',
+    type: "Explosive",
+    name: "R-36 Eruptor",
     icon: eruptor,
     ingameStats: {
       damage: 455,
       capacity: 5,
       recoil: 75,
       fireRate: 25,
-      traits: ['medium armor penetrating', 'explosive'],
+      traits: ["medium armor penetrating", "explosive"],
     },
     offensiveRange: [0.5, 1, 0.75],
     coverage: [1, 1, 0.75, 0.25, 0] /* to re-evaluate */,
@@ -373,14 +373,14 @@ export const primaryWeaponData = [
   {
     id: 18,
     color: primaryWeaponColor,
-    type: 'Energy',
-    name: 'LAS-5 Scythe',
+    type: "Energy",
+    name: "LAS-5 Scythe",
     icon: scythe,
     ingameStats: {
       dps: 350,
       fireLimit: 8,
       recoil: 0,
-      traits: ['light armor penetrating', 'beam', 'heat'],
+      traits: ["light armor penetrating", "beam", "heat"],
     },
     offensiveRange: [1, 1, 0.5],
     coverage: [1, 0.5, 0, 0, 0],
@@ -391,15 +391,15 @@ export const primaryWeaponData = [
   {
     id: 19,
     color: primaryWeaponColor,
-    type: 'Energy',
-    name: 'LAS-16 Sickle',
+    type: "Energy",
+    name: "LAS-16 Sickle",
     icon: sickle,
     ingameStats: {
       damage: 55,
       fireLimit: 9,
       recoil: 2,
       fireRate: 750,
-      traits: ['light armor penetrating', 'heat'],
+      traits: ["light armor penetrating", "heat"],
     },
     offensiveRange: [1, 1, 0.25],
     coverage: [1, 0.5, 0, 0, 0],
@@ -410,15 +410,15 @@ export const primaryWeaponData = [
   {
     id: 20,
     color: primaryWeaponColor,
-    type: 'Energy',
-    name: 'PLAS-1 Scorcher',
+    type: "Energy",
+    name: "PLAS-1 Scorcher",
     icon: scor,
     ingameStats: {
       damage: 200,
       capacity: 20,
       recoil: 20,
       fireRate: 350,
-      traits: ['medium armor penetrating', 'explosive'],
+      traits: ["medium armor penetrating", "explosive"],
     },
     offensiveRange: [0.8, 1, 0],
     coverage: [1, 1, 1, 0, 0],
@@ -429,15 +429,15 @@ export const primaryWeaponData = [
   {
     id: 21,
     color: primaryWeaponColor,
-    type: 'SMG',
-    name: 'MP-98 Knight',
+    type: "SMG",
+    name: "MP-98 Knight",
     icon: knight,
     ingameStats: {
       damage: 70,
       fireLimit: 50,
       recoil: 15,
       fireRate: 1380,
-      traits: ['light armor penetrating', 'one handed'],
+      traits: ["light armor penetrating", "one handed"],
     },
     offensiveRange: [1.2, 0.25, 0],
     coverage: [1, 0.5, 0, 0, 0],
@@ -448,15 +448,15 @@ export const primaryWeaponData = [
   {
     id: 22,
     color: primaryWeaponColor,
-    type: 'SMG',
-    name: 'SMG-72 Pummeler',
+    type: "SMG",
+    name: "SMG-72 Pummeler",
     icon: pummeler,
     ingameStats: {
       damage: 70,
       fireLimit: 45,
       recoil: 10,
       fireRate: 475,
-      traits: ['light armor penetrating', 'one handed'],
+      traits: ["light armor penetrating", "one handed"],
     },
     offensiveRange: [1, 0.5, 0],
     coverage: [1, 0.5, 0, 0, 0],
@@ -467,15 +467,15 @@ export const primaryWeaponData = [
   {
     id: 23,
     color: primaryWeaponColor,
-    type: 'Assault rifle',
-    name: 'AR-61 Tenderizer',
+    type: "Assault rifle",
+    name: "AR-61 Tenderizer",
     icon: tenderizer,
     ingameStats: {
       damage: 105,
       fireLimit: 35,
       recoil: 10,
       fireRate: 850,
-      traits: ['light armor penetrating'],
+      traits: ["light armor penetrating"],
     },
     offensiveRange: [1, 1, 0.5],
     coverage: [1, 0.5, 0, 0, 0],
@@ -486,15 +486,15 @@ export const primaryWeaponData = [
   {
     id: 24,
     color: primaryWeaponColor,
-    type: 'Energy',
-    name: 'PLAS-101 Purifier',
+    type: "Energy",
+    name: "PLAS-101 Purifier",
     icon: purifier,
     ingameStats: {
       damage: 500,
       fireLimit: 15,
       recoil: 20,
       fireRate: 1000,
-      traits: ['medium armor penetrating', 'Chargeup', 'explosive'],
+      traits: ["medium armor penetrating", "Chargeup", "explosive"],
     },
     offensiveRange: [1, 1, 0],
     coverage: [1, 1, 1, 0, 0],
@@ -505,15 +505,15 @@ export const primaryWeaponData = [
   {
     id: 25,
     color: primaryWeaponColor,
-    type: 'Assault rifle',
-    name: 'AR-23A Liberator Carbine',
+    type: "Assault rifle",
+    name: "AR-23A Liberator Carbine",
     icon: liberatorCarbine,
     ingameStats: {
       damage: 80,
       capacity: 45,
       recoil: 26,
       fireRate: 920,
-      traits: ['light armor penetrating'],
+      traits: ["light armor penetrating"],
     },
     offensiveRange: [1.2, 0.8, 0.25],
     coverage: [1, 0.5, 0, 0, 0],
@@ -524,15 +524,15 @@ export const primaryWeaponData = [
   {
     id: 26,
     color: primaryWeaponColor,
-    type: 'Shotgun',
-    name: 'SG-451 Cookout',
+    type: "Shotgun",
+    name: "SG-451 Cookout",
     icon: cookout,
     ingameStats: {
       damage: 320,
       capacity: 16,
       recoil: 100,
       fireRate: 80,
-      traits: ['light armor penetrating', 'rounds reload', 'incendiary'],
+      traits: ["light armor penetrating", "rounds reload", "incendiary"],
     },
     offensiveRange: [1, 0.5, 0],
     coverage: [1, 0.5, 0.2, 0, 0],
@@ -543,14 +543,14 @@ export const primaryWeaponData = [
   {
     id: 27,
     color: primaryWeaponColor,
-    type: 'Special',
-    name: 'FLAM-66 Torcher',
+    type: "Special",
+    name: "FLAM-66 Torcher",
     icon: torcher,
     ingameStats: {
       dps: 375,
       capacity: 80,
       recoil: 3,
-      traits: ['incendiary'],
+      traits: ["incendiary"],
     },
     offensiveRange: [1, 0, 0],
     coverage: [1, 1, 1, 0.5, 0],
@@ -561,15 +561,15 @@ export const primaryWeaponData = [
   {
     id: 28,
     color: primaryWeaponColor,
-    type: 'Marksman rifle',
-    name: 'R-2124 Constitution',
+    type: "Marksman rifle",
+    name: "R-2124 Constitution",
     icon: constitution,
     ingameStats: {
       damage: 180,
       capacity: 5,
       recoil: 43,
       fireRate: 60,
-      traits: ['medium armor penetrating', 'rounds reload'],
+      traits: ["medium armor penetrating", "rounds reload"],
     },
     offensiveRange: [1, 1, 0],
     coverage: [0.5, 1, 0.5, 0, 0],
@@ -580,15 +580,19 @@ export const primaryWeaponData = [
   {
     id: 29,
     color: primaryWeaponColor,
-    type: 'Shotgun',
-    name: 'SG-20 Halt',
+    type: "Shotgun",
+    name: "SG-20 Halt",
     icon: halt,
     ingameStats: {
       damage: 385,
       capacity: 16,
       recoil: 120,
       fireRate: 80,
-      traits: ['light armor penetrating', 'medium armor penetrating', 'rounds reload'],
+      traits: [
+        "light armor penetrating",
+        "medium armor penetrating",
+        "rounds reload",
+      ],
     },
     offensiveRange: [1, 0, 0],
     coverage: [0.75, 1, 0.5, 0, 0],
@@ -599,15 +603,15 @@ export const primaryWeaponData = [
   {
     id: 30,
     color: primaryWeaponColor,
-    type: 'SMG',
-    name: 'SMG-32 Reprimand',
+    type: "SMG",
+    name: "SMG-32 Reprimand",
     icon: reprimand,
     ingameStats: {
       damage: 125,
       capacity: 25,
       recoil: 44,
       fireRate: 490,
-      traits: ['medium armor penetrating'],
+      traits: ["medium armor penetrating"],
     },
     offensiveRange: [1, 0.25, 0],
     coverage: [1, 1, 0.5, 0, 0],
@@ -618,15 +622,15 @@ export const primaryWeaponData = [
   {
     id: 31,
     color: primaryWeaponColor,
-    type: 'Assault rifle',
-    name: 'StA-52 Assault Rifle',
+    type: "Assault rifle",
+    name: "StA-52 Assault Rifle",
     icon: StAAssaultRifle,
     ingameStats: {
       damage: 80,
       fireLimit: 56,
       recoil: 19,
       fireRate: 790,
-      traits: ['light armor penetrating'],
+      traits: ["light armor penetrating"],
     },
     offensiveRange: [1, 1, 0.5],
     coverage: [1, 0.5, 0, 0, 0],
@@ -637,15 +641,15 @@ export const primaryWeaponData = [
   {
     id: 32,
     color: primaryWeaponColor,
-    type: 'SMG',
-    name: 'StA-11 SMG',
+    type: "SMG",
+    name: "StA-11 SMG",
     icon: StASmg,
     ingameStats: {
       damage: 70,
       capacity: 48,
       recoil: 13,
       fireRate: 1050,
-      traits: ['light armor penetrating', 'one handed'],
+      traits: ["light armor penetrating", "one handed"],
     },
     offensiveRange: [1, 0.25, 0],
     coverage: [1, 0.5, 0, 0, 0],
@@ -656,15 +660,15 @@ export const primaryWeaponData = [
   {
     id: 33,
     color: primaryWeaponColor,
-    type: 'Sniper rifle',
-    name: 'PLAS-39 Accelerator Rifle',
+    type: "Sniper rifle",
+    name: "PLAS-39 Accelerator Rifle",
     icon: plasAcceleratorRifle,
     ingameStats: {
       damage: 350,
       capacity: 9,
       recoil: 3,
       fireRate: 550,
-      traits: ['medium armor penetrating', 'explosive'],
+      traits: ["medium armor penetrating", "explosive"],
     },
     offensiveRange: [0.75, 1, 0.5],
     coverage: [1, 1, 0.5, 0, 0],
@@ -675,15 +679,15 @@ export const primaryWeaponData = [
   {
     id: 34,
     color: primaryWeaponColor,
-    type: 'Energy',
-    name: 'LAS-17 Double-Edge Sickle',
+    type: "Energy",
+    name: "LAS-17 Double-Edge Sickle",
     icon: doubleSickle,
     ingameStats: {
       damage: 55,
       fireLimit: 17,
       recoil: 2,
       fireRate: 700,
-      traits: ['medium armor penetrating', 'heat'],
+      traits: ["medium armor penetrating", "heat"],
     },
     offensiveRange: [1, 1, 0],
     coverage: [1, 1, 0.5, 0, 0],
@@ -694,15 +698,15 @@ export const primaryWeaponData = [
   {
     id: 35,
     color: primaryWeaponColor,
-    type: 'Marksman rifle',
-    name: 'R-6 Deadeye',
+    type: "Marksman rifle",
+    name: "R-6 Deadeye",
     icon: deadeye,
     ingameStats: {
       damage: 300,
       capacity: 8,
       recoil: 120,
       fireRate: 100,
-      traits: ['medium armor penetrating', 'rounds reload'],
+      traits: ["medium armor penetrating", "rounds reload"],
     },
     offensiveRange: [0.5, 1, 1],
     coverage: [0.33, 1, 0.5, 0, 0],
@@ -713,15 +717,15 @@ export const primaryWeaponData = [
   {
     id: 36,
     color: primaryWeaponColor,
-    type: 'Marksman rifle',
-    name: 'R-2 Amendment',
+    type: "Marksman rifle",
+    name: "R-2 Amendment",
     icon: amendment,
     ingameStats: {
       damage: 200,
       capacity: 20,
       recoil: 29,
       fireRate: 480,
-      traits: ['light armor penetrating'],
+      traits: ["light armor penetrating"],
     },
     offensiveRange: [0.75, 1, 1],
     coverage: [1, 0.5, 0, 0, 0],
@@ -732,15 +736,15 @@ export const primaryWeaponData = [
   {
     id: 37,
     color: primaryWeaponColor,
-    type: 'Assault rifle',
-    name: 'AR-32 Pacifier',
+    type: "Assault rifle",
+    name: "AR-32 Pacifier",
     icon: pacifier,
     ingameStats: {
       damage: 50,
       capacity: 40,
       recoil: 11,
       fireRate: 700,
-      traits: ['medium armor penetrating', 'stun'],
+      traits: ["medium armor penetrating", "stun"],
     },
     offensiveRange: [1, 1, 0.5],
     coverage: [1, 1, 0.5, 0, 0],
@@ -751,15 +755,15 @@ export const primaryWeaponData = [
   {
     id: 38,
     color: primaryWeaponColor,
-    type: 'Special',
-    name: 'VG-70 Variable',
+    type: "Special",
+    name: "VG-70 Variable",
     icon: variable,
     ingameStats: {
       damage: 85,
       capacity: 49,
       recoil: 7,
       fireRate: 550,
-      traits: ['light armor penetrating'],
+      traits: ["light armor penetrating"],
     },
     offensiveRange: [1, 1, 0.25],
     coverage: [1, 0.5, 0, 0, 0],
@@ -769,15 +773,15 @@ export const primaryWeaponData = [
   {
     id: 39,
     color: primaryWeaponColor,
-    type: 'Shotgun',
-    name: 'M90A Shotgun',
+    type: "Shotgun",
+    name: "M90A Shotgun",
     icon: haloShotgun,
     ingameStats: {
       damage: 605,
       capacity: 6,
       recoil: 83,
       fireRate: 80,
-      traits: ['light armor penetrating', 'rounds reload'],
+      traits: ["light armor penetrating", "rounds reload"],
     },
     offensiveRange: [1, 0.5, 0],
     coverage: [1, 0.5, 0, 0, 0],
@@ -788,15 +792,15 @@ export const primaryWeaponData = [
   {
     id: 40,
     color: primaryWeaponColor,
-    type: 'SMG',
-    name: 'M7S SMG',
+    type: "SMG",
+    name: "M7S SMG",
     icon: haloSmg,
     ingameStats: {
       damage: 70,
       capacity: 48,
       recoil: 8,
       fireRate: 872,
-      traits: ['light armor penetrating', 'one handed', 'suppressed'],
+      traits: ["light armor penetrating", "one handed", "suppressed"],
     },
     offensiveRange: [1, 0.5, 0],
     coverage: [1, 0.5, 0, 0, 0],
@@ -807,15 +811,15 @@ export const primaryWeaponData = [
   {
     id: 41,
     color: primaryWeaponColor,
-    type: 'Assault rifle',
-    name: 'MA5C Assault Rifle',
+    type: "Assault rifle",
+    name: "MA5C Assault Rifle",
     icon: haloAr,
     ingameStats: {
       damage: 80,
       capacity: 32,
       recoil: 19,
       fireRate: 640,
-      traits: ['medium armor penetrating'],
+      traits: ["medium armor penetrating"],
     },
     offensiveRange: [1, 1, 0],
     coverage: [1, 1, 0.5, 0, 0],
@@ -826,15 +830,15 @@ export const primaryWeaponData = [
   {
     id: 42,
     color: primaryWeaponColor,
-    type: 'Assault rifle',
-    name: 'AR-2 Coyote',
+    type: "Assault rifle",
+    name: "AR-2 Coyote",
     icon: coyote,
     ingameStats: {
       damage: 75,
       capacity: 45,
       recoil: 17,
       fireRate: 600,
-      traits: ['medium armor penetrating', 'incendiary'],
+      traits: ["medium armor penetrating", "incendiary"],
     },
     offensiveRange: [1, 1, 0.5],
     coverage: [1.2, 1.2, 1.2, 0, 0],
@@ -845,15 +849,15 @@ export const primaryWeaponData = [
   {
     id: 43,
     color: primaryWeaponColor,
-    type: 'Assault rifle',
-    name: 'AR/GL-21 One-Two',
+    type: "Assault rifle",
+    name: "AR/GL-21 One-Two",
     icon: onetwo,
     ingameStats: {
       damage: 95,
       capacity: 40,
       recoil: 13,
       fireRate: 650,
-      traits: ['light armor penetrating', 'explosive'],
+      traits: ["light armor penetrating", "explosive"],
     },
     offensiveRange: [1, 1, 0.5],
     coverage: [1, 0.75, 0.25, 0, 0],
@@ -864,15 +868,15 @@ export const primaryWeaponData = [
   {
     id: 44,
     color: primaryWeaponColor,
-    type: 'Shotgun',
-    name: 'DBS-2 Double Freedom',
+    type: "Shotgun",
+    name: "DBS-2 Double Freedom",
     icon: doublefreedom,
     ingameStats: {
       damage: 840,
       capacity: 2,
       recoil: 163,
       fireRate: 650,
-      traits: ['medium armor penetrating', 'rounds reload'],
+      traits: ["medium armor penetrating", "rounds reload"],
     },
     offensiveRange: [1, 0.5, 0],
     coverage: [1, 1, 0.5, 0, 0],
@@ -883,15 +887,15 @@ export const primaryWeaponData = [
   {
     id: 45,
     color: primaryWeaponColor,
-    type: 'Assault rifle',
-    name: 'AR-59 Suppressor',
+    type: "Assault rifle",
+    name: "AR-59 Suppressor",
     // icon: suppressor,
     ingameStats: {
       damage: 80,
       capacity: 45,
       recoil: 13,
       fireRate: 850,
-      traits: ['light armor penetrating', 'suppressed'],
+      traits: ["light armor penetrating", "suppressed"],
     },
     offensiveRange: [1, 1, 0.5],
     coverage: [1, 0.75, 0.25, 0, 0],
@@ -902,17 +906,35 @@ export const primaryWeaponData = [
   {
     id: 46,
     color: primaryWeaponColor,
-    type: 'Marksman rifle',
-    name: 'R-72 Censor',
+    type: "Marksman rifle",
+    name: "R-72 Censor",
     // icon: censor,
     ingameStats: {
       damage: 165,
       capacity: 20,
       recoil: 13,
       fireRate: 400,
-      traits: ['light armor penetrating', 'suppressed'],
+      traits: ["light armor penetrating", "suppressed"],
     },
     offensiveRange: [1, 1, 1],
+    coverage: [1, 0.5, 0, 0, 0],
+    stun: false,
+    sluggish: false,
+    objectives: [],
+  },
+  {
+    id: 13,
+    color: primaryWeaponColor,
+    type: "Energy",
+    name: "LAS-16 Trident",
+    // icon: trident,
+    ingameStats: {
+      dps: 1800,
+      fireLimit: 8,
+      recoil: 0,
+      traits: ["light armor penetrating", "beam", "heat"],
+    },
+    offensiveRange: [1.25, 0, 0],
     coverage: [1, 0.5, 0, 0, 0],
     stun: false,
     sluggish: false,
