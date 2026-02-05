@@ -1,22 +1,23 @@
-import thermite from "../assets/weapons/thermite.webp";
-import incendiary from "../assets/weapons/incendiary.webp";
-import smoke from "../assets/weapons/smoke.webp";
-import frag from "../assets/weapons/frag.webp";
-import impact from "../assets/weapons/impact.webp";
-import stun from "../assets/weapons/stun.webp";
-import he from "../assets/weapons/he.webp";
-import incendiaryImpact from "../assets/weapons/incendiaryImpact.webp";
-import knife from "../assets/weapons/knife.webp";
-import gasGrenade from "../assets/weapons/gasGrenade.webp";
-import seekerGrenade from "../assets/weapons/seeker-grenade.webp";
-import dynamite from "../assets/weapons/dynamite.webp";
-import pyrotech from "../assets/weapons/pyrotech.webp";
-import urchin from "../assets/weapons/urchin.webp";
-import arcNade from "../assets/weapons/arcNade.webp";
-import pineapple from "../assets/weapons/pineapple.webp";
-import shieldgrenade from "../assets/weapons/gsh39shield.webp";
-import smokescreen from "../assets/weapons/g89smokescreen.png";
-import { colors } from "./constants";
+import thermite from '../assets/weapons/thermite.webp';
+import incendiary from '../assets/weapons/incendiary.webp';
+import smoke from '../assets/weapons/smoke.webp';
+import frag from '../assets/weapons/frag.webp';
+import impact from '../assets/weapons/impact.webp';
+import stun from '../assets/weapons/stun.webp';
+import he from '../assets/weapons/he.webp';
+import incendiaryImpact from '../assets/weapons/incendiaryImpact.webp';
+import knife from '../assets/weapons/knife.webp';
+import gasGrenade from '../assets/weapons/gasGrenade.webp';
+import seekerGrenade from '../assets/weapons/seeker-grenade.webp';
+import dynamite from '../assets/weapons/dynamite.webp';
+import pyrotech from '../assets/weapons/pyrotech.webp';
+import urchin from '../assets/weapons/urchin.webp';
+import arcNade from '../assets/weapons/arcNade.webp';
+import pineapple from '../assets/weapons/pineapple.webp';
+import shieldgrenade from '../assets/weapons/gsh39shield.webp';
+import luremine from '../assets/weapons/tm01luremine.webp';
+import smokescreen from '../assets/weapons/g89smokescreen.png';
+import { colors } from './constants';
 
 const { grenadeColor } = colors;
 
@@ -24,7 +25,7 @@ export const grenadeData = [
   {
     id: 1,
     color: grenadeColor,
-    name: "G-6 Frag",
+    name: 'G-6 Frag',
     icon: frag,
     ingameStats: {
       damage: 250,
@@ -41,7 +42,7 @@ export const grenadeData = [
   {
     id: 2,
     color: grenadeColor,
-    name: "G-12 High Explosive",
+    name: 'G-12 High Explosive',
     icon: he,
     ingameStats: {
       damage: 800,
@@ -58,14 +59,14 @@ export const grenadeData = [
   {
     id: 3,
     color: grenadeColor,
-    name: "G-10 Incendiary",
+    name: 'G-10 Incendiary',
     icon: incendiary,
     ingameStats: {
       damage: 300,
       penetration: 3,
       radius: 7,
       fuse: 2.9,
-      traits: ["incendiary"],
+      traits: ['incendiary'],
     },
     offensiveRange: [0.8, 1, 0],
     coverage: [1.5, 1, 0.5, 0, 0],
@@ -75,7 +76,7 @@ export const grenadeData = [
   {
     id: 4,
     color: grenadeColor,
-    name: "G-16 Impact",
+    name: 'G-16 Impact',
     icon: impact,
     ingameStats: {
       damage: 400,
@@ -92,7 +93,7 @@ export const grenadeData = [
   {
     id: 5,
     color: grenadeColor,
-    name: "G-23 Stun",
+    name: 'G-23 Stun',
     icon: stun,
     ingameStats: {
       damage: 0,
@@ -109,7 +110,7 @@ export const grenadeData = [
   {
     id: 6,
     color: grenadeColor,
-    name: "G-3 Smoke",
+    name: 'G-3 Smoke',
     icon: smoke,
     ingameStats: {
       damage: 0,
@@ -126,7 +127,7 @@ export const grenadeData = [
   {
     id: 7,
     color: grenadeColor,
-    name: "G-123 Thermite",
+    name: 'G-123 Thermite',
     icon: thermite,
     ingameStats: {
       damage: 2000,
@@ -143,14 +144,14 @@ export const grenadeData = [
   {
     id: 8,
     color: grenadeColor,
-    name: "G-13 Incendiary Impact",
+    name: 'G-13 Incendiary Impact',
     icon: incendiaryImpact,
     ingameStats: {
       damage: 150,
       penetration: 3,
       radius: 7,
       fuse: 0,
-      traits: ["Incendiary"],
+      traits: ['Incendiary'],
     },
     offensiveRange: [1, 1, 0],
     coverage: [1, 1, 0, 0, 0],
@@ -160,12 +161,12 @@ export const grenadeData = [
   {
     id: 9,
     color: grenadeColor,
-    name: "K-2 Throwing Knife",
+    name: 'K-2 Throwing Knife',
     icon: knife,
     ingameStats: {
       damage: 250,
       penetration: 3,
-      traits: ["medium armor penetrating"],
+      traits: ['medium armor penetrating'],
     },
     offensiveRange: [1, 0, 0],
     coverage: [0.75, 0.75, 0.2, 0, 0],
@@ -175,13 +176,13 @@ export const grenadeData = [
   {
     id: 10,
     color: grenadeColor,
-    name: "G-4 Gas",
+    name: 'G-4 Gas',
     icon: gasGrenade,
     ingameStats: {
       fuse: 2.9,
       penetration: 6,
       radius: 7,
-      traits: ["Caustic"],
+      traits: ['Caustic'],
     },
     offensiveRange: [1, 1, 0],
     coverage: [1, 0.5, 0, 0, 0],
@@ -191,13 +192,13 @@ export const grenadeData = [
   {
     id: 11,
     color: grenadeColor,
-    name: "G-50 Seeker",
+    name: 'G-50 Seeker',
     icon: seekerGrenade,
     ingameStats: {
       damage: 400,
       penetration: 4,
       radius: 7,
-      traits: ["medium armor penetrating"],
+      traits: ['medium armor penetrating'],
     },
     offensiveRange: [0.5, 1, 0.5],
     coverage: [1, 1, 1, 0.5, 0],
@@ -207,14 +208,14 @@ export const grenadeData = [
   {
     id: 12,
     color: grenadeColor,
-    name: "TED-63 Dynamite",
+    name: 'TED-63 Dynamite',
     icon: dynamite,
     ingameStats: {
       damage: 700,
       penetration: 4,
       radius: 12,
       fuse: 5,
-      traits: ["heavy armor penetrating"],
+      traits: ['heavy armor penetrating'],
     },
     offensiveRange: [0.5, 1, 0.5],
     coverage: [1, 1, 1, 0.5, 0],
@@ -224,13 +225,13 @@ export const grenadeData = [
   {
     id: 13,
     color: grenadeColor,
-    name: "G-142 Pyrotech",
+    name: 'G-142 Pyrotech',
     icon: pyrotech,
     ingameStats: {
       damage: 50,
       penetration: 3,
       radius: 5,
-      traits: ["incendiary"],
+      traits: ['incendiary'],
     },
     offensiveRange: [1, 1, 0],
     coverage: [1, 1, 0.8, 0.5, 0],
@@ -240,13 +241,13 @@ export const grenadeData = [
   {
     id: 14,
     color: grenadeColor,
-    name: "G-109 Urchin",
+    name: 'G-109 Urchin',
     icon: urchin,
     ingameStats: {
       damage: 0,
       penetration: 6,
       radius: 4,
-      traits: ["stun"],
+      traits: ['stun'],
     },
     offensiveRange: [1, 1, 0],
     coverage: [0, 0, 0, 0, 0],
@@ -256,13 +257,13 @@ export const grenadeData = [
   {
     id: 15,
     color: grenadeColor,
-    name: "G-31 Arc",
+    name: 'G-31 Arc',
     icon: arcNade,
     ingameStats: {
       damage: 100,
       penetration: 4,
       radius: 10,
-      traits: ["arc"],
+      traits: ['arc'],
     },
     offensiveRange: [0.5, 1, 0],
     coverage: [1.5, 1, 0.5, 0.2, 0],
@@ -272,7 +273,7 @@ export const grenadeData = [
   {
     id: 16,
     color: grenadeColor,
-    name: "G-7 Pineapple",
+    name: 'G-7 Pineapple',
     icon: pineapple,
     ingameStats: {
       damage: 300,
@@ -289,7 +290,7 @@ export const grenadeData = [
   {
     id: 17,
     color: grenadeColor,
-    name: "G-89 Smokescreen",
+    name: 'G-89 Smokescreen',
     icon: smokescreen,
     ingameStats: {
       damage: 0,
@@ -304,9 +305,9 @@ export const grenadeData = [
     objectives: [],
   },
   {
-    id: 17,
+    id: 18,
     color: grenadeColor,
-    name: "G/SH-39 Shield",
+    name: 'G/SH-39 Shield',
     icon: shieldgrenade,
     ingameStats: {
       damage: 0,
@@ -317,6 +318,23 @@ export const grenadeData = [
     },
     offensiveRange: [0, 0, 0],
     coverage: [0, 0, 0, 0, 0],
+    stun: false,
+    objectives: [],
+  },
+  {
+    id: 19,
+    color: grenadeColor,
+    name: 'TM-01 Lure Mine',
+    icon: luremine,
+    ingameStats: {
+      damage: 1000,
+      penetration: 4,
+      radius: 7,
+      fuse: 0,
+      traits: [],
+    },
+    offensiveRange: [1, 1, 0],
+    coverage: [1, 1, 0.8, 0.5, 0],
     stun: false,
     objectives: [],
   },
