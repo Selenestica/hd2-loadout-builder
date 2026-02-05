@@ -43,6 +43,9 @@ import haloSmg from "../assets/weapons/haloSmg.webp";
 import coyote from "../assets/weapons/coyote.webp";
 import onetwo from "../assets/weapons/onetwo.webp";
 import doublefreedom from "../assets/weapons/doublefreedom.webp";
+import censor from "../assets/weapons/r72censor.webp";
+import suppressor from "../assets/weapons/ar59suppressor.webp";
+import trident from "../assets/weapons/las16trident.webp";
 
 const { primaryWeaponColor } = colors;
 
@@ -889,7 +892,7 @@ export const primaryWeaponData = [
     color: primaryWeaponColor,
     type: "Assault rifle",
     name: "AR-59 Suppressor",
-    // icon: suppressor,
+    icon: suppressor,
     ingameStats: {
       damage: 80,
       capacity: 45,
@@ -908,7 +911,7 @@ export const primaryWeaponData = [
     color: primaryWeaponColor,
     type: "Marksman rifle",
     name: "R-72 Censor",
-    // icon: censor,
+    icon: censor,
     ingameStats: {
       damage: 165,
       capacity: 20,
@@ -927,7 +930,7 @@ export const primaryWeaponData = [
     color: primaryWeaponColor,
     type: "Energy",
     name: "LAS-16 Trident",
-    // icon: trident,
+    icon: trident,
     ingameStats: {
       dps: 1800,
       fireLimit: 8,

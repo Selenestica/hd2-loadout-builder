@@ -14,6 +14,8 @@ import pyrotech from "../assets/weapons/pyrotech.webp";
 import urchin from "../assets/weapons/urchin.webp";
 import arcNade from "../assets/weapons/arcNade.webp";
 import pineapple from "../assets/weapons/pineapple.webp";
+import shieldgrenade from "../assets/weapons/gsh39shield.webp";
+import smokescreen from "../assets/weapons/g89smokescreen.png";
 import { colors } from "./constants";
 
 const { grenadeColor } = colors;
@@ -288,7 +290,7 @@ export const grenadeData = [
     id: 17,
     color: grenadeColor,
     name: "G-89 Smokescreen",
-    // icon: pineapple,
+    icon: smokescreen,
     ingameStats: {
       damage: 0,
       penetration: 0,
@@ -305,7 +307,7 @@ export const grenadeData = [
     id: 17,
     color: grenadeColor,
     name: "G/SH-39 Shield",
-    // icon: shieldgrenade,
+    icon: shieldgrenade,
     ingameStats: {
       damage: 0,
       penetration: 0,

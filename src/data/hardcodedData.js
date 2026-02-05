@@ -76,6 +76,11 @@ import eatNapalm from "../assets/eatNapalm.webp";
 import chainsaw from "../assets/chainsaw.webp";
 import hotdog from "../assets/hotdog.webp";
 import minigun from "../assets/minigun.webp";
+import c4pack from "../assets/c4pack.svg";
+import breachinghammer from "../assets/breachinghammer.svg";
+import beltfedgrenadelauncher from "../assets/beltfedgrenadelauncher.svg";
+import bastiontank from "../assets/bastiontank.svg";
+import eat411leveller from "../assets/eat411leveller.svg";
 
 import { armorData } from "./armors";
 import { grenadeData } from "./grenades";
@@ -1011,7 +1016,7 @@ export const strategemData = [
   {
     id: 79,
     name: "B/MD C4 Pack",
-    // icon: c4pack,
+    icon: c4pack,
     type: "support-weapon",
     color: stratBlue,
     offensiveRange: [0.8, 1, 0],
@@ -1024,7 +1029,7 @@ export const strategemData = [
   {
     id: 80,
     name: "CQC-20 Breaching Hammer",
-    // icon: hammer,
+    icon: breachinghammer,
     offensiveRange: [0.5, 0, 0],
     type: "support-weapon",
     color: stratBlue,
@@ -1036,7 +1041,7 @@ export const strategemData = [
   {
     id: 81,
     name: "EAT-411 Leveller",
-    // icon: leveller,
+    icon: eat411leveller,
     offensiveRange: [0, 0, 1],
     type: "support-weapon",
     color: stratBlue,
@@ -1048,7 +1053,7 @@ export const strategemData = [
   {
     id: 82,
     name: "GL-28 Belt-Fed Grenade Launcher",
-    // icon: bfgrenadelauncher,
+    icon: beltfedgrenadelauncher,
     offensiveRange: [1, 1, 0],
     type: "support-weapon",
     color: stratBlue,
@@ -1060,7 +1065,7 @@ export const strategemData = [
   {
     id: 83,
     name: "TD-220 Bastion",
-    // icon: bastiontank,
+    icon: bastiontank,
     offensiveRange: [1, 1, 0.5],
     type: "support-weapon",
     color: stratBlue,
