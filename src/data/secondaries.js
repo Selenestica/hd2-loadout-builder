@@ -19,6 +19,8 @@ import haloPistol from "../assets/weapons/haloPistol.webp";
 import machete from "../assets/weapons/machete.webp";
 import hatchet from "../assets/weapons/hatchet.webp";
 import reeducator from "../assets/weapons/p35reeducator.webp";
+import veto from "../assets/weapons/p69veto.webp";
+import shovel from "../assets/weapons/cqc73entrenchmenttool.webp";
 
 const { secondaryWeaponColor } = colors;
 
@@ -393,9 +395,47 @@ export const secondaryWeaponData = [
       capacity: 6,
       recoil: 10,
       fireRate: 110,
-      traits: ["one handed", "caustic"],
+      traits: ["one handed", "caustic", "heavy armor penetrating"],
     },
     offensiveRange: [1, 0.75, 0],
+    coverage: [1, 0.5, 0, 0, 0],
+    sluggish: false,
+    stun: false,
+    objectives: [],
+  },
+  {
+    id: 21,
+    color: secondaryWeaponColor,
+    type: "pistol",
+    name: "P-69 Veto",
+    icon: veto,
+    ingameStats: {
+      damage: 105,
+      capacity: 12,
+      recoil: 30,
+      fireRate: 750,
+      traits: ["one handed", "medium armor penetrating"],
+    },
+    offensiveRange: [1, 0.75, 0],
+    coverage: [1, 0.5, 0, 0, 0],
+    sluggish: false,
+    stun: false,
+    objectives: [],
+  },
+  {
+    id: 22,
+    color: secondaryWeaponColor,
+    type: "melee",
+    name: "CQC-73 Entrenchment Tool",
+    icon: shovel,
+    ingameStats: {
+      /* damage: 125,
+            capacity: 7, */
+      recoil: 8,
+      /* fireRate: 1000, */
+      traits: ["medium armor penetrating", "one handed"],
+    },
+    offensiveRange: [0.5, 0, 0],
     coverage: [1, 0.5, 0, 0, 0],
     sluggish: false,
     stun: false,

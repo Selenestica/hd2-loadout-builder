@@ -81,6 +81,8 @@ import breachinghammer from "../assets/breachinghammer.svg";
 import beltfedgrenadelauncher from "../assets/beltfedgrenadelauncher.svg";
 import bastiontank from "../assets/bastiontank.svg";
 import eat411leveller from "../assets/eat411leveller.svg";
+import gasmortarsentry from "../assets/gasmortarsentry.svg";
+import cremator from "../assets/cremator.svg";
 
 import { armorData } from "./armors";
 import { grenadeData } from "./grenades";
@@ -1072,6 +1074,31 @@ export const strategemData = [
     coverage: [0.6, 0.6, 0.6, 0.6, 0.6],
     supportSlotNecessary: false,
     uptime: "low",
+    objectives: [],
+  },
+  {
+    id: 84,
+    name: "B/FLAM-80 Cremator",
+    icon: cremator,
+    offensiveRange: [1, 1, 0.5],
+    type: "support-weapon",
+    color: stratBlue,
+    coverage: [0.6, 0.6, 0.6, 0.6, 0.6],
+    supportSlotNecessary: true,
+    uptime: "very high",
+    objectives: [],
+    hasBackpack: true,
+  },
+  {
+    id: 85,
+    name: "Gas Mortar Sentry",
+    icon: gasmortarsentry,
+    offensiveRange: [1, 1, 0.5],
+    type: "turret",
+    color: stratGreen,
+    coverage: [0.6, 0.6, 0.6, 0.6, 0.6],
+    supportSlotNecessary: false,
+    uptime: "medium",
     objectives: [],
   },
 ];

@@ -663,4 +663,34 @@ export const armorData = [
     icon: mediumSVG,
     type: "heavy",
   },
+  {
+    id: 69,
+    name: "light concussive padding",
+    bonus: "concussive padding",
+    abbr: "CPA",
+    longText:
+      "Provides 50% resistance to explosive damage. Provides 25% resistance to gas damage and effects. Sidearm recoil reduced by 30%.",
+    icon: lightSVG,
+    type: "heavy",
+  },
+  {
+    id: 70,
+    name: "medium concussive padding",
+    bonus: "concussive padding",
+    abbr: "CPB",
+    longText:
+      "Provides 50% resistance to explosive damage. Increases initial inventory and holding capacity of throwables by +2.",
+    icon: mediumSVG,
+    type: "heavy",
+  },
+  {
+    id: 71,
+    name: "heavy concussive padding",
+    bonus: "concussive padding",
+    abbr: "CPC",
+    longText:
+      "Provides 50% resistance to explosive damage. Provides a higher armor rating.",
+    icon: heavySVG,
+    type: "heavy",
+  },
 ];
