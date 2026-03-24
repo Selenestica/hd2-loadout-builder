@@ -645,22 +645,22 @@ export const armorData = [
   },
   {
     id: 67,
-    name: "medium supplementary adrenaline",
-    bonus: "supplementary adrenaline",
-    abbr: "SPA",
-    longText:
-      "When the wearer takes damage, they regain some stamina. Provides a higher armor rating.",
-    icon: lightSVG,
-    type: "medium",
-  },
-  {
-    id: 68,
-    name: "medium supplementary adrenaline",
+    name: "medium supp. adrenaline",
     bonus: "supplementary adrenaline",
     abbr: "SPA",
     longText:
       "When the wearer takes damage, they regain some stamina. Provides a higher armor rating.",
     icon: mediumSVG,
+    type: "medium",
+  },
+  {
+    id: 68,
+    name: "heavy supp. adrenaline",
+    bonus: "supplementary adrenaline",
+    abbr: "SPA",
+    longText:
+      "When the wearer takes damage, they regain some stamina. Provides a higher armor rating.",
+    icon: heavySVG,
     type: "heavy",
   },
   {
@@ -671,7 +671,7 @@ export const armorData = [
     longText:
       "Provides 50% resistance to explosive damage. Provides 25% resistance to gas damage and effects. Sidearm recoil reduced by 30%.",
     icon: lightSVG,
-    type: "heavy",
+    type: "light",
   },
   {
     id: 70,
@@ -681,7 +681,7 @@ export const armorData = [
     longText:
       "Provides 50% resistance to explosive damage. Increases initial inventory and holding capacity of throwables by +2.",
     icon: mediumSVG,
-    type: "heavy",
+    type: "medium",
   },
   {
     id: 71,
