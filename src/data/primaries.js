@@ -48,6 +48,7 @@ import suppressor from "../assets/weapons/ar59suppressor.webp";
 import trident from "../assets/weapons/las16trident.webp";
 import sweeper from "../assets/weapons/sg97sweeper.webp";
 import stoker from "../assets/weapons/smgflam34stoker.webp";
+import gallant from "../assets/weapons/smg203gallant.webp";
 
 const { primaryWeaponColor } = colors;
 
@@ -976,6 +977,25 @@ export const primaryWeaponData = [
       recoil: 76,
       fireRate: 150,
       traits: ["medium armor penetrating", "rounds reload"],
+    },
+    offensiveRange: [1, 0.5, 0],
+    coverage: [1, 0.5, 0, 0, 0],
+    stun: false,
+    sluggish: false,
+    objectives: [],
+  },
+  {
+    id: 50,
+    color: primaryWeaponColor,
+    type: "SMG",
+    name: "SMG-203 Gallant",
+    icon: gallant,
+    ingameStats: {
+      damage: 65,
+      capacity: 50,
+      recoil: 15,
+      fireRate: 1380,
+      traits: ["medium armor penetrating", "one handed"],
     },
     offensiveRange: [1, 0.5, 0],
     coverage: [1, 0.5, 0, 0, 0],

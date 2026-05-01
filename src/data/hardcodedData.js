@@ -83,6 +83,9 @@ import bastiontank from "../assets/bastiontank.svg";
 import eat411leveller from "../assets/eat411leveller.svg";
 import gasmortarsentry from "../assets/gasmortarsentry.svg";
 import cremator from "../assets/cremator.svg";
+import expendablemachinegun from "../assets/mgx42bulletstorm.svg";
+import lumberer from "../assets/exo51lumbererexosuit.svg";
+import breakthrough from "../assets/exo55breakthroughexosuit.svg";
 
 import { armorData } from "./armors";
 import { grenadeData } from "./grenades";
@@ -1099,6 +1102,43 @@ export const strategemData = [
     coverage: [0.6, 0.6, 0.6, 0.6, 0.6],
     supportSlotNecessary: false,
     uptime: "medium",
+    objectives: [],
+  },
+  {
+    id: 86,
+    name: "Bullet Storm",
+    icon: expendablemachinegun,
+    offensiveRange: [1, 1, 0],
+    type: "support-weapon",
+    color: stratBlue,
+    coverage: [2, 0.5, 0, 0, 0],
+    supplyBuffedCoverage: [2.5, 1, 0, 0, 0],
+    supportSlotNecessary: true,
+    uptime: "very high",
+    objectives: [],
+  },
+  {
+    id: 87,
+    name: "Lumberer Exosuit",
+    icon: lumberer,
+    offensiveRange: [1, 1, 0.5],
+    type: "support-weapon",
+    color: stratBlue,
+    coverage: [0.7, 0.7, 1.1, 1.1, 0.3],
+    supportSlotNecessary: false,
+    uptime: "low",
+    objectives: [],
+  },
+  {
+    id: 88,
+    name: "Breakthrough Exosuit",
+    icon: breakthrough,
+    offensiveRange: [1, 1, 0.5],
+    type: "support-weapon",
+    color: stratBlue,
+    coverage: [0.7, 0.7, 1.1, 1.1, 0.3],
+    supportSlotNecessary: false,
+    uptime: "low",
     objectives: [],
   },
 ];

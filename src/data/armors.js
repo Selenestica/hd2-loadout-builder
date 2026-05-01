@@ -693,4 +693,34 @@ export const armorData = [
     icon: heavySVG,
     type: "heavy",
   },
+  {
+    id: 72,
+    name: "light oxygenator",
+    bonus: "oxygenator",
+    abbr: "OXY",
+    longText:
+      "Increases the wearer's walking speed and running speed. Increases the speed and duration of slides.",
+    icon: lightSVG,
+    type: "light",
+  },
+  {
+    id: 73,
+    name: "medium oxygenator",
+    bonus: "oxygenator",
+    abbr: "OXY",
+    longText:
+      "Increases the wearer's walking speed and running speed. Increases the speed and duration of slides.",
+    icon: mediumSVG,
+    type: "medium",
+  },
+  {
+    id: 74,
+    name: "heavy oxygenator",
+    bonus: "oxygenator",
+    abbr: "OXY",
+    longText:
+      "Increases the wearer's walking speed and running speed. Increases the speed and duration of slides.",
+    icon: heavySVG,
+    type: "heavy",
+  },
 ];

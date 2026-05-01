@@ -21,6 +21,7 @@ import hatchet from "../assets/weapons/hatchet.webp";
 import reeducator from "../assets/weapons/p35reeducator.webp";
 import veto from "../assets/weapons/p69veto.webp";
 import shovel from "../assets/weapons/cqc73entrenchmenttool.webp";
+import missile from "../assets/weapons/p33missilepistol.webp";
 
 const { secondaryWeaponColor } = colors;
 
@@ -437,6 +438,25 @@ export const secondaryWeaponData = [
     },
     offensiveRange: [0.5, 0, 0],
     coverage: [1, 0.5, 0, 0, 0],
+    sluggish: false,
+    stun: false,
+    objectives: [],
+  },
+  {
+    id: 23,
+    color: secondaryWeaponColor,
+    type: "special",
+    name: "P-33 Missile Pistol",
+    icon: missile,
+    ingameStats: {
+      damage: 1300,
+      capacity: 1,
+      recoil: 312,
+      fireRate: 60,
+      traits: ["heavy armor penetrating", "one handed", "explosive"],
+    },
+    offensiveRange: [1, 0.5, 0],
+    coverage: [0, 0, 0, 0.8, 0.8],
     sluggish: false,
     stun: false,
     objectives: [],
