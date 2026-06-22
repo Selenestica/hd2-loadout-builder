@@ -25,6 +25,8 @@ import GrenadeDetails from "./GrenadeDetails";
 import GrenadeList from "./GrenadeList";
 import ArmorDetails from "./ArmorDetails";
 import ArmorList from "./ArmorList";
+import BoosterDetails from "./BoosterDetails";
+import BoosterList from "./BoosterList";
 import ShareButton from "./ShareButton";
 import OverridesContext from "../context/Overrides";
 import Select from "react-select";
@@ -150,6 +152,9 @@ export default function LoadoutDetails({ ...props }) {
   const newArmor = newLoadout.armor
     ? getFinalData(newLoadout.armor, "armor")
     : null;
+  const newBooster = newLoadout.booster
+    ? getFinalData(newLoadout.booster, "booster")
+    : null;
   const newFaction = newLoadout.faction ?? "Generic";
 
   const activeChanges = useMemo(() => {
@@ -163,6 +168,7 @@ export default function LoadoutDetails({ ...props }) {
       (newSecondary?.id || null) !== selectedLoadout.secondary ||
       (newGrenade?.id || null) !== selectedLoadout.grenade ||
       (newArmor?.id || null) !== selectedLoadout.armor ||
+      (newBooster?.id || null) !== selectedLoadout.booster ||
       newFaction !== selectedLoadout.faction
     );
   }, [
@@ -224,6 +230,7 @@ export default function LoadoutDetails({ ...props }) {
       secondary: null,
       grenade: null,
       armor: null,
+      booster: null,
     }));
   }, []);
 
@@ -430,6 +437,21 @@ export default function LoadoutDetails({ ...props }) {
             )
           }
         />
+        <BoosterDetails
+          booster={newBooster}
+          active={selectedTarget.target === "booster"}
+          reset={() => {
+            setNewLoadout((prev) => ({ ...prev, booster: null }));
+            setSelectedTarget({ type: null, target: null });
+          }}
+          onClick={() =>
+            setSelectedTarget(
+              selectedTarget.target === "booster"
+                ? { type: null, target: null }
+                : { type: "booster", target: "booster" },
+            )
+          }
+        />
 
         <div
           className={css`
@@ -562,6 +584,15 @@ export default function LoadoutDetails({ ...props }) {
             setSelectedTarget({ type: null, target: null });
           }}
           filterArr={[newArmor?.id]}
+        />
+      )}
+      {selectedTarget.type === "booster" && (
+        <BoosterList
+          handleClick={(id) => {
+            setNewLoadout((prev) => ({ ...prev, booster: id }));
+            setSelectedTarget({ type: null, target: null });
+          }}
+          filterArr={[newBooster?.id]}
         />
       )}
       {!selectedTarget.type && (

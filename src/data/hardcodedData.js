@@ -91,7 +91,9 @@ import { armorData } from "./armors";
 import { grenadeData } from "./grenades";
 import { primaryWeaponData } from "./primaries";
 import { secondaryWeaponData } from "./secondaries";
+import { boosterData } from "./boosters";
 
+export { boosterData };
 export { armorData };
 export { grenadeData };
 export { primaryWeaponData };

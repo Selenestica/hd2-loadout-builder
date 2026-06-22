@@ -30,6 +30,7 @@ export default function LoadoutList({ ...props }) {
       secondary: null,
       grenade: null,
       armor: null,
+      booster: null,
     };
     addObject("loadouts", newLoadout).then((loadout) => {
       setLoadouts((current) => [...current, loadout]);
