@@ -86,6 +86,7 @@ import cremator from "../assets/cremator.svg";
 import expendablemachinegun from "../assets/mgx42bulletstorm.svg";
 import lumberer from "../assets/exo51lumbererexosuit.svg";
 import breakthrough from "../assets/exo55breakthroughexosuit.svg";
+import supplyfrv from "../assets/supplyfrv.svg";
 
 import { armorData } from "./armors";
 import { grenadeData } from "./grenades";
@@ -1141,6 +1142,18 @@ export const strategemData = [
     coverage: [0.7, 0.7, 1.1, 1.1, 0.3],
     supportSlotNecessary: false,
     uptime: "low",
+    objectives: [],
+  },
+  {
+    id: 89,
+    name: "Supply FRV",
+    icon: supplyfrv,
+    offensiveRange: [1, 0, 0],
+    type: "support-weapon",
+    color: stratBlue,
+    coverage: [1, 0.5, 0.5, 0.5, 0],
+    supportSlotNecessary: false,
+    uptime: "medium",
     objectives: [],
   },
 ];
