@@ -49,6 +49,7 @@ import trident from "../assets/weapons/las16trident.webp";
 import sweeper from "../assets/weapons/sg97sweeper.webp";
 import stoker from "../assets/weapons/smgflam34stoker.webp";
 import gallant from "../assets/weapons/smg203gallant.webp";
+import hyena from "../assets/weapons/r4hyena.webp";
 
 const { primaryWeaponColor } = colors;
 
@@ -1001,6 +1002,25 @@ export const primaryWeaponData = [
     coverage: [1, 0.5, 0, 0, 0],
     stun: false,
     sluggish: false,
+    objectives: [],
+  },
+  {
+    id: 51,
+    color: primaryWeaponColor,
+    type: "Marksman rifle",
+    name: "R-4 Hyena",
+    icon: hyena,
+    ingameStats: {
+      damage: 220,
+      capacity: 15,
+      recoil: 65,
+      fireRate: 190,
+      traits: ["medium armor penetrating", "incendiary"],
+    },
+    offensiveRange: [1, 1, 1],
+    coverage: [1, 0.5, 0, 0, 0],
+    stun: false,
+    sluggish: true,
     objectives: [],
   },
 ];
