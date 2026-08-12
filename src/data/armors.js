@@ -723,4 +723,34 @@ export const armorData = [
     icon: heavySVG,
     type: "heavy",
   },
+  {
+    id: 75,
+    name: "heavy kinetic displacement mitigation",
+    bonus: "kinetic displacement mitigation",
+    abbr: "KDM",
+    longText:
+      "Provides 50% damage resistance to fire, allowing bearer to rest assured in their inflammability. Gives the wearer a 50% chance to avoid grievous limb injury. Reduces damage taken from impact and collisions by 30%.",
+    icon: heavySVG,
+    type: "heavy",
+  },
+  {
+    id: 76,
+    name: "medium true grit",
+    bonus: "true grit",
+    abbr: "MTG",
+    longText:
+      "Provides +20 Weapon Handling. Provides +30% Reload Speed for Support Weapons.",
+    icon: mediumSVG,
+    type: "medium",
+  },
+  {
+    id: 77,
+    name: "heavy true grit",
+    bonus: "true grit",
+    abbr: "HTG",
+    longText:
+      "Provides +20 Weapon Handling. Provides +30% Reload Speed for Support Weapons.",
+    icon: heavySVG,
+    type: "heavy",
+  },
 ];

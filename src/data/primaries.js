@@ -50,6 +50,7 @@ import sweeper from "../assets/weapons/sg97sweeper.webp";
 import stoker from "../assets/weapons/smgflam34stoker.webp";
 import gallant from "../assets/weapons/smg203gallant.webp";
 import hyena from "../assets/weapons/r4hyena.webp";
+import hotshotlas from "../assets/weapons/hotshotmarksmanrifle.webp";
 
 const { primaryWeaponColor } = colors;
 
@@ -1021,6 +1022,25 @@ export const primaryWeaponData = [
     coverage: [1, 0.5, 0, 0, 0],
     stun: false,
     sluggish: true,
+    objectives: [],
+  },
+  {
+    id: 52,
+    color: primaryWeaponColor,
+    type: "Marksman rifle",
+    name: "Hotshot Marksman Rifle",
+    icon: hotshotlas,
+    ingameStats: {
+      damage: 275,
+      capacity: 12,
+      recoil: 19,
+      fireRate: 210,
+      traits: ["medium armor penetrating"],
+    },
+    offensiveRange: [1, 1, 1],
+    coverage: [1, 0.5, 0, 0, 0],
+    stun: false,
+    sluggish: false,
     objectives: [],
   },
 ];

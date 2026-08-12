@@ -1156,6 +1156,19 @@ export const strategemData = [
     uptime: "medium",
     objectives: [],
   },
+  {
+    id: 90,
+    name: "Meltagun",
+    icon: strat6,
+    offensiveRange: [1, 0, 0],
+    type: "support-weapon",
+    color: stratBlue,
+    coverage: [1, 1, 1, 1, 0],
+    supplyBuffedCoverage: [1.5, 1.5, 1.5, 1.5, 0],
+    supportSlotNecessary: true,
+    uptime: "very high",
+    objectives: [],
+  },
 ];
 
 export function preloadImages() {

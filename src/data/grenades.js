@@ -18,6 +18,7 @@ import shieldgrenade from "../assets/weapons/gsh39shield.webp";
 import luremine from "../assets/weapons/tm01luremine.webp";
 import smokescreen from "../assets/weapons/g89smokescreen.png";
 import giga from "../assets/weapons/g48giga.webp";
+import meltamine from "../assets/weapons/meltamine.webp";
 import { colors } from "./constants";
 
 const { grenadeColor } = colors;
@@ -348,6 +349,23 @@ export const grenadeData = [
       damage: 2000,
       penetration: 5,
       radius: 12,
+      fuse: 0,
+      traits: [],
+    },
+    offensiveRange: [1, 1, 0],
+    coverage: [1, 1, 0.8, 0.5, 0],
+    stun: false,
+    objectives: [],
+  },
+  {
+    id: 21,
+    color: grenadeColor,
+    name: "Meltamine",
+    icon: meltamine,
+    ingameStats: {
+      damage: 2000,
+      penetration: 7,
+      radius: 7,
       fuse: 0,
       traits: [],
     },

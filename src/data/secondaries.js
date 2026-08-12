@@ -22,6 +22,7 @@ import reeducator from "../assets/weapons/p35reeducator.webp";
 import veto from "../assets/weapons/p69veto.webp";
 import shovel from "../assets/weapons/cqc73entrenchmenttool.webp";
 import missile from "../assets/weapons/p33missilepistol.webp";
+import boltpistol from "../assets/weapons/boltpistol.webp";
 
 const { secondaryWeaponColor } = colors;
 
@@ -453,6 +454,25 @@ export const secondaryWeaponData = [
       capacity: 1,
       recoil: 312,
       fireRate: 60,
+      traits: ["heavy armor penetrating", "one handed", "explosive"],
+    },
+    offensiveRange: [1, 0.5, 0],
+    coverage: [0, 0, 0, 0.8, 0.8],
+    sluggish: false,
+    stun: false,
+    objectives: [],
+  },
+  {
+    id: 24,
+    color: secondaryWeaponColor,
+    type: "special",
+    name: "Bolt Pistol",
+    icon: boltpistol,
+    ingameStats: {
+      damage: 500,
+      capacity: 6,
+      recoil: 325,
+      fireRate: 150,
       traits: ["heavy armor penetrating", "one handed", "explosive"],
     },
     offensiveRange: [1, 0.5, 0],
