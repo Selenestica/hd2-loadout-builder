@@ -87,6 +87,7 @@ import expendablemachinegun from "../assets/mgx42bulletstorm.svg";
 import lumberer from "../assets/exo51lumbererexosuit.svg";
 import breakthrough from "../assets/exo55breakthroughexosuit.svg";
 import supplyfrv from "../assets/supplyfrv.svg";
+import meltagun from "../assets/meltagun.svg";
 
 import { armorData } from "./armors";
 import { grenadeData } from "./grenades";
@@ -1159,7 +1160,7 @@ export const strategemData = [
   {
     id: 90,
     name: "Meltagun",
-    icon: strat6,
+    icon: meltagun,
     offensiveRange: [1, 0, 0],
     type: "support-weapon",
     color: stratBlue,
