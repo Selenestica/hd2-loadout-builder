@@ -88,6 +88,7 @@ import lumberer from "../assets/exo51lumbererexosuit.svg";
 import breakthrough from "../assets/exo55breakthroughexosuit.svg";
 import supplyfrv from "../assets/supplyfrv.svg";
 import meltagun from "../assets/meltagun.svg";
+import eaglegasstrike from "../assets/eaglegasstrike.svg";
 
 import { armorData } from "./armors";
 import { grenadeData } from "./grenades";
@@ -1168,6 +1169,17 @@ export const strategemData = [
     supplyBuffedCoverage: [1.5, 1.5, 1.5, 1.5, 0],
     supportSlotNecessary: true,
     uptime: "very high",
+    objectives: [],
+  },
+  {
+    id: 91,
+    name: "Eagle Gas Strike",
+    icon: eaglegasstrike,
+    offensiveRange: [1, 1, 0],
+    type: "eagle",
+    color: stratRed,
+    coverage: [1.5, 1.5, 0.2, 0, 0],
+    uptime: "high",
     objectives: [],
   },
 ];
