@@ -1,6 +1,34 @@
 import lightSVG from "../assets/light.svg";
 import mediumSVG from "../assets/medium.svg";
 import heavySVG from "../assets/heavy.svg";
+import adrenodefibrillator from "../assets/passives/adrenodefibrillator.webp";
+import advancedfiltration from "../assets/passives/advancedfiltration.webp";
+import ballisticpadding from "../assets/passives/ballisticpadding.webp";
+import concussivepadding from "../assets/passives/concussivepadding.webp";
+import democracyprotects from "../assets/passives/democracyprotects.webp";
+import desertstormer from "../assets/passives/desertstormer.webp";
+import electricalconduit from "../assets/passives/electricalconduit.webp";
+import engineeringkit from "../assets/passives/engineeringkit.webp";
+import extrapadding from "../assets/passives/extrapadding.webp";
+import feetfirst from "../assets/passives/feetfirst.webp";
+import fortified from "../assets/passives/fortified.webp";
+import gunslinger from "../assets/passives/gunslinger.webp";
+import inflammable from "../assets/passives/inflammable.webp";
+import integratedexplosives from "../assets/passives/integratedexplosives.webp";
+import kineticdisplacementmitigation from "../assets/passives/kineticdisplacementmitigation.webp";
+import medkit from "../assets/passives/medkit.webp";
+import oxygenator from "../assets/passives/oxygenator.webp";
+import peakphysique from "../assets/passives/peakphysique.webp";
+import reducedsignature from "../assets/passives/reducedsignature.webp";
+import reinforcedepaulettes from "../assets/passives/reinforcedepaulettes.webp";
+import rocksolid from "../assets/passives/rocksolid.webp";
+import scout from "../assets/passives/scout.webp";
+import servoassisted from "../assets/passives/servoassisted.webp";
+import siegeready from "../assets/passives/siegeready.webp";
+import supplementaryadrenaline from "../assets/passives/supplementaryadrenaline.webp";
+import truegrit from "../assets/passives/truegrit.webp";
+import unflinching from "../assets/passives/unflinching.webp";
+import bluntforcemitigation from "../assets/passives/bluntforcemitigation.webp";
 
 export const armorData = [
   {
@@ -10,7 +38,7 @@ export const armorData = [
     abbr: "ENG",
     longText:
       "Further reduces recoil when crouching or prone by 30% Increases initial inventory and holding capacity of grenades by +2.",
-    icon: lightSVG,
+    icon: engineeringkit,
     type: "light",
   },
   {
@@ -19,7 +47,7 @@ export const armorData = [
     bonus: "servo assisted",
     abbr: "SER",
     longText: "Increases throwing range by 30%. Provides +50% limb health.",
-    icon: lightSVG,
+    icon: servoassisted,
     type: "light",
   },
   {
@@ -28,7 +56,7 @@ export const armorData = [
     bonus: "extra padding",
     abbr: "PAD",
     longText: "Provides a higher Armor Rating.",
-    icon: lightSVG,
+    icon: extrapadding,
     type: "light",
   },
   {
@@ -38,7 +66,7 @@ export const armorData = [
     abbr: "PRO",
     longText:
       "50% chance to not die when taking lethal damage. Precents all damage from bleeding if chest hemorrhages.",
-    icon: lightSVG,
+    icon: democracyprotects,
     type: "light",
   },
   {
@@ -48,7 +76,7 @@ export const armorData = [
     abbr: "FOR",
     longText:
       "Further reduces recoil when crouching or prone by 30%. Provides 50% resistance to explosive damage.",
-    icon: lightSVG,
+    icon: fortified,
     type: "light",
   },
   {
@@ -58,7 +86,7 @@ export const armorData = [
     abbr: "MED",
     longText:
       "Increases initial inventory and holding capacity of stims by +2. Increases stim effect duration by 2.0s.",
-    icon: lightSVG,
+    icon: medkit,
     type: "light",
   },
   {
@@ -68,7 +96,7 @@ export const armorData = [
     abbr: "SCT",
     longText:
       "Markers placed on the map will generate radar scans every 2.0s. Reduces range at which enemies can detect the wearer by 30%.",
-    icon: lightSVG,
+    icon: scout,
     type: "light",
   },
   {
@@ -78,7 +106,7 @@ export const armorData = [
     abbr: "ENG",
     longText:
       "Further reduces recoil when crouching or prone by 30% Increases initial inventory and holding capacity of grenades by +2.",
-    icon: mediumSVG,
+    icon: engineeringkit,
     type: "medium",
   },
   {
@@ -88,7 +116,7 @@ export const armorData = [
     abbr: "PRO",
     longText:
       "50% chance to not die when taking lethal damage. Precents all damage from bleeding if chest hemorrhages.",
-    icon: mediumSVG,
+    icon: democracyprotects,
     type: "medium",
   },
   {
@@ -97,7 +125,7 @@ export const armorData = [
     bonus: "extra padding",
     abbr: "PAD",
     longText: "Provides a higher Armor Rating.",
-    icon: mediumSVG,
+    icon: extrapadding,
     type: "medium",
   },
   {
@@ -107,7 +135,7 @@ export const armorData = [
     abbr: "FOR",
     longText:
       "Further reduces recoil when crouching or prone by 30%. Provides 50% resistance to explosive damage.",
-    icon: mediumSVG,
+    icon: fortified,
     type: "medium",
   },
   {
@@ -117,7 +145,7 @@ export const armorData = [
     abbr: "SCT",
     longText:
       "Markers placed on the map will generate radar scans every 2.0s. Reduces range at which enemies can detect the wearer by 30%.",
-    icon: mediumSVG,
+    icon: scout,
     type: "medium",
   },
   {
@@ -126,7 +154,7 @@ export const armorData = [
     bonus: "servo assisted",
     abbr: "SER",
     longText: "Increases throwing range by 30%. Provides +50% limb health.",
-    icon: mediumSVG,
+    icon: servoassisted,
     type: "medium",
   },
   {
@@ -136,7 +164,7 @@ export const armorData = [
     abbr: "MED",
     longText:
       "Increases initial inventory and holding capacity of stims by +2. Increases stim effect duration by 2.0s.",
-    icon: mediumSVG,
+    icon: medkit,
     type: "medium",
   },
   {
@@ -145,7 +173,7 @@ export const armorData = [
     bonus: "electrical conduit",
     abbr: "ARC",
     longText: "Provides 95% resistance to arc damage.",
-    icon: mediumSVG,
+    icon: electricalconduit,
     type: "medium",
   },
   {
@@ -155,7 +183,7 @@ export const armorData = [
     abbr: "ENG",
     longText:
       "Further reduces recoil when crouching or prone by 30% Increases initial inventory and holding capacity of grenades by +2.",
-    icon: heavySVG,
+    icon: engineeringkit,
     type: "heavy",
   },
   {
@@ -164,7 +192,7 @@ export const armorData = [
     bonus: "extra padding",
     abbr: "PAD",
     longText: "Provides a higher Armor Rating.",
-    icon: heavySVG,
+    icon: extrapadding,
     type: "heavy",
   },
   {
@@ -174,7 +202,7 @@ export const armorData = [
     abbr: "FOR",
     longText:
       "Further reduces recoil when crouching or prone by 30%. Provides 50% resistance to explosive damage.",
-    icon: heavySVG,
+    icon: fortified,
     type: "heavy",
   },
   {
@@ -184,7 +212,7 @@ export const armorData = [
     abbr: "SCT",
     longText:
       "Markers placed on the map will generate radar scans every 2.0s. Reduces range at which enemies can detect the wearer by 30%.",
-    icon: heavySVG,
+    icon: scout,
     type: "heavy",
   },
   {
@@ -193,7 +221,7 @@ export const armorData = [
     bonus: "servo assisted",
     abbr: "SER",
     longText: "Increases throwing range by 30%. Provides +50% limb health.",
-    icon: heavySVG,
+    icon: servoassisted,
     type: "heavy",
   },
   {
@@ -203,7 +231,7 @@ export const armorData = [
     abbr: "MED",
     longText:
       "Increases initial inventory and holding capacity of stims by +2. Increases stim effect duration by 2.0s.",
-    icon: heavySVG,
+    icon: medkit,
     type: "heavy",
   },
   {
@@ -212,7 +240,7 @@ export const armorData = [
     bonus: "electrical conduit",
     abbr: "ARC",
     longText: "Provides 95% resistance to arc damage.",
-    icon: lightSVG,
+    icon: electricalconduit,
     type: "light",
   },
   {
@@ -222,7 +250,7 @@ export const armorData = [
     abbr: "PHY",
     longText:
       "Increases melee damage by 50%.  Improves weapons handling with less drag on weapon movement.",
-    icon: lightSVG,
+    icon: peakphysique,
     type: "light",
   },
   {
@@ -232,7 +260,7 @@ export const armorData = [
     abbr: "PHY",
     longText:
       "Increases melee damage by 50%.  Improves weapons handling with less drag on weapon movement.",
-    icon: mediumSVG,
+    icon: peakphysique,
     type: "medium",
   },
   {
@@ -242,7 +270,7 @@ export const armorData = [
     abbr: "PHY",
     longText:
       "Increases melee damage by 50%.  Improves weapons handling with less drag on weapon movement.",
-    icon: heavySVG,
+    icon: peakphysique,
     type: "heavy",
   },
   {
@@ -252,7 +280,7 @@ export const armorData = [
     abbr: "FLA",
     longText:
       "Provides 75% damage resistance to fire, allowing bearer to rest assured in their inflammability.",
-    icon: lightSVG,
+    icon: inflammable,
     type: "light",
   },
   {
@@ -262,7 +290,7 @@ export const armorData = [
     abbr: "FLA",
     longText:
       "Provides 75% damage resistance to fire, allowing bearer to rest assured in their inflammability.",
-    icon: mediumSVG,
+    icon: inflammable,
     type: "medium",
   },
   {
@@ -272,7 +300,7 @@ export const armorData = [
     abbr: "FLA",
     longText:
       "Provides 75% damage resistance to fire, allowing bearer to rest assured in their inflammability.",
-    icon: heavySVG,
+    icon: inflammable,
     type: "heavy",
   },
   {
@@ -281,7 +309,7 @@ export const armorData = [
     bonus: "advanced filtration",
     abbr: "FIL",
     longText: "Provides 80% resistance to gas damage and effects.",
-    icon: lightSVG,
+    icon: advancedfiltration,
     type: "light",
   },
   {
@@ -290,7 +318,7 @@ export const armorData = [
     bonus: "advanced filtration",
     abbr: "FIL",
     longText: "Provides 80% resistance to gas damage and effects.",
-    icon: mediumSVG,
+    icon: advancedfiltration,
     type: "medium",
   },
   {
@@ -299,7 +327,7 @@ export const armorData = [
     bonus: "advanced filtration",
     abbr: "FIL",
     longText: "Provides 80% resistance to gas damage and effects.",
-    icon: heavySVG,
+    icon: advancedfiltration,
     type: "heavy",
   },
   {
@@ -309,7 +337,7 @@ export const armorData = [
     abbr: "UNF",
     longText:
       "Helps prevent Helldivers from flinching when hit. Higher armor rating. Markers on map will generate scans every 2s",
-    icon: lightSVG,
+    icon: unflinching,
     type: "light",
   },
   {
@@ -319,7 +347,7 @@ export const armorData = [
     abbr: "UNF",
     longText:
       "Helps prevent Helldivers from flinching when hit. Higher armor rating. Markers on map will generate scans every 2s",
-    icon: mediumSVG,
+    icon: unflinching,
     type: "medium",
   },
   {
@@ -329,7 +357,7 @@ export const armorData = [
     abbr: "UNF",
     longText:
       "Helps prevent Helldivers from flinching when hit. Higher armor rating. Markers on map will generate scans every 2s",
-    icon: heavySVG,
+    icon: unflinching,
     type: "heavy",
   },
   {
@@ -339,7 +367,7 @@ export const armorData = [
     abbr: "SGR",
     longText:
       "Increases reload speed of primary weapons by 30%. Increases ammo capacity of primary weapons by 20%.",
-    icon: lightSVG,
+    icon: siegeready,
     type: "light",
   },
   {
@@ -349,7 +377,7 @@ export const armorData = [
     abbr: "SGR",
     longText:
       "Increases reload speed of primary weapons by 30%. Increases ammo capacity of primary weapons by 20%.",
-    icon: mediumSVG,
+    icon: siegeready,
     type: "medium",
   },
   {
@@ -359,7 +387,7 @@ export const armorData = [
     abbr: "SGR",
     longText:
       "Increases reload speed of primary weapons by 30%. Increases ammo capacity of primary weapons by 20%.",
-    icon: heavySVG,
+    icon: siegeready,
     type: "heavy",
   },
   {
@@ -369,7 +397,7 @@ export const armorData = [
     abbr: "ACC",
     longText:
       "Provides 50% resistance to fire, gas, acid, and electrical damage.",
-    icon: lightSVG,
+    icon: inflammable,
     type: "light",
   },
   {
@@ -379,7 +407,7 @@ export const armorData = [
     abbr: "ACC",
     longText:
       "Provides 50% resistance to fire, gas, acid, and electrical damage.",
-    icon: mediumSVG,
+    icon: inflammable,
     type: "medium",
   },
   {
@@ -389,7 +417,7 @@ export const armorData = [
     abbr: "ACC",
     longText:
       "Provides 50% resistance to fire, gas, acid, and electrical damage.",
-    icon: heavySVG,
+    icon: inflammable,
     type: "heavy",
   },
   {
@@ -398,7 +426,7 @@ export const armorData = [
     bonus: "integrated explosives",
     abbr: "IEX",
     longText: "Armor explodes 1.5s after the wearer dies. +2 grenades",
-    icon: lightSVG,
+    icon: integratedexplosives,
     type: "light",
   },
   {
@@ -407,7 +435,7 @@ export const armorData = [
     bonus: "integrated explosives",
     abbr: "IEX",
     longText: "Armor explodes 1.5s after the wearer dies. +2 grenades",
-    icon: mediumSVG,
+    icon: integratedexplosives,
     type: "medium",
   },
   {
@@ -416,7 +444,7 @@ export const armorData = [
     bonus: "integrated explosives",
     abbr: "IEX",
     longText: "Armor explodes 1.5s after the wearer dies. +2 grenades",
-    icon: heavySVG,
+    icon: integratedexplosives,
     type: "heavy",
   },
   {
@@ -425,7 +453,7 @@ export const armorData = [
     bonus: "gunslinger",
     abbr: "GSL",
     longText: "Sidearm reload speed +40%, swap speed +50%, recoil -70%.",
-    icon: lightSVG,
+    icon: gunslinger,
     type: "light",
   },
   {
@@ -434,7 +462,7 @@ export const armorData = [
     bonus: "gunslinger",
     abbr: "GSL",
     longText: "Sidearm reload speed +40%, swap speed +50%, recoil -70%.",
-    icon: mediumSVG,
+    icon: gunslinger,
     type: "medium",
   },
   {
@@ -443,7 +471,7 @@ export const armorData = [
     bonus: "gunslinger",
     abbr: "GSL",
     longText: "Sidearm reload speed +40%, swap speed +50%, recoil -70%.",
-    icon: heavySVG,
+    icon: gunslinger,
     type: "heavy",
   },
   {
@@ -452,7 +480,7 @@ export const armorData = [
     bonus: "epaulettes",
     abbr: "EPL",
     longText: "Gives wearer a 50% chance to avoid grievous limb injury",
-    icon: lightSVG,
+    icon: reinforcedepaulettes,
     type: "light",
   },
   {
@@ -461,7 +489,7 @@ export const armorData = [
     bonus: "epaulettes",
     abbr: "EPL",
     longText: "Gives wearer a 50% chance to avoid grievous limb injury",
-    icon: mediumSVG,
+    icon: reinforcedepaulettes,
     type: "medium",
   },
   {
@@ -470,7 +498,7 @@ export const armorData = [
     bonus: "epaulettes",
     abbr: "EPL",
     longText: "Gives wearer a 50% chance to avoid grievous limb injury",
-    icon: heavySVG,
+    icon: reinforcedepaulettes,
     type: "heavy",
   },
   {
@@ -480,7 +508,7 @@ export const armorData = [
     abbr: "BAL",
     longText:
       "25% resistance to chest and explosive damage. Prevents bleeding from chest hemmorhages.",
-    icon: lightSVG,
+    icon: ballisticpadding,
     type: "light",
   },
   {
@@ -490,7 +518,7 @@ export const armorData = [
     abbr: "BAL",
     longText:
       "25% resistance to chest and explosive damage. Prevents bleeding from chest hemmorhages.",
-    icon: mediumSVG,
+    icon: ballisticpadding,
     type: "medium",
   },
   {
@@ -500,7 +528,7 @@ export const armorData = [
     abbr: "BAL",
     longText:
       "25% resistance to chest and explosive damage. Prevents bleeding from chest hemmorhages.",
-    icon: heavySVG,
+    icon: ballisticpadding,
     type: "heavy",
   },
   {
@@ -510,7 +538,7 @@ export const armorData = [
     abbr: "ADR",
     longText:
       "Provides one-time, short-lived resuscitation upon death, given that the body is still intact.  Increases stim effect duration by 2s. Provides 50% resistance to arc damage.",
-    icon: lightSVG,
+    icon: adrenodefibrillator,
     type: "light",
   },
   {
@@ -520,7 +548,7 @@ export const armorData = [
     abbr: "ADR",
     longText:
       "Provides one-time, short-lived resuscitation upon death, given that the body is still intact.  Increases stim effect duration by 2s. Provides 50% resistance to arc damage.",
-    icon: mediumSVG,
+    icon: adrenodefibrillator,
     type: "medium",
   },
   {
@@ -530,7 +558,7 @@ export const armorData = [
     abbr: "ADR",
     longText:
       "Provides one-time, short-lived resuscitation upon death, given that the body is still intact.  Increases stim effect duration by 2s. Provides 50% resistance to arc damage.",
-    icon: heavySVG,
+    icon: adrenodefibrillator,
     type: "heavy",
   },
   {
@@ -540,7 +568,7 @@ export const armorData = [
     abbr: "FEF",
     longText:
       "Wearer makes 50% less noise when moving. Increases point-of-interest identification range by 30%. Provides immunity to leg injuries",
-    icon: lightSVG,
+    icon: feetfirst,
     type: "light",
   },
   {
@@ -550,7 +578,7 @@ export const armorData = [
     abbr: "FEF",
     longText:
       "Wearer makes 50% less noise when moving. Increases point-of-interest identification range by 30%. Provides immunity to leg injuries",
-    icon: mediumSVG,
+    icon: feetfirst,
     type: "medium",
   },
   {
@@ -560,7 +588,7 @@ export const armorData = [
     abbr: "FEF",
     longText:
       "Wearer makes 50% less noise when moving. Increases point-of-interest identification range by 30%. Provides immunity to leg injuries",
-    icon: heavySVG,
+    icon: feetfirst,
     type: "heavy",
   },
   {
@@ -570,7 +598,7 @@ export const armorData = [
     abbr: "DES",
     longText:
       "Provides 40% resistance to fire, gas, acid, and electrical damage. Increases throwing range by 20%.",
-    icon: lightSVG,
+    icon: desertstormer,
     type: "light",
   },
   {
@@ -580,7 +608,7 @@ export const armorData = [
     abbr: "DES",
     longText:
       "Provides 40% resistance to fire, gas, acid, and electrical damage. Increases throwing range by 20%.",
-    icon: mediumSVG,
+    icon: desertstormer,
     type: "medium",
   },
   {
@@ -590,7 +618,7 @@ export const armorData = [
     abbr: "DES",
     longText:
       "Provides 40% resistance to fire, gas, acid, and electrical damage. Increases throwing range by 20%.",
-    icon: heavySVG,
+    icon: desertstormer,
     type: "heavy",
   },
   {
@@ -600,7 +628,7 @@ export const armorData = [
     abbr: "RCK",
     longText:
       "Increase melee damage by 100%.  Bearer is more resistant to being knocked prone.",
-    icon: lightSVG,
+    icon: rocksolid,
     type: "light",
   },
   {
@@ -610,7 +638,7 @@ export const armorData = [
     abbr: "RCK",
     longText:
       "Increase melee damage by 100%.  Bearer is more resistant to being knocked prone.",
-    icon: mediumSVG,
+    icon: rocksolid,
     type: "medium",
   },
   {
@@ -620,7 +648,7 @@ export const armorData = [
     abbr: "RCK",
     longText:
       "Increase melee damage by 100%.  Bearer is more resistant to being knocked prone.",
-    icon: heavySVG,
+    icon: rocksolid,
     type: "heavy",
   },
   {
@@ -630,7 +658,7 @@ export const armorData = [
     abbr: "RSG",
     longText:
       "Wearer makes 50% less noise when moving. Reduces range at which enemies can detect the wearer by 40%.",
-    icon: lightSVG,
+    icon: reducedsignature,
     type: "light",
   },
   {
@@ -640,7 +668,7 @@ export const armorData = [
     abbr: "RSG",
     longText:
       "Wearer makes 50% less noise when moving. Reduces range at which enemies can detect the wearer by 40%.",
-    icon: mediumSVG,
+    icon: reducedsignature,
     type: "medium",
   },
   {
@@ -650,7 +678,7 @@ export const armorData = [
     abbr: "SPA",
     longText:
       "When the wearer takes damage, they regain some stamina. Provides a higher armor rating.",
-    icon: mediumSVG,
+    icon: supplementaryadrenaline,
     type: "medium",
   },
   {
@@ -660,7 +688,7 @@ export const armorData = [
     abbr: "SPA",
     longText:
       "When the wearer takes damage, they regain some stamina. Provides a higher armor rating.",
-    icon: heavySVG,
+    icon: supplementaryadrenaline,
     type: "heavy",
   },
   {
@@ -670,7 +698,7 @@ export const armorData = [
     abbr: "CPA",
     longText:
       "Provides 50% resistance to explosive damage. Provides 25% resistance to gas damage and effects. Sidearm recoil reduced by 30%.",
-    icon: lightSVG,
+    icon: concussivepadding,
     type: "light",
   },
   {
@@ -680,7 +708,7 @@ export const armorData = [
     abbr: "CPB",
     longText:
       "Provides 50% resistance to explosive damage. Increases initial inventory and holding capacity of throwables by +2.",
-    icon: mediumSVG,
+    icon: concussivepadding,
     type: "medium",
   },
   {
@@ -690,7 +718,7 @@ export const armorData = [
     abbr: "CPC",
     longText:
       "Provides 50% resistance to explosive damage. Provides a higher armor rating.",
-    icon: heavySVG,
+    icon: concussivepadding,
     type: "heavy",
   },
   {
@@ -700,7 +728,7 @@ export const armorData = [
     abbr: "OXY",
     longText:
       "Increases the wearer's walking speed and running speed. Increases the speed and duration of slides.",
-    icon: lightSVG,
+    icon: oxygenator,
     type: "light",
   },
   {
@@ -710,7 +738,7 @@ export const armorData = [
     abbr: "OXY",
     longText:
       "Increases the wearer's walking speed and running speed. Increases the speed and duration of slides.",
-    icon: mediumSVG,
+    icon: oxygenator,
     type: "medium",
   },
   {
@@ -720,7 +748,7 @@ export const armorData = [
     abbr: "OXY",
     longText:
       "Increases the wearer's walking speed and running speed. Increases the speed and duration of slides.",
-    icon: heavySVG,
+    icon: oxygenator,
     type: "heavy",
   },
   {
@@ -730,7 +758,7 @@ export const armorData = [
     abbr: "KDM",
     longText:
       "Provides 50% damage resistance to fire, allowing bearer to rest assured in their inflammability. Gives the wearer a 50% chance to avoid grievous limb injury. Reduces damage taken from impact and collisions by 30%.",
-    icon: heavySVG,
+    icon: kineticdisplacementmitigation,
     type: "heavy",
   },
   {
@@ -740,7 +768,7 @@ export const armorData = [
     abbr: "MTG",
     longText:
       "Provides +20 Weapon Handling. Provides +30% Reload Speed for Support Weapons.",
-    icon: mediumSVG,
+    icon: truegrit,
     type: "medium",
   },
   {
@@ -750,7 +778,7 @@ export const armorData = [
     abbr: "HTG",
     longText:
       "Provides +20 Weapon Handling. Provides +30% Reload Speed for Support Weapons.",
-    icon: heavySVG,
+    icon: truegrit,
     type: "heavy",
   },
 ];
