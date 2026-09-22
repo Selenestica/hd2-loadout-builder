@@ -16,6 +16,8 @@ import sampleextricator from "../assets/boosters/sampleextricator.webp";
 import samplescanner from "../assets/boosters/samplescanner.webp";
 import stunpods from "../assets/boosters/stunpods.webp";
 import concealedinsertion from "../assets/boosters/concealedinsertion.webp";
+import integratedextinguishers from "../assets/boosters/integratedextinguishers.webp";
+import surpluseatallocation from "../assets/boosters/surpluseatallocation.webp";
 
 export const boosterData = [
   {
@@ -142,5 +144,20 @@ export const boosterData = [
     icon: concealedinsertion,
     description:
       "Hellpods make no noise on descent and produce no visible steam trail, allowing Helldivers to drop without alerting nearby enemies.",
+  },
+
+  {
+    id: 19,
+    name: "Integrated Extinguishers",
+    icon: integratedextinguishers,
+    description:
+      "Reduces the time in which a Helldiver is automatically put out from being on fire.",
+  },
+  {
+    id: 20,
+    name: "Surplus EAT Allocation",
+    icon: surpluseatallocation,
+    description:
+      "Provides two free uses of the EAT-17 Expendable Anti-Tank support weapon per mission, a total of 4 launchers, one for each Helldiver.",
   },
 ];

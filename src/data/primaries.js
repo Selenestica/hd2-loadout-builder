@@ -51,6 +51,8 @@ import stoker from "../assets/weapons/smgflam34stoker.webp";
 import gallant from "../assets/weapons/smg203gallant.webp";
 import hyena from "../assets/weapons/r4hyena.webp";
 import hotshotlas from "../assets/weapons/hotshotmarksmanrifle.webp";
+import arbitrator from "../assets/weapons/ar11arbitrator.webp";
+import evictor from "../assets/weapons/gl15evictor.webp";
 
 const { primaryWeaponColor } = colors;
 
@@ -1040,6 +1042,45 @@ export const primaryWeaponData = [
     offensiveRange: [1, 1, 1],
     coverage: [1, 0.5, 0, 0, 0],
     stun: false,
+    sluggish: false,
+    objectives: [],
+  },
+
+  {
+    id: 53,
+    color: primaryWeaponColor,
+    type: "Assault rifle",
+    name: "AR-11 Arbitrator",
+    icon: arbitrator,
+    ingameStats: {
+      damage: 70,
+      capacity: 45,
+      recoil: 13,
+      fireRate: 1200,
+      traits: ["light armor penetrating"],
+    },
+    offensiveRange: [1, 1, 0.5],
+    coverage: [1, 0.5, 0, 0, 0],
+    sluggish: false,
+    stun: false,
+    objectives: [],
+  },
+  {
+    id: 54,
+    color: primaryWeaponColor,
+    type: "Explosive",
+    name: "GL-15 Evictor",
+    icon: evictor,
+    ingameStats: {
+      damage: 490,
+      capacity: 4,
+      recoil: 83,
+      fireRate: 60,
+      traits: ["explosive"],
+    },
+    offensiveRange: [1, 1, 0],
+    coverage: [1, 1, 1, 0.2, 0],
+    stun: true,
     sluggish: false,
     objectives: [],
   },

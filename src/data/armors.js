@@ -781,4 +781,25 @@ export const armorData = [
     icon: truegrit,
     type: "heavy",
   },
+
+  {
+    id: 78,
+    name: "heavy blunt force mitigation",
+    bonus: "blunt force mitigation",
+    abbr: "BFM",
+    longText:
+      "Makes Helldivers more resistant to being knocked off their feet when under attack and reduces any damage taken from impact and collisions by 30%, while also providing a higher armor rating.",
+    icon: bluntforcemitigation,
+    type: "heavy",
+  },
+  {
+    id: 79,
+    name: "light blunt force mitigation",
+    bonus: "blunt force mitigation",
+    abbr: "BFM",
+    longText:
+      "Makes Helldivers more resistant to being knocked off their feet when under attack and reduces any damage taken from impact and collisions by 30%, while also providing a higher armor rating.",
+    icon: bluntforcemitigation,
+    type: "light",
+  },
 ];

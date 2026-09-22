@@ -481,4 +481,24 @@ export const secondaryWeaponData = [
     stun: false,
     objectives: [],
   },
+
+  {
+    id: 25,
+    color: secondaryWeaponColor,
+    type: "special",
+    name: "P-34 Breacher",
+    icon: missile,
+    ingameStats: {
+      damage: 2000,
+      capacity: 1,
+      recoil: 313,
+      fireRate: 20,
+      traits: ["heavy armor penetrating", "one handed", "explosive"],
+    },
+    offensiveRange: [1, 0.5, 0],
+    coverage: [0, 0, 0, 0.8, 0.8],
+    sluggish: false,
+    stun: false,
+    objectives: [],
+  },
 ];

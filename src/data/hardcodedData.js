@@ -1182,6 +1182,18 @@ export const strategemData = [
     uptime: "high",
     objectives: [],
   },
+  {
+    id: 92,
+    name: "TD-110 Maelstrom",
+    icon: bastiontank,
+    offensiveRange: [1, 1, 0.5],
+    type: "support-weapon",
+    color: stratBlue,
+    coverage: [0.6, 0.6, 0.6, 0.6, 0.6],
+    supportSlotNecessary: false,
+    uptime: "low",
+    objectives: [],
+  },
 ];
 
 export function preloadImages() {

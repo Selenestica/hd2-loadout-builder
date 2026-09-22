@@ -19,6 +19,8 @@ import luremine from "../assets/weapons/tm01luremine.webp";
 import smokescreen from "../assets/weapons/g89smokescreen.png";
 import giga from "../assets/weapons/g48giga.webp";
 import meltamine from "../assets/weapons/meltamine.webp";
+import immolation from "../assets/weapons/g8immolation.webp";
+import atseeker from "../assets/weapons/g60antitankseeker.webp";
 import { colors } from "./constants";
 
 const { grenadeColor } = colors;
@@ -371,6 +373,41 @@ export const grenadeData = [
     },
     offensiveRange: [1, 1, 0],
     coverage: [1, 1, 0.8, 0.5, 0],
+    stun: false,
+    objectives: [],
+  },
+
+  {
+    id: 22,
+    color: grenadeColor,
+    name: "Anti-Tank Seeker",
+    icon: atseeker,
+    ingameStats: {
+      damage: 1800,
+      penetration: 7,
+      radius: 7,
+      fuse: 0,
+      traits: [],
+    },
+    offensiveRange: [1, 1, 0],
+    coverage: [1, 1, 0.8, 0.5, 0],
+    stun: false,
+    objectives: [],
+  },
+  {
+    id: 23,
+    color: grenadeColor,
+    name: "G-8 Immolation",
+    icon: immolation,
+    ingameStats: {
+      damage: 150,
+      penetration: 3,
+      radius: 7,
+      fuse: 0,
+      traits: ["Incendiary"],
+    },
+    offensiveRange: [1, 1, 0],
+    coverage: [1, 1, 0, 0, 0],
     stun: false,
     objectives: [],
   },
