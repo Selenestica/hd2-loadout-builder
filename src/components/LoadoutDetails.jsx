@@ -8,6 +8,7 @@ import {
   preloadImages,
   grenadeData,
   armorData,
+  boosterData,
 } from "../data/hardcodedData";
 import {
   updateObject as updateLoadout,
@@ -83,6 +84,7 @@ export default function LoadoutDetails({ ...props }) {
         secondary: pickRandom(secondaryWeaponData),
         grenade: pickRandom(grenadeData),
         armor: pickRandom(armorData),
+        booster: pickRandom(boosterData),
       };
     }
 
@@ -117,6 +119,7 @@ export default function LoadoutDetails({ ...props }) {
         secondary: resultingData.secondary.id,
         grenade: resultingData.grenade.id,
         armor: resultingData.armor.id,
+        booster: resultingData.booster.id,
       };
     });
   }, [loadouts]);
