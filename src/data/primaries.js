@@ -53,6 +53,7 @@ import hyena from "../assets/weapons/r4hyena.webp";
 import hotshotlas from "../assets/weapons/hotshotmarksmanrifle.webp";
 import arbitrator from "../assets/weapons/ar11arbitrator.webp";
 import evictor from "../assets/weapons/gl15evictor.webp";
+import sai from "../assets/weapons/las12sai.webp";
 
 const { primaryWeaponColor } = colors;
 
@@ -1081,6 +1082,25 @@ export const primaryWeaponData = [
     offensiveRange: [1, 1, 0],
     coverage: [1, 1, 1, 0.2, 0],
     stun: true,
+    sluggish: false,
+    objectives: [],
+  },
+  {
+    id: 55,
+    color: primaryWeaponColor,
+    type: "Energy",
+    name: "LAS-12 SAI",
+    icon: sai,
+    ingameStats: {
+      damage: 1066,
+      fireLimit: 17,
+      recoil: 2,
+      fireRate: 700,
+      traits: ["medium armor penetrating", "heat"],
+    },
+    offensiveRange: [1, 1, 0],
+    coverage: [1, 1, 0.5, 0, 0],
+    stun: false,
     sluggish: false,
     objectives: [],
   },
